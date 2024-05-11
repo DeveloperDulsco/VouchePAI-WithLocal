@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlewares", "Middlewares\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{7982C982-1FA1-4DA1-B830-C8A736A1E7D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentAPI", "PaymentAPI\PaymentAPI.csproj", "{89EDF974-727E-4439-8826-D34C6C688E95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7982C982-1FA1-4DA1-B830-C8A736A1E7D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7982C982-1FA1-4DA1-B830-C8A736A1E7D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7982C982-1FA1-4DA1-B830-C8A736A1E7D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89EDF974-727E-4439-8826-D34C6C688E95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89EDF974-727E-4439-8826-D34C6C688E95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89EDF974-727E-4439-8826-D34C6C688E95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89EDF974-727E-4439-8826-D34C6C688E95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
