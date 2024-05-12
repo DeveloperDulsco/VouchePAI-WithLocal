@@ -23,7 +23,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
 }
 
 app.UseHttpsRedirection();
-app.UseHttpLogging();
+//app.UseHttpLogging();
 app.usePaymentAPIS();
 
 
