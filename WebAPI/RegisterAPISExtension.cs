@@ -12,6 +12,7 @@ public static class RegisterAPISExtension
         app.UseHttpsRedirection();
         app.validateToken();
         app.AddApiEndPoints(typeof(WebAPI.RegisterAPISExtension).Assembly);
+        
     }
 
 }

@@ -33,14 +33,9 @@ public static class AuthenticationMiddleware
                 }
 
                 var path=context.Request.Path.ToString().ToLower();
-                    if(path.StartsWith("/ping",StringComparison.OrdinalIgnoreCase)) { 
+                  
 
-                        await Task.Delay(1000);
-                        await returnResponse(200,"pong");
-
-                        }
-
-                        else if(path.StartsWith("/swagger",StringComparison.OrdinalIgnoreCase))
+                       if(path.StartsWith("/swagger",StringComparison.OrdinalIgnoreCase))
                         {
                             if(app.Environment.IsDevelopment() || app.Environment.IsStaging()) await next.Invoke();
                             else await returnResponse(401,string.Empty);
