@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Middlewares\Middlewares.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />

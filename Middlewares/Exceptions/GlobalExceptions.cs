@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
+﻿using Domain;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 
 
@@ -8,7 +9,9 @@ namespace Middlewares.Exceptions
     {
         public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
         {
-            await httpContext.Response.WriteAsJsonAsync(exception.Message);
+            
+            ServiceResult serviceResult=new ServiceResult();
+            await httpContext.Response.WriteAsJsonAsync(await serviceResult.GetServiceResponseAsync<string>(exception.Message,ApplicationGenericConstants.UNKNOWN_ERROR,ApiResponseCodes.FAILURE, 500,null));
             return true;
         }
     }
