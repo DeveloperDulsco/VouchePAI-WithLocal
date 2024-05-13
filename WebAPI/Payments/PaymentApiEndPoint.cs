@@ -30,10 +30,10 @@ internal class  PaymentApiEndPoint : IEndPointDefinition
         }
 
         private static RouteGroupBuilder PaymentAPI(RouteGroupBuilder payment) {
-            payment.MapGet("/ping", getAsync).Produces<Ok>();
-        payment.MapPost("/PaymentInsert", PaymentInsertAsync).Produces<Ok>();
-        payment.MapPut("/PaymentUpdate", PaymentUpdateAsync).Produces<Ok>();
-        payment.MapGet("/PaymentFetch", PaymentFetchAsync).Produces<Ok>();
+        payment.MapGet("/ping", getAsync).Produces<Ok>();
+        payment.MapPost("/", PaymentInsertAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();
+        payment.MapPut("/", PaymentUpdateAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();;
+        payment.MapGet("/", PaymentFetchAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();
         return payment;
 
         }
