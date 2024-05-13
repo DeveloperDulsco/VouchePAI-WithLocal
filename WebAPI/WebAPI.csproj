@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\PaymentsAPI\BussinessLogic\BussinessLogic.csproj" />
     <ProjectReference Include="..\Middlewares\Middlewares.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>

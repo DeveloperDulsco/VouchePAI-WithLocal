@@ -1,3 +1,5 @@
+using Domain.Request;
+using Microsoft.OpenApi.Models;
 using PaymentAPI;
 using WebAPI;
 
@@ -7,7 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.useApplicationServices();
+
+
+// Configure the app
 
 var app = builder.Build();
 app.UseExceptionHandler(_=>{});

@@ -7,7 +7,7 @@ public static class RegisterAPISExtension
 {
     public static void usePaymentAPIS(this WebApplication app)
     {
-        
+
        
         app.UseHttpsRedirection();
         app.validateToken();

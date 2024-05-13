@@ -14,6 +14,7 @@ namespace DataAccessLayer.Repository
 {
     public class PaymentRepository
     {
+
         /// <summary>
         /// inserting Payment details to payment header table
         /// </summary>
@@ -22,26 +23,28 @@ namespace DataAccessLayer.Repository
         /// <param name="paymentAdditionalInfos"></param>
         /// <param name="connectionString"></param>
         /// <returns></returns>
-        public bool InsertPaymentDetails(List<PaymentHistory> paymentHistories, List<PushPaymentHeaderModel> paymentHeaders, List<PaymentAdditionalInfo> paymentAdditionalInfos, string connectionString)
+        public async Task<ResponseModel> InsertPaymentDetails(List<PaymentHistory> paymentHistories, List<PushPaymentHeaderModel> paymentHeaders, List<PaymentAdditionalInfo> paymentAdditionalInfos)
         {
-            bool isSavedSuccessfully = false;
-
+           
+            ResponseModel responseModel = new ResponseModel();
             try
             {
 
 
-                var spResponse = new DapperHelper(connectionString).ExecuteSPAsync("Usp_InsertPaymentTransactions"
+                var spResponse = await new DapperHelper().ExecuteSPAsync("Usp_InsertPaymentTransactions"
                         , new { TbPaymentHeaderType = new DBHelper().ToDataTable(paymentHeaders), TbPaymentAdditionalInfoType = new DBHelper().ToDataTable(paymentAdditionalInfos), TbPaymentHistoryType = new DBHelper().ToDataTable(paymentHistories) });
                 if (spResponse != null)
-                    return true;
+                    responseModel.Result = true;
+               
                 else
-                    return false;
+                    responseModel.Result = false;
+                    responseModel.ErrorMessage = "Failed to Update Data";
             }
             catch (Exception ex)
             {
 
             }
-            return isSavedSuccessfully;
+            return responseModel;
         }
         /// <summary>
         /// Update the Payment Header after 
@@ -54,32 +57,29 @@ namespace DataAccessLayer.Repository
         /// <param name="amount"></param>
         /// <param name="ReservationNumber"></param>
         /// <returns></returns>
-        public bool UpdatePaymentHeaderData(string transactionID, string ResultCode, string ResponseMessage, bool? isActive, string transactionType, decimal amount, string ReservationNumber,string connectionString)
+        public async Task<ResponseModel> UpdatePaymentHeaderData(UpdatePaymentModel updatePayment)
         {
+            ResponseModel responseModel = new ResponseModel();
             try
             {
-               
 
 
-              var ProfilesDt = new DapperHelper(connectionString).ExecuteSPAsync("Usp_UpdatePaymentHeader"
-                        , new { TransactionID = transactionID, ResultCode = ResultCode , ResponseMessage = ResponseMessage , IsActive = isActive, TransactionType= transactionType , Amount = amount , ReservationNumber = ReservationNumber }).Result.ToList();
 
-                if (ProfilesDt != null && ProfilesDt.Count > 0)
-                {
+                var ProfilesDt = await new DapperHelper().ExecuteSPAsync("Usp_UpdatePaymentHeader"
+                        , new { TransactionID = updatePayment.transactionID, ResultCode = updatePayment.ResultCode, ResponseMessage = updatePayment.ResponseMessage , IsActive = updatePayment.isActive, TransactionType= updatePayment.transactionType , Amount = updatePayment.amount , ReservationNumber = updatePayment.ReservationNumber });
 
-                   
-                        return true;
-                    }
+                if (ProfilesDt != null && ProfilesDt.Any())
+            
+                        responseModel.Result = true;
                     else
-                    {
-                      return false;
-                    }
-                
-            }
+                        responseModel.Result = false;
+                        responseModel.ErrorMessage = "Failed to Update Data";
+                }
             catch (Exception ex)
             {
-              }
-            return false;
+
+            }
+            return responseModel;
         }
 
         /// <summary>
@@ -88,20 +88,29 @@ namespace DataAccessLayer.Repository
         /// <param name="ReservationNameID"></param>
         /// <param name="connectionString"></param>
         /// <returns></returns>
-        public async Task<List<FetchPaymentTransaction>> FetchPaymentActiveTransactions(string ReservationNameID, string connectionString)
+        public async Task<ResponseModel> FetchPaymentActiveTransactions(string reservationNameID)
         {
-            var spResponse = new List<FetchPaymentTransaction>();
+            ResponseModel responseModel = new ResponseModel();
             try
             {
 
-                 spResponse = new DapperHelper(connectionString).ExecuteSPAsync<FetchPaymentTransaction>("Usp_FetchPaymentTransactionsForPortal_Test",
-                   new { ReservationNameID = ReservationNameID }).Result.ToList();
-              
+                var spResponse = await new DapperHelper().ExecuteSPAsync<FetchPaymentTransaction>("Usp_FetchPaymentTransaction",new { ReservationNameID= reservationNameID });
+                if (spResponse != null && spResponse.Any())
+                {
+                    responseModel.Result = true;
+                    responseModel.ResponseObject = spResponse;
+                }
+
+                else
+                {
+                    responseModel.Result = false;
+                    responseModel.ErrorMessage = "Failed to Get Data";
+                }
             }
             catch (Exception ex)
             {
             }
-            return spResponse;
+            return responseModel;
         }
 
     }
