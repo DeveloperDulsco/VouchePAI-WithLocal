@@ -1,32 +1,138 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using BussinessLogic;
+using DataAccessLayer.Model;
+using DataAccessLayer.Repository;
+using Domain;
+using Domain.Request;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Configuration;
 using Middlewares;
+using Newtonsoft.Json;
+using static System.Net.Mime.MediaTypeNames;
 
 
-namespace WebAPI.Payments
-{
-    internal class  PaymentApiEndPoint : IEndPointDefinintion
+
+namespace WebAPI.Payments;
+
+internal class  PaymentApiEndPoint : IEndPointDefinition
     {
-        public void RegisterEndPoints(WebApplication application)
+
+    
+    public void RegisterEndPoints(WebApplication application)
         {
             var PaymentGroup = application.MapGroup("v1/Payments").WithOpenApi();
-            throw new NotImplementedException();
+            PaymentAPI(PaymentGroup);
+     
         }
 
         private static RouteGroupBuilder PaymentAPI(RouteGroupBuilder payment) {
-            payment.MapGet("/Ping", getAsync).Produces<Ok>();
-            return payment;
+            payment.MapGet("/ping", getAsync).Produces<Ok>();
+        payment.MapPost("/PaymentInsert", PaymentInsertAsync).Produces<Ok>();
+        payment.MapPut("/PaymentUpdate", PaymentUpdateAsync).Produces<Ok>();
+        payment.MapGet("/PaymentFetch", PaymentFetchAsync).Produces<Ok>();
+        return payment;
 
         }
-        private static async Task<IResult?> getAsync()
+ 
+    private static async Task<IResult?> getAsync()
+        {
+        
+           ServiceResult serviceResult=new ServiceResult();
+           return ReturnResultBaseClass.returnResult<string> (await serviceResult.GetServiceResponseAsync<string>("pong",ApplicationGenericConstants.SUCCESS,ApiResponseCodes.SUCCESS, 200,null));
+        }
+
+    private static async Task<IResult> PaymentInsertAsync([FromBody]  ServiceRequest request)
+    {
+        ServiceResult serviceResult = new ServiceResult();
+      
+        ServiceResponse<string> serviceResponse = new ServiceResponse<string>();
+        try
+        {
+            var response = await new PaymentBL().InsertPayment(new RequestModel { RequestObject = request.RequestObject});
+            if (response != null)
+            {
+                if (response.Result)
+                {
+                    serviceResponse = await serviceResult.GetServiceResponseAsync<string>(response.ResponseObject!=null?response.ResponseObject.ToString():"", ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
+                }
+                else
+                {
+                    serviceResponse = await serviceResult.GetServiceResponseAsync<string>(response.ResponseObject.ToString(), ApplicationGenericConstants.FAILURE, ApiResponseCodes.SUCCESS, response.StatusCode, new List<ValidationError> { new ValidationError { ErrorMessage = response.ErrorMessage, ErrorNumber = response.StatusCode} });
+                }
+            }
+            else
+            {
+                serviceResponse = await serviceResult.GetServiceResponseAsync<string>(null, ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 210, new List<ValidationError> {new ValidationError { ErrorMessage="Payment Insertion Failed",ErrorNumber=210} });
+            }
+       
+        }
+        catch (Exception ex) { 
+        }
+        return ReturnResultBaseClass.returnResult<string>(serviceResponse);
+    }
+    private static async Task<IResult?> PaymentUpdateAsync([FromBody] ServiceRequest request)
+    {
+        ServiceResult serviceResult = new ServiceResult();
+        ServiceResponse<string> serviceResponse = new ServiceResponse<string>();
+        try
         {
 
-            return null;
-        }
+            var response = await new PaymentBL().UpdatePaymentHeader(new RequestModel { RequestObject = request.RequestObject});
+            if (response != null)
+            {
+                if (response.Result)
+                {
+                    serviceResponse = await serviceResult.GetServiceResponseAsync<string>(response.ResponseObject != null ? response.ResponseObject.ToString() : null, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
+                }
+                else
+                {
+                    serviceResponse = await serviceResult.GetServiceResponseAsync<string>(response.ResponseObject != null ? response.ResponseObject.ToString() : null, ApplicationGenericConstants.FAILURE, ApiResponseCodes.SUCCESS, response.StatusCode, new List<ValidationError> { new ValidationError { ErrorMessage = response.ErrorMessage, ErrorNumber = response.StatusCode } });
+                }
+            }
+            else
+            {
+                serviceResponse = await serviceResult.GetServiceResponseAsync<string>(null, ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 210, new List<ValidationError> { new ValidationError { ErrorMessage = "Payment header updation Failed", ErrorNumber = 210 } });
+            }
 
-    
+        }
+        catch (Exception ex)
+        {
+        }
+        return ReturnResultBaseClass.returnResult<string>(serviceResponse);
+    }
+    private static async Task<IResult?> PaymentFetchAsync([FromBody] ServiceRequest request)
+    {
+        ServiceResult serviceResult = new ServiceResult();
+        ServiceResponse<string> serviceResponse = new ServiceResponse<string>();
+        try
+        {
+
+            var response = await new PaymentBL().FetchPaymentDetails(new RequestModel { RequestObject = request.RequestObject});
+            if (response != null)
+            {
+                if (response.Result)
+                {
+                    serviceResponse = await serviceResult.GetServiceResponseAsync<string>(response.ResponseObject!=null? JsonConvert.SerializeObject(response.ResponseObject) :null, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
+                }
+                else
+                {
+                    serviceResponse = await serviceResult.GetServiceResponseAsync<string>(response.ResponseObject.ToString(), ApplicationGenericConstants.FAILURE, ApiResponseCodes.SUCCESS, response.StatusCode, new List<ValidationError> { new ValidationError { ErrorMessage = response.ErrorMessage, ErrorNumber = response.StatusCode } });
+                }
+            }
+            else
+            {
+                serviceResponse = await serviceResult.GetServiceResponseAsync<string>(null, ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 210, new List<ValidationError> { new ValidationError { ErrorMessage = "Payment Insertion Failed", ErrorNumber = 210 } });
+            }
+
+        }
+        catch (Exception ex)
+        {
+        }
+        return ReturnResultBaseClass.returnResult<string>(serviceResponse);
     }
 }
+

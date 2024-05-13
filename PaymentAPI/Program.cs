@@ -1,3 +1,8 @@
+using Domain.Request;
+using Microsoft.OpenApi.Models;
+using PaymentAPI;
+using WebAPI;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,23 +10,28 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.useApplicationServices();
+
+
+// Configure the app
+
 var app = builder.Build();
+app.UseExceptionHandler(_=>{});
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c=>{
+        c.SwaggerEndpoint("/swagger/v1/swagger.json","Savy Pay APIS");
+
+    });
 }
 
 app.UseHttpsRedirection();
+//app.UseHttpLogging();
+app.usePaymentAPIS();
 
-
-
-app.MapGet("/Ping", () =>
-{
-    return "Pong";
-});
 
 app.Run();
 

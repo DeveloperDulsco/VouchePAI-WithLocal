@@ -41,6 +41,16 @@ namespace DataAccessLayer.Model
         public string KeyHeader { get; set; }
         public string KeyValue { get; set; }
     }
+    public class UpdatePaymentModel
+    {
+      public string transactionID { get; set; }
+      public string ResultCode { get; set; }
+      public string ResponseMessage { get; set; }
+      public  bool? isActive { get; set; }
+      public string transactionType { get; set; }
+      public decimal amount { get; set; }
+      public string ReservationNumber { get; set; }
+    }
 
     public class PaymentHistory
     {
@@ -88,5 +98,16 @@ namespace DataAccessLayer.Model
         public string UserName { get; set; }
         public bool VisaCardExpiry { get; set; } = false;
     }
-
+    public class RequestModel
+    {
+        public object RequestObject { get; set; }
+        public string ConnectionString { get; set; }
+    }
+    public class ResponseModel
+    {
+        public object ResponseObject { get; set; }
+        public bool Result { get; set; }
+        public int StatusCode { get; set; }
+        public string ErrorMessage { get; set; }
+    }
 }
