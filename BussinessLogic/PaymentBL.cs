@@ -104,15 +104,14 @@ namespace BussinessLogic
             }
             return responseModel;
         }
-        public async Task<ServiceResponse<ResponseModel>> FetchPaymentDetails(RequestModel request)
+        public async Task<ServiceResponse<object>> FetchPaymentDetails(RequestModel request)
         {
            
             ServiceResult serviceResult=new ServiceResult();
-            ResponseModel responseModel = new ResponseModel();
             var respose = await _prepository.FetchPaymentActiveTransactions(request.RequestObject.ToString());
-            if (respose != null && respose.Result) return await serviceResult.GetServiceResponseAsync<ResponseModel>(responseModel,ApplicationGenericConstants.SUCCESS,ApiResponseCodes.SUCCESS,200,null);
+            if (respose is not null && respose.Result) return await serviceResult.GetServiceResponseAsync(respose.ResponseObject,ApplicationGenericConstants.SUCCESS,ApiResponseCodes.SUCCESS,200,null);
             else
-            return await serviceResult.GetServiceResponseAsync<ResponseModel>(null,ApplicationGenericConstants.FAILURE,ApiResponseCodes.FAILURE,400,null);
+            return await serviceResult.GetServiceResponseAsync(respose?.ResponseObject,respose?.ErrorMessage,ApiResponseCodes.FAILURE,400,null);
 
 
         }

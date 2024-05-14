@@ -101,7 +101,7 @@ internal class  PaymentApiEndPoint : IEndPointDefinition
     {
     
             var response = await new PaymentBL().FetchPaymentDetails(new RequestModel { RequestObject = request.RequestObject});
-            return ReturnResultBaseClass.returnResult<ResponseModel>(response);
+            return ReturnResultBaseClass.returnResult<object>(response);
     }
 }
 
