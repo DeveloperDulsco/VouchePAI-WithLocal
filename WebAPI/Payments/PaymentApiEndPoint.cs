@@ -45,28 +45,26 @@ internal class  PaymentApiEndPoint : IEndPointDefinition
            return ReturnResultBaseClass.returnResult<string> (await serviceResult.GetServiceResponseAsync<string>("pong",ApplicationGenericConstants.SUCCESS,ApiResponseCodes.SUCCESS, 200,null));
         }
 
-    private static async Task<IResult> PaymentInsertAsync([FromBody]  ServiceRequest request)
+    private static async Task<IResult?> PaymentInsertAsync([FromBody]  ServiceRequest request)
     {
-        ServiceResult serviceResult = new ServiceResult();
+            
               var response = await new PaymentBL().InsertPayment(new RequestModel { RequestObject = request.RequestObject});
-            if (response is not  null)          
-       return     ReturnResultBaseClass.returnResult<object>(response);        
-            else
-         return   ReturnResultBaseClass.returnResult<string>(await serviceResult.GetServiceResponseAsync<string>(null, ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 400, new List<ValidationError> {new ValidationError { ErrorMessage= "Unknown Error", ErrorNumber=400} }));
+              return ReturnResultBaseClass.returnResult(response);
     }
+          
+    
     private static async Task<IResult?> PaymentUpdateAsync([FromBody] ServiceRequest request)
     {
-        ServiceResult serviceResult = new ServiceResult();
-            var response = await new PaymentBL().UpdatePaymentHeader(new RequestModel { RequestObject = request.RequestObject});
-        if (response is not null)
-            return ReturnResultBaseClass.returnResult<object>(response);
-        else return ReturnResultBaseClass.returnResult<string>(await serviceResult.GetServiceResponseAsync<string>(null, ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 400, new List<ValidationError> { new ValidationError { ErrorMessage = "Unknown Error", ErrorNumber = 400 } }));
+        
+        var response = await new PaymentBL().UpdatePaymentHeader(new RequestModel { RequestObject = request.RequestObject});
+        return ReturnResultBaseClass.returnResult(response);
+        
     }
     private static async Task<IResult?> PaymentFetchAsync([FromBody] ServiceRequest request)
     {
     
             var response = await new PaymentBL().FetchPaymentDetails(new RequestModel { RequestObject = request.RequestObject});
-            return ReturnResultBaseClass.returnResult<object>(response);
+            return ReturnResultBaseClass.returnResult(response);
     }
 }
 

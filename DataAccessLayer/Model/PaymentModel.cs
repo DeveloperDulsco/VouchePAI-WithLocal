@@ -103,11 +103,11 @@ namespace DataAccessLayer.Model
         public object RequestObject { get; set; }
         public string ConnectionString { get; set; }
     }
-    public class ResponseModel
+    public class ResponseModel<T>
     {
-        public object ResponseObject { get; set; }
+        public T? ResponseObject { get; set; }
         public bool Result { get; set; }
         public int StatusCode { get; set; }
-        public string ErrorMessage { get; set; }
+        public string? ErrorMessage { get; set; }
     }
 }
