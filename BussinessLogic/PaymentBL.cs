@@ -13,96 +13,45 @@ namespace BussinessLogic
 
         PaymentRepository _prepository = new PaymentRepository();
 
-       
-        public async Task<ResponseModel> InsertPayment(RequestModel request)
+
+        public async Task<ServiceResponse<object>> InsertPayment(RequestModel request)
         {
-            ResponseModel responseModel = new ResponseModel();
-            try
-            {
-                if (request != null)
-                {
-                    PaymentModel? paymentDetails = JsonSerializer.Deserialize <PaymentModel>(request.RequestObject.ToString());
-                    if (paymentDetails != null)
-                    {
-
-
-                     var respose=   await _prepository.InsertPaymentDetails(paymentDetails.paymentHistories, paymentDetails.paymentHeaders, paymentDetails.paymentAdditionalInfos);
-                        if(respose != null && respose.Result)
-                        {
-                            return new ResponseModel() {Result = true};
-
-                        }
-                        else
-                        {
-                            return new ResponseModel() { ErrorMessage = "Some Error Occured from DB", Result = false, ResponseObject = "" };
-
-                        }
-                    }
-                    else
-                    {
-                        return new ResponseModel() { ErrorMessage = "Request object can not be null", Result = false, ResponseObject = "" };
-
-                    }
-
-                }
-                else { 
-                
-                return new ResponseModel(){ ErrorMessage= "Request object can not be null",Result=false,ResponseObject=""};
-                   
-                }
-
-
-            }
-            catch {
+            ServiceResult serviceResult = new ServiceResult();
+            PaymentModel? paymentDetails = JsonSerializer.Deserialize<PaymentModel>(request.RequestObject.ToString());
+            if (paymentDetails != null)
+            {           
+                var respose = await _prepository.InsertPaymentDetails(paymentDetails.paymentHistories, paymentDetails.paymentHeaders, paymentDetails.paymentAdditionalInfos);
                
-            }
-            return responseModel;
-        }
-        public async Task<ResponseModel> UpdatePaymentHeader(RequestModel request)
-        {
-            ResponseModel responseModel = new ResponseModel();
-            try
-            {
-                if (request != null)
-                {
-                    UpdatePaymentModel updatePayment = JsonSerializer.Deserialize <UpdatePaymentModel>(request.RequestObject.ToString());
-                    if (updatePayment != null)
-                    {
-
-
-                        var respose = await _prepository.UpdatePaymentHeaderData(updatePayment);
-                        if (respose != null && respose.Result)
-                        {
-                            return new ResponseModel() { Result = respose.Result };
-
-                        }
-                        else
-                        {
-                            return new ResponseModel() { ErrorMessage =respose.ErrorMessage, Result = respose.Result, ResponseObject = "" };
-
-                        }
-                    }
+                    if (respose != null && respose.Result)
+                        return await serviceResult.GetServiceResponseAsync
+                        (respose.ResponseObject, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
                     else
-                    {
-                        return new ResponseModel() { ErrorMessage = "Request object can not be null", Result = false, ResponseObject = "" };
-
-                    }
-
-                }
-                else
-                {
-
-                    return new ResponseModel() { ErrorMessage = "Request object can not be null", Result = false, ResponseObject = "" };
-
-                }
-
-
+                        return await serviceResult.GetServiceResponseAsync(respose?.ResponseObject, respose?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
             }
-            catch
+            else
             {
-
+                return await serviceResult.GetServiceResponseAsync(request?.RequestObject, "Request object can not be null", ApiResponseCodes.FAILURE, 400, null);
             }
-            return responseModel;
+
+        }
+        public async Task<ServiceResponse<object>> UpdatePaymentHeader(RequestModel request)
+        {
+           
+            ServiceResult serviceResult = new ServiceResult();
+          
+            UpdatePaymentModel updatePayment = JsonSerializer.Deserialize <UpdatePaymentModel>(request.RequestObject.ToString());
+            if (updatePayment != null)
+            {
+                var respose = await _prepository.UpdatePaymentHeaderData(updatePayment);
+                if (respose != null && respose.Result)
+                    return await serviceResult.GetServiceResponseAsync
+                    (respose.ResponseObject, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
+                else
+                return await serviceResult.GetServiceResponseAsync(respose?.ResponseObject, respose?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
+            }
+            else {
+                return await serviceResult.GetServiceResponseAsync(request?.RequestObject, "Request object can not be null", ApiResponseCodes.FAILURE, 400, null);
+            }                                       
         }
         public async Task<ServiceResponse<object>> FetchPaymentDetails(RequestModel request)
         {

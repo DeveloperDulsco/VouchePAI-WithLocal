@@ -48,54 +48,19 @@ internal class  PaymentApiEndPoint : IEndPointDefinition
     private static async Task<IResult> PaymentInsertAsync([FromBody]  ServiceRequest request)
     {
         ServiceResult serviceResult = new ServiceResult();
-      
-        ServiceResponse<string> serviceResponse = new ServiceResponse<string>();
-        
-            var response = await new PaymentBL().InsertPayment(new RequestModel { RequestObject = request.RequestObject});
-            if (response is not  null)
-            {
-                if (response.Result)
-                {
-                    serviceResponse = await serviceResult.GetServiceResponseAsync<string>(response.ResponseObject!=null?response.ResponseObject.ToString():"", ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
-                }
-                else
-                {
-                    serviceResponse = await serviceResult.GetServiceResponseAsync<string>(response.ResponseObject.ToString(), ApplicationGenericConstants.FAILURE, ApiResponseCodes.SUCCESS, response.StatusCode, new List<ValidationError> { new ValidationError { ErrorMessage = response.ErrorMessage, ErrorNumber = response.StatusCode} });
-                }
-            }
+              var response = await new PaymentBL().InsertPayment(new RequestModel { RequestObject = request.RequestObject});
+            if (response is not  null)          
+       return     ReturnResultBaseClass.returnResult<object>(response);        
             else
-            {
-                serviceResponse = await serviceResult.GetServiceResponseAsync<string>(null, ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 210, new List<ValidationError> {new ValidationError { ErrorMessage="Payment Insertion Failed",ErrorNumber=210} });
-            }
-       
-        
-       
-        return ReturnResultBaseClass.returnResult<string>(serviceResponse);
+         return   ReturnResultBaseClass.returnResult<string>(await serviceResult.GetServiceResponseAsync<string>(null, ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 400, new List<ValidationError> {new ValidationError { ErrorMessage= "Unknown Error", ErrorNumber=400} }));
     }
     private static async Task<IResult?> PaymentUpdateAsync([FromBody] ServiceRequest request)
     {
         ServiceResult serviceResult = new ServiceResult();
-        ServiceResponse<string> serviceResponse = new ServiceResponse<string>();
-        
             var response = await new PaymentBL().UpdatePaymentHeader(new RequestModel { RequestObject = request.RequestObject});
-            if (response != null)
-            {
-                if (response.Result)
-                {
-                    serviceResponse = await serviceResult.GetServiceResponseAsync<string>(response.ResponseObject != null ? response.ResponseObject.ToString() : null, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
-                }
-                else
-                {
-                    serviceResponse = await serviceResult.GetServiceResponseAsync<string>(response.ResponseObject != null ? response.ResponseObject.ToString() : null, ApplicationGenericConstants.FAILURE, ApiResponseCodes.SUCCESS, response.StatusCode, new List<ValidationError> { new ValidationError { ErrorMessage = response.ErrorMessage, ErrorNumber = response.StatusCode } });
-                }
-            }
-            else
-            {
-                serviceResponse = await serviceResult.GetServiceResponseAsync<string>(null, ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 210, new List<ValidationError> { new ValidationError { ErrorMessage = "Payment header updation Failed", ErrorNumber = 210 } });
-            }
-
-        
-        return ReturnResultBaseClass.returnResult<string>(serviceResponse);
+        if (response is not null)
+            return ReturnResultBaseClass.returnResult<object>(response);
+        else return ReturnResultBaseClass.returnResult<string>(await serviceResult.GetServiceResponseAsync<string>(null, ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 400, new List<ValidationError> { new ValidationError { ErrorMessage = "Unknown Error", ErrorNumber = 400 } }));
     }
     private static async Task<IResult?> PaymentFetchAsync([FromBody] ServiceRequest request)
     {
