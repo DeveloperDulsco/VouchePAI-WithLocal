@@ -1,13 +1,10 @@
 ﻿using DataAccessLayer.Helper;
 using DataAccessLayer.Model;
 using DataAccessLayer.Repository;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+using Domain;
 using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json;
+
 
 namespace BussinessLogic
 {
@@ -24,7 +21,7 @@ namespace BussinessLogic
             {
                 if (request != null)
                 {
-                    PaymentModel paymentDetails = JsonConvert.DeserializeObject<PaymentModel>(request.RequestObject.ToString());
+                    PaymentModel? paymentDetails = JsonSerializer.Deserialize <PaymentModel>(request.RequestObject.ToString());
                     if (paymentDetails != null)
                     {
 
@@ -68,7 +65,7 @@ namespace BussinessLogic
             {
                 if (request != null)
                 {
-                    UpdatePaymentModel updatePayment = JsonConvert.DeserializeObject<UpdatePaymentModel>(request.RequestObject.ToString());
+                    UpdatePaymentModel updatePayment = JsonSerializer.Deserialize <UpdatePaymentModel>(request.RequestObject.ToString());
                     if (updatePayment != null)
                     {
 
@@ -107,43 +104,17 @@ namespace BussinessLogic
             }
             return responseModel;
         }
-        public async Task<ResponseModel> FetchPaymentDetails(RequestModel request)
+        public async Task<ServiceResponse<ResponseModel>> FetchPaymentDetails(RequestModel request)
         {
+           
+            ServiceResult serviceResult=new ServiceResult();
             ResponseModel responseModel = new ResponseModel();
-            try
-            {
-                
-                   if (request != null)
-                    {  
+            var respose = await _prepository.FetchPaymentActiveTransactions(request.RequestObject.ToString());
+            if (respose != null && respose.Result) return await serviceResult.GetServiceResponseAsync<ResponseModel>(responseModel,ApplicationGenericConstants.SUCCESS,ApiResponseCodes.SUCCESS,200,null);
+            else
+            return await serviceResult.GetServiceResponseAsync<ResponseModel>(null,ApplicationGenericConstants.FAILURE,ApiResponseCodes.FAILURE,400,null);
 
 
-                        var respose = await _prepository.FetchPaymentActiveTransactions(request.RequestObject.ToString());
-                        if (respose != null && respose.Result)
-                        {
-                            return new ResponseModel() { Result = respose.Result,ResponseObject=respose.ResponseObject };
-
-                        }
-                        else
-                        {
-                            return new ResponseModel() { ErrorMessage = respose.ErrorMessage, Result = respose.Result, ResponseObject = "" };
-
-                        }
-                    }
-                    else
-                    {
-                        return new ResponseModel() { ErrorMessage = "Request object can not be null", Result = false, ResponseObject = "" };
-
-                    }
-
-                
-
-
-            }
-            catch
-            {
-
-            }
-            return responseModel;
         }
     }
 }

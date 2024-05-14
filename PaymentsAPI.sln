@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BussinessLogic", "..\..\..\..\..\PaymentsAPI\BussinessLogic\BussinessLogic.csproj", "{B30E09E1-04DC-4BD3-81EA-71EF741555EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BussinessLogic", "BussinessLogic\BussinessLogic.csproj", "{B30E09E1-04DC-4BD3-81EA-71EF741555EB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{5D7E7680-32E7-42FA-A50D-A5B68D614D35}"
 EndProject
