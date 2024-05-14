@@ -14,50 +14,59 @@ namespace BussinessLogic
         PaymentRepository _prepository = new PaymentRepository();
 
 
-        public async Task<ServiceResponse<object>> InsertPayment(RequestModel request)
+        public async Task<ServiceResponse<object>> InsertPayment(RequestModel<PaymentModel> request)
         {
             ServiceResult serviceResult = new ServiceResult();
-            PaymentModel? paymentDetails = JsonSerializer.Deserialize<PaymentModel>(request.RequestObject.ToString());   
-            if (paymentDetails is not null)
-            {   
+              
+            if (request?.RequestObject is  null)  return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.MISSING_PAYMENT, ApiResponseCodes.FAILURE, 400, null);
+             
+                PaymentModel? paymentDetails=request?.RequestObject;
                 var respose = await _prepository.InsertPaymentDetails(paymentDetails.paymentHistories, paymentDetails.paymentHeaders, paymentDetails.paymentAdditionalInfos);
-               
+                  
                     if (respose is not null && respose.Result)
                         return await serviceResult.GetServiceResponseAsync<object>  (null, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
                     else
                         return await serviceResult.GetServiceResponseAsync<object>(null, respose?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
-            }
+            
              
-            return await serviceResult.GetServiceResponseAsync<object>(null, "Missing or invalid payments Details", ApiResponseCodes.FAILURE, 400, null);
+            
             
 
         }
-        public async Task<ServiceResponse<object>> UpdatePaymentHeader(RequestModel request)
+        public async Task<ServiceResponse<object>> UpdatePaymentHeader(RequestModel<UpdatePaymentModel> request)
         {
            
             ServiceResult serviceResult = new ServiceResult();
           
-            UpdatePaymentModel updatePayment = JsonSerializer.Deserialize <UpdatePaymentModel>(request.RequestObject.ToString());
-            if (updatePayment is not  null)
-            {
+            
+             if (request?.RequestObject is  null) 
+              return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.MISSING_PAYMENT, ApiResponseCodes.FAILURE, 400, null);
+            
+                UpdatePaymentModel? updatePayment = request?.RequestObject;
                 var respose = await _prepository.UpdatePaymentHeaderData(updatePayment);
+               
                 if (respose is not null && respose.Result)
                     return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
                 else
-                return await serviceResult.GetServiceResponseAsync<object>(null, respose?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
-            }
+                    return await serviceResult.GetServiceResponseAsync<object>(null, respose?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
             
-                return await serviceResult.GetServiceResponseAsync(request?.RequestObject, "Missing or invalid payments Details", ApiResponseCodes.FAILURE, 400, null);
+            
+                
                                                   
         }
-        public async Task<ServiceResponse<IEnumerable<FetchPaymentTransaction>>> FetchPaymentDetails(RequestModel request)
+        public async Task<ServiceResponse<IEnumerable<FetchPaymentTransaction>>> FetchPaymentDetails(RequestModel<string> request)
         {
            
             ServiceResult serviceResult=new ServiceResult();
-            var respose = await _prepository.FetchPaymentActiveTransactions(request.RequestObject.ToString());
-            if (respose is not null && respose.Result) return await serviceResult.GetServiceResponseAsync(respose.ResponseObject,ApplicationGenericConstants.SUCCESS,ApiResponseCodes.SUCCESS,200,null);
-            else
-            return await serviceResult.GetServiceResponseAsync(respose?.ResponseObject,respose?.ErrorMessage,ApiResponseCodes.FAILURE,400,null);
+            if (request?.RequestObject is  null) 
+             return await serviceResult.GetServiceResponseAsync<IEnumerable<FetchPaymentTransaction>>(null,"INVALID RESERVATION ID",ApiResponseCodes.FAILURE,400,null);
+            
+            var respose = await _prepository.FetchPaymentActiveTransactions(request?.RequestObject);
+            if (respose is not null && respose.Result) 
+                return await serviceResult.GetServiceResponseAsync(respose.ResponseObject,ApplicationGenericConstants.SUCCESS,ApiResponseCodes.SUCCESS,200,null);
+            else 
+                return await serviceResult.GetServiceResponseAsync(respose?.ResponseObject,respose?.ErrorMessage,ApiResponseCodes.FAILURE,400,null);
+           
 
 
         }

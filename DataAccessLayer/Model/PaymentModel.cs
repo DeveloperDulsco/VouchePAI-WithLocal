@@ -98,15 +98,15 @@ namespace DataAccessLayer.Model
         public string UserName { get; set; }
         public bool VisaCardExpiry { get; set; } = false;
     }
-    public class RequestModel
+    public class RequestModel<T>
     {
-        public object RequestObject { get; set; }
-        public string ConnectionString { get; set; }
+        public T? RequestObject { get; set; }
+        public string? ConnectionString { get; set; }
     }
     public class ResponseModel<T>
     {
         public T? ResponseObject { get; set; }
-        public bool Result { get; set; }
+        public bool Result { get; set; }=false;
         public int StatusCode { get; set; }
         public string? ErrorMessage { get; set; }
     }
