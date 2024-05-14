@@ -45,25 +45,25 @@ internal class  PaymentApiEndPoint : IEndPointDefinition
            return ReturnResultBaseClass.returnResult<string> (await serviceResult.GetServiceResponseAsync<string>("pong",ApplicationGenericConstants.SUCCESS,ApiResponseCodes.SUCCESS, 200,null));
         }
 
-    private static async Task<IResult?> PaymentInsertAsync([FromBody]  ServiceRequest request)
+    private static async Task<IResult?> PaymentInsertAsync([FromBody]  ServiceRequest<PaymentModel> request)
     {
             
-              var response = await new PaymentBL().InsertPayment(new RequestModel { RequestObject = request.RequestObject});
+              var response = await new PaymentBL().InsertPayment(new RequestModel<PaymentModel> { RequestObject = request.RequestObject});
               return ReturnResultBaseClass.returnResult(response);
     }
           
     
-    private static async Task<IResult?> PaymentUpdateAsync([FromBody] ServiceRequest request)
+    private static async Task<IResult?> PaymentUpdateAsync([FromBody] ServiceRequest<UpdatePaymentModel> request)
     {
         
-        var response = await new PaymentBL().UpdatePaymentHeader(new RequestModel { RequestObject = request.RequestObject});
+        var response = await new PaymentBL().UpdatePaymentHeader(new RequestModel<UpdatePaymentModel> { RequestObject = request.RequestObject});
         return ReturnResultBaseClass.returnResult(response);
         
     }
-    private static async Task<IResult?> PaymentFetchAsync([FromBody] ServiceRequest request)
+    private static async Task<IResult?> PaymentFetchAsync([FromBody] ServiceRequest<string> request)
     {
     
-            var response = await new PaymentBL().FetchPaymentDetails(new RequestModel { RequestObject = request.RequestObject});
+            var response = await new PaymentBL().FetchPaymentDetails(new RequestModel<string> { RequestObject = request.RequestObject});
             return ReturnResultBaseClass.returnResult(response);
     }
 }

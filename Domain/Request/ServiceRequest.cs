@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Domain.Request
 {
-    public class ServiceRequest
+    public class ServiceRequest<T>
     {
-        public object RequestObject { get; set; }
+        public T? RequestObject { get; set; }
     }
 }
