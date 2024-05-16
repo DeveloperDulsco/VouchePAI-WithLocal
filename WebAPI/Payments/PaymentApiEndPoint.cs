@@ -1,18 +1,14 @@
 ﻿using BussinessLogic;
 using DataAccessLayer.Model;
-using DataAccessLayer.Repository;
 using Domain;
 using Domain.Request;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.Configuration;
 using Middlewares;
 
-using static System.Net.Mime.MediaTypeNames;
 
 
 
@@ -32,8 +28,10 @@ internal class  PaymentApiEndPoint : IEndPointDefinition
         private static RouteGroupBuilder PaymentAPI(RouteGroupBuilder payment) {
         payment.MapGet("/ping", getAsync).Produces<Ok>();
         payment.MapPost("/", PaymentInsertAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();
-        payment.MapPut("/", PaymentUpdateAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();;
+        payment.MapPut("/", PaymentUpdateAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();
         payment.MapGet("/", PaymentFetchAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();
+        payment.MapPost("/CapturePaymentAsync", CapturePaymentAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();
+
         return payment;
 
         }
@@ -66,5 +64,12 @@ internal class  PaymentApiEndPoint : IEndPointDefinition
             var response = await new PaymentBL().FetchPaymentDetails(new RequestModel<string> { RequestObject = request.RequestObject});
             return ReturnResultBaseClass.returnResult(response);
     }
+    private static async Task<IResult?> CapturePaymentAsync([FromBody] ServiceRequest<PaymentRequest> request)
+    {
+
+        var response = await new PaymentBL().CapturePayment(new RequestModel<PaymentRequest> { RequestObject = request.RequestObject });
+        return ReturnResultBaseClass.returnResult(response);
+    }
+    
 }
 

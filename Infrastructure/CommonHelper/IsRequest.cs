@@ -19,4 +19,6 @@ namespace Infrastructure.CommonHelper
        public string? proxyUN { get; set; }
        public string? proxyPSWD { get; set; }
     }
+    
+   
 }
