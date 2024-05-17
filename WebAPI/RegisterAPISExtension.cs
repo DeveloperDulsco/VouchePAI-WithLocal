@@ -8,11 +8,11 @@ public static class RegisterAPISExtension
     public static void usePaymentAPIS(this WebApplication app)
     {
 
-       
+
         app.UseHttpsRedirection();
-        app.validateToken();
+        // app.validateToken();
         app.AddApiEndPoints(typeof(WebAPI.RegisterAPISExtension).Assembly);
-        
+
     }
 
 }
