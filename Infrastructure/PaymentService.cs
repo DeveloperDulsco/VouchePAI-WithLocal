@@ -6,6 +6,8 @@ using System.Text;
 using Adyen;
 using DataAccessLayer.Model;
 using System.Net.Http;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
 
 namespace Infrastructure
 {
@@ -36,14 +38,14 @@ namespace Infrastructure
             httpClient.DefaultRequestHeaders.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             httpClient.DefaultRequestHeaders.Add("x-api-key", paymentRequest?.ApiKey);
-           
+
             HttpContent requestContent = new StringContent(JsonConvert.SerializeObject(captureRequest), Encoding.UTF8, "application/json");
             HttpResponseMessage response = await httpClient.PostAsync("https://pal-test.adyen.com/pal/servlet/Payment/v52/capture", requestContent);
             return response;
         }
-        public async Task<HttpResponseMessage> GetAccessToken(TokenRequest token)
+        public async Task<HttpResponseMessage> GetAccessToken(Dictionary<string, StringValues> token)
         {
-            var requestUrl = $"https://login.microsoftonline.com/a53a7a70-988d-4539-b456-708670a75463/oauth2/v2.0/token";
+            var requestUrl = "https://login.microsoftonline.com/a53a7a70-988d-4539-b456-708670a75463/oauth2/v2.0/token";
 
             HttpClient? httpClient = null;
             bool proxy = false;
@@ -53,24 +55,18 @@ namespace Infrastructure
             }
             else
                 httpClient = new HttpClient();
-           
 
-            var content = new FormUrlEncodedContent(new Dictionary<string, string> {
-              { "client_id", token.Client_Id },
-              { "client_secret",token.Client_Secret},
-              { "grant_type", token.Grant_Type },
-              { "scope", token.Scope },
-            });
-            httpClient.DefaultRequestHeaders.Clear();
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, new Uri(requestUrl))
-            {
-                Content = content
-            };
+            var formEnCoder = new Dictionary<string, string>();
 
-            var response = await httpClient.SendAsync(httpRequestMessage);
-            return response;
-            
+            foreach (var item in token)
+                formEnCoder.Add(item.Key, item.Value[0]);
+
+            var content = new FormUrlEncodedContent(formEnCoder);
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
+            var response = await httpClient.PostAsync(requestUrl, content);
+            if (response.IsSuccessStatusCode)
+                return response;
+
         }
     }
 }

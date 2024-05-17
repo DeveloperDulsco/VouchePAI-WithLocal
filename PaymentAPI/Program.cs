@@ -16,22 +16,23 @@ builder.Services.AddAuthorization(options =>
    .RequireAuthenticatedUser()
    .Build();
 });
-
+builder.Services.AddAntiforgery();
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddAntiforgery(options =>
-{
-    options.Cookie.Name = "MyApp.Antiforgery";
-    options.HeaderName = "X-CSRF-TOKEN";
-});
+
 builder.useApplicationServices();
+
+
 
 // Configure the app
 
 var app = builder.Build();
+
+app.UseHttpsRedirection();
 app.UseExceptionHandler(_ => { });
+app.UseAntiforgery();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
@@ -44,18 +45,11 @@ if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
     });
 }
 
-app.UseHttpsRedirection();
+
 //app.UseHttpLogging();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.Use((context, next) =>
-{
-    var antiforgery = context.RequestServices.GetRequiredService<IAntiforgery>();
-    var tokens = antiforgery.GetAndStoreTokens(context);
-    context.Response.Cookies.Append("MyApp.Antiforgery", tokens.RequestToken!, new CookieOptions { HttpOnly = true });
-    return next(context);
-});
 app.usePaymentAPIS();
 
 

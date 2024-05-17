@@ -5,6 +5,8 @@ using DataAccessLayer.Repository;
 using Domain;
 using Infrastructure;
 using Infrastructure.CommonHelper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 using System.Net.Http.Json;
 using System.Reflection;
@@ -171,7 +173,7 @@ namespace BussinessLogic
                 return await serviceResult.GetServiceResponseAsync(responseModel?.ResponseObject, responseModel?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
         }
 
-        public async Task<ServiceResponse<object>> GetAccessToken(RequestModel<TokenRequest> request)
+        public async Task<ServiceResponse<object>> GetAccessToken(RequestModel<Dictionary<string,StringValues>> request)
         {
             ServiceResult serviceResult = new ServiceResult();
             if(request?.RequestObject is null)

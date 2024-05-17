@@ -1,5 +1,7 @@
 ﻿using DataAccessLayer.Model;
 using Domain;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +16,7 @@ namespace BussinessLogic.Abstractions
         Task<ServiceResponse<object>> InsertPayment(RequestModel<PaymentModel> request);
         Task<ServiceResponse<object>> UpdatePaymentHeader(RequestModel<UpdatePaymentModel> request);
         Task<ServiceResponse<IEnumerable<FetchPaymentTransaction>>> FetchPaymentDetails(RequestModel<string> request);
-        Task<ServiceResponse<object>> GetAccessToken(RequestModel<TokenRequest> request);
+        Task<ServiceResponse<object>> GetAccessToken(RequestModel<Dictionary<string,StringValues>>request);
 
 
     }
