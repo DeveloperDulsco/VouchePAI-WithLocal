@@ -2,6 +2,7 @@
 using DataAccessLayer.Model;
 using Domain;
 using Domain.Request;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -42,7 +43,7 @@ internal class  PaymentApiEndPoint : IEndPointDefinition
            ServiceResult serviceResult=new ServiceResult();
            return ReturnResultBaseClass.returnResult<string> (await serviceResult.GetServiceResponseAsync<string>("pong",ApplicationGenericConstants.SUCCESS,ApiResponseCodes.SUCCESS, 200,null));
         }
-
+   
     private static async Task<IResult?> PaymentInsertAsync([FromBody]  ServiceRequest<PaymentModel> request)
     {
             

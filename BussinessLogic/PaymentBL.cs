@@ -1,10 +1,12 @@
-﻿using DataAccessLayer.Helper;
+﻿using BussinessLogic.Abstractions;
+using DataAccessLayer.Helper;
 using DataAccessLayer.Model;
 using DataAccessLayer.Repository;
 using Domain;
 using Infrastructure;
 using Infrastructure.CommonHelper;
 using Newtonsoft.Json;
+using System.Net.Http.Json;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
@@ -12,7 +14,7 @@ using System.Text.Json;
 
 namespace BussinessLogic
 {
-    public class PaymentBL
+    public class PaymentBL: IPayment
     {
 
         PaymentRepository _prepository = new PaymentRepository();
@@ -169,6 +171,19 @@ namespace BussinessLogic
                 return await serviceResult.GetServiceResponseAsync(responseModel?.ResponseObject, responseModel?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
         }
 
+        public async Task<ServiceResponse<object>> GetAccessToken(RequestModel<TokenRequest> request)
+        {
+            ServiceResult serviceResult = new ServiceResult();
+            if(request?.RequestObject is null)
+                return await serviceResult.GetServiceResponseAsync<object?>(null, "Invalid Token Request", ApiResponseCodes.FAILURE, 400, null);
+            var response = await _pservice.GetAccessToken(request?.RequestObject);
+            var responseContent = await response.Content.ReadAsStringAsync();
+            if (response is not null && response.IsSuccessStatusCode)
+               
 
+            return await serviceResult.GetServiceResponseAsync<object>(responseContent, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
+            else
+                return await serviceResult.GetServiceResponseAsync<object>(responseContent, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, 400, null);
+        }
     }
 }
