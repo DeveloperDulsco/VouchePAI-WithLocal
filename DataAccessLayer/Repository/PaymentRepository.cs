@@ -7,18 +7,23 @@ using Domain.Response;
 using System.Text.Json.Nodes;
 using System.Text.Json;
 using System.Collections.Generic;
-using Infrastructure;
+
 using System.Net.Http.Json;
 using Domain.Responses;
 
-namespace DataAccessLayer.Repository
-{
+namespace DataAccessLayer.Repository;
+
     public class PaymentRepository : IPayment
     {
+        DALConfigutations? config;
+        public PaymentRepository(DALConfigutations _config)
+        {
+            config = _config;
+        }
         async Task<ServiceResponse<object>> IPayment.InsertPayment(Domain.Response.RequestModel<Domain.Response.PaymentModel> request)
         {
             Model.ResponseModel<bool> responseModel = new Model.ResponseModel<bool>();
-            var spResponse = await new DapperHelper().ExecuteSPAsync("Usp_InsertPaymentTransactions"
+            var spResponse = await new DapperHelper(config._connectionString).ExecuteSPAsync("Usp_InsertPaymentTransactions"
                     , new { TbPaymentHeaderType = new DBHelper().ToDataTable(request.RequestObject.paymentHeaders), TbPaymentAdditionalInfoType = new DBHelper().ToDataTable(request.RequestObject.paymentAdditionalInfos), TbPaymentHistoryType = new DBHelper().ToDataTable(request.RequestObject.paymentHistories) });
             if (spResponse is not null)
             {
@@ -37,7 +42,7 @@ namespace DataAccessLayer.Repository
         async Task<ServiceResponse<object>> IPayment.UpdatePaymentHeader(Domain.Response.RequestModel<Domain.Response.UpdatePaymentModel> request)
         {
             Domain.Responses.ResponseModel<bool> responseModel = new Domain.Responses.ResponseModel<bool>();
-            var ProfilesDt = await new DapperHelper().ExecuteSPAsync("Usp_UpdatePaymentHeader"
+            var ProfilesDt = await new DapperHelper(config._connectionString).ExecuteSPAsync("Usp_UpdatePaymentHeader"
                    , new { TransactionID = request.RequestObject.transactionID, ResultCode = request.RequestObject.ResultCode, ResponseMessage = request.RequestObject.ResponseMessage, IsActive = request.RequestObject.isActive, TransactionType = request.RequestObject.transactionType, Amount = request.RequestObject.amount, ReservationNumber = request.RequestObject.ReservationNumber });
 
             if (ProfilesDt != null && ProfilesDt.Any())
@@ -57,7 +62,7 @@ namespace DataAccessLayer.Repository
        async Task<ServiceResponse<IEnumerable<Domain.Responses.FetchPaymentTransaction>>> IPayment.FetchPaymentDetails(Domain.Response.RequestModel<string> request)
     {
             Domain.Responses.ResponseModel<IEnumerable<Domain.Responses.FetchPaymentTransaction>> responseModel = new Domain.Responses.ResponseModel<IEnumerable<Domain.Responses.FetchPaymentTransaction>>();
-        var spResponse = await new DapperHelper().ExecuteSPAsync<Model.FetchPaymentTransaction>("Usp_FetchPaymentTransaction", new { ReservationNameID = request.RequestObject });
+        var spResponse = await new DapperHelper(config._connectionString).ExecuteSPAsync<Model.FetchPaymentTransaction>("Usp_FetchPaymentTransaction", new { ReservationNameID = request.RequestObject });
         if (spResponse != null && spResponse.Any())
         {
 
@@ -78,21 +83,13 @@ namespace DataAccessLayer.Repository
         }
     }
 
-        async Task<ServiceResponse<T>> IPayment.GetAccessToken<T>(Domain.Response.RequestModel<Dictionary<string, StringValues>> request)
-        {
-           HttpResponseMessage response = await new PaymentService().GetAccessToken(request?.RequestObject);
-            T responseContent = await response.Content.ReadFromJsonAsync<T>();
-            return await new ServiceResult().GetServiceResponseAsync<T>(responseContent, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, (int)response.StatusCode, null);
-            
-        }   
+           
         async Task<ServiceResponse<Domain.Responses.PaymentResponse>> IPayment.CapturePayment(Domain.Response.RequestModel<Domain.Response.PaymentRequest> request)
         {
             Domain.Responses.PaymentResponse? paymentResponseObject = new Domain.Responses.PaymentResponse();
-            HttpResponseMessage response = await new PaymentService().PaymentCapture(request?.RequestObject);
-            if (response != null && response.IsSuccessStatusCode)
-            {
-
-                var responsestr = await response.Content.ReadAsStringAsync();
+          
+           
+               
                 Adyen.Model.Modification.ModificationResult modificationResult = JsonSerializer.Deserialize<Adyen.Model.Modification.ModificationResult>(await response.Content.ReadAsStringAsync());
 
                 if (modificationResult != null && modificationResult.Response == Adyen.Model.Enum.ResponseEnum.CaptureReceived)
@@ -142,10 +139,7 @@ namespace DataAccessLayer.Repository
                 }
                 return await new ServiceResult().GetServiceResponseAsync(paymentResponseObject, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
             }
-            else
-            {
-                return await new ServiceResult().GetServiceResponseAsync(paymentResponseObject, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, 200, null);
-            }
+            
         }
-    }
-}
+    
+

@@ -7,15 +7,20 @@ using System.Net.Http.Json;
 
 
 
-namespace BussinessLogic
-{
+namespace BussinessLogic;
+
     public class PaymentBL
     {
         IPayment payment;
-        public PaymentBL(IPayment _payment)
+        ITokenRequest tokenRequest;
+        IAdenPayment adenPayment;
+        public PaymentBL(IPayment _ipayment , ITokenRequest _itokenRequest, IAdenPayment _iadenPayment)
         {
-             payment=_payment;
-        }       
+                payment = _ipayment;
+                tokenRequest = _itokenRequest;
+                adenPayment = _iadenPayment;
+        }
+        
         public async Task<ServiceResponse<object>> InsertPayment(RequestModel<PaymentModel> request)
         {
             ServiceResult serviceResult = new ServiceResult();
@@ -65,29 +70,38 @@ namespace BussinessLogic
 
 
         }
-        public async Task<ServiceResponse<PaymentResponse>> CapturePayment(RequestModel<PaymentRequest> request)
+
+
+        public async Task<ServiceResponse<PaymentResponse>>  CapturePayment(RequestModel<PaymentRequest> request)
         {
-            PaymentResponse paymentResponseObject = new PaymentResponse();
             ServiceResult serviceResult = new ServiceResult();
             if (request?.RequestObject is null)
-                return await serviceResult.GetServiceResponseAsync<PaymentResponse>(null, "Invalid Capture Request", ApiResponseCodes.FAILURE, 400, null);
+                return await serviceResult.GetServiceResponseAsync<PaymentResponse>(null, ApplicationGenericConstants.MISSING_PAYMENT, ApiResponseCodes.FAILURE, 400, null);
 
-            ResponseModel<PaymentResponse> responseModel = new ResponseModel<PaymentResponse>();
+            PaymentRequest? paymentRequest = request?.RequestObject;
+            var respose = await adenPayment.CapturePayment(paymentRequest);
 
-            var response = await payment.CapturePayment(request);
-            
-            if (responseModel is not null && responseModel.Result)
-                return await serviceResult.GetServiceResponseAsync(responseModel.ResponseObject, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
+            var paymentresponse=payment.CapturePayment(request);
+
+
+
+            if (respose is not null)
+                return await serviceResult.GetServiceResponseAsync(respose?.ResponseData, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
             else
-                return await serviceResult.GetServiceResponseAsync(responseModel?.ResponseObject, responseModel?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
+                return await serviceResult.GetServiceResponseAsync<PaymentResponse>(null, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, 400, null);
+       
         }
 
-        public async Task<ServiceResponse<T>> GetAccessToken<T>(RequestModel<Dictionary<string, StringValues>> request)
-        {
-            ServiceResult serviceResult = new ServiceResult();
-            var response = await payment.GetAccessToken<T>(request);
-            return response;
-           
-        }
+    public async Task<ServiceResponse<T>> GetAccessToken<T>(Dictionary<string, StringValues> request)
+    {
+        ServiceResult serviceResult = new ServiceResult();
+        if (request is null)
+            return await serviceResult.GetServiceResponseAsync<T>(default, ApplicationGenericConstants.MISSING_PAYMENT, ApiResponseCodes.FAILURE, 400, null);
+
+        var response = await tokenRequest.GetAccessToken(request);
+        if (response is not null)
+            return await serviceResult.GetServiceResponseAsync(response?.ResponseData, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
+        else
+            return await serviceResult.GetServiceResponseAsync<T>(default, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, 400, null);
     }
 }

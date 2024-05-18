@@ -6,7 +6,12 @@ namespace DataAccessLayer.Helper
 {
     public class DapperHelper
     {
-        string _connectionString = "Data Source=94.203.133.74,1433;Initial Catalog=QC_SaavyPayDB;user id=sbs_administrator;password=P@ssw0rd@2020";
+        string _connectionString {get;set;}
+
+        public DapperHelper(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
 
         public async Task<IEnumerable<T>> ExecuteSPAsync<T>(string sprocName, object? sprocParams = null)
         {

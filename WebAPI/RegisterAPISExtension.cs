@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Middlewares;
+using WebAPI;
 
 namespace WebAPI;
 
@@ -14,5 +15,7 @@ public static class RegisterAPISExtension
         app.AddApiEndPoints(typeof(WebAPI.RegisterAPISExtension).Assembly);
 
     }
+
+
 
 }

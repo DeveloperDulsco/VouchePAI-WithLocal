@@ -28,10 +28,10 @@ internal class IdentityApiEndPoint : IEndPointDefinition
     [AllowAnonymous]
     [Consumes("application/x-www-form-urlencoded")]
 
-    private static async Task<IResult?> GenerateTokenAsync(HttpRequest httpRequest)
+    private static async Task<IResult?> GenerateTokenAsync(HttpRequest httpRequest, PaymentBL paymentBL)
     {
         var vals = (await httpRequest.ReadFormAsync()).ToDictionary(); ;
-        var serviceResponse = await new PaymentBL().GetAccessToken<dynamic>(new RequestModel<Dictionary<string, StringValues>> { RequestObject = vals });
+        var serviceResponse = await paymentBL.GetAccessToken<dynamic>(vals);
         return ReturnResultBaseClass.TokenreturnResult(serviceResponse);
     }
 
