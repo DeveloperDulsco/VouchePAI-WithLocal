@@ -17,7 +17,7 @@ public class TokenService : ITokenRequest
     {
         config = _config;
     }
-    public async Task<dynamic> GetAccessToken(Dictionary<string, StringValues> token)
+    public async Task<HttpResponseMessage> GetAccessToken(Dictionary<string, StringValues> token)
     {
         var requestUrl = config?.PaymentSettings?.AccessTokenURL;
 

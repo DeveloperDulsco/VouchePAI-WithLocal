@@ -31,7 +31,7 @@ internal class IdentityApiEndPoint : IEndPointDefinition
     private static async Task<IResult?> GenerateTokenAsync(HttpRequest httpRequest, PaymentBL paymentBL)
     {
         var vals = (await httpRequest.ReadFormAsync()).ToDictionary(); ;
-        var serviceResponse = await paymentBL.GetAccessToken<dynamic>(vals);
+        var serviceResponse = await paymentBL.GetAccessToken(vals);
         return ReturnResultBaseClass.TokenreturnResult(serviceResponse);
     }
 

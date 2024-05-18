@@ -84,7 +84,7 @@ namespace DataAccessLayer.Repository;
     }
 
            
-        async Task<ServiceResponse<Domain.Responses.PaymentResponse>> IPayment.CapturePayment(Domain.Response.RequestModel<Domain.Response.PaymentRequest> request)
+        /*async Task<ServiceResponse<Domain.Responses.PaymentResponse>> IPayment.CapturePayment(Domain.Response.RequestModel<Domain.Response.PaymentRequest> request)
         {
             Domain.Responses.PaymentResponse? paymentResponseObject = new Domain.Responses.PaymentResponse();
           
@@ -138,7 +138,7 @@ namespace DataAccessLayer.Repository;
                     }
                 }
                 return await new ServiceResult().GetServiceResponseAsync(paymentResponseObject, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
-            }
+            }*/
             
         }
     

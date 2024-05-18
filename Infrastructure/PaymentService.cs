@@ -23,7 +23,7 @@ public class PaymentService : IAdenPayment
         config = _config;
     }
 
-    public async Task<ServiceResponse<PaymentResponse>> CapturePayment(PaymentRequest paymentRequest)
+    public async Task<ServiceResponse<PaymentResponse?>> CapturePayment(PaymentRequest? paymentRequest)
     {
         HttpClient? httpClient = null;
         bool proxy = false;
@@ -34,7 +34,7 @@ public class PaymentService : IAdenPayment
         else
             httpClient = new HttpClient();
         long amnt = 0;
-        if (paymentRequest.RequestObject.Amount != null)
+        if (paymentRequest?.RequestObject.Amount != null)
             amnt = (long)(paymentRequest.RequestObject.Amount * 100);
         Adyen.Model.Modification.CaptureRequest captureRequest = new Adyen.Model.Modification.CaptureRequest()
         {
@@ -45,7 +45,7 @@ public class PaymentService : IAdenPayment
 
         httpClient.DefaultRequestHeaders.Clear();
         httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        httpClient.DefaultRequestHeaders.Add("x-api-key", paymentRequest?.ApiKey);
+        httpClient.DefaultRequestHeaders.Add("x-api-key", config.PaymentSettings.ApiKey);
 
         HttpContent requestContent = new StringContent(JsonSerializer.Serialize(captureRequest), Encoding.UTF8, "application/json");
         HttpResponseMessage response = await httpClient.PostAsync(config.PaymentSettings.AdyenPaymentURL, requestContent);

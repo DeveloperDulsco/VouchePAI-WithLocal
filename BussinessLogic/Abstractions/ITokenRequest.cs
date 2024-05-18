@@ -7,7 +7,7 @@ namespace BussinessLogic;
 
 public interface ITokenRequest
 {
-    public Task<dynamic> GetAccessToken(Dictionary<string, StringValues> token);
+    public Task<HttpResponseMessage> GetAccessToken(Dictionary<string, StringValues> token);
 
 }
 

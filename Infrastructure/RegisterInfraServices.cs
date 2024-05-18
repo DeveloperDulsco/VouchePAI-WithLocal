@@ -35,5 +35,6 @@ public class PaymentSettings
     public string? AdyenPaymentURL { get; set; }
     public string? AdyenPaymentCurrency { get; set; }
     public string? AccessTokenURL { get; set; }
+    public string? ApiKey { get; set; }
 }
 

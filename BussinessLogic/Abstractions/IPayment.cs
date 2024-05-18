@@ -10,7 +10,7 @@ namespace BussinessLogic.Abstractions
         Task<ServiceResponse<object>> InsertPayment(RequestModel<PaymentModel> request);
         Task<ServiceResponse<object>> UpdatePaymentHeader(RequestModel<UpdatePaymentModel> request);
         Task<ServiceResponse<IEnumerable<FetchPaymentTransaction>>> FetchPaymentDetails(RequestModel<string> request);
-        Task<ServiceResponse<PaymentResponse>> CapturePayment(RequestModel<PaymentRequest> request);
+        //Task<ServiceResponse<PaymentResponse>> CapturePayment(RequestModel<PaymentRequest> request);
 
     }
 }

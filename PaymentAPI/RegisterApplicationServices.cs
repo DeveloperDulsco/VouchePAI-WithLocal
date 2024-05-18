@@ -2,6 +2,7 @@
 using DataAccessLayer;
 using BussinessLogic;
 using Infrastructure;
+using System.Configuration;
 
 namespace PaymentAPI;
 
@@ -11,16 +12,20 @@ public static class RegisterApplicationServices
     internal static IServiceCollection useApplicationServices(this WebApplicationBuilder builder)
     {
         var services = builder.Services;
+        var configuration = builder.Configuration;
         services.useAPIServices(APIconfig => APIconfig.Name = "PaymentAPI");
-        services.useDALServices(DALconfig => DALconfig._connectionString = "Data Source=94.203.133.74,1433;Initial Catalog=QC_SaavyPayDB;user id=sbs_administrator;password=P@ssw0rd@2020");
+        services.useDALServices(DALconfig => DALconfig._connectionString = configuration.GetConnectionString("DBConnection"));
         services.useBLServices(blconfig => blconfig.Name = "PaymentAPI");
 
-        services.useInfraServices(Infraconfig => Infraconfig.PaymentSettings = new PaymentSettings
+        services.useInfraServices(Infraconfig =>
         {
-            AdyenPaymentURL = "https://pal-test.adyen.com/pal/servlet/Payment/v52/capture",
-            AdyenPaymentCurrency = "SGD",
-            AccessTokenURL = "https://login.microsoftonline.com/a53a7a70-988d-4539-b456-708670a75463/oauth2/v2.0/token"
+
+            PaymentSettings? paymentSettings = new PaymentSettings();
+            paymentSettings = configuration.GetSection("PaymentSettings").Get<PaymentSettings>();
+            Infraconfig.PaymentSettings = paymentSettings;
+
         });
+
         return services;
 
 
