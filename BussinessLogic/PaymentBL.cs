@@ -173,19 +173,13 @@ namespace BussinessLogic
                 return await serviceResult.GetServiceResponseAsync(responseModel?.ResponseObject, responseModel?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
         }
 
-        public async Task<ServiceResponse<object>> GetAccessToken(RequestModel<Dictionary<string,StringValues>> request)
+        public async Task<ServiceResponse<T>> GetAccessToken<T>(RequestModel<Dictionary<string,StringValues>> request)
         {
             ServiceResult serviceResult = new ServiceResult();
-            if(request?.RequestObject is null)
-                return await serviceResult.GetServiceResponseAsync<object?>(null, "Invalid Token Request", ApiResponseCodes.FAILURE, 400, null);
             var response = await _pservice.GetAccessToken(request?.RequestObject);
-            var responseContent = await response.Content.ReadAsStringAsync();
-            if (response is not null && response.IsSuccessStatusCode)
-               
-
-            return await serviceResult.GetServiceResponseAsync<object>(responseContent, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
-            else
-                return await serviceResult.GetServiceResponseAsync<object>(responseContent, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, 400, null);
+            T responseContent = await response.Content.ReadFromJsonAsync<T>();
+            return await serviceResult.GetServiceResponseAsync<T>(responseContent , ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, (int)response.StatusCode, null);
+           
         }
     }
 }

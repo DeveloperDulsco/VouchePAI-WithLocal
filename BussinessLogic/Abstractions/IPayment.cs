@@ -16,7 +16,7 @@ namespace BussinessLogic.Abstractions
         Task<ServiceResponse<object>> InsertPayment(RequestModel<PaymentModel> request);
         Task<ServiceResponse<object>> UpdatePaymentHeader(RequestModel<UpdatePaymentModel> request);
         Task<ServiceResponse<IEnumerable<FetchPaymentTransaction>>> FetchPaymentDetails(RequestModel<string> request);
-        Task<ServiceResponse<object>> GetAccessToken(RequestModel<Dictionary<string,StringValues>>request);
+        Task<ServiceResponse<dynamic>> GetAccessToken<dynamic>(RequestModel<Dictionary<string,StringValues>>request);
 
 
     }
