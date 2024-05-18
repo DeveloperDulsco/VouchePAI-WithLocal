@@ -1,27 +1,21 @@
 ﻿using BussinessLogic.Abstractions;
-using DataAccessLayer.Helper;
-using DataAccessLayer.Model;
-using DataAccessLayer.Repository;
 using Domain;
-using Infrastructure;
-using Infrastructure.CommonHelper;
-using Microsoft.AspNetCore.Http;
+using Domain.Response;
+using Domain.Responses;
 using Microsoft.Extensions.Primitives;
-using Newtonsoft.Json;
 using System.Net.Http.Json;
-using System.Reflection;
-using System.Text;
-using System.Text.Json;
+
 
 
 namespace BussinessLogic
 {
-    public class PaymentBL: IPayment
+    public class PaymentBL
     {
-
-        PaymentRepository _prepository = new PaymentRepository();
-        PaymentService _pservice = new PaymentService();
-
+        IPayment payment;
+        public PaymentBL(IPayment _payment)
+        {
+             payment=_payment;
+        }       
         public async Task<ServiceResponse<object>> InsertPayment(RequestModel<PaymentModel> request)
         {
             ServiceResult serviceResult = new ServiceResult();
@@ -29,12 +23,12 @@ namespace BussinessLogic
             if (request?.RequestObject is null) return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.MISSING_PAYMENT, ApiResponseCodes.FAILURE, 400, null);
 
             PaymentModel? paymentDetails = request?.RequestObject;
-            var respose = await _prepository.InsertPaymentDetails(paymentDetails.paymentHistories, paymentDetails.paymentHeaders, paymentDetails.paymentAdditionalInfos);
+            var respose = await payment.InsertPayment(request);
 
-            if (respose is not null && respose.Result)
+            if (respose is not null)
                 return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
             else
-                return await serviceResult.GetServiceResponseAsync<object>(null, respose?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
+                return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, 400, null);
 
 
 
@@ -43,43 +37,36 @@ namespace BussinessLogic
         }
         public async Task<ServiceResponse<object>> UpdatePaymentHeader(RequestModel<UpdatePaymentModel> request)
         {
-
             ServiceResult serviceResult = new ServiceResult();
-
-
             if (request?.RequestObject is null)
                 return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.MISSING_PAYMENT, ApiResponseCodes.FAILURE, 400, null);
 
             UpdatePaymentModel? updatePayment = request?.RequestObject;
-            var respose = await _prepository.UpdatePaymentHeaderData(updatePayment);
+            var respose = await payment.UpdatePaymentHeader(request);
 
-            if (respose is not null && respose.Result)
+            if (respose is not null)
                 return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
             else
-                return await serviceResult.GetServiceResponseAsync<object>(null, respose?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
-
-
-
-
+                return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, 400, null);
         }
         public async Task<ServiceResponse<IEnumerable<FetchPaymentTransaction>>> FetchPaymentDetails(RequestModel<string> request)
         {
 
             ServiceResult serviceResult = new ServiceResult();
             if (request?.RequestObject is null)
-                return await serviceResult.GetServiceResponseAsync<IEnumerable<FetchPaymentTransaction>>(null, "Invalid Capture Request", ApiResponseCodes.FAILURE, 400, null);
+                return await serviceResult.GetServiceResponseAsync<IEnumerable<FetchPaymentTransaction>>(null, "Invalid Payment Request", ApiResponseCodes.FAILURE, 400, null);
 
-            var respose = await _prepository.FetchPaymentActiveTransactions(request?.RequestObject);
-            if (respose is not null && respose.Result)
-                return await serviceResult.GetServiceResponseAsync(respose.ResponseObject, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
+            var respose = await payment.FetchPaymentDetails(request);
+            if (respose is not null)
+                return await serviceResult.GetServiceResponseAsync(respose?.ResponseData, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
             else
-                return await serviceResult.GetServiceResponseAsync(respose?.ResponseObject, respose?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
+                return await serviceResult.GetServiceResponseAsync(respose?.ResponseData, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, 400, null);
 
 
 
         }
         public async Task<ServiceResponse<PaymentResponse>> CapturePayment(RequestModel<PaymentRequest> request)
-            {
+        {
             PaymentResponse paymentResponseObject = new PaymentResponse();
             ServiceResult serviceResult = new ServiceResult();
             if (request?.RequestObject is null)
@@ -87,98 +74,19 @@ namespace BussinessLogic
 
             ResponseModel<PaymentResponse> responseModel = new ResponseModel<PaymentResponse>();
 
-            var response = await _pservice.PaymentCapture(request?.RequestObject);
-            if (response != null)
-            {
-                if (response.IsSuccessStatusCode)
-                {
-                    var responsestr = await response.Content.ReadAsStringAsync();
-                    Adyen.Model.Modification.ModificationResult modificationResult = JsonConvert.DeserializeObject<Adyen.Model.Modification.ModificationResult>(await response.Content.ReadAsStringAsync());
-                   
-                    if (modificationResult != null && modificationResult.Response == Adyen.Model.Enum.ResponseEnum.CaptureReceived)
-                    {
-                        paymentResponseObject.PspReference = modificationResult.PspReference;
-                        List<AdditionalInfo> additionalInfos = new List<AdditionalInfo>();
-                        if (modificationResult.AdditionalData != null)
-                        {
-                            foreach (KeyValuePair<string, string> keyValuePair in modificationResult.AdditionalData)
-                            {
-                               AdditionalInfo additionalInfo = new AdditionalInfo();
-                                additionalInfo.key = keyValuePair.Key;
-                                additionalInfo.value = keyValuePair.Value;
-                                switch (additionalInfo.key)
-                                {
-                                    case "refusalReasonRaw":
-                                        paymentResponseObject.RefusalReason = additionalInfo.value;
-                                        break;
-                                    case "expiryDate":
-                                        paymentResponseObject.CardExpiryDate = additionalInfo.value;
-                                        break;
-                                    case "recurring.recurringDetailReference":
-                                        paymentResponseObject.PaymentToken = additionalInfo.value;
-                                        break;
-                                    case "authCode":
-                                        paymentResponseObject.AuthCode = additionalInfo.value;
-                                        break;
-                                    case "paymentMethod":
-                                        paymentResponseObject.CardType = additionalInfo.value;
-                                        break;
-                                    case "fundingSource":
-                                        paymentResponseObject.FundingSource = additionalInfo.value;
-                                        break;
-                                    case "authorisedAmountCurrency":
-                                        paymentResponseObject.Currency = additionalInfo.value;
-                                        break;
-                                    case "authorisedAmountValue":
-                                        paymentResponseObject.Amount = !string.IsNullOrEmpty(additionalInfo.value) ? Decimal.Divide(Convert.ToDecimal(long.Parse(additionalInfo.value)), Convert.ToDecimal(100)) : 0;
-                                        break;
-
-
-                                }
-                                additionalInfos.Add(additionalInfo);
-                            }
-                            paymentResponseObject.additionalInfos = additionalInfos;
-                        }
-
-                        responseModel.ResponseObject=paymentResponseObject;
-                        responseModel.Result = true;
-                       
-                    }
-                    else
-                    {
-
-
-                        responseModel.ErrorMessage = modificationResult?.Message;
-                            responseModel.Result = false;
-                        
-                    }
-                }
-                else
-                {
-                    responseModel.Result = false;
-                    responseModel.ErrorMessage = response.ReasonPhrase;
-                   
-                }
-
-            }
-            else
-            {
-                responseModel.Result = false;
-                responseModel.ErrorMessage = "Payment gateway returned blank";
-               
-            }
+            var response = await payment.CapturePayment(request);
+            
             if (responseModel is not null && responseModel.Result)
                 return await serviceResult.GetServiceResponseAsync(responseModel.ResponseObject, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
             else
                 return await serviceResult.GetServiceResponseAsync(responseModel?.ResponseObject, responseModel?.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
         }
 
-        public async Task<ServiceResponse<T>> GetAccessToken<T>(RequestModel<Dictionary<string,StringValues>> request)
+        public async Task<ServiceResponse<T>> GetAccessToken<T>(RequestModel<Dictionary<string, StringValues>> request)
         {
             ServiceResult serviceResult = new ServiceResult();
-            var response = await _pservice.GetAccessToken(request?.RequestObject);
-            T responseContent = await response.Content.ReadFromJsonAsync<T>();
-            return await serviceResult.GetServiceResponseAsync<T>(responseContent , ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, (int)response.StatusCode, null);
+            var response = await payment.GetAccessToken<T>(request);
+            return response;
            
         }
     }

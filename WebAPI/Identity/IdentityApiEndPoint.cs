@@ -1,7 +1,5 @@
 ﻿using BussinessLogic;
-using DataAccessLayer.Model;
-using Domain;
-using Domain.Request;
+using Domain.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;

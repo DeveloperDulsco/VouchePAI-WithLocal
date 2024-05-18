@@ -3,10 +3,6 @@ using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
-using Adyen;
-using DataAccessLayer.Model;
-using System.Net.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
 
 namespace Infrastructure
@@ -15,7 +11,7 @@ namespace Infrastructure
     {
 
 
-        public async Task<HttpResponseMessage> PaymentCapture(PaymentRequest paymentRequest)
+        public async Task<HttpResponseMessage> PaymentCapture(Domain.Response.PaymentRequest paymentRequest)
         {
             HttpClient? httpClient = null;
             bool proxy = false;

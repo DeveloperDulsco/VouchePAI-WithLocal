@@ -7,10 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repository\PaymentRepository\**" />
+    <EmbeddedResource Remove="Repository\PaymentRepository\**" />
+    <None Remove="Repository\PaymentRepository\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Repository\PaymentRepository %282%29.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.35" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BussinessLogic\BussinessLogic.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

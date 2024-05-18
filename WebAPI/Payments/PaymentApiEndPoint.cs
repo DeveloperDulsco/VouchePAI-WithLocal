@@ -1,7 +1,8 @@
 ﻿using BussinessLogic;
-using DataAccessLayer.Model;
+using BussinessLogic.Abstractions;
 using Domain;
 using Domain.Request;
+using Domain.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -18,7 +19,6 @@ namespace WebAPI.Payments;
 internal class  PaymentApiEndPoint : IEndPointDefinition
     {
 
-    
     public void RegisterEndPoints(WebApplication application)
         {
             var PaymentGroup = application.MapGroup("v1/Payments").WithOpenApi();

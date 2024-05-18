@@ -1,95 +1,151 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccessLayer.Model;
+﻿using DataAccessLayer.Model;
 using DataAccessLayer.Helper;
-using System.Net.Http;
+using BussinessLogic.Abstractions;
+using Domain;
+using Microsoft.Extensions.Primitives;
+using Domain.Response;
+using System.Text.Json.Nodes;
+using System.Text.Json;
+using System.Collections.Generic;
+using Infrastructure;
+using System.Net.Http.Json;
+using Domain.Responses;
 
 namespace DataAccessLayer.Repository
 {
-    public class PaymentRepository
+    public class PaymentRepository : IPayment
     {
-
-        /// <summary>
-        /// inserting Payment details to payment header table
-        /// </summary>
-        /// <param name="paymentHistories"></param>
-        /// <param name="paymentHeaders"></param>
-        /// <param name="paymentAdditionalInfos"></param>
-        /// <param name="connectionString"></param>
-        /// <returns></returns>
-        public async Task<ResponseModel<bool>> InsertPaymentDetails(List<PaymentHistory> paymentHistories, List<PushPaymentHeaderModel> paymentHeaders, List<PaymentAdditionalInfo> paymentAdditionalInfos)
+        async Task<ServiceResponse<object>> IPayment.InsertPayment(Domain.Response.RequestModel<Domain.Response.PaymentModel> request)
         {
-           
-            ResponseModel<bool> responseModel = new ResponseModel<bool>();
-                var spResponse = await new DapperHelper().ExecuteSPAsync("Usp_InsertPaymentTransactions"
-                        , new { TbPaymentHeaderType = new DBHelper().ToDataTable(paymentHeaders), TbPaymentAdditionalInfoType = new DBHelper().ToDataTable(paymentAdditionalInfos), TbPaymentHistoryType = new DBHelper().ToDataTable(paymentHistories) });
-                if (spResponse is not null)
-                    responseModel.Result = true;
-               
-                else
-                    {
-                        responseModel.Result = false;
-                        responseModel.ErrorMessage = "Failed to Update Data";
-                    }
-                   return responseModel;
+            Model.ResponseModel<bool> responseModel = new Model.ResponseModel<bool>();
+            var spResponse = await new DapperHelper().ExecuteSPAsync("Usp_InsertPaymentTransactions"
+                    , new { TbPaymentHeaderType = new DBHelper().ToDataTable(request.RequestObject.paymentHeaders), TbPaymentAdditionalInfoType = new DBHelper().ToDataTable(request.RequestObject.paymentAdditionalInfos), TbPaymentHistoryType = new DBHelper().ToDataTable(request.RequestObject.paymentHistories) });
+            if (spResponse is not null)
+            {
+                responseModel.Result = true;
+                return await new ServiceResult().GetServiceResponseAsync<object>(responseModel, responseModel.ErrorMessage, ApiResponseCodes.SUCCESS, 200, null);
+            }
+            else
+            {
+                responseModel.Result = false;
+                responseModel.ErrorMessage = "Failed to Update Data";
+                return await new ServiceResult().GetServiceResponseAsync<object>(responseModel, responseModel.ErrorMessage, ApiResponseCodes.SUCCESS, 200, null);
+            }
+
         }
-        /// <summary>
-        /// Update the Payment Header after 
-        /// </summary>
-        /// <param name="transactionID"></param>
-        /// <param name="ResultCode"></param>
-        /// <param name="ResponseMessage"></param>
-        /// <param name="isActive"></param>
-        /// <param name="transactionType"></param>
-        /// <param name="amount"></param>
-        /// <param name="ReservationNumber"></param>
-        /// <returns></returns>
-        public async Task<ResponseModel<bool>> UpdatePaymentHeaderData(UpdatePaymentModel updatePayment)
-        {
-            ResponseModel<bool> responseModel = new ResponseModel<bool>();
-                 var ProfilesDt = await new DapperHelper().ExecuteSPAsync("Usp_UpdatePaymentHeader"
-                        , new { TransactionID = updatePayment.transactionID, ResultCode = updatePayment.ResultCode, ResponseMessage = updatePayment.ResponseMessage , IsActive = updatePayment.isActive, TransactionType= updatePayment.transactionType , Amount = updatePayment.amount , ReservationNumber = updatePayment.ReservationNumber });
 
-                if (ProfilesDt != null && ProfilesDt.Any())
+        async Task<ServiceResponse<object>> IPayment.UpdatePaymentHeader(Domain.Response.RequestModel<Domain.Response.UpdatePaymentModel> request)
+        {
+            Domain.Responses.ResponseModel<bool> responseModel = new Domain.Responses.ResponseModel<bool>();
+            var ProfilesDt = await new DapperHelper().ExecuteSPAsync("Usp_UpdatePaymentHeader"
+                   , new { TransactionID = request.RequestObject.transactionID, ResultCode = request.RequestObject.ResultCode, ResponseMessage = request.RequestObject.ResponseMessage, IsActive = request.RequestObject.isActive, TransactionType = request.RequestObject.transactionType, Amount = request.RequestObject.amount, ReservationNumber = request.RequestObject.ReservationNumber });
+
+            if (ProfilesDt != null && ProfilesDt.Any())
+            {
+                responseModel.Result = true;
+                return await new ServiceResult().GetServiceResponseAsync<object>(responseModel, responseModel.ErrorMessage, ApiResponseCodes.SUCCESS, 200, null);
+            }
+            else
+            {
+                responseModel.Result = false;
+                responseModel.ErrorMessage = "Failed to Update Data";
+                return await new ServiceResult().GetServiceResponseAsync<object>(responseModel, responseModel.ErrorMessage, ApiResponseCodes.SUCCESS, 200, null);
+            }
+
+        }
+
+       async Task<ServiceResponse<IEnumerable<Domain.Responses.FetchPaymentTransaction>>> IPayment.FetchPaymentDetails(Domain.Response.RequestModel<string> request)
+    {
+            Domain.Responses.ResponseModel<IEnumerable<Domain.Responses.FetchPaymentTransaction>> responseModel = new Domain.Responses.ResponseModel<IEnumerable<Domain.Responses.FetchPaymentTransaction>>();
+        var spResponse = await new DapperHelper().ExecuteSPAsync<Model.FetchPaymentTransaction>("Usp_FetchPaymentTransaction", new { ReservationNameID = request.RequestObject });
+        if (spResponse != null && spResponse.Any())
+        {
+
+            responseModel.Result = true;
             
-                        responseModel.Result = true;
-                    else
-                       {    responseModel.Result = false;
-                            responseModel.ErrorMessage = "Failed to Update Data";
-                       }
-            return responseModel;
+            var payrespone = JsonSerializer.Serialize(spResponse);
+            IEnumerable<Domain.Responses.FetchPaymentTransaction>? des = JsonSerializer.Deserialize<IEnumerable<Domain.Responses.FetchPaymentTransaction>>(payrespone);
+            return await new ServiceResult().GetServiceResponseAsync<IEnumerable<Domain.Responses.FetchPaymentTransaction>>(des, responseModel.ErrorMessage, ApiResponseCodes.SUCCESS, 200, null);
         }
-       
 
-        /// <summary>
-        /// Fetch Active Preauthorization details
-        /// </summary>
-        /// <param name="ReservationNameID"></param>
-        /// <param name="connectionString"></param>
-        /// <returns></returns>
-        public async Task<ResponseModel<IEnumerable<FetchPaymentTransaction>>> FetchPaymentActiveTransactions(string reservationNameID)
+        else
         {
-            ResponseModel<IEnumerable<FetchPaymentTransaction>> responseModel = new ResponseModel<IEnumerable<FetchPaymentTransaction>>();
-                 var spResponse = await new DapperHelper().ExecuteSPAsync<FetchPaymentTransaction>("Usp_FetchPaymentTransaction",new { ReservationNameID= reservationNameID });
-                if (spResponse != null && spResponse.Any())
-                {
-                    responseModel.Result = true;
-                    responseModel.ResponseObject = spResponse;
-                }
 
-                else
-                {
-                    responseModel.Result = false;
-                    responseModel.ErrorMessage = "Failed to Get Data";
-                }
-                   return responseModel;
+            responseModel.Result = false;
+            responseModel.ErrorMessage = "Failed to Get Data";
+
+            return await new ServiceResult().GetServiceResponseAsync<IEnumerable<Domain.Responses.FetchPaymentTransaction>>(null, responseModel.ErrorMessage, ApiResponseCodes.FAILURE, 400, null);
         }
+    }
 
+        async Task<ServiceResponse<T>> IPayment.GetAccessToken<T>(Domain.Response.RequestModel<Dictionary<string, StringValues>> request)
+        {
+           HttpResponseMessage response = await new PaymentService().GetAccessToken(request?.RequestObject);
+            T responseContent = await response.Content.ReadFromJsonAsync<T>();
+            return await new ServiceResult().GetServiceResponseAsync<T>(responseContent, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, (int)response.StatusCode, null);
+            
+        }   
+        async Task<ServiceResponse<Domain.Responses.PaymentResponse>> IPayment.CapturePayment(Domain.Response.RequestModel<Domain.Response.PaymentRequest> request)
+        {
+            Domain.Responses.PaymentResponse? paymentResponseObject = new Domain.Responses.PaymentResponse();
+            HttpResponseMessage response = await new PaymentService().PaymentCapture(request?.RequestObject);
+            if (response != null && response.IsSuccessStatusCode)
+            {
+
+                var responsestr = await response.Content.ReadAsStringAsync();
+                Adyen.Model.Modification.ModificationResult modificationResult = JsonSerializer.Deserialize<Adyen.Model.Modification.ModificationResult>(await response.Content.ReadAsStringAsync());
+
+                if (modificationResult != null && modificationResult.Response == Adyen.Model.Enum.ResponseEnum.CaptureReceived)
+                {
+                    paymentResponseObject.PspReference = modificationResult.PspReference;
+                    List<Domain.Responses.AdditionalInfo> additionalInfos = new List<Domain.Responses.AdditionalInfo>();
+                    if (modificationResult.AdditionalData != null)
+                    {
+                        foreach (KeyValuePair<string, string> keyValuePair in modificationResult.AdditionalData)
+                        {
+                            Domain.Responses.AdditionalInfo additionalInfo = new Domain.Responses.AdditionalInfo();
+                            additionalInfo.key = keyValuePair.Key;
+                            additionalInfo.value = keyValuePair.Value;
+                            switch (additionalInfo.key)
+                            {
+                                case "refusalReasonRaw":
+                                    paymentResponseObject.RefusalReason = additionalInfo.value;
+                                    break;
+                                case "expiryDate":
+                                    paymentResponseObject.CardExpiryDate = additionalInfo.value;
+                                    break;
+                                case "recurring.recurringDetailReference":
+                                    paymentResponseObject.PaymentToken = additionalInfo.value;
+                                    break;
+                                case "authCode":
+                                    paymentResponseObject.AuthCode = additionalInfo.value;
+                                    break;
+                                case "paymentMethod":
+                                    paymentResponseObject.CardType = additionalInfo.value;
+                                    break;
+                                case "fundingSource":
+                                    paymentResponseObject.FundingSource = additionalInfo.value;
+                                    break;
+                                case "authorisedAmountCurrency":
+                                    paymentResponseObject.Currency = additionalInfo.value;
+                                    break;
+                                case "authorisedAmountValue":
+                                    paymentResponseObject.Amount = !string.IsNullOrEmpty(additionalInfo.value) ? Decimal.Divide(Convert.ToDecimal(long.Parse(additionalInfo.value)), Convert.ToDecimal(100)) : 0;
+                                    break;
+
+
+                            }
+                            additionalInfos.Add(additionalInfo);
+                        }
+                        paymentResponseObject.additionalInfos = additionalInfos;
+                    }
+                }
+                return await new ServiceResult().GetServiceResponseAsync(paymentResponseObject, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
+            }
+            else
+            {
+                return await new ServiceResult().GetServiceResponseAsync(paymentResponseObject, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, 200, null);
+            }
+        }
     }
 }
