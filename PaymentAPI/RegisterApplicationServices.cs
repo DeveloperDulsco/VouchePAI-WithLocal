@@ -16,7 +16,7 @@ public static class RegisterApplicationServices
         var services = builder.Services;
         var configuration = builder.Configuration;
 
-        string? _connectionString = configuration.GetConnectionString(ApplicationGenericConstants.DBCCON_PARAM);
+        string? _connectionString = configuration.GetConnectionString(ApplicationGenericConstants.DBCON_PARAM);
         if (string.IsNullOrWhiteSpace(_connectionString)) throw new ConfigurationErrorsException(ApplicationGenericConstants.MISSING_CONNECTION_STRING);
 
 

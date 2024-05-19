@@ -7,11 +7,11 @@ namespace DataAccessLayer;
 
 public static class RegisterDALServices
 {
-    public static void useDALServices(this IServiceCollection services, Action<DALConfigutations> options)
+    public static void useDALServices(this IServiceCollection services, Action<DALConfigurations> options)
     {
 
         services.AddScoped<IPayment, PaymentRepository>();
-        services.AddScoped(p => new DALConfigutations(options));
+        services.AddScoped(p => new DALConfigurations(options));
 
 
     }
@@ -19,10 +19,10 @@ public static class RegisterDALServices
 }
 
 
-public class DALConfigutations
+public class DALConfigurations
 {
     public string? _connectionString { get; set; }
-    public DALConfigutations(Action<DALConfigutations> options)
+    public DALConfigurations(Action<DALConfigurations> options)
     {
         options(this);
     }

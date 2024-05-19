@@ -15,8 +15,8 @@ namespace DataAccessLayer.Repository;
 
 public class PaymentRepository : IPayment
 {
-    DALConfigutations? config;
-    public PaymentRepository(DALConfigutations _config)
+    DALConfigurations? config;
+    public PaymentRepository(DALConfigurations _config)
     {
         config = _config;
     }

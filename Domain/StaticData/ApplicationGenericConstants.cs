@@ -12,7 +12,7 @@ public static class ApplicationGenericConstants
     public const string ERR_DATA_CAPTURE = "Error in Data Capture";
     public const string MISSING_CONNECTION_STRING = "Error in Data Fetch";
     public const string MISSING_PAYMENT_SETTINGS = "Error in Data Update";
-    public const string DBCCON_PARAM = "DBConnection";
+    public const string DBCON_PARAM = "DBConnection";
 
 
 }
