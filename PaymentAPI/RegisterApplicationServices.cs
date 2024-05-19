@@ -3,6 +3,7 @@ using DataAccessLayer;
 using BussinessLogic;
 using Infrastructure;
 using System.Configuration;
+using Middlewares.Exceptions;
 
 namespace PaymentAPI;
 
@@ -11,8 +12,10 @@ public static class RegisterApplicationServices
 {
     internal static IServiceCollection useApplicationServices(this WebApplicationBuilder builder)
     {
+
         var services = builder.Services;
         var configuration = builder.Configuration;
+        services.AddExceptionHandler<GlobalExceptions>();
         services.useAPIServices(APIconfig => APIconfig.Name = "PaymentAPI");
         services.useDALServices(DALconfig => DALconfig._connectionString = configuration.GetConnectionString("DBConnection"));
         services.useBLServices(blconfig => blconfig.Name = "PaymentAPI");

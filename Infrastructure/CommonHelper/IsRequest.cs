@@ -8,7 +8,7 @@ namespace Infrastructure.CommonHelper
 {
     public class IsRequestModel
     {
-       public string web_url { get; set; } 
+       public string? web_url { get; set; } 
        public object? body { get; set; }
        public Dictionary<string, string>? headers { get; set; }
        public string? accesToken { get; set; }

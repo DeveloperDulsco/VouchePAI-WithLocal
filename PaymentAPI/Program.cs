@@ -1,10 +1,10 @@
-using Domain.Request;
-using Microsoft.OpenApi.Models;
+
 using PaymentAPI;
 using WebAPI;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Identity.Web;
-using Microsoft.AspNetCore.Antiforgery;
+using Microsoft.AspNetCore.HttpLogging;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +17,15 @@ builder.Services.AddAuthorization(options =>
    .Build();
 });
 builder.Services.AddAntiforgery();
+
+builder.Services.AddHttpLogging(logging =>
+{
+    logging.RequestBodyLogLimit = 4096;
+    logging.ResponseBodyLogLimit = 4096;
+    logging.LoggingFields = HttpLoggingFields.All;
+
+
+});
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -32,6 +41,7 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseExceptionHandler(_ => { });
+app.UseHttpLogging();
 app.UseAntiforgery();
 
 // Configure the HTTP request pipeline.
@@ -46,12 +56,12 @@ if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
 }
 
 
-//app.UseHttpLogging();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.usePaymentAPIS();
-
+app.Logger.LogInformation("Starting the app");
 
 app.Run();
 

@@ -17,4 +17,3 @@ public class ServiceResult
 }
 
 
-//This code should be moved Business Logic

@@ -14,7 +14,7 @@ using Middlewares;
 
 namespace WebAPI.Payments;
 
-internal class PaymentApiEndPoint : IEndPointDefinition 
+internal class PaymentApiEndPoint : IEndPointDefinition
 {
 
     public void RegisterEndPoints(WebApplication application)
@@ -40,7 +40,7 @@ internal class PaymentApiEndPoint : IEndPointDefinition
     {
 
         ServiceResult serviceResult = new ServiceResult();
-        return ReturnResultBaseClass.returnResult<string>(await serviceResult.GetServiceResponseAsync<string>("pong", ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null));
+        return ReturnResultBaseClass.returnResult<string?>(await serviceResult.GetServiceResponseAsync<string>("pong", ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null));
     }
 
     private static async Task<IResult?> PaymentInsertAsync([FromBody] ServiceRequest<PaymentModel> request, PaymentBL paymentBL)

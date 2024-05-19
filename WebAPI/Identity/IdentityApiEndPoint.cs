@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.Primitives;
+
 using Middlewares;
 namespace WebAPI.Identity;
 
@@ -21,16 +21,16 @@ internal class IdentityApiEndPoint : IEndPointDefinition
     private static RouteGroupBuilder IdentityAPI(RouteGroupBuilder IdentityGroup)
     {
 
-        IdentityGroup.MapPost("/", GenerateTokenAsync).Produces<Ok>().Produces<UnauthorizedHttpResult>().Produces<BadRequest>();
+        IdentityGroup.MapPost("/", GenerateTokenAsync).Produces<Ok>().Produces<UnauthorizedHttpResult>().Produces<BadRequest>().AllowAnonymous();
         return IdentityGroup;
     }
 
-    [AllowAnonymous]
-    [Consumes("application/x-www-form-urlencoded")]
+
+
 
     private static async Task<IResult?> GenerateTokenAsync(HttpRequest httpRequest, PaymentBL paymentBL)
     {
-        throw new NotImplementedException();
+
         var vals = (await httpRequest.ReadFormAsync()).ToDictionary(); ;
         var serviceResponse = await paymentBL.GetAccessToken(vals);
         return ReturnResultBaseClass.TokenreturnResult(serviceResponse);

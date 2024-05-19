@@ -40,25 +40,25 @@ public class PaymentService : IAdenPayment
         {
             MerchantAccount = paymentRequest?.merchantAccount,
             OriginalReference = paymentRequest?.RequestObject.OrginalPSPRefernce,
-            ModificationAmount = new Adyen.Model.Amount(config.PaymentSettings.AdyenPaymentCurrency, amnt)
+            ModificationAmount = new Adyen.Model.Amount(config?.PaymentSettings!.AdyenPaymentCurrency, amnt)
         };
 
         httpClient.DefaultRequestHeaders.Clear();
         httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        httpClient.DefaultRequestHeaders.Add("x-api-key", config.PaymentSettings.ApiKey);
+        httpClient.DefaultRequestHeaders.Add("x-api-key", config?.PaymentSettings!.ApiKey);
 
         HttpContent requestContent = new StringContent(JsonSerializer.Serialize(captureRequest), Encoding.UTF8, "application/json");
-        HttpResponseMessage response = await httpClient.PostAsync(config.PaymentSettings.AdyenPaymentURL, requestContent);
+        HttpResponseMessage response = await httpClient.PostAsync(config?.PaymentSettings!.AdyenPaymentURL, requestContent);
         if (response.StatusCode == System.Net.HttpStatusCode.OK)
         {
             var responseContent = await response.Content.ReadAsStringAsync();
 
             var paymentResponse = JsonSerializer.Deserialize<PaymentResponse>(JsonSerializer.Serialize(responseContent));
 
-            return await new ServiceResult().GetServiceResponseAsync<PaymentResponse>(paymentResponse, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, (int)response.StatusCode, null);
+            return await new ServiceResult().GetServiceResponseAsync<PaymentResponse?>(paymentResponse, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, (int)response.StatusCode, null);
         }
         else
-            return await new ServiceResult().GetServiceResponseAsync<PaymentResponse>(null, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, (int)response.StatusCode, null);
+            return await new ServiceResult().GetServiceResponseAsync<PaymentResponse?>(null, ApplicationGenericConstants.ERR_DATA_CAPTURE, ApiResponseCodes.FAILURE, (int)response.StatusCode, null);
 
 
 
