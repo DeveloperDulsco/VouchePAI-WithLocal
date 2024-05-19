@@ -1,4 +1,5 @@
 ﻿using BussinessLogic;
+using Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -11,13 +12,12 @@ internal class IdentityApiEndPoint : IEndPointDefinition
 {
     public void RegisterEndPoints(WebApplication application)
     {
-        var IdentityGroup = application.MapGroup("identity/oauth2/v2.0/token");
+        var IdentityGroup = application.MapGroup(IdentityAPIConstants.IdentityEndPoint);
         IdentityAPI(IdentityGroup);
 
     }
     private static RouteGroupBuilder IdentityAPI(RouteGroupBuilder IdentityGroup)
     {
-
         IdentityGroup.MapPost("/", GenerateTokenAsync).Produces<Ok>().Produces<UnauthorizedHttpResult>().Produces<BadRequest>().AllowAnonymous();
         return IdentityGroup;
     }

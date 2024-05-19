@@ -19,8 +19,8 @@ internal class PaymentApiEndPoint : IEndPointDefinition
 
     public void RegisterEndPoints(WebApplication application)
     {
-        PaymentAPI(application.MapGroup("v1/Payments").WithOpenApi());
-        PaymentAPI(application.MapGroup("Payments")).ExcludeFromDescription();
+        PaymentAPI(application.MapGroup(PaymentAPIConstants.PaymentAPIEndV1Point).WithOpenApi());
+        PaymentAPI(application.MapGroup(PaymentAPIConstants.PaymentAPIEndPoint)).ExcludeFromDescription();
 
     }
 
@@ -30,7 +30,7 @@ internal class PaymentApiEndPoint : IEndPointDefinition
         payment.MapPost("/", PaymentInsertAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();
         payment.MapPut("/", PaymentUpdateAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();
         payment.MapGet("/", PaymentFetchAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();
-        payment.MapPost("/CapturePayment", CapturePaymentAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();
+        payment.MapPost(PaymentAPIConstants.CapturePaymentEndpoint, CapturePaymentAsync).Produces<Ok>().Produces<NotFound>().Produces<BadRequest>();
 
         return payment;
 

@@ -16,3 +16,21 @@ public static class ApplicationGenericConstants
 
 
 }
+
+
+public static class IdentityAPIConstants
+{
+    public const string IdentityEndPoint = "identity/oauth2/v2.0/token";
+
+   
+}
+
+
+public static class PaymentAPIConstants
+{
+    public const string PaymentAPIEndV1Point = "v1/Payments";
+    public const string PaymentAPIEndPoint = "Payments";
+    public const string CapturePaymentEndpoint = "/CapturePayment";
+
+   
+}
