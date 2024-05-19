@@ -9,7 +9,7 @@ using Middlewares.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddExceptionHandler<GlobalExceptions>();
-
+builder.Services.AddApplicationInsightsTelemetry();
 builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration, "AzureAd");
 builder.Services.AddAuthorization(options =>
 {
