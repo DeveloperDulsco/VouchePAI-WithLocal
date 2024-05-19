@@ -20,7 +20,7 @@ internal class PaymentApiEndPoint : IEndPointDefinition
     public void RegisterEndPoints(WebApplication application)
     {
         PaymentAPI(application.MapGroup(PaymentAPIConstants.PaymentAPIEndV1Point).WithOpenApi());
-        PaymentAPI(application.MapGroup(PaymentAPIConstants.PaymentAPIEndPoint)).ExcludeFromDescription();
+        PaymentAPI(application.MapGroup(PaymentAPIConstants.PaymentAPIEndPoint)).WithOpenApi().ExcludeFromDescription();
 
     }
 
