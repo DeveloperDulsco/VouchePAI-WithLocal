@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Middlewares
 {
-    public static class AddEnpoints
+    public static class AddEndpoints
     {
         public static void AddApiEndPoints
         (this WebApplication app, Assembly assembly)

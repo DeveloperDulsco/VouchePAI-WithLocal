@@ -52,7 +52,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Savy Pay APIS");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Savvy Pay APIS");
 
     });
 }

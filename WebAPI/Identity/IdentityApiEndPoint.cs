@@ -1,10 +1,7 @@
 ﻿using BussinessLogic;
-using Domain.Response;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 
 using Middlewares;
@@ -31,8 +28,8 @@ internal class IdentityApiEndPoint : IEndPointDefinition
     private static async Task<IResult?> GenerateTokenAsync(HttpRequest httpRequest, PaymentBL paymentBL)
     {
 
-        var vals = (await httpRequest.ReadFormAsync()).ToDictionary(); ;
-        var serviceResponse = await paymentBL.GetAccessToken(vals);
+        var parameters = (await httpRequest.ReadFormAsync()).ToDictionary();
+        var serviceResponse = await paymentBL.GetAccessToken(parameters);
         return ReturnResultBaseClass.TokenreturnResult(serviceResponse);
     }
 

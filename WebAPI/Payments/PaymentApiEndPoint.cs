@@ -44,7 +44,6 @@ internal class PaymentApiEndPoint : IEndPointDefinition
 
     private static async Task<IResult?> PaymentInsertAsync([FromBody] ServiceRequest<PaymentModel> request, PaymentBL paymentBL)
     {
-
         var response = await paymentBL.InsertPayment(new RequestModel<PaymentModel> { RequestObject = request.RequestObject });
         return ReturnResultBaseClass.returnResult(response);
     }
@@ -52,20 +51,17 @@ internal class PaymentApiEndPoint : IEndPointDefinition
 
     private static async Task<IResult?> PaymentUpdateAsync([FromBody] ServiceRequest<UpdatePaymentModel> request, PaymentBL paymentBL)
     {
-
-        var response = await paymentBL.UpdatePaymentHeader(new RequestModel<UpdatePaymentModel> { RequestObject = request.RequestObject });
+         var response = await paymentBL.UpdatePaymentHeader(new RequestModel<UpdatePaymentModel> { RequestObject = request.RequestObject });
         return ReturnResultBaseClass.returnResult(response);
 
     }
     private static async Task<IResult?> PaymentFetchAsync([FromBody] ServiceRequest<string> request, PaymentBL paymentBL)
     {
-
         var response = await paymentBL.FetchPaymentDetails(new RequestModel<string> { RequestObject = request.RequestObject });
         return ReturnResultBaseClass.returnResult(response);
     }
     private static async Task<IResult?> CapturePaymentAsync([FromBody] ServiceRequest<PaymentRequest> request, PaymentBL paymentBL)
     {
-
         var response = await paymentBL.CapturePayment(new RequestModel<PaymentRequest> { RequestObject = request.RequestObject });
         return ReturnResultBaseClass.returnResult(response);
     }
