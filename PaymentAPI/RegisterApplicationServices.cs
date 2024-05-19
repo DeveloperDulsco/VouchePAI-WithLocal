@@ -3,7 +3,7 @@ using DataAccessLayer;
 using BussinessLogic;
 using Infrastructure;
 using System.Configuration;
-using Middlewares.Exceptions;
+using Domain;
 
 namespace PaymentAPI;
 
@@ -15,19 +15,22 @@ public static class RegisterApplicationServices
 
         var services = builder.Services;
         var configuration = builder.Configuration;
-        services.AddExceptionHandler<GlobalExceptions>();
-        services.useAPIServices(APIconfig => APIconfig.Name = "PaymentAPI");
-        services.useDALServices(DALconfig => DALconfig._connectionString = configuration.GetConnectionString("DBConnection"));
-        services.useBLServices(blconfig => blconfig.Name = "PaymentAPI");
 
-        services.useInfraServices(Infraconfig =>
-        {
+        string? _connectionString = configuration.GetConnectionString(ApplicationGenericConstants.DBCCON_PARAM);
+        if (string.IsNullOrWhiteSpace(_connectionString)) throw new ConfigurationErrorsException(ApplicationGenericConstants.MISSING_CONNECTION_STRING);
 
-            PaymentSettings? paymentSettings = new PaymentSettings();
-            paymentSettings = configuration.GetSection("PaymentSettings").Get<PaymentSettings>();
-            Infraconfig.PaymentSettings = paymentSettings;
 
-        });
+        PaymentSettings? paymentSettings = new PaymentSettings();
+        paymentSettings = configuration.GetSection("PaymentSettings").Get<PaymentSettings>();
+        if (paymentSettings is null) throw new ConfigurationErrorsException(ApplicationGenericConstants.MISSING_PAYMENT_SETTINGS);
+
+
+
+        services.useAPIServices(APIconfig => APIconfig.Name = "PaymentAPI"); //to be changed
+        services.useDALServices(DALconfig => DALconfig._connectionString = _connectionString);
+        services.useBLServices(blconfig => blconfig.Name = "PaymentAPI"); //to be changed
+
+        services.useInfraServices(Infraconfig => Infraconfig.PaymentSettings = paymentSettings);
 
         return services;
 

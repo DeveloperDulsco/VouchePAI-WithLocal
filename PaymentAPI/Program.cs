@@ -4,10 +4,11 @@ using WebAPI;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Identity.Web;
 using Microsoft.AspNetCore.HttpLogging;
+using Middlewares.Exceptions;
 
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddExceptionHandler<GlobalExceptions>();
 
 builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration, "AzureAd");
 builder.Services.AddAuthorization(options =>
@@ -16,6 +17,7 @@ builder.Services.AddAuthorization(options =>
    .RequireAuthenticatedUser()
    .Build();
 });
+
 builder.Services.AddAntiforgery();
 
 builder.Services.AddHttpLogging(logging =>
@@ -61,7 +63,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.usePaymentAPIS();
-app.Logger.LogInformation("Starting the app");
+app.Logger.LogInformation("*******************Starting the app*************************");
 
 app.Run();
 
