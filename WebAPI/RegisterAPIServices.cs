@@ -6,9 +6,9 @@ namespace WebAPI;
 
 public static class RegisterAPIServices
 {
-    public static void useAPIServices(this IServiceCollection services, Action<APIConfigutations> options)
+    public static void useAPIServices(this IServiceCollection services, Action<APIConfigurations> options)
     {
-        services.AddScoped(p => new APIConfigutations(options));
+        services.AddScoped(p => new APIConfigurations(options));
         services.AddScoped<PaymentBL>();
     }
 
@@ -17,10 +17,10 @@ public static class RegisterAPIServices
 
 
 
-public class APIConfigutations
+public class APIConfigurations
 {
     public string? Name { get; set; }
-    public APIConfigutations(Action<APIConfigutations> options)
+    public APIConfigurations(Action<APIConfigurations> options)
     {
         options(this);
     }

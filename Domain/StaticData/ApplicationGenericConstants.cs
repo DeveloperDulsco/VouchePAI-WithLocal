@@ -9,10 +9,10 @@ public static class ApplicationGenericConstants
     public const string UNAUTHORIZED = "Unauthorized";
     public const string MISSING_PAYMENT = "Missing or invalid payments Details";
     public const string FAILD_TO_LOAD = "Failed to Load Data ";
-    public const string ERR_DATA_CAPTURE = "Erroe in Data Capture";
-    public const string MISSING_CONNECTION_STRING = "Erroe in Data Fetch";
-    public const string MISSING_PAYMENT_SETTINGS = "Erroe in Data Update";
-    public const string DBCCON_PARAM= "DBConnection";
+    public const string ERR_DATA_CAPTURE = "Error in Data Capture";
+    public const string MISSING_CONNECTION_STRING = "Error in Data Fetch";
+    public const string MISSING_PAYMENT_SETTINGS = "Error in Data Update";
+    public const string DBCCON_PARAM = "DBConnection";
 
 
 }
