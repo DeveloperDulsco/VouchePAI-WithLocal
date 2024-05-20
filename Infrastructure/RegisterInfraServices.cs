@@ -36,5 +36,9 @@ public class PaymentSettings
     public string? AdyenPaymentCurrency { get; set; }
     public string? AccessTokenURL { get; set; }
     public string? ApiKey { get; set; }
+    public string? WSSEUserName { get; set; }
+    public string? WSSEPassword { get; set; }
+    public bool OperaCloudEnabled { get; set; }
+    public bool OPIEnabled { get; set; }
 }
 

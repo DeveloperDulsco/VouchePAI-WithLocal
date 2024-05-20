@@ -8,10 +8,19 @@
 
   <ItemGroup>
     <PackageReference Include="Adyen" Version="3.4.0" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="6.0.*" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="6.0.*" />
+    <PackageReference Include="System.ServiceModel.Http" Version="6.0.*" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="6.0.*" />
+    <PackageReference Include="System.ServiceModel.Security" Version="6.0.*" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BussinessLogic\BussinessLogic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="OwsServiceClass\ResponseDTO\" />
   </ItemGroup>
 
 </Project>
