@@ -185,6 +185,7 @@ namespace Infrastructure.OwsHelper
                 {
                     CC.Item = new ResAvancedService.VaultedCardType()
                     {
+                    // valuted credit card.
                         vaultedCardID = Request.MakePaymentRequest.ApprovalCode,
                         lastFourDigits = Request.MakePaymentRequest.MaskedCardNumber.Substring(Request.MakePaymentRequest.MaskedCardNumber.Length - 4)
 
