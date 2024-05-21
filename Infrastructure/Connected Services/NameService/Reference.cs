@@ -18471,11 +18471,11 @@ namespace NameService
         {
             if ((endpointConfiguration == EndpointConfiguration.NameServiceSoap))
             {
-                return new System.ServiceModel.EndpointAddress("https://operademo1.microsdc.us:4430/OWS_WS_51/Name.asmx");
+                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/ows_ws_51/Name.asmx");
             }
             if ((endpointConfiguration == EndpointConfiguration.NameServiceSoap12))
             {
-                return new System.ServiceModel.EndpointAddress("https://operademo1.microsdc.us:4430/OWS_WS_51/Name.asmx");
+                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/ows_ws_51/Name.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

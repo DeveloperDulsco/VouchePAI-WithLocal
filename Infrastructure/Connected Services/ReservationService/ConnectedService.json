@@ -7,12 +7,13 @@
       "System.Array",
       "System.Collections.Generic.Dictionary`2"
     ],
-    "messageContract": true,
     "namespaceMappings": [
       "*, ReservationService"
     ],
     "references": [
       "Adyen, {Adyen, 3.4.0}",
+      "C:\\Users\\Administrator\\source\\repos\\PaymentsAPIs\\Infrastructure\\bin\\Debug\\net8.0\\BussinessLogic.dll",
+      "C:\\Users\\Administrator\\source\\repos\\PaymentsAPIs\\Infrastructure\\bin\\Debug\\net8.0\\Domain.dll",
       "Microsoft.Extensions.DependencyInjection.Abstractions, {Microsoft.Extensions.DependencyInjection.Abstractions, 8.0.1}",
       "Microsoft.Extensions.ObjectPool, {Microsoft.Extensions.ObjectPool, 6.0.16}",
       "Microsoft.Extensions.Primitives, {Microsoft.Extensions.Primitives, 8.0.0}",
@@ -87,6 +88,7 @@
       "System.Xml.XDocument, {System.Xml.XDocument, 4.3.0}",
       "System.Xml.XmlDocument, {System.Xml.XmlDocument, 4.3.0}"
     ],
+    "sync": true,
     "targetFramework": "net8.0",
     "typeReuseMode": "All"
   }

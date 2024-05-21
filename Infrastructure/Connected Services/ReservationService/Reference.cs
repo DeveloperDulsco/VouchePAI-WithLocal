@@ -16,215 +16,356 @@ namespace ReservationService
     public interface ReservationServiceSoap
     {
         
+        // CODEGEN: Generating message contract since the operation FetchBooking is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchBooking", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.FetchBookingResponse1 FetchBooking(ReservationService.FetchBookingRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchBooking", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.FetchBookingResponse1> FetchBookingAsync(ReservationService.FetchBookingRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation CreateBooking is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#CreateBooking", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.CreateBookingResponse1 CreateBooking(ReservationService.CreateBookingRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#CreateBooking", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.CreateBookingResponse1> CreateBookingAsync(ReservationService.CreateBookingRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation ModifyBooking is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#ModifyBooking", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.ModifyBookingResponse1 ModifyBooking(ReservationService.ModifyBookingRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#ModifyBooking", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.ModifyBookingResponse1> ModifyBookingAsync(ReservationService.ModifyBookingRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation CancelBooking is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#CancelBooking", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.CancelBookingResponse1 CancelBooking(ReservationService.CancelBookingRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#CancelBooking", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.CancelBookingResponse1> CancelBookingAsync(ReservationService.CancelBookingRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation FutureBookingSummary is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FutureBookingSummary", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.FutureBookingSummaryResponse1 FutureBookingSummary(ReservationService.FutureBookingSummaryRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FutureBookingSummary", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.FutureBookingSummaryResponse1> FutureBookingSummaryAsync(ReservationService.FutureBookingSummaryRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation EmailConfirmation is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#EmailConfirmation", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.EmailConfirmationResponse1 EmailConfirmation(ReservationService.EmailConfirmationRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#EmailConfirmation", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.EmailConfirmationResponse1> EmailConfirmationAsync(ReservationService.EmailConfirmationRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation SetDailyPoints is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#SetDailyPoints", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.SetDailyPointsResponse1 SetDailyPoints(ReservationService.SetDailyPointsRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#SetDailyPoints", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.SetDailyPointsResponse1> SetDailyPointsAsync(ReservationService.SetDailyPointsRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation FetchBookingForPointUpdate is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchBookingForPointUpdate" +
             "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.FetchBookingForPointUpdateResponse1 FetchBookingForPointUpdate(ReservationService.FetchBookingForPointUpdateRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchBookingForPointUpdate" +
+            "", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.FetchBookingForPointUpdateResponse1> FetchBookingForPointUpdateAsync(ReservationService.FetchBookingForPointUpdateRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation FetchBookedPackages is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchBookedPackages", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.FetchBookedPackagesResponse1 FetchBookedPackages(ReservationService.FetchBookedPackagesRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchBookedPackages", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.FetchBookedPackagesResponse1> FetchBookedPackagesAsync(ReservationService.FetchBookedPackagesRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation DeletePackages is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#DeletePackages", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.DeletePackagesResponse1 DeletePackages(ReservationService.DeletePackagesRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#DeletePackages", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.DeletePackagesResponse1> DeletePackagesAsync(ReservationService.DeletePackagesRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation UpdatePackages is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#UpdatePackages", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.UpdatePackagesResponse1 UpdatePackages(ReservationService.UpdatePackagesRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#UpdatePackages", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.UpdatePackagesResponse1> UpdatePackagesAsync(ReservationService.UpdatePackagesRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation FetchSummary is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchSummary", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.FetchSummaryResponse1 FetchSummary(ReservationService.FetchSummaryRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchSummary", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.FetchSummaryResponse1> FetchSummaryAsync(ReservationService.FetchSummaryRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation UpdateInventoryItem is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#UpdateInventoryItem", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.UpdateInventoryItemResponse1 UpdateInventoryItem(ReservationService.UpdateInventoryItemRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#UpdateInventoryItem", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.UpdateInventoryItemResponse1> UpdateInventoryItemAsync(ReservationService.UpdateInventoryItemRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation DeleteInventoryItem is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#DeleteInventoryItem", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.DeleteInventoryItemResponse1 DeleteInventoryItem(ReservationService.DeleteInventoryItemRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#DeleteInventoryItem", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.DeleteInventoryItemResponse1> DeleteInventoryItemAsync(ReservationService.DeleteInventoryItemRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation FetchBookedInventoryItems is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchBookedInventoryItems", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.FetchBookedInventoryItemsResponse1 FetchBookedInventoryItems(ReservationService.FetchBookedInventoryItemsRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchBookedInventoryItems", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.FetchBookedInventoryItemsResponse1> FetchBookedInventoryItemsAsync(ReservationService.FetchBookedInventoryItemsRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation CreateItemHold is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#CreateItemHold", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.CreateItemHoldResponse1 CreateItemHold(ReservationService.CreateItemHoldRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#CreateItemHold", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.CreateItemHoldResponse1> CreateItemHoldAsync(ReservationService.CreateItemHoldRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation ModifyItemHold is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#ModifyItemHold", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.ModifyItemHoldResponse1 ModifyItemHold(ReservationService.ModifyItemHoldRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#ModifyItemHold", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.ModifyItemHoldResponse1> ModifyItemHoldAsync(ReservationService.ModifyItemHoldRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation FetchHoldItems is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchHoldItems", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.FetchHoldItemsResponse1 FetchHoldItems(ReservationService.FetchHoldItemsRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchHoldItems", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.FetchHoldItemsResponse1> FetchHoldItemsAsync(ReservationService.FetchHoldItemsRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation ClearItemHold is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#ClearItemHold", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.ClearItemHoldResponse1 ClearItemHold(ReservationService.ClearItemHoldRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#ClearItemHold", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.ClearItemHoldResponse1> ClearItemHoldAsync(ReservationService.ClearItemHoldRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation BookHoldItems is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#BookHoldItems", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.BookHoldItemsResponse1 BookHoldItems(ReservationService.BookHoldItemsRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#BookHoldItems", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.BookHoldItemsResponse1> BookHoldItemsAsync(ReservationService.BookHoldItemsRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation ConfirmBooking is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#ConfirmBooking", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.ConfirmBookingResponse1 ConfirmBooking(ReservationService.ConfirmBookingRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#ConfirmBooking", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.ConfirmBookingResponse1> ConfirmBookingAsync(ReservationService.ConfirmBookingRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation IgnoreBooking is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#IgnoreBooking", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.IgnoreBookingResponse1 IgnoreBooking(ReservationService.IgnoreBookingRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#IgnoreBooking", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.IgnoreBookingResponse1> IgnoreBookingAsync(ReservationService.IgnoreBookingRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation AssignRoom is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#AssignRoom", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.AssignRoomResponse1 AssignRoom(ReservationService.AssignRoomRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#AssignRoom", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.AssignRoomResponse1> AssignRoomAsync(ReservationService.AssignRoomRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation ReleaseRoom is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#ReleaseRoom", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.ReleaseRoomResponse1 ReleaseRoom(ReservationService.ReleaseRoomRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#ReleaseRoom", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.ReleaseRoomResponse1> ReleaseRoomAsync(ReservationService.ReleaseRoomRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation AddAccompanyGuest is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#AddAccompanyGuest", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.AddAccompanyGuestResponse1 AddAccompanyGuest(ReservationService.AddAccompanyGuestRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#AddAccompanyGuest", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.AddAccompanyGuestResponse1> AddAccompanyGuestAsync(ReservationService.AddAccompanyGuestRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation DeleteAccompanyGuest is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#DeleteAccompanyGuest", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.DeleteAccompanyGuestResponse1 DeleteAccompanyGuest(ReservationService.DeleteAccompanyGuestRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#DeleteAccompanyGuest", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.DeleteAccompanyGuestResponse1> DeleteAccompanyGuestAsync(ReservationService.DeleteAccompanyGuestRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation FetchRoomUpgrades is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchRoomUpgrades", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.FetchRoomUpgradesResponse1 FetchRoomUpgrades(ReservationService.FetchRoomUpgradesRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchRoomUpgrades", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.FetchRoomUpgradesResponse1> FetchRoomUpgradesAsync(ReservationService.FetchRoomUpgradesRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation UpgradeReservation is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#UpgradeReservation", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.UpgradeReservationResponse1 UpgradeReservation(ReservationService.UpgradeReservationRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#UpgradeReservation", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.UpgradeReservationResponse1> UpgradeReservationAsync(ReservationService.UpgradeReservationRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation FetchAvailableOffers is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchAvailableOffers", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.FetchAvailableOffersResponse1 FetchAvailableOffers(ReservationService.FetchAvailableOffersRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchAvailableOffers", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.FetchAvailableOffersResponse1> FetchAvailableOffersAsync(ReservationService.FetchAvailableOffersRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation UpsellReservation is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#UpsellReservation", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.UpsellReservationResponse1 UpsellReservation(ReservationService.UpsellReservationRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#UpsellReservation", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.UpsellReservationResponse1> UpsellReservationAsync(ReservationService.UpsellReservationRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation GuestRequests is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#GuestRequests", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.GuestRequestsResponse1 GuestRequests(ReservationService.GuestRequestsRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#GuestRequests", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.GuestRequestsResponse1> GuestRequestsAsync(ReservationService.GuestRequestsRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation CombineShare is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#CombineShare", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.CombineShareResponse1 CombineShare(ReservationService.CombineShareRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#CombineShare", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.CombineShareResponse1> CombineShareAsync(ReservationService.CombineShareRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation BreakShare is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#BreakShare", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.BreakShareResponse1 BreakShare(ReservationService.BreakShareRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#BreakShare", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.BreakShareResponse1> BreakShareAsync(ReservationService.BreakShareRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation CreateMultipleBookings is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#CreateMultipleBookings", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.CreateMultipleBookingsResponse CreateMultipleBookings(ReservationService.CreateMultipleBookingsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#CreateMultipleBookings", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.CreateMultipleBookingsResponse> CreateMultipleBookingsAsync(ReservationService.CreateMultipleBookingsRequest request);
         
+        // CODEGEN: Generating message contract since the operation ReInstateReservation is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#ReInstateReservation", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResultStatus))]
+        ReservationService.ReInstateReservationResponse1 ReInstateReservation(ReservationService.ReInstateReservationRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Reservation.wsdl#ReInstateReservation", ReplyAction="*")]
         System.Threading.Tasks.Task<ReservationService.ReInstateReservationResponse1> ReInstateReservationAsync(ReservationService.ReInstateReservationRequest1 request);
     }
     
@@ -878,8 +1019,7 @@ namespace ReservationService
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Reservation/")]
     public partial class HotelReservation
     {
-        internal bool checkInTimeSpecified;
-        internal DateTime checkInTime;
+        
         private UniqueID[] uniqueIDListField;
         
         private RoomStay[] roomStaysField;
@@ -5013,7 +5153,7 @@ namespace ReservationService
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
     public partial class CreditCard
     {
-        
+        internal bool expirationDateSpecified;
         private string cardCodeField;
         
         private string cardHolderNameField;
@@ -5222,8 +5362,6 @@ namespace ReservationService
                 this.chipAndPinFieldSpecified = value;
             }
         }
-
-        public bool expirationDateSpecified { get; internal set; }
     }
     
     /// <remarks/>
@@ -25709,6 +25847,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchBookingRequest1
     {
@@ -25732,6 +25871,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchBookingResponse1
     {
@@ -25755,6 +25895,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateBookingRequest1
     {
@@ -25778,6 +25919,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateBookingResponse1
     {
@@ -25801,6 +25943,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ModifyBookingRequest1
     {
@@ -25824,6 +25967,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ModifyBookingResponse1
     {
@@ -25847,6 +25991,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CancelBookingRequest1
     {
@@ -25870,6 +26015,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CancelBookingResponse1
     {
@@ -25893,6 +26039,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FutureBookingSummaryRequest1
     {
@@ -25916,6 +26063,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FutureBookingSummaryResponse1
     {
@@ -25939,6 +26087,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class EmailConfirmationRequest1
     {
@@ -25962,6 +26111,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class EmailConfirmationResponse1
     {
@@ -25985,6 +26135,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SetDailyPointsRequest1
     {
@@ -26008,6 +26159,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SetDailyPointsResponse1
     {
@@ -26031,6 +26183,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchBookingForPointUpdateRequest1
     {
@@ -26054,6 +26207,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchBookingForPointUpdateResponse1
     {
@@ -26077,6 +26231,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchBookedPackagesRequest1
     {
@@ -26100,6 +26255,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchBookedPackagesResponse1
     {
@@ -26123,6 +26279,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeletePackagesRequest1
     {
@@ -26146,6 +26303,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeletePackagesResponse1
     {
@@ -26169,6 +26327,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpdatePackagesRequest1
     {
@@ -26192,6 +26351,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpdatePackagesResponse1
     {
@@ -26215,6 +26375,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchSummaryRequest1
     {
@@ -26238,6 +26399,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchSummaryResponse1
     {
@@ -26261,6 +26423,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpdateInventoryItemRequest1
     {
@@ -26284,6 +26447,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpdateInventoryItemResponse1
     {
@@ -26307,6 +26471,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeleteInventoryItemRequest1
     {
@@ -26330,6 +26495,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeleteInventoryItemResponse1
     {
@@ -26353,6 +26519,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchBookedInventoryItemsRequest1
     {
@@ -26376,6 +26543,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchBookedInventoryItemsResponse1
     {
@@ -26399,6 +26567,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateItemHoldRequest1
     {
@@ -26422,6 +26591,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateItemHoldResponse1
     {
@@ -26445,6 +26615,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ModifyItemHoldRequest1
     {
@@ -26468,6 +26639,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ModifyItemHoldResponse1
     {
@@ -26491,6 +26663,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchHoldItemsRequest1
     {
@@ -26514,6 +26687,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchHoldItemsResponse1
     {
@@ -26537,6 +26711,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ClearItemHoldRequest1
     {
@@ -26560,6 +26735,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ClearItemHoldResponse1
     {
@@ -26583,6 +26759,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class BookHoldItemsRequest1
     {
@@ -26606,6 +26783,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class BookHoldItemsResponse1
     {
@@ -26629,6 +26807,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConfirmBookingRequest1
     {
@@ -26652,6 +26831,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConfirmBookingResponse1
     {
@@ -26675,6 +26855,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class IgnoreBookingRequest1
     {
@@ -26698,6 +26879,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class IgnoreBookingResponse1
     {
@@ -26721,6 +26903,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AssignRoomRequest1
     {
@@ -26744,6 +26927,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AssignRoomResponse1
     {
@@ -26767,6 +26951,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ReleaseRoomRequest1
     {
@@ -26790,6 +26975,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ReleaseRoomResponse1
     {
@@ -26813,6 +26999,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AddAccompanyGuestRequest1
     {
@@ -26836,6 +27023,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AddAccompanyGuestResponse1
     {
@@ -26859,6 +27047,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeleteAccompanyGuestRequest1
     {
@@ -26882,6 +27071,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeleteAccompanyGuestResponse1
     {
@@ -26905,6 +27095,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchRoomUpgradesRequest1
     {
@@ -26928,6 +27119,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchRoomUpgradesResponse1
     {
@@ -26951,6 +27143,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpgradeReservationRequest1
     {
@@ -26974,6 +27167,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpgradeReservationResponse1
     {
@@ -27126,6 +27320,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchAvailableOffersRequest1
     {
@@ -27149,6 +27344,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class FetchAvailableOffersResponse1
     {
@@ -27284,6 +27480,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpsellReservationRequest1
     {
@@ -27307,6 +27504,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpsellReservationResponse1
     {
@@ -27525,6 +27723,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GuestRequestsRequest1
     {
@@ -27548,6 +27747,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GuestRequestsResponse1
     {
@@ -27780,6 +27980,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CombineShareRequest1
     {
@@ -27803,6 +28004,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CombineShareResponse1
     {
@@ -27922,6 +28124,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class BreakShareRequest1
     {
@@ -27945,6 +28148,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class BreakShareResponse1
     {
@@ -27968,6 +28172,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateMultipleBookingsRequest
     {
@@ -27992,6 +28197,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateMultipleBookingsResponse
     {
@@ -28128,6 +28334,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ReInstateReservationRequest1
     {
@@ -28151,6 +28358,7 @@ namespace ReservationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ReInstateReservationResponse1
     {
@@ -28214,184 +28422,1055 @@ namespace ReservationService
                 base(binding, remoteAddress)
         {
         }
-
-        public ReservationServiceSoapClient()
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.FetchBookingResponse1 ReservationService.ReservationServiceSoap.FetchBooking(ReservationService.FetchBookingRequest1 request)
         {
+            return base.Channel.FetchBooking(request);
         }
-
-        public System.Threading.Tasks.Task<ReservationService.FetchBookingResponse1> FetchBookingAsync(ReservationService.FetchBookingRequest1 request)
+        
+        public ReservationService.FetchBookingResponse FetchBooking(ref ReservationService.OGHeader OGHeader, ReservationService.FetchBookingRequest FetchBookingRequest)
+        {
+            ReservationService.FetchBookingRequest1 inValue = new ReservationService.FetchBookingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchBookingRequest = FetchBookingRequest;
+            ReservationService.FetchBookingResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).FetchBooking(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchBookingResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.FetchBookingResponse1> ReservationService.ReservationServiceSoap.FetchBookingAsync(ReservationService.FetchBookingRequest1 request)
         {
             return base.Channel.FetchBookingAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.CreateBookingResponse1> CreateBookingAsync(ReservationService.CreateBookingRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.FetchBookingResponse1> FetchBookingAsync(ReservationService.OGHeader OGHeader, ReservationService.FetchBookingRequest FetchBookingRequest)
+        {
+            ReservationService.FetchBookingRequest1 inValue = new ReservationService.FetchBookingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchBookingRequest = FetchBookingRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).FetchBookingAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.CreateBookingResponse1 ReservationService.ReservationServiceSoap.CreateBooking(ReservationService.CreateBookingRequest1 request)
+        {
+            return base.Channel.CreateBooking(request);
+        }
+        
+        public ReservationService.CreateBookingResponse CreateBooking(ref ReservationService.OGHeader OGHeader, ReservationService.CreateBookingRequest CreateBookingRequest)
+        {
+            ReservationService.CreateBookingRequest1 inValue = new ReservationService.CreateBookingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CreateBookingRequest = CreateBookingRequest;
+            ReservationService.CreateBookingResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).CreateBooking(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.CreateBookingResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.CreateBookingResponse1> ReservationService.ReservationServiceSoap.CreateBookingAsync(ReservationService.CreateBookingRequest1 request)
         {
             return base.Channel.CreateBookingAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.ModifyBookingResponse1> ModifyBookingAsync(ReservationService.ModifyBookingRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.CreateBookingResponse1> CreateBookingAsync(ReservationService.OGHeader OGHeader, ReservationService.CreateBookingRequest CreateBookingRequest)
+        {
+            ReservationService.CreateBookingRequest1 inValue = new ReservationService.CreateBookingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CreateBookingRequest = CreateBookingRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).CreateBookingAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.ModifyBookingResponse1 ReservationService.ReservationServiceSoap.ModifyBooking(ReservationService.ModifyBookingRequest1 request)
+        {
+            return base.Channel.ModifyBooking(request);
+        }
+        
+        public ReservationService.ModifyBookingResponse ModifyBooking(ref ReservationService.OGHeader OGHeader, ReservationService.ModifyBookingRequest ModifyBookingRequest)
+        {
+            ReservationService.ModifyBookingRequest1 inValue = new ReservationService.ModifyBookingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ModifyBookingRequest = ModifyBookingRequest;
+            ReservationService.ModifyBookingResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).ModifyBooking(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.ModifyBookingResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.ModifyBookingResponse1> ReservationService.ReservationServiceSoap.ModifyBookingAsync(ReservationService.ModifyBookingRequest1 request)
         {
             return base.Channel.ModifyBookingAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.CancelBookingResponse1> CancelBookingAsync(ReservationService.CancelBookingRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.ModifyBookingResponse1> ModifyBookingAsync(ReservationService.OGHeader OGHeader, ReservationService.ModifyBookingRequest ModifyBookingRequest)
+        {
+            ReservationService.ModifyBookingRequest1 inValue = new ReservationService.ModifyBookingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ModifyBookingRequest = ModifyBookingRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).ModifyBookingAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.CancelBookingResponse1 ReservationService.ReservationServiceSoap.CancelBooking(ReservationService.CancelBookingRequest1 request)
+        {
+            return base.Channel.CancelBooking(request);
+        }
+        
+        public ReservationService.CancelBookingResponse CancelBooking(ref ReservationService.OGHeader OGHeader, ReservationService.CancelBookingRequest CancelBookingRequest)
+        {
+            ReservationService.CancelBookingRequest1 inValue = new ReservationService.CancelBookingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CancelBookingRequest = CancelBookingRequest;
+            ReservationService.CancelBookingResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).CancelBooking(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.CancelBookingResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.CancelBookingResponse1> ReservationService.ReservationServiceSoap.CancelBookingAsync(ReservationService.CancelBookingRequest1 request)
         {
             return base.Channel.CancelBookingAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.FutureBookingSummaryResponse1> FutureBookingSummaryAsync(ReservationService.FutureBookingSummaryRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.CancelBookingResponse1> CancelBookingAsync(ReservationService.OGHeader OGHeader, ReservationService.CancelBookingRequest CancelBookingRequest)
+        {
+            ReservationService.CancelBookingRequest1 inValue = new ReservationService.CancelBookingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CancelBookingRequest = CancelBookingRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).CancelBookingAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.FutureBookingSummaryResponse1 ReservationService.ReservationServiceSoap.FutureBookingSummary(ReservationService.FutureBookingSummaryRequest1 request)
+        {
+            return base.Channel.FutureBookingSummary(request);
+        }
+        
+        public ReservationService.FutureBookingSummaryResponse FutureBookingSummary(ref ReservationService.OGHeader OGHeader, ReservationService.FutureBookingSummaryRequest FutureBookingSummaryRequest)
+        {
+            ReservationService.FutureBookingSummaryRequest1 inValue = new ReservationService.FutureBookingSummaryRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FutureBookingSummaryRequest = FutureBookingSummaryRequest;
+            ReservationService.FutureBookingSummaryResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).FutureBookingSummary(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FutureBookingSummaryResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.FutureBookingSummaryResponse1> ReservationService.ReservationServiceSoap.FutureBookingSummaryAsync(ReservationService.FutureBookingSummaryRequest1 request)
         {
             return base.Channel.FutureBookingSummaryAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.EmailConfirmationResponse1> EmailConfirmationAsync(ReservationService.EmailConfirmationRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.FutureBookingSummaryResponse1> FutureBookingSummaryAsync(ReservationService.OGHeader OGHeader, ReservationService.FutureBookingSummaryRequest FutureBookingSummaryRequest)
+        {
+            ReservationService.FutureBookingSummaryRequest1 inValue = new ReservationService.FutureBookingSummaryRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FutureBookingSummaryRequest = FutureBookingSummaryRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).FutureBookingSummaryAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.EmailConfirmationResponse1 ReservationService.ReservationServiceSoap.EmailConfirmation(ReservationService.EmailConfirmationRequest1 request)
+        {
+            return base.Channel.EmailConfirmation(request);
+        }
+        
+        public ReservationService.EmailConfirmationResponse EmailConfirmation(ref ReservationService.OGHeader OGHeader, ReservationService.EmailConfirmationRequest EmailConfirmationRequest)
+        {
+            ReservationService.EmailConfirmationRequest1 inValue = new ReservationService.EmailConfirmationRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.EmailConfirmationRequest = EmailConfirmationRequest;
+            ReservationService.EmailConfirmationResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).EmailConfirmation(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.EmailConfirmationResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.EmailConfirmationResponse1> ReservationService.ReservationServiceSoap.EmailConfirmationAsync(ReservationService.EmailConfirmationRequest1 request)
         {
             return base.Channel.EmailConfirmationAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.SetDailyPointsResponse1> SetDailyPointsAsync(ReservationService.SetDailyPointsRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.EmailConfirmationResponse1> EmailConfirmationAsync(ReservationService.OGHeader OGHeader, ReservationService.EmailConfirmationRequest EmailConfirmationRequest)
+        {
+            ReservationService.EmailConfirmationRequest1 inValue = new ReservationService.EmailConfirmationRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.EmailConfirmationRequest = EmailConfirmationRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).EmailConfirmationAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.SetDailyPointsResponse1 ReservationService.ReservationServiceSoap.SetDailyPoints(ReservationService.SetDailyPointsRequest1 request)
+        {
+            return base.Channel.SetDailyPoints(request);
+        }
+        
+        public ReservationService.SetDailyPointsResponse SetDailyPoints(ref ReservationService.OGHeader OGHeader, ReservationService.SetDailyPointsRequest SetDailyPointsRequest)
+        {
+            ReservationService.SetDailyPointsRequest1 inValue = new ReservationService.SetDailyPointsRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.SetDailyPointsRequest = SetDailyPointsRequest;
+            ReservationService.SetDailyPointsResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).SetDailyPoints(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.SetDailyPointsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.SetDailyPointsResponse1> ReservationService.ReservationServiceSoap.SetDailyPointsAsync(ReservationService.SetDailyPointsRequest1 request)
         {
             return base.Channel.SetDailyPointsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.FetchBookingForPointUpdateResponse1> FetchBookingForPointUpdateAsync(ReservationService.FetchBookingForPointUpdateRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.SetDailyPointsResponse1> SetDailyPointsAsync(ReservationService.OGHeader OGHeader, ReservationService.SetDailyPointsRequest SetDailyPointsRequest)
+        {
+            ReservationService.SetDailyPointsRequest1 inValue = new ReservationService.SetDailyPointsRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.SetDailyPointsRequest = SetDailyPointsRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).SetDailyPointsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.FetchBookingForPointUpdateResponse1 ReservationService.ReservationServiceSoap.FetchBookingForPointUpdate(ReservationService.FetchBookingForPointUpdateRequest1 request)
+        {
+            return base.Channel.FetchBookingForPointUpdate(request);
+        }
+        
+        public ReservationService.FetchBookingForPointUpdateResponse FetchBookingForPointUpdate(ref ReservationService.OGHeader OGHeader, ReservationService.FetchBookingForPointUpdateRequest FetchBookingForPointUpdateRequest)
+        {
+            ReservationService.FetchBookingForPointUpdateRequest1 inValue = new ReservationService.FetchBookingForPointUpdateRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchBookingForPointUpdateRequest = FetchBookingForPointUpdateRequest;
+            ReservationService.FetchBookingForPointUpdateResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).FetchBookingForPointUpdate(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchBookingForPointUpdateResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.FetchBookingForPointUpdateResponse1> ReservationService.ReservationServiceSoap.FetchBookingForPointUpdateAsync(ReservationService.FetchBookingForPointUpdateRequest1 request)
         {
             return base.Channel.FetchBookingForPointUpdateAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.FetchBookedPackagesResponse1> FetchBookedPackagesAsync(ReservationService.FetchBookedPackagesRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.FetchBookingForPointUpdateResponse1> FetchBookingForPointUpdateAsync(ReservationService.OGHeader OGHeader, ReservationService.FetchBookingForPointUpdateRequest FetchBookingForPointUpdateRequest)
+        {
+            ReservationService.FetchBookingForPointUpdateRequest1 inValue = new ReservationService.FetchBookingForPointUpdateRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchBookingForPointUpdateRequest = FetchBookingForPointUpdateRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).FetchBookingForPointUpdateAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.FetchBookedPackagesResponse1 ReservationService.ReservationServiceSoap.FetchBookedPackages(ReservationService.FetchBookedPackagesRequest1 request)
+        {
+            return base.Channel.FetchBookedPackages(request);
+        }
+        
+        public ReservationService.FetchBookedPackagesResponse FetchBookedPackages(ref ReservationService.OGHeader OGHeader, ReservationService.FetchBookedPackagesRequest FetchBookedPackagesRequest)
+        {
+            ReservationService.FetchBookedPackagesRequest1 inValue = new ReservationService.FetchBookedPackagesRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchBookedPackagesRequest = FetchBookedPackagesRequest;
+            ReservationService.FetchBookedPackagesResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).FetchBookedPackages(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchBookedPackagesResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.FetchBookedPackagesResponse1> ReservationService.ReservationServiceSoap.FetchBookedPackagesAsync(ReservationService.FetchBookedPackagesRequest1 request)
         {
             return base.Channel.FetchBookedPackagesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.DeletePackagesResponse1> DeletePackagesAsync(ReservationService.DeletePackagesRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.FetchBookedPackagesResponse1> FetchBookedPackagesAsync(ReservationService.OGHeader OGHeader, ReservationService.FetchBookedPackagesRequest FetchBookedPackagesRequest)
+        {
+            ReservationService.FetchBookedPackagesRequest1 inValue = new ReservationService.FetchBookedPackagesRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchBookedPackagesRequest = FetchBookedPackagesRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).FetchBookedPackagesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.DeletePackagesResponse1 ReservationService.ReservationServiceSoap.DeletePackages(ReservationService.DeletePackagesRequest1 request)
+        {
+            return base.Channel.DeletePackages(request);
+        }
+        
+        public ReservationService.DeletePackagesResponse DeletePackages(ref ReservationService.OGHeader OGHeader, ReservationService.DeletePackagesRequest DeletePackagesRequest)
+        {
+            ReservationService.DeletePackagesRequest1 inValue = new ReservationService.DeletePackagesRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.DeletePackagesRequest = DeletePackagesRequest;
+            ReservationService.DeletePackagesResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).DeletePackages(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.DeletePackagesResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.DeletePackagesResponse1> ReservationService.ReservationServiceSoap.DeletePackagesAsync(ReservationService.DeletePackagesRequest1 request)
         {
             return base.Channel.DeletePackagesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.UpdatePackagesResponse1> UpdatePackagesAsync(ReservationService.UpdatePackagesRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.DeletePackagesResponse1> DeletePackagesAsync(ReservationService.OGHeader OGHeader, ReservationService.DeletePackagesRequest DeletePackagesRequest)
+        {
+            ReservationService.DeletePackagesRequest1 inValue = new ReservationService.DeletePackagesRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.DeletePackagesRequest = DeletePackagesRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).DeletePackagesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.UpdatePackagesResponse1 ReservationService.ReservationServiceSoap.UpdatePackages(ReservationService.UpdatePackagesRequest1 request)
+        {
+            return base.Channel.UpdatePackages(request);
+        }
+        
+        public ReservationService.UpdatePackagesResponse UpdatePackages(ref ReservationService.OGHeader OGHeader, ReservationService.UpdatePackagesRequest UpdatePackagesRequest)
+        {
+            ReservationService.UpdatePackagesRequest1 inValue = new ReservationService.UpdatePackagesRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.UpdatePackagesRequest = UpdatePackagesRequest;
+            ReservationService.UpdatePackagesResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).UpdatePackages(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.UpdatePackagesResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.UpdatePackagesResponse1> ReservationService.ReservationServiceSoap.UpdatePackagesAsync(ReservationService.UpdatePackagesRequest1 request)
         {
             return base.Channel.UpdatePackagesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.FetchSummaryResponse1> FetchSummaryAsync(ReservationService.FetchSummaryRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.UpdatePackagesResponse1> UpdatePackagesAsync(ReservationService.OGHeader OGHeader, ReservationService.UpdatePackagesRequest UpdatePackagesRequest)
+        {
+            ReservationService.UpdatePackagesRequest1 inValue = new ReservationService.UpdatePackagesRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.UpdatePackagesRequest = UpdatePackagesRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).UpdatePackagesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.FetchSummaryResponse1 ReservationService.ReservationServiceSoap.FetchSummary(ReservationService.FetchSummaryRequest1 request)
+        {
+            return base.Channel.FetchSummary(request);
+        }
+        
+        public ReservationService.FetchSummaryResponse FetchSummary(ref ReservationService.OGHeader OGHeader, ReservationService.FetchSummaryRequest FetchSummaryRequest)
+        {
+            ReservationService.FetchSummaryRequest1 inValue = new ReservationService.FetchSummaryRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchSummaryRequest = FetchSummaryRequest;
+            ReservationService.FetchSummaryResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).FetchSummary(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchSummaryResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.FetchSummaryResponse1> ReservationService.ReservationServiceSoap.FetchSummaryAsync(ReservationService.FetchSummaryRequest1 request)
         {
             return base.Channel.FetchSummaryAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.UpdateInventoryItemResponse1> UpdateInventoryItemAsync(ReservationService.UpdateInventoryItemRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.FetchSummaryResponse1> FetchSummaryAsync(ReservationService.OGHeader OGHeader, ReservationService.FetchSummaryRequest FetchSummaryRequest)
+        {
+            ReservationService.FetchSummaryRequest1 inValue = new ReservationService.FetchSummaryRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchSummaryRequest = FetchSummaryRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).FetchSummaryAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.UpdateInventoryItemResponse1 ReservationService.ReservationServiceSoap.UpdateInventoryItem(ReservationService.UpdateInventoryItemRequest1 request)
+        {
+            return base.Channel.UpdateInventoryItem(request);
+        }
+        
+        public ReservationService.UpdateInventoryItemResponse UpdateInventoryItem(ref ReservationService.OGHeader OGHeader, ReservationService.UpdateInventoryItemRequest UpdateInventoryItemRequest)
+        {
+            ReservationService.UpdateInventoryItemRequest1 inValue = new ReservationService.UpdateInventoryItemRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.UpdateInventoryItemRequest = UpdateInventoryItemRequest;
+            ReservationService.UpdateInventoryItemResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).UpdateInventoryItem(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.UpdateInventoryItemResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.UpdateInventoryItemResponse1> ReservationService.ReservationServiceSoap.UpdateInventoryItemAsync(ReservationService.UpdateInventoryItemRequest1 request)
         {
             return base.Channel.UpdateInventoryItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.DeleteInventoryItemResponse1> DeleteInventoryItemAsync(ReservationService.DeleteInventoryItemRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.UpdateInventoryItemResponse1> UpdateInventoryItemAsync(ReservationService.OGHeader OGHeader, ReservationService.UpdateInventoryItemRequest UpdateInventoryItemRequest)
+        {
+            ReservationService.UpdateInventoryItemRequest1 inValue = new ReservationService.UpdateInventoryItemRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.UpdateInventoryItemRequest = UpdateInventoryItemRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).UpdateInventoryItemAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.DeleteInventoryItemResponse1 ReservationService.ReservationServiceSoap.DeleteInventoryItem(ReservationService.DeleteInventoryItemRequest1 request)
+        {
+            return base.Channel.DeleteInventoryItem(request);
+        }
+        
+        public ReservationService.DeleteInventoryItemResponse DeleteInventoryItem(ref ReservationService.OGHeader OGHeader, ReservationService.DeleteInventoryItemRequest DeleteInventoryItemRequest)
+        {
+            ReservationService.DeleteInventoryItemRequest1 inValue = new ReservationService.DeleteInventoryItemRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.DeleteInventoryItemRequest = DeleteInventoryItemRequest;
+            ReservationService.DeleteInventoryItemResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).DeleteInventoryItem(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.DeleteInventoryItemResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.DeleteInventoryItemResponse1> ReservationService.ReservationServiceSoap.DeleteInventoryItemAsync(ReservationService.DeleteInventoryItemRequest1 request)
         {
             return base.Channel.DeleteInventoryItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.FetchBookedInventoryItemsResponse1> FetchBookedInventoryItemsAsync(ReservationService.FetchBookedInventoryItemsRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.DeleteInventoryItemResponse1> DeleteInventoryItemAsync(ReservationService.OGHeader OGHeader, ReservationService.DeleteInventoryItemRequest DeleteInventoryItemRequest)
+        {
+            ReservationService.DeleteInventoryItemRequest1 inValue = new ReservationService.DeleteInventoryItemRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.DeleteInventoryItemRequest = DeleteInventoryItemRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).DeleteInventoryItemAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.FetchBookedInventoryItemsResponse1 ReservationService.ReservationServiceSoap.FetchBookedInventoryItems(ReservationService.FetchBookedInventoryItemsRequest1 request)
+        {
+            return base.Channel.FetchBookedInventoryItems(request);
+        }
+        
+        public ReservationService.FetchBookedInventoryItemsResponse FetchBookedInventoryItems(ref ReservationService.OGHeader OGHeader, ReservationService.FetchBookedInventoryItemsRequest FetchBookedInventoryItemsRequest)
+        {
+            ReservationService.FetchBookedInventoryItemsRequest1 inValue = new ReservationService.FetchBookedInventoryItemsRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchBookedInventoryItemsRequest = FetchBookedInventoryItemsRequest;
+            ReservationService.FetchBookedInventoryItemsResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).FetchBookedInventoryItems(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchBookedInventoryItemsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.FetchBookedInventoryItemsResponse1> ReservationService.ReservationServiceSoap.FetchBookedInventoryItemsAsync(ReservationService.FetchBookedInventoryItemsRequest1 request)
         {
             return base.Channel.FetchBookedInventoryItemsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.CreateItemHoldResponse1> CreateItemHoldAsync(ReservationService.CreateItemHoldRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.FetchBookedInventoryItemsResponse1> FetchBookedInventoryItemsAsync(ReservationService.OGHeader OGHeader, ReservationService.FetchBookedInventoryItemsRequest FetchBookedInventoryItemsRequest)
+        {
+            ReservationService.FetchBookedInventoryItemsRequest1 inValue = new ReservationService.FetchBookedInventoryItemsRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchBookedInventoryItemsRequest = FetchBookedInventoryItemsRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).FetchBookedInventoryItemsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.CreateItemHoldResponse1 ReservationService.ReservationServiceSoap.CreateItemHold(ReservationService.CreateItemHoldRequest1 request)
+        {
+            return base.Channel.CreateItemHold(request);
+        }
+        
+        public ReservationService.CreateItemHoldResponse CreateItemHold(ref ReservationService.OGHeader OGHeader, ReservationService.CreateItemHoldRequest CreateItemHoldRequest)
+        {
+            ReservationService.CreateItemHoldRequest1 inValue = new ReservationService.CreateItemHoldRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CreateItemHoldRequest = CreateItemHoldRequest;
+            ReservationService.CreateItemHoldResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).CreateItemHold(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.CreateItemHoldResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.CreateItemHoldResponse1> ReservationService.ReservationServiceSoap.CreateItemHoldAsync(ReservationService.CreateItemHoldRequest1 request)
         {
             return base.Channel.CreateItemHoldAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.ModifyItemHoldResponse1> ModifyItemHoldAsync(ReservationService.ModifyItemHoldRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.CreateItemHoldResponse1> CreateItemHoldAsync(ReservationService.OGHeader OGHeader, ReservationService.CreateItemHoldRequest CreateItemHoldRequest)
+        {
+            ReservationService.CreateItemHoldRequest1 inValue = new ReservationService.CreateItemHoldRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CreateItemHoldRequest = CreateItemHoldRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).CreateItemHoldAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.ModifyItemHoldResponse1 ReservationService.ReservationServiceSoap.ModifyItemHold(ReservationService.ModifyItemHoldRequest1 request)
+        {
+            return base.Channel.ModifyItemHold(request);
+        }
+        
+        public ReservationService.ModifyItemHoldResponse ModifyItemHold(ref ReservationService.OGHeader OGHeader, ReservationService.ModifyItemHoldRequest ModifyItemHoldRequest)
+        {
+            ReservationService.ModifyItemHoldRequest1 inValue = new ReservationService.ModifyItemHoldRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ModifyItemHoldRequest = ModifyItemHoldRequest;
+            ReservationService.ModifyItemHoldResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).ModifyItemHold(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.ModifyItemHoldResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.ModifyItemHoldResponse1> ReservationService.ReservationServiceSoap.ModifyItemHoldAsync(ReservationService.ModifyItemHoldRequest1 request)
         {
             return base.Channel.ModifyItemHoldAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.FetchHoldItemsResponse1> FetchHoldItemsAsync(ReservationService.FetchHoldItemsRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.ModifyItemHoldResponse1> ModifyItemHoldAsync(ReservationService.OGHeader OGHeader, ReservationService.ModifyItemHoldRequest ModifyItemHoldRequest)
+        {
+            ReservationService.ModifyItemHoldRequest1 inValue = new ReservationService.ModifyItemHoldRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ModifyItemHoldRequest = ModifyItemHoldRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).ModifyItemHoldAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.FetchHoldItemsResponse1 ReservationService.ReservationServiceSoap.FetchHoldItems(ReservationService.FetchHoldItemsRequest1 request)
+        {
+            return base.Channel.FetchHoldItems(request);
+        }
+        
+        public ReservationService.FetchHoldItemsResponse FetchHoldItems(ref ReservationService.OGHeader OGHeader, ReservationService.FetchHoldItemsRequest FetchHoldItemsRequest)
+        {
+            ReservationService.FetchHoldItemsRequest1 inValue = new ReservationService.FetchHoldItemsRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchHoldItemsRequest = FetchHoldItemsRequest;
+            ReservationService.FetchHoldItemsResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).FetchHoldItems(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchHoldItemsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.FetchHoldItemsResponse1> ReservationService.ReservationServiceSoap.FetchHoldItemsAsync(ReservationService.FetchHoldItemsRequest1 request)
         {
             return base.Channel.FetchHoldItemsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.ClearItemHoldResponse1> ClearItemHoldAsync(ReservationService.ClearItemHoldRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.FetchHoldItemsResponse1> FetchHoldItemsAsync(ReservationService.OGHeader OGHeader, ReservationService.FetchHoldItemsRequest FetchHoldItemsRequest)
+        {
+            ReservationService.FetchHoldItemsRequest1 inValue = new ReservationService.FetchHoldItemsRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchHoldItemsRequest = FetchHoldItemsRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).FetchHoldItemsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.ClearItemHoldResponse1 ReservationService.ReservationServiceSoap.ClearItemHold(ReservationService.ClearItemHoldRequest1 request)
+        {
+            return base.Channel.ClearItemHold(request);
+        }
+        
+        public ReservationService.ClearItemHoldResponse ClearItemHold(ref ReservationService.OGHeader OGHeader, ReservationService.ClearItemHoldRequest ClearItemHoldRequest)
+        {
+            ReservationService.ClearItemHoldRequest1 inValue = new ReservationService.ClearItemHoldRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ClearItemHoldRequest = ClearItemHoldRequest;
+            ReservationService.ClearItemHoldResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).ClearItemHold(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.ClearItemHoldResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.ClearItemHoldResponse1> ReservationService.ReservationServiceSoap.ClearItemHoldAsync(ReservationService.ClearItemHoldRequest1 request)
         {
             return base.Channel.ClearItemHoldAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.BookHoldItemsResponse1> BookHoldItemsAsync(ReservationService.BookHoldItemsRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.ClearItemHoldResponse1> ClearItemHoldAsync(ReservationService.OGHeader OGHeader, ReservationService.ClearItemHoldRequest ClearItemHoldRequest)
+        {
+            ReservationService.ClearItemHoldRequest1 inValue = new ReservationService.ClearItemHoldRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ClearItemHoldRequest = ClearItemHoldRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).ClearItemHoldAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.BookHoldItemsResponse1 ReservationService.ReservationServiceSoap.BookHoldItems(ReservationService.BookHoldItemsRequest1 request)
+        {
+            return base.Channel.BookHoldItems(request);
+        }
+        
+        public ReservationService.BookHoldItemsResponse BookHoldItems(ref ReservationService.OGHeader OGHeader, ReservationService.BookHoldItemsRequest BookHoldItemsRequest)
+        {
+            ReservationService.BookHoldItemsRequest1 inValue = new ReservationService.BookHoldItemsRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.BookHoldItemsRequest = BookHoldItemsRequest;
+            ReservationService.BookHoldItemsResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).BookHoldItems(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.BookHoldItemsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.BookHoldItemsResponse1> ReservationService.ReservationServiceSoap.BookHoldItemsAsync(ReservationService.BookHoldItemsRequest1 request)
         {
             return base.Channel.BookHoldItemsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.ConfirmBookingResponse1> ConfirmBookingAsync(ReservationService.ConfirmBookingRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.BookHoldItemsResponse1> BookHoldItemsAsync(ReservationService.OGHeader OGHeader, ReservationService.BookHoldItemsRequest BookHoldItemsRequest)
+        {
+            ReservationService.BookHoldItemsRequest1 inValue = new ReservationService.BookHoldItemsRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.BookHoldItemsRequest = BookHoldItemsRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).BookHoldItemsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.ConfirmBookingResponse1 ReservationService.ReservationServiceSoap.ConfirmBooking(ReservationService.ConfirmBookingRequest1 request)
+        {
+            return base.Channel.ConfirmBooking(request);
+        }
+        
+        public ReservationService.ConfirmBookingResponse ConfirmBooking(ref ReservationService.OGHeader OGHeader, ReservationService.ConfirmBookingRequest ConfirmBookingRequest)
+        {
+            ReservationService.ConfirmBookingRequest1 inValue = new ReservationService.ConfirmBookingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ConfirmBookingRequest = ConfirmBookingRequest;
+            ReservationService.ConfirmBookingResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).ConfirmBooking(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.ConfirmBookingResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.ConfirmBookingResponse1> ReservationService.ReservationServiceSoap.ConfirmBookingAsync(ReservationService.ConfirmBookingRequest1 request)
         {
             return base.Channel.ConfirmBookingAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.IgnoreBookingResponse1> IgnoreBookingAsync(ReservationService.IgnoreBookingRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.ConfirmBookingResponse1> ConfirmBookingAsync(ReservationService.OGHeader OGHeader, ReservationService.ConfirmBookingRequest ConfirmBookingRequest)
+        {
+            ReservationService.ConfirmBookingRequest1 inValue = new ReservationService.ConfirmBookingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ConfirmBookingRequest = ConfirmBookingRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).ConfirmBookingAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.IgnoreBookingResponse1 ReservationService.ReservationServiceSoap.IgnoreBooking(ReservationService.IgnoreBookingRequest1 request)
+        {
+            return base.Channel.IgnoreBooking(request);
+        }
+        
+        public ReservationService.IgnoreBookingResponse IgnoreBooking(ref ReservationService.OGHeader OGHeader, ReservationService.IgnoreBookingRequest IgnoreBookingRequest)
+        {
+            ReservationService.IgnoreBookingRequest1 inValue = new ReservationService.IgnoreBookingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.IgnoreBookingRequest = IgnoreBookingRequest;
+            ReservationService.IgnoreBookingResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).IgnoreBooking(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.IgnoreBookingResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.IgnoreBookingResponse1> ReservationService.ReservationServiceSoap.IgnoreBookingAsync(ReservationService.IgnoreBookingRequest1 request)
         {
             return base.Channel.IgnoreBookingAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.AssignRoomResponse1> AssignRoomAsync(ReservationService.AssignRoomRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.IgnoreBookingResponse1> IgnoreBookingAsync(ReservationService.OGHeader OGHeader, ReservationService.IgnoreBookingRequest IgnoreBookingRequest)
+        {
+            ReservationService.IgnoreBookingRequest1 inValue = new ReservationService.IgnoreBookingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.IgnoreBookingRequest = IgnoreBookingRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).IgnoreBookingAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.AssignRoomResponse1 ReservationService.ReservationServiceSoap.AssignRoom(ReservationService.AssignRoomRequest1 request)
+        {
+            return base.Channel.AssignRoom(request);
+        }
+        
+        public ReservationService.AssignRoomResponse AssignRoom(ref ReservationService.OGHeader OGHeader, ReservationService.AssignRoomRequest AssignRoomRequest)
+        {
+            ReservationService.AssignRoomRequest1 inValue = new ReservationService.AssignRoomRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.AssignRoomRequest = AssignRoomRequest;
+            ReservationService.AssignRoomResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).AssignRoom(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.AssignRoomResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.AssignRoomResponse1> ReservationService.ReservationServiceSoap.AssignRoomAsync(ReservationService.AssignRoomRequest1 request)
         {
             return base.Channel.AssignRoomAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.ReleaseRoomResponse1> ReleaseRoomAsync(ReservationService.ReleaseRoomRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.AssignRoomResponse1> AssignRoomAsync(ReservationService.OGHeader OGHeader, ReservationService.AssignRoomRequest AssignRoomRequest)
+        {
+            ReservationService.AssignRoomRequest1 inValue = new ReservationService.AssignRoomRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.AssignRoomRequest = AssignRoomRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).AssignRoomAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.ReleaseRoomResponse1 ReservationService.ReservationServiceSoap.ReleaseRoom(ReservationService.ReleaseRoomRequest1 request)
+        {
+            return base.Channel.ReleaseRoom(request);
+        }
+        
+        public ReservationService.ReleaseRoomResponse ReleaseRoom(ref ReservationService.OGHeader OGHeader, ReservationService.ReleaseRoomRequest ReleaseRoomRequest)
+        {
+            ReservationService.ReleaseRoomRequest1 inValue = new ReservationService.ReleaseRoomRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ReleaseRoomRequest = ReleaseRoomRequest;
+            ReservationService.ReleaseRoomResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).ReleaseRoom(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.ReleaseRoomResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.ReleaseRoomResponse1> ReservationService.ReservationServiceSoap.ReleaseRoomAsync(ReservationService.ReleaseRoomRequest1 request)
         {
             return base.Channel.ReleaseRoomAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.AddAccompanyGuestResponse1> AddAccompanyGuestAsync(ReservationService.AddAccompanyGuestRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.ReleaseRoomResponse1> ReleaseRoomAsync(ReservationService.OGHeader OGHeader, ReservationService.ReleaseRoomRequest ReleaseRoomRequest)
+        {
+            ReservationService.ReleaseRoomRequest1 inValue = new ReservationService.ReleaseRoomRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ReleaseRoomRequest = ReleaseRoomRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).ReleaseRoomAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.AddAccompanyGuestResponse1 ReservationService.ReservationServiceSoap.AddAccompanyGuest(ReservationService.AddAccompanyGuestRequest1 request)
+        {
+            return base.Channel.AddAccompanyGuest(request);
+        }
+        
+        public ReservationService.AddAccompanyGuestResponse AddAccompanyGuest(ref ReservationService.OGHeader OGHeader, ReservationService.AddAccompanyGuestRequest AddAccompanyGuestRequest)
+        {
+            ReservationService.AddAccompanyGuestRequest1 inValue = new ReservationService.AddAccompanyGuestRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.AddAccompanyGuestRequest = AddAccompanyGuestRequest;
+            ReservationService.AddAccompanyGuestResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).AddAccompanyGuest(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.AddAccompanyGuestResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.AddAccompanyGuestResponse1> ReservationService.ReservationServiceSoap.AddAccompanyGuestAsync(ReservationService.AddAccompanyGuestRequest1 request)
         {
             return base.Channel.AddAccompanyGuestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.DeleteAccompanyGuestResponse1> DeleteAccompanyGuestAsync(ReservationService.DeleteAccompanyGuestRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.AddAccompanyGuestResponse1> AddAccompanyGuestAsync(ReservationService.OGHeader OGHeader, ReservationService.AddAccompanyGuestRequest AddAccompanyGuestRequest)
+        {
+            ReservationService.AddAccompanyGuestRequest1 inValue = new ReservationService.AddAccompanyGuestRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.AddAccompanyGuestRequest = AddAccompanyGuestRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).AddAccompanyGuestAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.DeleteAccompanyGuestResponse1 ReservationService.ReservationServiceSoap.DeleteAccompanyGuest(ReservationService.DeleteAccompanyGuestRequest1 request)
+        {
+            return base.Channel.DeleteAccompanyGuest(request);
+        }
+        
+        public ReservationService.DeleteAccompanyGuestResponse DeleteAccompanyGuest(ref ReservationService.OGHeader OGHeader, ReservationService.DeleteAccompanyGuestRequest DeleteAccompanyGuestRequest)
+        {
+            ReservationService.DeleteAccompanyGuestRequest1 inValue = new ReservationService.DeleteAccompanyGuestRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.DeleteAccompanyGuestRequest = DeleteAccompanyGuestRequest;
+            ReservationService.DeleteAccompanyGuestResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).DeleteAccompanyGuest(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.DeleteAccompanyGuestResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.DeleteAccompanyGuestResponse1> ReservationService.ReservationServiceSoap.DeleteAccompanyGuestAsync(ReservationService.DeleteAccompanyGuestRequest1 request)
         {
             return base.Channel.DeleteAccompanyGuestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.FetchRoomUpgradesResponse1> FetchRoomUpgradesAsync(ReservationService.FetchRoomUpgradesRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.DeleteAccompanyGuestResponse1> DeleteAccompanyGuestAsync(ReservationService.OGHeader OGHeader, ReservationService.DeleteAccompanyGuestRequest DeleteAccompanyGuestRequest)
+        {
+            ReservationService.DeleteAccompanyGuestRequest1 inValue = new ReservationService.DeleteAccompanyGuestRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.DeleteAccompanyGuestRequest = DeleteAccompanyGuestRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).DeleteAccompanyGuestAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.FetchRoomUpgradesResponse1 ReservationService.ReservationServiceSoap.FetchRoomUpgrades(ReservationService.FetchRoomUpgradesRequest1 request)
+        {
+            return base.Channel.FetchRoomUpgrades(request);
+        }
+        
+        public ReservationService.FetchRoomUpgradesResponse FetchRoomUpgrades(ref ReservationService.OGHeader OGHeader, ReservationService.FetchRoomUpgradesRequest FetchRoomUpgradesRequest)
+        {
+            ReservationService.FetchRoomUpgradesRequest1 inValue = new ReservationService.FetchRoomUpgradesRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchRoomUpgradesRequest = FetchRoomUpgradesRequest;
+            ReservationService.FetchRoomUpgradesResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).FetchRoomUpgrades(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchRoomUpgradesResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.FetchRoomUpgradesResponse1> ReservationService.ReservationServiceSoap.FetchRoomUpgradesAsync(ReservationService.FetchRoomUpgradesRequest1 request)
         {
             return base.Channel.FetchRoomUpgradesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.UpgradeReservationResponse1> UpgradeReservationAsync(ReservationService.UpgradeReservationRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.FetchRoomUpgradesResponse1> FetchRoomUpgradesAsync(ReservationService.OGHeader OGHeader, ReservationService.FetchRoomUpgradesRequest FetchRoomUpgradesRequest)
+        {
+            ReservationService.FetchRoomUpgradesRequest1 inValue = new ReservationService.FetchRoomUpgradesRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchRoomUpgradesRequest = FetchRoomUpgradesRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).FetchRoomUpgradesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.UpgradeReservationResponse1 ReservationService.ReservationServiceSoap.UpgradeReservation(ReservationService.UpgradeReservationRequest1 request)
+        {
+            return base.Channel.UpgradeReservation(request);
+        }
+        
+        public ReservationService.UpgradeReservationResponse UpgradeReservation(ref ReservationService.OGHeader OGHeader, ReservationService.UpgradeReservationRequest UpgradeReservationRequest)
+        {
+            ReservationService.UpgradeReservationRequest1 inValue = new ReservationService.UpgradeReservationRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.UpgradeReservationRequest = UpgradeReservationRequest;
+            ReservationService.UpgradeReservationResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).UpgradeReservation(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.UpgradeReservationResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.UpgradeReservationResponse1> ReservationService.ReservationServiceSoap.UpgradeReservationAsync(ReservationService.UpgradeReservationRequest1 request)
         {
             return base.Channel.UpgradeReservationAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.FetchAvailableOffersResponse1> FetchAvailableOffersAsync(ReservationService.FetchAvailableOffersRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.UpgradeReservationResponse1> UpgradeReservationAsync(ReservationService.OGHeader OGHeader, ReservationService.UpgradeReservationRequest UpgradeReservationRequest)
+        {
+            ReservationService.UpgradeReservationRequest1 inValue = new ReservationService.UpgradeReservationRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.UpgradeReservationRequest = UpgradeReservationRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).UpgradeReservationAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.FetchAvailableOffersResponse1 ReservationService.ReservationServiceSoap.FetchAvailableOffers(ReservationService.FetchAvailableOffersRequest1 request)
+        {
+            return base.Channel.FetchAvailableOffers(request);
+        }
+        
+        public ReservationService.FetchAvailableOffersResponse FetchAvailableOffers(ref ReservationService.OGHeader OGHeader, ReservationService.FetchAvailableOffersRequest FetchAvailableOffersRequest)
+        {
+            ReservationService.FetchAvailableOffersRequest1 inValue = new ReservationService.FetchAvailableOffersRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchAvailableOffersRequest = FetchAvailableOffersRequest;
+            ReservationService.FetchAvailableOffersResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).FetchAvailableOffers(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchAvailableOffersResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.FetchAvailableOffersResponse1> ReservationService.ReservationServiceSoap.FetchAvailableOffersAsync(ReservationService.FetchAvailableOffersRequest1 request)
         {
             return base.Channel.FetchAvailableOffersAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.UpsellReservationResponse1> UpsellReservationAsync(ReservationService.UpsellReservationRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.FetchAvailableOffersResponse1> FetchAvailableOffersAsync(ReservationService.OGHeader OGHeader, ReservationService.FetchAvailableOffersRequest FetchAvailableOffersRequest)
+        {
+            ReservationService.FetchAvailableOffersRequest1 inValue = new ReservationService.FetchAvailableOffersRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchAvailableOffersRequest = FetchAvailableOffersRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).FetchAvailableOffersAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.UpsellReservationResponse1 ReservationService.ReservationServiceSoap.UpsellReservation(ReservationService.UpsellReservationRequest1 request)
+        {
+            return base.Channel.UpsellReservation(request);
+        }
+        
+        public ReservationService.UpsellReservationResponse UpsellReservation(ref ReservationService.OGHeader OGHeader, ReservationService.UpsellReservationRequest UpsellReservationRequest)
+        {
+            ReservationService.UpsellReservationRequest1 inValue = new ReservationService.UpsellReservationRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.UpsellReservationRequest = UpsellReservationRequest;
+            ReservationService.UpsellReservationResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).UpsellReservation(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.UpsellReservationResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.UpsellReservationResponse1> ReservationService.ReservationServiceSoap.UpsellReservationAsync(ReservationService.UpsellReservationRequest1 request)
         {
             return base.Channel.UpsellReservationAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.GuestRequestsResponse1> GuestRequestsAsync(ReservationService.GuestRequestsRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.UpsellReservationResponse1> UpsellReservationAsync(ReservationService.OGHeader OGHeader, ReservationService.UpsellReservationRequest UpsellReservationRequest)
+        {
+            ReservationService.UpsellReservationRequest1 inValue = new ReservationService.UpsellReservationRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.UpsellReservationRequest = UpsellReservationRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).UpsellReservationAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.GuestRequestsResponse1 ReservationService.ReservationServiceSoap.GuestRequests(ReservationService.GuestRequestsRequest1 request)
+        {
+            return base.Channel.GuestRequests(request);
+        }
+        
+        public ReservationService.GuestRequestsResponse GuestRequests(ref ReservationService.OGHeader OGHeader, ReservationService.GuestRequestsRequest GuestRequestsRequest)
+        {
+            ReservationService.GuestRequestsRequest1 inValue = new ReservationService.GuestRequestsRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.GuestRequestsRequest = GuestRequestsRequest;
+            ReservationService.GuestRequestsResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).GuestRequests(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.GuestRequestsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.GuestRequestsResponse1> ReservationService.ReservationServiceSoap.GuestRequestsAsync(ReservationService.GuestRequestsRequest1 request)
         {
             return base.Channel.GuestRequestsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.CombineShareResponse1> CombineShareAsync(ReservationService.CombineShareRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.GuestRequestsResponse1> GuestRequestsAsync(ReservationService.OGHeader OGHeader, ReservationService.GuestRequestsRequest GuestRequestsRequest)
+        {
+            ReservationService.GuestRequestsRequest1 inValue = new ReservationService.GuestRequestsRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.GuestRequestsRequest = GuestRequestsRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).GuestRequestsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.CombineShareResponse1 ReservationService.ReservationServiceSoap.CombineShare(ReservationService.CombineShareRequest1 request)
+        {
+            return base.Channel.CombineShare(request);
+        }
+        
+        public ReservationService.CombineShareResponse CombineShare(ref ReservationService.OGHeader OGHeader, ReservationService.CombineShareRequest CombineShareRequest)
+        {
+            ReservationService.CombineShareRequest1 inValue = new ReservationService.CombineShareRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CombineShareRequest = CombineShareRequest;
+            ReservationService.CombineShareResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).CombineShare(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.CombineShareResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.CombineShareResponse1> ReservationService.ReservationServiceSoap.CombineShareAsync(ReservationService.CombineShareRequest1 request)
         {
             return base.Channel.CombineShareAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.BreakShareResponse1> BreakShareAsync(ReservationService.BreakShareRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.CombineShareResponse1> CombineShareAsync(ReservationService.OGHeader OGHeader, ReservationService.CombineShareRequest CombineShareRequest)
+        {
+            ReservationService.CombineShareRequest1 inValue = new ReservationService.CombineShareRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CombineShareRequest = CombineShareRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).CombineShareAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.BreakShareResponse1 ReservationService.ReservationServiceSoap.BreakShare(ReservationService.BreakShareRequest1 request)
+        {
+            return base.Channel.BreakShare(request);
+        }
+        
+        public ReservationService.BreakShareResponse BreakShare(ref ReservationService.OGHeader OGHeader, ReservationService.BreakShareRequest BreakShareRequest)
+        {
+            ReservationService.BreakShareRequest1 inValue = new ReservationService.BreakShareRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.BreakShareRequest = BreakShareRequest;
+            ReservationService.BreakShareResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).BreakShare(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.BreakShareResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.BreakShareResponse1> ReservationService.ReservationServiceSoap.BreakShareAsync(ReservationService.BreakShareRequest1 request)
         {
             return base.Channel.BreakShareAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.CreateMultipleBookingsResponse> CreateMultipleBookingsAsync(ReservationService.CreateMultipleBookingsRequest request)
+        public System.Threading.Tasks.Task<ReservationService.BreakShareResponse1> BreakShareAsync(ReservationService.OGHeader OGHeader, ReservationService.BreakShareRequest BreakShareRequest)
+        {
+            ReservationService.BreakShareRequest1 inValue = new ReservationService.BreakShareRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.BreakShareRequest = BreakShareRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).BreakShareAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.CreateMultipleBookingsResponse ReservationService.ReservationServiceSoap.CreateMultipleBookings(ReservationService.CreateMultipleBookingsRequest request)
+        {
+            return base.Channel.CreateMultipleBookings(request);
+        }
+        
+        public ReservationService.BookingResult[] CreateMultipleBookings(ref ReservationService.OGHeader OGHeader, ReservationService.BookingRequest[] CreateMultipleBookingsRequest1)
+        {
+            ReservationService.CreateMultipleBookingsRequest inValue = new ReservationService.CreateMultipleBookingsRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.CreateMultipleBookingsRequest1 = CreateMultipleBookingsRequest1;
+            ReservationService.CreateMultipleBookingsResponse retVal = ((ReservationService.ReservationServiceSoap)(this)).CreateMultipleBookings(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.CreateMultipleBookingsResponse1;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.CreateMultipleBookingsResponse> ReservationService.ReservationServiceSoap.CreateMultipleBookingsAsync(ReservationService.CreateMultipleBookingsRequest request)
         {
             return base.Channel.CreateMultipleBookingsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationService.ReInstateReservationResponse1> ReInstateReservationAsync(ReservationService.ReInstateReservationRequest1 request)
+        public System.Threading.Tasks.Task<ReservationService.CreateMultipleBookingsResponse> CreateMultipleBookingsAsync(ReservationService.OGHeader OGHeader, ReservationService.BookingRequest[] CreateMultipleBookingsRequest1)
+        {
+            ReservationService.CreateMultipleBookingsRequest inValue = new ReservationService.CreateMultipleBookingsRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.CreateMultipleBookingsRequest1 = CreateMultipleBookingsRequest1;
+            return ((ReservationService.ReservationServiceSoap)(this)).CreateMultipleBookingsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ReservationService.ReInstateReservationResponse1 ReservationService.ReservationServiceSoap.ReInstateReservation(ReservationService.ReInstateReservationRequest1 request)
+        {
+            return base.Channel.ReInstateReservation(request);
+        }
+        
+        public ReservationService.ReInstateReservationResponse ReInstateReservation(ref ReservationService.OGHeader OGHeader, ReservationService.ReInstateReservationRequest ReInstateReservationRequest)
+        {
+            ReservationService.ReInstateReservationRequest1 inValue = new ReservationService.ReInstateReservationRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ReInstateReservationRequest = ReInstateReservationRequest;
+            ReservationService.ReInstateReservationResponse1 retVal = ((ReservationService.ReservationServiceSoap)(this)).ReInstateReservation(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.ReInstateReservationResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ReservationService.ReInstateReservationResponse1> ReservationService.ReservationServiceSoap.ReInstateReservationAsync(ReservationService.ReInstateReservationRequest1 request)
         {
             return base.Channel.ReInstateReservationAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ReservationService.ReInstateReservationResponse1> ReInstateReservationAsync(ReservationService.OGHeader OGHeader, ReservationService.ReInstateReservationRequest ReInstateReservationRequest)
+        {
+            ReservationService.ReInstateReservationRequest1 inValue = new ReservationService.ReInstateReservationRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ReInstateReservationRequest = ReInstateReservationRequest;
+            return ((ReservationService.ReservationServiceSoap)(this)).ReInstateReservationAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -28430,20 +29509,15 @@ namespace ReservationService
         {
             if ((endpointConfiguration == EndpointConfiguration.ReservationServiceSoap))
             {
-                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8081/OWS_WS_51/Reservation.asmx");
+                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/OWS_WS_51/Reservation.asmx");
             }
             if ((endpointConfiguration == EndpointConfiguration.ReservationServiceSoap12))
             {
-                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8081/OWS_WS_51/Reservation.asmx");
+                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/OWS_WS_51/Reservation.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
-
-        internal ModifyBookingResponse ModifyBookingAsync(ModifyBookingRequest modifyBookingReq)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public enum EndpointConfiguration
         {
             

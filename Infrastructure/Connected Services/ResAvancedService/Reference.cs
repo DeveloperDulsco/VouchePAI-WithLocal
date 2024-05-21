@@ -7,248 +7,381 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-namespace ReservationAdvancedService
+namespace ResAvancedService
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ReservationAdvancedService.ResvAdvancedServiceSoap")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ResAvancedService.ResvAdvancedServiceSoap")]
     public interface ResvAdvancedServiceSoap
     {
         
+        // CODEGEN: Generating message contract since the operation AdditionalKeys is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#AdditionalKeys", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.AdditionalKeysResponse1> AdditionalKeysAsync(ReservationAdvancedService.AdditionalKeysRequest1 request);
+        ResAvancedService.AdditionalKeysResponse1 AdditionalKeys(ResAvancedService.AdditionalKeysRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#AdditionalKeys", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.AdditionalKeysResponse1> AdditionalKeysAsync(ResAvancedService.AdditionalKeysRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation AlternateRooms is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#AlternateRooms", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.AlternateRoomsResponse1> AlternateRoomsAsync(ReservationAdvancedService.AlternateRoomsRequest1 request);
+        ResAvancedService.AlternateRoomsResponse1 AlternateRooms(ResAvancedService.AlternateRoomsRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#AlternateRooms", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.AlternateRoomsResponse1> AlternateRoomsAsync(ResAvancedService.AlternateRoomsRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation CancelCheckIn is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#CancelCheckIn", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.CancelCheckInResponse1> CancelCheckInAsync(ReservationAdvancedService.CancelCheckInRequest1 request);
+        ResAvancedService.CancelCheckInResponse1 CancelCheckIn(ResAvancedService.CancelCheckInRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#CancelCheckIn", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.CancelCheckInResponse1> CancelCheckInAsync(ResAvancedService.CancelCheckInRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation CheckIn is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#CheckIn", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.CheckInResponse1> CheckInAsync(ReservationAdvancedService.CheckInRequest1 request);
+        ResAvancedService.CheckInResponse1 CheckIn(ResAvancedService.CheckInRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#CheckIn", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.CheckInResponse1> CheckInAsync(ResAvancedService.CheckInRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation CheckOut is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#CheckOut", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.CheckOutResponse1> CheckOutAsync(ReservationAdvancedService.CheckOutRequest1 request);
+        ResAvancedService.CheckOutResponse1 CheckOut(ResAvancedService.CheckOutRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#CheckOut", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.CheckOutResponse1> CheckOutAsync(ResAvancedService.CheckOutRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation GuestMessages is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#GuestMessages", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.GuestMessagesResponse1> GuestMessagesAsync(ReservationAdvancedService.GuestMessagesRequest1 request);
+        ResAvancedService.GuestMessagesResponse1 GuestMessages(ResAvancedService.GuestMessagesRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#GuestMessages", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.GuestMessagesResponse1> GuestMessagesAsync(ResAvancedService.GuestMessagesRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation Invoice is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#Invoice", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.InvoiceResponse1> InvoiceAsync(ReservationAdvancedService.InvoiceRequest1 request);
+        ResAvancedService.InvoiceResponse1 Invoice(ResAvancedService.InvoiceRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#Invoice", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.InvoiceResponse1> InvoiceAsync(ResAvancedService.InvoiceRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation KioskAvaliablity is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#KioskAvaliablity", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.KioskAvaliablityResponse1> KioskAvaliablityAsync(ReservationAdvancedService.KioskAvaliablityRequest1 request);
+        ResAvancedService.KioskAvaliablityResponse1 KioskAvaliablity(ResAvancedService.KioskAvaliablityRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#KioskAvaliablity", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.KioskAvaliablityResponse1> KioskAvaliablityAsync(ResAvancedService.KioskAvaliablityRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation MakePayment is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#MakePayment", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.MakePaymentResponse1> MakePaymentAsync(ReservationAdvancedService.MakePaymentRequest1 request);
+        ResAvancedService.MakePaymentResponse1 MakePayment(ResAvancedService.MakePaymentRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#MakePayment", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.MakePaymentResponse1> MakePaymentAsync(ResAvancedService.MakePaymentRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation PayRouting is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#PayRouting", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.PayRoutingResponse1> PayRoutingAsync(ReservationAdvancedService.PayRoutingRequest1 request);
+        ResAvancedService.PayRoutingResponse1 PayRouting(ResAvancedService.PayRoutingRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#PayRouting", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.PayRoutingResponse1> PayRoutingAsync(ResAvancedService.PayRoutingRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation PostCharge is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#PostCharge", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.PostChargeResponse1> PostChargeAsync(ReservationAdvancedService.PostChargeRequest1 request);
+        ResAvancedService.PostChargeResponse1 PostCharge(ResAvancedService.PostChargeRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#PostCharge", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.PostChargeResponse1> PostChargeAsync(ResAvancedService.PostChargeRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation PrintPreCheckOutBill is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#PrintPreCheckOutBill", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.PrintPreCheckOutBillResponse1> PrintPreCheckOutBillAsync(ReservationAdvancedService.PrintPreCheckOutBillRequest1 request);
+        ResAvancedService.PrintPreCheckOutBillResponse1 PrintPreCheckOutBill(ResAvancedService.PrintPreCheckOutBillRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#PrintPreCheckOutBill", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.PrintPreCheckOutBillResponse1> PrintPreCheckOutBillAsync(ResAvancedService.PrintPreCheckOutBillRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation ReservationRequestCode is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#ReservationRequestCode", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.ReservationRequestCodeResponse1> ReservationRequestCodeAsync(ReservationAdvancedService.ReservationRequestCodeRequest1 request);
+        ResAvancedService.ReservationRequestCodeResponse1 ReservationRequestCode(ResAvancedService.ReservationRequestCodeRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#ReservationRequestCode", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.ReservationRequestCodeResponse1> ReservationRequestCodeAsync(ResAvancedService.ReservationRequestCodeRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation FetchKeyData is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchKeyData", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchKeyDataResponse1> FetchKeyDataAsync(ReservationAdvancedService.FetchKeyDataRequest1 request);
+        ResAvancedService.FetchKeyDataResponse1 FetchKeyData(ResAvancedService.FetchKeyDataRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchKeyData", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.FetchKeyDataResponse1> FetchKeyDataAsync(ResAvancedService.FetchKeyDataRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation SetKeyData is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#SetKeyData", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.SetKeyDataResponse1> SetKeyDataAsync(ReservationAdvancedService.SetKeyDataRequest1 request);
+        ResAvancedService.SetKeyDataResponse1 SetKeyData(ResAvancedService.SetKeyDataRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#SetKeyData", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.SetKeyDataResponse1> SetKeyDataAsync(ResAvancedService.SetKeyDataRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation FetchRoomSetup is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchRoomSetup", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchRoomSetupResponse1> FetchRoomSetupAsync(ReservationAdvancedService.FetchRoomSetupRequest1 request);
+        ResAvancedService.FetchRoomSetupResponse1 FetchRoomSetup(ResAvancedService.FetchRoomSetupRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchRoomSetup", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.FetchRoomSetupResponse1> FetchRoomSetupAsync(ResAvancedService.FetchRoomSetupRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation FetchRoomStatus is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchRoomStatus", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchRoomStatusResponse1> FetchRoomStatusAsync(ReservationAdvancedService.FetchRoomStatusRequest1 request);
+        ResAvancedService.FetchRoomStatusResponse1 FetchRoomStatus(ResAvancedService.FetchRoomStatusRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchRoomStatus", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.FetchRoomStatusResponse1> FetchRoomStatusAsync(ResAvancedService.FetchRoomStatusRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation FetchPromotionCode is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchPromotionCode", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchPromotionCodeResponse> FetchPromotionCodeAsync(ReservationAdvancedService.FetchPromotionCodeRequest1 request);
+        ResAvancedService.FetchPromotionCodeResponse FetchPromotionCode(ResAvancedService.FetchPromotionCodeRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchPromotionCode", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.FetchPromotionCodeResponse> FetchPromotionCodeAsync(ResAvancedService.FetchPromotionCodeRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation FetchResPromotionCode is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchResPromotionCode", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchResPromotionCodeResponse1> FetchResPromotionCodeAsync(ReservationAdvancedService.FetchResPromotionCodeRequest1 request);
+        ResAvancedService.FetchResPromotionCodeResponse1 FetchResPromotionCode(ResAvancedService.FetchResPromotionCodeRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchResPromotionCode", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.FetchResPromotionCodeResponse1> FetchResPromotionCodeAsync(ResAvancedService.FetchResPromotionCodeRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation SetResPromotionCode is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#SetResPromotionCode", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.SetResPromotionCodeResponse1> SetResPromotionCodeAsync(ReservationAdvancedService.SetResPromotionCodeRequest1 request);
+        ResAvancedService.SetResPromotionCodeResponse1 SetResPromotionCode(ResAvancedService.SetResPromotionCodeRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#SetResPromotionCode", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.SetResPromotionCodeResponse1> SetResPromotionCodeAsync(ResAvancedService.SetResPromotionCodeRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation UpdateMethodOfPayment is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#UpdateMethodOfPayment", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.UpdateMethodOfPaymentResponse1> UpdateMethodOfPaymentAsync(ReservationAdvancedService.UpdateMethodOfPaymentRequest1 request);
+        ResAvancedService.UpdateMethodOfPaymentResponse1 UpdateMethodOfPayment(ResAvancedService.UpdateMethodOfPaymentRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#UpdateMethodOfPayment", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.UpdateMethodOfPaymentResponse1> UpdateMethodOfPaymentAsync(ResAvancedService.UpdateMethodOfPaymentRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation GenerateRegistrationCard is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#GenerateRegistrationCard", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.GenerateRegistrationCardResponse1> GenerateRegistrationCardAsync(ReservationAdvancedService.GenerateRegistrationCardRequest1 request);
+        ResAvancedService.GenerateRegistrationCardResponse1 GenerateRegistrationCard(ResAvancedService.GenerateRegistrationCardRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#GenerateRegistrationCard", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.GenerateRegistrationCardResponse1> GenerateRegistrationCardAsync(ResAvancedService.GenerateRegistrationCardRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation ExternalPayment is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#ExternalPayment", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.ExternalPaymentResponse1> ExternalPaymentAsync(ReservationAdvancedService.ExternalPaymentRequest1 request);
+        ResAvancedService.ExternalPaymentResponse1 ExternalPayment(ResAvancedService.ExternalPaymentRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#ExternalPayment", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.ExternalPaymentResponse1> ExternalPaymentAsync(ResAvancedService.ExternalPaymentRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation InstantPaymentNotification is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#InstantPaymentNotificatio" +
             "n", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.InstantPaymentNotificationResponse1> InstantPaymentNotificationAsync(ReservationAdvancedService.InstantPaymentNotificationRequest1 request);
+        ResAvancedService.InstantPaymentNotificationResponse1 InstantPaymentNotification(ResAvancedService.InstantPaymentNotificationRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#InstantPaymentNotificatio" +
+            "n", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.InstantPaymentNotificationResponse1> InstantPaymentNotificationAsync(ResAvancedService.InstantPaymentNotificationRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation AssignRoom is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#AssignRoom", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.AssignRoomResponse> AssignRoomAsync(ReservationAdvancedService.AssignRoomRequest request);
+        ResAvancedService.AssignRoomResponse AssignRoom(ResAvancedService.AssignRoomRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#AssignRoom", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.AssignRoomResponse> AssignRoomAsync(ResAvancedService.AssignRoomRequest request);
+        
+        // CODEGEN: Generating message contract since the operation ReleaseRoom is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#ReleaseRoom", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.ReleaseRoomResponse> ReleaseRoomAsync(ReservationAdvancedService.ReleaseRoomRequest request);
+        ResAvancedService.ReleaseRoomResponse ReleaseRoom(ResAvancedService.ReleaseRoomRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#ReleaseRoom", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.ReleaseRoomResponse> ReleaseRoomAsync(ResAvancedService.ReleaseRoomRequest request);
+        
+        // CODEGEN: Generating message contract since the operation InsertPayRouting is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#InsertPayRouting", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.InsertPayRoutingResponse1> InsertPayRoutingAsync(ReservationAdvancedService.InsertPayRoutingRequest1 request);
+        ResAvancedService.InsertPayRoutingResponse1 InsertPayRouting(ResAvancedService.InsertPayRoutingRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#InsertPayRouting", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.InsertPayRoutingResponse1> InsertPayRoutingAsync(ResAvancedService.InsertPayRoutingRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation UpdatePayRouting is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#UpdatePayRouting", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.UpdatePayRoutingResponse1> UpdatePayRoutingAsync(ReservationAdvancedService.UpdatePayRoutingRequest1 request);
+        ResAvancedService.UpdatePayRoutingResponse1 UpdatePayRouting(ResAvancedService.UpdatePayRoutingRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#UpdatePayRouting", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.UpdatePayRoutingResponse1> UpdatePayRoutingAsync(ResAvancedService.UpdatePayRoutingRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation FolioTransactionTransfer is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FolioTransactionTransfer", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FolioTransactionTransferResponse1> FolioTransactionTransferAsync(ReservationAdvancedService.FolioTransactionTransferRequest1 request);
+        ResAvancedService.FolioTransactionTransferResponse1 FolioTransactionTransfer(ResAvancedService.FolioTransactionTransferRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FolioTransactionTransfer", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.FolioTransactionTransferResponse1> FolioTransactionTransferAsync(ResAvancedService.FolioTransactionTransferRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation QueueReservation is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#QueueReservation", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.QueueReservationResponse1> QueueReservationAsync(ReservationAdvancedService.QueueReservationRequest1 request);
+        ResAvancedService.QueueReservationResponse1 QueueReservation(ResAvancedService.QueueReservationRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#QueueReservation", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.QueueReservationResponse1> QueueReservationAsync(ResAvancedService.QueueReservationRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation FetchQueueReservations is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchQueueReservations", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchQueueReservationsResponse1> FetchQueueReservationsAsync(ReservationAdvancedService.FetchQueueReservationsRequest1 request);
+        ResAvancedService.FetchQueueReservationsResponse1 FetchQueueReservations(ResAvancedService.FetchQueueReservationsRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchQueueReservations", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.FetchQueueReservationsResponse1> FetchQueueReservationsAsync(ResAvancedService.FetchQueueReservationsRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation DCCCheck is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#DCCCheck", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.DCCCheckResponse1> DCCCheckAsync(ReservationAdvancedService.DCCCheckRequest1 request);
+        ResAvancedService.DCCCheckResponse1 DCCCheck(ResAvancedService.DCCCheckRequest1 request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#DCCCheck", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.DCCCheckResponse1> DCCCheckAsync(ResAvancedService.DCCCheckRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation FetchAuthorizationsHistory is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchAuthorizationsHistor" +
             "y", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Phone))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Membership))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchAuthorizationsHistoryResponse1> FetchAuthorizationsHistoryAsync(ReservationAdvancedService.FetchAuthorizationsHistoryRequest1 request);
+        ResAvancedService.FetchAuthorizationsHistoryResponse1 FetchAuthorizationsHistory(ResAvancedService.FetchAuthorizationsHistoryRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/ResvAdvanced.wsdl#FetchAuthorizationsHistor" +
+            "y", ReplyAction="*")]
+        System.Threading.Tasks.Task<ResAvancedService.FetchAuthorizationsHistoryResponse1> FetchAuthorizationsHistoryAsync(ResAvancedService.FetchAuthorizationsHistoryRequest1 request);
     }
     
     /// <remarks/>
@@ -5275,8 +5408,6 @@ namespace ReservationAdvancedService
                 this.chipAndPinFieldSpecified = value;
             }
         }
-
-        public bool expirationDateSpecified { get; internal set; }
     }
     
     /// <remarks/>
@@ -9395,11 +9526,6 @@ namespace ReservationAdvancedService
             {
                 this.xsnField = value;
             }
-        }
-
-        public static implicit operator MakePaymentResponse(MakePaymentResponse1 v)
-        {
-            throw new NotImplementedException();
         }
     }
     
@@ -21115,16 +21241,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.AdditionalKeysRequest AdditionalKeysRequest;
+        public ResAvancedService.AdditionalKeysRequest AdditionalKeysRequest;
         
         public AdditionalKeysRequest1()
         {
         }
         
-        public AdditionalKeysRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.AdditionalKeysRequest AdditionalKeysRequest)
+        public AdditionalKeysRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.AdditionalKeysRequest AdditionalKeysRequest)
         {
             this.OGHeader = OGHeader;
             this.AdditionalKeysRequest = AdditionalKeysRequest;
@@ -21139,16 +21265,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.AdditionalKeysResponse AdditionalKeysResponse;
+        public ResAvancedService.AdditionalKeysResponse AdditionalKeysResponse;
         
         public AdditionalKeysResponse1()
         {
         }
         
-        public AdditionalKeysResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.AdditionalKeysResponse AdditionalKeysResponse)
+        public AdditionalKeysResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.AdditionalKeysResponse AdditionalKeysResponse)
         {
             this.OGHeader = OGHeader;
             this.AdditionalKeysResponse = AdditionalKeysResponse;
@@ -21163,16 +21289,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.AlternateRoomsRequest AlternateRoomsRequest;
+        public ResAvancedService.AlternateRoomsRequest AlternateRoomsRequest;
         
         public AlternateRoomsRequest1()
         {
         }
         
-        public AlternateRoomsRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.AlternateRoomsRequest AlternateRoomsRequest)
+        public AlternateRoomsRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.AlternateRoomsRequest AlternateRoomsRequest)
         {
             this.OGHeader = OGHeader;
             this.AlternateRoomsRequest = AlternateRoomsRequest;
@@ -21187,16 +21313,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.AlternateRoomsResponse AlternateRoomsResponse;
+        public ResAvancedService.AlternateRoomsResponse AlternateRoomsResponse;
         
         public AlternateRoomsResponse1()
         {
         }
         
-        public AlternateRoomsResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.AlternateRoomsResponse AlternateRoomsResponse)
+        public AlternateRoomsResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.AlternateRoomsResponse AlternateRoomsResponse)
         {
             this.OGHeader = OGHeader;
             this.AlternateRoomsResponse = AlternateRoomsResponse;
@@ -21211,16 +21337,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.CancelCheckInRequest CancelCheckInRequest;
+        public ResAvancedService.CancelCheckInRequest CancelCheckInRequest;
         
         public CancelCheckInRequest1()
         {
         }
         
-        public CancelCheckInRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.CancelCheckInRequest CancelCheckInRequest)
+        public CancelCheckInRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.CancelCheckInRequest CancelCheckInRequest)
         {
             this.OGHeader = OGHeader;
             this.CancelCheckInRequest = CancelCheckInRequest;
@@ -21235,16 +21361,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.CancelCheckInResponse CancelCheckInResponse;
+        public ResAvancedService.CancelCheckInResponse CancelCheckInResponse;
         
         public CancelCheckInResponse1()
         {
         }
         
-        public CancelCheckInResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.CancelCheckInResponse CancelCheckInResponse)
+        public CancelCheckInResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.CancelCheckInResponse CancelCheckInResponse)
         {
             this.OGHeader = OGHeader;
             this.CancelCheckInResponse = CancelCheckInResponse;
@@ -21259,16 +21385,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.CheckInRequest CheckInRequest;
+        public ResAvancedService.CheckInRequest CheckInRequest;
         
         public CheckInRequest1()
         {
         }
         
-        public CheckInRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.CheckInRequest CheckInRequest)
+        public CheckInRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.CheckInRequest CheckInRequest)
         {
             this.OGHeader = OGHeader;
             this.CheckInRequest = CheckInRequest;
@@ -21283,16 +21409,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.CheckInResponse CheckInResponse;
+        public ResAvancedService.CheckInResponse CheckInResponse;
         
         public CheckInResponse1()
         {
         }
         
-        public CheckInResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.CheckInResponse CheckInResponse)
+        public CheckInResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.CheckInResponse CheckInResponse)
         {
             this.OGHeader = OGHeader;
             this.CheckInResponse = CheckInResponse;
@@ -21307,16 +21433,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.CheckOutRequest CheckOutRequest;
+        public ResAvancedService.CheckOutRequest CheckOutRequest;
         
         public CheckOutRequest1()
         {
         }
         
-        public CheckOutRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.CheckOutRequest CheckOutRequest)
+        public CheckOutRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.CheckOutRequest CheckOutRequest)
         {
             this.OGHeader = OGHeader;
             this.CheckOutRequest = CheckOutRequest;
@@ -21331,16 +21457,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.CheckOutResponse CheckOutResponse;
+        public ResAvancedService.CheckOutResponse CheckOutResponse;
         
         public CheckOutResponse1()
         {
         }
         
-        public CheckOutResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.CheckOutResponse CheckOutResponse)
+        public CheckOutResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.CheckOutResponse CheckOutResponse)
         {
             this.OGHeader = OGHeader;
             this.CheckOutResponse = CheckOutResponse;
@@ -21355,16 +21481,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.GuestMessagesRequest GuestMessagesRequest;
+        public ResAvancedService.GuestMessagesRequest GuestMessagesRequest;
         
         public GuestMessagesRequest1()
         {
         }
         
-        public GuestMessagesRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.GuestMessagesRequest GuestMessagesRequest)
+        public GuestMessagesRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.GuestMessagesRequest GuestMessagesRequest)
         {
             this.OGHeader = OGHeader;
             this.GuestMessagesRequest = GuestMessagesRequest;
@@ -21379,16 +21505,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.GuestMessagesResponse GuestMessagesResponse;
+        public ResAvancedService.GuestMessagesResponse GuestMessagesResponse;
         
         public GuestMessagesResponse1()
         {
         }
         
-        public GuestMessagesResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.GuestMessagesResponse GuestMessagesResponse)
+        public GuestMessagesResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.GuestMessagesResponse GuestMessagesResponse)
         {
             this.OGHeader = OGHeader;
             this.GuestMessagesResponse = GuestMessagesResponse;
@@ -21403,16 +21529,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.InvoiceRequest InvoiceRequest;
+        public ResAvancedService.InvoiceRequest InvoiceRequest;
         
         public InvoiceRequest1()
         {
         }
         
-        public InvoiceRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.InvoiceRequest InvoiceRequest)
+        public InvoiceRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.InvoiceRequest InvoiceRequest)
         {
             this.OGHeader = OGHeader;
             this.InvoiceRequest = InvoiceRequest;
@@ -21427,16 +21553,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.InvoiceResponse InvoiceResponse;
+        public ResAvancedService.InvoiceResponse InvoiceResponse;
         
         public InvoiceResponse1()
         {
         }
         
-        public InvoiceResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.InvoiceResponse InvoiceResponse)
+        public InvoiceResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.InvoiceResponse InvoiceResponse)
         {
             this.OGHeader = OGHeader;
             this.InvoiceResponse = InvoiceResponse;
@@ -21451,16 +21577,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.KioskAvaliablityRequest KioskAvaliablityRequest;
+        public ResAvancedService.KioskAvaliablityRequest KioskAvaliablityRequest;
         
         public KioskAvaliablityRequest1()
         {
         }
         
-        public KioskAvaliablityRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.KioskAvaliablityRequest KioskAvaliablityRequest)
+        public KioskAvaliablityRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.KioskAvaliablityRequest KioskAvaliablityRequest)
         {
             this.OGHeader = OGHeader;
             this.KioskAvaliablityRequest = KioskAvaliablityRequest;
@@ -21475,16 +21601,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.KioskAvaliablityResponse KioskAvaliablityResponse;
+        public ResAvancedService.KioskAvaliablityResponse KioskAvaliablityResponse;
         
         public KioskAvaliablityResponse1()
         {
         }
         
-        public KioskAvaliablityResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.KioskAvaliablityResponse KioskAvaliablityResponse)
+        public KioskAvaliablityResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.KioskAvaliablityResponse KioskAvaliablityResponse)
         {
             this.OGHeader = OGHeader;
             this.KioskAvaliablityResponse = KioskAvaliablityResponse;
@@ -21499,16 +21625,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.MakePaymentRequest MakePaymentRequest;
+        public ResAvancedService.MakePaymentRequest MakePaymentRequest;
         
         public MakePaymentRequest1()
         {
         }
         
-        public MakePaymentRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.MakePaymentRequest MakePaymentRequest)
+        public MakePaymentRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.MakePaymentRequest MakePaymentRequest)
         {
             this.OGHeader = OGHeader;
             this.MakePaymentRequest = MakePaymentRequest;
@@ -21523,16 +21649,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.MakePaymentResponse MakePaymentResponse;
+        public ResAvancedService.MakePaymentResponse MakePaymentResponse;
         
         public MakePaymentResponse1()
         {
         }
         
-        public MakePaymentResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.MakePaymentResponse MakePaymentResponse)
+        public MakePaymentResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.MakePaymentResponse MakePaymentResponse)
         {
             this.OGHeader = OGHeader;
             this.MakePaymentResponse = MakePaymentResponse;
@@ -21547,16 +21673,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.PayRoutingRequest PayRoutingRequest;
+        public ResAvancedService.PayRoutingRequest PayRoutingRequest;
         
         public PayRoutingRequest1()
         {
         }
         
-        public PayRoutingRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.PayRoutingRequest PayRoutingRequest)
+        public PayRoutingRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.PayRoutingRequest PayRoutingRequest)
         {
             this.OGHeader = OGHeader;
             this.PayRoutingRequest = PayRoutingRequest;
@@ -21571,16 +21697,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.PayRoutingResponse PayRoutingResponse;
+        public ResAvancedService.PayRoutingResponse PayRoutingResponse;
         
         public PayRoutingResponse1()
         {
         }
         
-        public PayRoutingResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.PayRoutingResponse PayRoutingResponse)
+        public PayRoutingResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.PayRoutingResponse PayRoutingResponse)
         {
             this.OGHeader = OGHeader;
             this.PayRoutingResponse = PayRoutingResponse;
@@ -21595,16 +21721,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.PostChargeRequest PostChargeRequest;
+        public ResAvancedService.PostChargeRequest PostChargeRequest;
         
         public PostChargeRequest1()
         {
         }
         
-        public PostChargeRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.PostChargeRequest PostChargeRequest)
+        public PostChargeRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.PostChargeRequest PostChargeRequest)
         {
             this.OGHeader = OGHeader;
             this.PostChargeRequest = PostChargeRequest;
@@ -21619,16 +21745,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.PostChargeResponse PostChargeResponse;
+        public ResAvancedService.PostChargeResponse PostChargeResponse;
         
         public PostChargeResponse1()
         {
         }
         
-        public PostChargeResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.PostChargeResponse PostChargeResponse)
+        public PostChargeResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.PostChargeResponse PostChargeResponse)
         {
             this.OGHeader = OGHeader;
             this.PostChargeResponse = PostChargeResponse;
@@ -21643,16 +21769,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.PrintPreCheckOutBillRequest PrintPreCheckOutBillRequest;
+        public ResAvancedService.PrintPreCheckOutBillRequest PrintPreCheckOutBillRequest;
         
         public PrintPreCheckOutBillRequest1()
         {
         }
         
-        public PrintPreCheckOutBillRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.PrintPreCheckOutBillRequest PrintPreCheckOutBillRequest)
+        public PrintPreCheckOutBillRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.PrintPreCheckOutBillRequest PrintPreCheckOutBillRequest)
         {
             this.OGHeader = OGHeader;
             this.PrintPreCheckOutBillRequest = PrintPreCheckOutBillRequest;
@@ -21667,16 +21793,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.PrintPreCheckOutBillResponse PrintPreCheckOutBillResponse;
+        public ResAvancedService.PrintPreCheckOutBillResponse PrintPreCheckOutBillResponse;
         
         public PrintPreCheckOutBillResponse1()
         {
         }
         
-        public PrintPreCheckOutBillResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.PrintPreCheckOutBillResponse PrintPreCheckOutBillResponse)
+        public PrintPreCheckOutBillResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.PrintPreCheckOutBillResponse PrintPreCheckOutBillResponse)
         {
             this.OGHeader = OGHeader;
             this.PrintPreCheckOutBillResponse = PrintPreCheckOutBillResponse;
@@ -21691,16 +21817,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.ReservationRequestCodeRequest ReservationRequestCodeRequest;
+        public ResAvancedService.ReservationRequestCodeRequest ReservationRequestCodeRequest;
         
         public ReservationRequestCodeRequest1()
         {
         }
         
-        public ReservationRequestCodeRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.ReservationRequestCodeRequest ReservationRequestCodeRequest)
+        public ReservationRequestCodeRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.ReservationRequestCodeRequest ReservationRequestCodeRequest)
         {
             this.OGHeader = OGHeader;
             this.ReservationRequestCodeRequest = ReservationRequestCodeRequest;
@@ -21715,16 +21841,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.ReservationRequestCodeResponse ReservationRequestCodeResponse;
+        public ResAvancedService.ReservationRequestCodeResponse ReservationRequestCodeResponse;
         
         public ReservationRequestCodeResponse1()
         {
         }
         
-        public ReservationRequestCodeResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.ReservationRequestCodeResponse ReservationRequestCodeResponse)
+        public ReservationRequestCodeResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.ReservationRequestCodeResponse ReservationRequestCodeResponse)
         {
             this.OGHeader = OGHeader;
             this.ReservationRequestCodeResponse = ReservationRequestCodeResponse;
@@ -21739,16 +21865,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchKeyDataRequest FetchKeyDataRequest;
+        public ResAvancedService.FetchKeyDataRequest FetchKeyDataRequest;
         
         public FetchKeyDataRequest1()
         {
         }
         
-        public FetchKeyDataRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchKeyDataRequest FetchKeyDataRequest)
+        public FetchKeyDataRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchKeyDataRequest FetchKeyDataRequest)
         {
             this.OGHeader = OGHeader;
             this.FetchKeyDataRequest = FetchKeyDataRequest;
@@ -21763,16 +21889,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchKeyDataResponse FetchKeyDataResponse;
+        public ResAvancedService.FetchKeyDataResponse FetchKeyDataResponse;
         
         public FetchKeyDataResponse1()
         {
         }
         
-        public FetchKeyDataResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchKeyDataResponse FetchKeyDataResponse)
+        public FetchKeyDataResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchKeyDataResponse FetchKeyDataResponse)
         {
             this.OGHeader = OGHeader;
             this.FetchKeyDataResponse = FetchKeyDataResponse;
@@ -21787,16 +21913,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.SetKeyDataRequest SetKeyDataRequest;
+        public ResAvancedService.SetKeyDataRequest SetKeyDataRequest;
         
         public SetKeyDataRequest1()
         {
         }
         
-        public SetKeyDataRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.SetKeyDataRequest SetKeyDataRequest)
+        public SetKeyDataRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.SetKeyDataRequest SetKeyDataRequest)
         {
             this.OGHeader = OGHeader;
             this.SetKeyDataRequest = SetKeyDataRequest;
@@ -21811,16 +21937,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.SetKeyDataResponse SetKeyDataResponse;
+        public ResAvancedService.SetKeyDataResponse SetKeyDataResponse;
         
         public SetKeyDataResponse1()
         {
         }
         
-        public SetKeyDataResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.SetKeyDataResponse SetKeyDataResponse)
+        public SetKeyDataResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.SetKeyDataResponse SetKeyDataResponse)
         {
             this.OGHeader = OGHeader;
             this.SetKeyDataResponse = SetKeyDataResponse;
@@ -21835,16 +21961,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchRoomSetupRequest FetchRoomSetupRequest;
+        public ResAvancedService.FetchRoomSetupRequest FetchRoomSetupRequest;
         
         public FetchRoomSetupRequest1()
         {
         }
         
-        public FetchRoomSetupRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchRoomSetupRequest FetchRoomSetupRequest)
+        public FetchRoomSetupRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchRoomSetupRequest FetchRoomSetupRequest)
         {
             this.OGHeader = OGHeader;
             this.FetchRoomSetupRequest = FetchRoomSetupRequest;
@@ -21859,16 +21985,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchRoomSetupResponse FetchRoomSetupResponse;
+        public ResAvancedService.FetchRoomSetupResponse FetchRoomSetupResponse;
         
         public FetchRoomSetupResponse1()
         {
         }
         
-        public FetchRoomSetupResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchRoomSetupResponse FetchRoomSetupResponse)
+        public FetchRoomSetupResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchRoomSetupResponse FetchRoomSetupResponse)
         {
             this.OGHeader = OGHeader;
             this.FetchRoomSetupResponse = FetchRoomSetupResponse;
@@ -21883,16 +22009,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchRoomStatusRequest FetchRoomStatusRequest;
+        public ResAvancedService.FetchRoomStatusRequest FetchRoomStatusRequest;
         
         public FetchRoomStatusRequest1()
         {
         }
         
-        public FetchRoomStatusRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchRoomStatusRequest FetchRoomStatusRequest)
+        public FetchRoomStatusRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchRoomStatusRequest FetchRoomStatusRequest)
         {
             this.OGHeader = OGHeader;
             this.FetchRoomStatusRequest = FetchRoomStatusRequest;
@@ -21907,16 +22033,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchRoomStatusResponse FetchRoomStatusResponse;
+        public ResAvancedService.FetchRoomStatusResponse FetchRoomStatusResponse;
         
         public FetchRoomStatusResponse1()
         {
         }
         
-        public FetchRoomStatusResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchRoomStatusResponse FetchRoomStatusResponse)
+        public FetchRoomStatusResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchRoomStatusResponse FetchRoomStatusResponse)
         {
             this.OGHeader = OGHeader;
             this.FetchRoomStatusResponse = FetchRoomStatusResponse;
@@ -21931,16 +22057,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchPromotionCodeRequest FetchPromotionCodeRequest;
+        public ResAvancedService.FetchPromotionCodeRequest FetchPromotionCodeRequest;
         
         public FetchPromotionCodeRequest1()
         {
         }
         
-        public FetchPromotionCodeRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchPromotionCodeRequest FetchPromotionCodeRequest)
+        public FetchPromotionCodeRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchPromotionCodeRequest FetchPromotionCodeRequest)
         {
             this.OGHeader = OGHeader;
             this.FetchPromotionCodeRequest = FetchPromotionCodeRequest;
@@ -21955,16 +22081,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchResPromotionCodeResponse FetchResPromotionCodeResponse;
+        public ResAvancedService.FetchResPromotionCodeResponse FetchResPromotionCodeResponse;
         
         public FetchPromotionCodeResponse()
         {
         }
         
-        public FetchPromotionCodeResponse(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchResPromotionCodeResponse FetchResPromotionCodeResponse)
+        public FetchPromotionCodeResponse(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchResPromotionCodeResponse FetchResPromotionCodeResponse)
         {
             this.OGHeader = OGHeader;
             this.FetchResPromotionCodeResponse = FetchResPromotionCodeResponse;
@@ -21979,16 +22105,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchResPromotionCodeRequest FetchResPromotionCodeRequest;
+        public ResAvancedService.FetchResPromotionCodeRequest FetchResPromotionCodeRequest;
         
         public FetchResPromotionCodeRequest1()
         {
         }
         
-        public FetchResPromotionCodeRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchResPromotionCodeRequest FetchResPromotionCodeRequest)
+        public FetchResPromotionCodeRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchResPromotionCodeRequest FetchResPromotionCodeRequest)
         {
             this.OGHeader = OGHeader;
             this.FetchResPromotionCodeRequest = FetchResPromotionCodeRequest;
@@ -22003,16 +22129,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchResPromotionCodeResponse FetchResPromotionCodeResponse;
+        public ResAvancedService.FetchResPromotionCodeResponse FetchResPromotionCodeResponse;
         
         public FetchResPromotionCodeResponse1()
         {
         }
         
-        public FetchResPromotionCodeResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchResPromotionCodeResponse FetchResPromotionCodeResponse)
+        public FetchResPromotionCodeResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchResPromotionCodeResponse FetchResPromotionCodeResponse)
         {
             this.OGHeader = OGHeader;
             this.FetchResPromotionCodeResponse = FetchResPromotionCodeResponse;
@@ -22027,16 +22153,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.SetResPromotionCodeRequest SetResPromotionCodeRequest;
+        public ResAvancedService.SetResPromotionCodeRequest SetResPromotionCodeRequest;
         
         public SetResPromotionCodeRequest1()
         {
         }
         
-        public SetResPromotionCodeRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.SetResPromotionCodeRequest SetResPromotionCodeRequest)
+        public SetResPromotionCodeRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.SetResPromotionCodeRequest SetResPromotionCodeRequest)
         {
             this.OGHeader = OGHeader;
             this.SetResPromotionCodeRequest = SetResPromotionCodeRequest;
@@ -22051,16 +22177,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.SetResPromotionCodeResponse SetResPromotionCodeResponse;
+        public ResAvancedService.SetResPromotionCodeResponse SetResPromotionCodeResponse;
         
         public SetResPromotionCodeResponse1()
         {
         }
         
-        public SetResPromotionCodeResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.SetResPromotionCodeResponse SetResPromotionCodeResponse)
+        public SetResPromotionCodeResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.SetResPromotionCodeResponse SetResPromotionCodeResponse)
         {
             this.OGHeader = OGHeader;
             this.SetResPromotionCodeResponse = SetResPromotionCodeResponse;
@@ -22075,16 +22201,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.UpdateMethodOfPaymentRequest UpdateMethodOfPaymentRequest;
+        public ResAvancedService.UpdateMethodOfPaymentRequest UpdateMethodOfPaymentRequest;
         
         public UpdateMethodOfPaymentRequest1()
         {
         }
         
-        public UpdateMethodOfPaymentRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.UpdateMethodOfPaymentRequest UpdateMethodOfPaymentRequest)
+        public UpdateMethodOfPaymentRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.UpdateMethodOfPaymentRequest UpdateMethodOfPaymentRequest)
         {
             this.OGHeader = OGHeader;
             this.UpdateMethodOfPaymentRequest = UpdateMethodOfPaymentRequest;
@@ -22099,16 +22225,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.UpdateMethodOfPaymentResponse UpdateMethodOfPaymentResponse;
+        public ResAvancedService.UpdateMethodOfPaymentResponse UpdateMethodOfPaymentResponse;
         
         public UpdateMethodOfPaymentResponse1()
         {
         }
         
-        public UpdateMethodOfPaymentResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.UpdateMethodOfPaymentResponse UpdateMethodOfPaymentResponse)
+        public UpdateMethodOfPaymentResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.UpdateMethodOfPaymentResponse UpdateMethodOfPaymentResponse)
         {
             this.OGHeader = OGHeader;
             this.UpdateMethodOfPaymentResponse = UpdateMethodOfPaymentResponse;
@@ -22123,16 +22249,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.GenerateRegistrationCardRequest GenerateRegistrationCardRequest;
+        public ResAvancedService.GenerateRegistrationCardRequest GenerateRegistrationCardRequest;
         
         public GenerateRegistrationCardRequest1()
         {
         }
         
-        public GenerateRegistrationCardRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.GenerateRegistrationCardRequest GenerateRegistrationCardRequest)
+        public GenerateRegistrationCardRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.GenerateRegistrationCardRequest GenerateRegistrationCardRequest)
         {
             this.OGHeader = OGHeader;
             this.GenerateRegistrationCardRequest = GenerateRegistrationCardRequest;
@@ -22147,16 +22273,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.GenerateRegistrationCardResponse GenerateRegistrationCardResponse;
+        public ResAvancedService.GenerateRegistrationCardResponse GenerateRegistrationCardResponse;
         
         public GenerateRegistrationCardResponse1()
         {
         }
         
-        public GenerateRegistrationCardResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.GenerateRegistrationCardResponse GenerateRegistrationCardResponse)
+        public GenerateRegistrationCardResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.GenerateRegistrationCardResponse GenerateRegistrationCardResponse)
         {
             this.OGHeader = OGHeader;
             this.GenerateRegistrationCardResponse = GenerateRegistrationCardResponse;
@@ -22459,16 +22585,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.ExternalPaymentRequest ExternalPaymentRequest;
+        public ResAvancedService.ExternalPaymentRequest ExternalPaymentRequest;
         
         public ExternalPaymentRequest1()
         {
         }
         
-        public ExternalPaymentRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.ExternalPaymentRequest ExternalPaymentRequest)
+        public ExternalPaymentRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.ExternalPaymentRequest ExternalPaymentRequest)
         {
             this.OGHeader = OGHeader;
             this.ExternalPaymentRequest = ExternalPaymentRequest;
@@ -22483,16 +22609,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.ExternalPaymentResponse ExternalPaymentResponse;
+        public ResAvancedService.ExternalPaymentResponse ExternalPaymentResponse;
         
         public ExternalPaymentResponse1()
         {
         }
         
-        public ExternalPaymentResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.ExternalPaymentResponse ExternalPaymentResponse)
+        public ExternalPaymentResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.ExternalPaymentResponse ExternalPaymentResponse)
         {
             this.OGHeader = OGHeader;
             this.ExternalPaymentResponse = ExternalPaymentResponse;
@@ -22571,16 +22697,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.InstantPaymentNotificationRequest InstantPaymentNotificationRequest;
+        public ResAvancedService.InstantPaymentNotificationRequest InstantPaymentNotificationRequest;
         
         public InstantPaymentNotificationRequest1()
         {
         }
         
-        public InstantPaymentNotificationRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.InstantPaymentNotificationRequest InstantPaymentNotificationRequest)
+        public InstantPaymentNotificationRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.InstantPaymentNotificationRequest InstantPaymentNotificationRequest)
         {
             this.OGHeader = OGHeader;
             this.InstantPaymentNotificationRequest = InstantPaymentNotificationRequest;
@@ -22595,16 +22721,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.InstantPaymentNotificationResponse InstantPaymentNotificationResponse;
+        public ResAvancedService.InstantPaymentNotificationResponse InstantPaymentNotificationResponse;
         
         public InstantPaymentNotificationResponse1()
         {
         }
         
-        public InstantPaymentNotificationResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.InstantPaymentNotificationResponse InstantPaymentNotificationResponse)
+        public InstantPaymentNotificationResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.InstantPaymentNotificationResponse InstantPaymentNotificationResponse)
         {
             this.OGHeader = OGHeader;
             this.InstantPaymentNotificationResponse = InstantPaymentNotificationResponse;
@@ -22619,16 +22745,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.AssignRoomAdvRequest AssignRoomAdvRequest;
+        public ResAvancedService.AssignRoomAdvRequest AssignRoomAdvRequest;
         
         public AssignRoomRequest()
         {
         }
         
-        public AssignRoomRequest(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.AssignRoomAdvRequest AssignRoomAdvRequest)
+        public AssignRoomRequest(ResAvancedService.OGHeader OGHeader, ResAvancedService.AssignRoomAdvRequest AssignRoomAdvRequest)
         {
             this.OGHeader = OGHeader;
             this.AssignRoomAdvRequest = AssignRoomAdvRequest;
@@ -22643,16 +22769,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.AssignRoomAdvResponse AssignRoomAdvResponse;
+        public ResAvancedService.AssignRoomAdvResponse AssignRoomAdvResponse;
         
         public AssignRoomResponse()
         {
         }
         
-        public AssignRoomResponse(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.AssignRoomAdvResponse AssignRoomAdvResponse)
+        public AssignRoomResponse(ResAvancedService.OGHeader OGHeader, ResAvancedService.AssignRoomAdvResponse AssignRoomAdvResponse)
         {
             this.OGHeader = OGHeader;
             this.AssignRoomAdvResponse = AssignRoomAdvResponse;
@@ -22667,16 +22793,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.ReleaseRoomAdvRequest ReleaseRoomAdvRequest;
+        public ResAvancedService.ReleaseRoomAdvRequest ReleaseRoomAdvRequest;
         
         public ReleaseRoomRequest()
         {
         }
         
-        public ReleaseRoomRequest(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.ReleaseRoomAdvRequest ReleaseRoomAdvRequest)
+        public ReleaseRoomRequest(ResAvancedService.OGHeader OGHeader, ResAvancedService.ReleaseRoomAdvRequest ReleaseRoomAdvRequest)
         {
             this.OGHeader = OGHeader;
             this.ReleaseRoomAdvRequest = ReleaseRoomAdvRequest;
@@ -22691,16 +22817,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.ReleaseRoomAdvResponse ReleaseRoomAdvResponse;
+        public ResAvancedService.ReleaseRoomAdvResponse ReleaseRoomAdvResponse;
         
         public ReleaseRoomResponse()
         {
         }
         
-        public ReleaseRoomResponse(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.ReleaseRoomAdvResponse ReleaseRoomAdvResponse)
+        public ReleaseRoomResponse(ResAvancedService.OGHeader OGHeader, ResAvancedService.ReleaseRoomAdvResponse ReleaseRoomAdvResponse)
         {
             this.OGHeader = OGHeader;
             this.ReleaseRoomAdvResponse = ReleaseRoomAdvResponse;
@@ -22715,16 +22841,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.InsertPayRoutingRequest InsertPayRoutingRequest;
+        public ResAvancedService.InsertPayRoutingRequest InsertPayRoutingRequest;
         
         public InsertPayRoutingRequest1()
         {
         }
         
-        public InsertPayRoutingRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.InsertPayRoutingRequest InsertPayRoutingRequest)
+        public InsertPayRoutingRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.InsertPayRoutingRequest InsertPayRoutingRequest)
         {
             this.OGHeader = OGHeader;
             this.InsertPayRoutingRequest = InsertPayRoutingRequest;
@@ -22739,16 +22865,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.InsertPayRoutingResponse InsertPayRoutingResponse;
+        public ResAvancedService.InsertPayRoutingResponse InsertPayRoutingResponse;
         
         public InsertPayRoutingResponse1()
         {
         }
         
-        public InsertPayRoutingResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.InsertPayRoutingResponse InsertPayRoutingResponse)
+        public InsertPayRoutingResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.InsertPayRoutingResponse InsertPayRoutingResponse)
         {
             this.OGHeader = OGHeader;
             this.InsertPayRoutingResponse = InsertPayRoutingResponse;
@@ -22763,16 +22889,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.UpdatePayRoutingRequest UpdatePayRoutingRequest;
+        public ResAvancedService.UpdatePayRoutingRequest UpdatePayRoutingRequest;
         
         public UpdatePayRoutingRequest1()
         {
         }
         
-        public UpdatePayRoutingRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.UpdatePayRoutingRequest UpdatePayRoutingRequest)
+        public UpdatePayRoutingRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.UpdatePayRoutingRequest UpdatePayRoutingRequest)
         {
             this.OGHeader = OGHeader;
             this.UpdatePayRoutingRequest = UpdatePayRoutingRequest;
@@ -22787,16 +22913,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.UpdatePayRoutingResponse UpdatePayRoutingResponse;
+        public ResAvancedService.UpdatePayRoutingResponse UpdatePayRoutingResponse;
         
         public UpdatePayRoutingResponse1()
         {
         }
         
-        public UpdatePayRoutingResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.UpdatePayRoutingResponse UpdatePayRoutingResponse)
+        public UpdatePayRoutingResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.UpdatePayRoutingResponse UpdatePayRoutingResponse)
         {
             this.OGHeader = OGHeader;
             this.UpdatePayRoutingResponse = UpdatePayRoutingResponse;
@@ -22811,16 +22937,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FolioTransactionTransferRequest FolioTransactionTransferRequest;
+        public ResAvancedService.FolioTransactionTransferRequest FolioTransactionTransferRequest;
         
         public FolioTransactionTransferRequest1()
         {
         }
         
-        public FolioTransactionTransferRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FolioTransactionTransferRequest FolioTransactionTransferRequest)
+        public FolioTransactionTransferRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FolioTransactionTransferRequest FolioTransactionTransferRequest)
         {
             this.OGHeader = OGHeader;
             this.FolioTransactionTransferRequest = FolioTransactionTransferRequest;
@@ -22835,16 +22961,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FolioTransactionTransferResponse FolioTransactionTransferResponse;
+        public ResAvancedService.FolioTransactionTransferResponse FolioTransactionTransferResponse;
         
         public FolioTransactionTransferResponse1()
         {
         }
         
-        public FolioTransactionTransferResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FolioTransactionTransferResponse FolioTransactionTransferResponse)
+        public FolioTransactionTransferResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FolioTransactionTransferResponse FolioTransactionTransferResponse)
         {
             this.OGHeader = OGHeader;
             this.FolioTransactionTransferResponse = FolioTransactionTransferResponse;
@@ -22958,16 +23084,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.QueueReservationRequest QueueReservationRequest;
+        public ResAvancedService.QueueReservationRequest QueueReservationRequest;
         
         public QueueReservationRequest1()
         {
         }
         
-        public QueueReservationRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.QueueReservationRequest QueueReservationRequest)
+        public QueueReservationRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.QueueReservationRequest QueueReservationRequest)
         {
             this.OGHeader = OGHeader;
             this.QueueReservationRequest = QueueReservationRequest;
@@ -22982,16 +23108,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.QueueReservationResponse QueueReservationResponse;
+        public ResAvancedService.QueueReservationResponse QueueReservationResponse;
         
         public QueueReservationResponse1()
         {
         }
         
-        public QueueReservationResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.QueueReservationResponse QueueReservationResponse)
+        public QueueReservationResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.QueueReservationResponse QueueReservationResponse)
         {
             this.OGHeader = OGHeader;
             this.QueueReservationResponse = QueueReservationResponse;
@@ -23135,16 +23261,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchQueueReservationsRequest FetchQueueReservationsRequest;
+        public ResAvancedService.FetchQueueReservationsRequest FetchQueueReservationsRequest;
         
         public FetchQueueReservationsRequest1()
         {
         }
         
-        public FetchQueueReservationsRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchQueueReservationsRequest FetchQueueReservationsRequest)
+        public FetchQueueReservationsRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchQueueReservationsRequest FetchQueueReservationsRequest)
         {
             this.OGHeader = OGHeader;
             this.FetchQueueReservationsRequest = FetchQueueReservationsRequest;
@@ -23159,16 +23285,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchQueueReservationsResponse FetchQueueReservationsResponse;
+        public ResAvancedService.FetchQueueReservationsResponse FetchQueueReservationsResponse;
         
         public FetchQueueReservationsResponse1()
         {
         }
         
-        public FetchQueueReservationsResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchQueueReservationsResponse FetchQueueReservationsResponse)
+        public FetchQueueReservationsResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchQueueReservationsResponse FetchQueueReservationsResponse)
         {
             this.OGHeader = OGHeader;
             this.FetchQueueReservationsResponse = FetchQueueReservationsResponse;
@@ -23359,16 +23485,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.DCCCheckRequest DCCCheckRequest;
+        public ResAvancedService.DCCCheckRequest DCCCheckRequest;
         
         public DCCCheckRequest1()
         {
         }
         
-        public DCCCheckRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.DCCCheckRequest DCCCheckRequest)
+        public DCCCheckRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.DCCCheckRequest DCCCheckRequest)
         {
             this.OGHeader = OGHeader;
             this.DCCCheckRequest = DCCCheckRequest;
@@ -23383,16 +23509,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.DCCCheckResponse DCCCheckResponse;
+        public ResAvancedService.DCCCheckResponse DCCCheckResponse;
         
         public DCCCheckResponse1()
         {
         }
         
-        public DCCCheckResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.DCCCheckResponse DCCCheckResponse)
+        public DCCCheckResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.DCCCheckResponse DCCCheckResponse)
         {
             this.OGHeader = OGHeader;
             this.DCCCheckResponse = DCCCheckResponse;
@@ -23519,16 +23645,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchAuthorizationsHistoryRequest FetchAuthorizationsHistoryRequest;
+        public ResAvancedService.FetchAuthorizationsHistoryRequest FetchAuthorizationsHistoryRequest;
         
         public FetchAuthorizationsHistoryRequest1()
         {
         }
         
-        public FetchAuthorizationsHistoryRequest1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchAuthorizationsHistoryRequest FetchAuthorizationsHistoryRequest)
+        public FetchAuthorizationsHistoryRequest1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchAuthorizationsHistoryRequest FetchAuthorizationsHistoryRequest)
         {
             this.OGHeader = OGHeader;
             this.FetchAuthorizationsHistoryRequest = FetchAuthorizationsHistoryRequest;
@@ -23543,16 +23669,16 @@ namespace ReservationAdvancedService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-        public ReservationAdvancedService.OGHeader OGHeader;
+        public ResAvancedService.OGHeader OGHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservices.micros.com/og/4.3/ResvAdvanced/", Order=0)]
-        public ReservationAdvancedService.FetchAuthorizationsHistoryResponse FetchAuthorizationsHistoryResponse;
+        public ResAvancedService.FetchAuthorizationsHistoryResponse FetchAuthorizationsHistoryResponse;
         
         public FetchAuthorizationsHistoryResponse1()
         {
         }
         
-        public FetchAuthorizationsHistoryResponse1(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchAuthorizationsHistoryResponse FetchAuthorizationsHistoryResponse)
+        public FetchAuthorizationsHistoryResponse1(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchAuthorizationsHistoryResponse FetchAuthorizationsHistoryResponse)
         {
             this.OGHeader = OGHeader;
             this.FetchAuthorizationsHistoryResponse = FetchAuthorizationsHistoryResponse;
@@ -23560,13 +23686,13 @@ namespace ReservationAdvancedService
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    public interface ResvAdvancedServiceSoapChannel : ReservationAdvancedService.ResvAdvancedServiceSoap, System.ServiceModel.IClientChannel
+    public interface ResvAdvancedServiceSoapChannel : ResAvancedService.ResvAdvancedServiceSoap, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    public partial class ResvAdvancedServiceSoapClient : System.ServiceModel.ClientBase<ReservationAdvancedService.ResvAdvancedServiceSoap>, ReservationAdvancedService.ResvAdvancedServiceSoap
+    public partial class ResvAdvancedServiceSoapClient : System.ServiceModel.ClientBase<ResAvancedService.ResvAdvancedServiceSoap>, ResAvancedService.ResvAdvancedServiceSoap
     {
         
         /// <summary>
@@ -23601,471 +23727,995 @@ namespace ReservationAdvancedService
                 base(binding, remoteAddress)
         {
         }
-
-        public ResvAdvancedServiceSoapClient()
-        {
-        }
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.AdditionalKeysResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.AdditionalKeysAsync(ReservationAdvancedService.AdditionalKeysRequest1 request)
+        ResAvancedService.AdditionalKeysResponse1 ResAvancedService.ResvAdvancedServiceSoap.AdditionalKeys(ResAvancedService.AdditionalKeysRequest1 request)
+        {
+            return base.Channel.AdditionalKeys(request);
+        }
+        
+        public ResAvancedService.AdditionalKeysResponse AdditionalKeys(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.AdditionalKeysRequest AdditionalKeysRequest)
+        {
+            ResAvancedService.AdditionalKeysRequest1 inValue = new ResAvancedService.AdditionalKeysRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.AdditionalKeysRequest = AdditionalKeysRequest;
+            ResAvancedService.AdditionalKeysResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).AdditionalKeys(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.AdditionalKeysResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.AdditionalKeysResponse1> ResAvancedService.ResvAdvancedServiceSoap.AdditionalKeysAsync(ResAvancedService.AdditionalKeysRequest1 request)
         {
             return base.Channel.AdditionalKeysAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.AdditionalKeysResponse1> AdditionalKeysAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.AdditionalKeysRequest AdditionalKeysRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.AdditionalKeysResponse1> AdditionalKeysAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.AdditionalKeysRequest AdditionalKeysRequest)
         {
-            ReservationAdvancedService.AdditionalKeysRequest1 inValue = new ReservationAdvancedService.AdditionalKeysRequest1();
+            ResAvancedService.AdditionalKeysRequest1 inValue = new ResAvancedService.AdditionalKeysRequest1();
             inValue.OGHeader = OGHeader;
             inValue.AdditionalKeysRequest = AdditionalKeysRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).AdditionalKeysAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).AdditionalKeysAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.AlternateRoomsResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.AlternateRoomsAsync(ReservationAdvancedService.AlternateRoomsRequest1 request)
+        ResAvancedService.AlternateRoomsResponse1 ResAvancedService.ResvAdvancedServiceSoap.AlternateRooms(ResAvancedService.AlternateRoomsRequest1 request)
+        {
+            return base.Channel.AlternateRooms(request);
+        }
+        
+        public ResAvancedService.AlternateRoomsResponse AlternateRooms(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.AlternateRoomsRequest AlternateRoomsRequest)
+        {
+            ResAvancedService.AlternateRoomsRequest1 inValue = new ResAvancedService.AlternateRoomsRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.AlternateRoomsRequest = AlternateRoomsRequest;
+            ResAvancedService.AlternateRoomsResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).AlternateRooms(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.AlternateRoomsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.AlternateRoomsResponse1> ResAvancedService.ResvAdvancedServiceSoap.AlternateRoomsAsync(ResAvancedService.AlternateRoomsRequest1 request)
         {
             return base.Channel.AlternateRoomsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.AlternateRoomsResponse1> AlternateRoomsAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.AlternateRoomsRequest AlternateRoomsRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.AlternateRoomsResponse1> AlternateRoomsAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.AlternateRoomsRequest AlternateRoomsRequest)
         {
-            ReservationAdvancedService.AlternateRoomsRequest1 inValue = new ReservationAdvancedService.AlternateRoomsRequest1();
+            ResAvancedService.AlternateRoomsRequest1 inValue = new ResAvancedService.AlternateRoomsRequest1();
             inValue.OGHeader = OGHeader;
             inValue.AlternateRoomsRequest = AlternateRoomsRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).AlternateRoomsAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).AlternateRoomsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.CancelCheckInResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.CancelCheckInAsync(ReservationAdvancedService.CancelCheckInRequest1 request)
+        ResAvancedService.CancelCheckInResponse1 ResAvancedService.ResvAdvancedServiceSoap.CancelCheckIn(ResAvancedService.CancelCheckInRequest1 request)
+        {
+            return base.Channel.CancelCheckIn(request);
+        }
+        
+        public ResAvancedService.CancelCheckInResponse CancelCheckIn(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.CancelCheckInRequest CancelCheckInRequest)
+        {
+            ResAvancedService.CancelCheckInRequest1 inValue = new ResAvancedService.CancelCheckInRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CancelCheckInRequest = CancelCheckInRequest;
+            ResAvancedService.CancelCheckInResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).CancelCheckIn(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.CancelCheckInResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.CancelCheckInResponse1> ResAvancedService.ResvAdvancedServiceSoap.CancelCheckInAsync(ResAvancedService.CancelCheckInRequest1 request)
         {
             return base.Channel.CancelCheckInAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.CancelCheckInResponse1> CancelCheckInAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.CancelCheckInRequest CancelCheckInRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.CancelCheckInResponse1> CancelCheckInAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.CancelCheckInRequest CancelCheckInRequest)
         {
-            ReservationAdvancedService.CancelCheckInRequest1 inValue = new ReservationAdvancedService.CancelCheckInRequest1();
+            ResAvancedService.CancelCheckInRequest1 inValue = new ResAvancedService.CancelCheckInRequest1();
             inValue.OGHeader = OGHeader;
             inValue.CancelCheckInRequest = CancelCheckInRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).CancelCheckInAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).CancelCheckInAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.CheckInResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.CheckInAsync(ReservationAdvancedService.CheckInRequest1 request)
+        ResAvancedService.CheckInResponse1 ResAvancedService.ResvAdvancedServiceSoap.CheckIn(ResAvancedService.CheckInRequest1 request)
+        {
+            return base.Channel.CheckIn(request);
+        }
+        
+        public ResAvancedService.CheckInResponse CheckIn(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.CheckInRequest CheckInRequest)
+        {
+            ResAvancedService.CheckInRequest1 inValue = new ResAvancedService.CheckInRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CheckInRequest = CheckInRequest;
+            ResAvancedService.CheckInResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).CheckIn(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.CheckInResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.CheckInResponse1> ResAvancedService.ResvAdvancedServiceSoap.CheckInAsync(ResAvancedService.CheckInRequest1 request)
         {
             return base.Channel.CheckInAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.CheckInResponse1> CheckInAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.CheckInRequest CheckInRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.CheckInResponse1> CheckInAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.CheckInRequest CheckInRequest)
         {
-            ReservationAdvancedService.CheckInRequest1 inValue = new ReservationAdvancedService.CheckInRequest1();
+            ResAvancedService.CheckInRequest1 inValue = new ResAvancedService.CheckInRequest1();
             inValue.OGHeader = OGHeader;
             inValue.CheckInRequest = CheckInRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).CheckInAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).CheckInAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.CheckOutResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.CheckOutAsync(ReservationAdvancedService.CheckOutRequest1 request)
+        ResAvancedService.CheckOutResponse1 ResAvancedService.ResvAdvancedServiceSoap.CheckOut(ResAvancedService.CheckOutRequest1 request)
+        {
+            return base.Channel.CheckOut(request);
+        }
+        
+        public ResAvancedService.CheckOutResponse CheckOut(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.CheckOutRequest CheckOutRequest)
+        {
+            ResAvancedService.CheckOutRequest1 inValue = new ResAvancedService.CheckOutRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CheckOutRequest = CheckOutRequest;
+            ResAvancedService.CheckOutResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).CheckOut(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.CheckOutResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.CheckOutResponse1> ResAvancedService.ResvAdvancedServiceSoap.CheckOutAsync(ResAvancedService.CheckOutRequest1 request)
         {
             return base.Channel.CheckOutAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.CheckOutResponse1> CheckOutAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.CheckOutRequest CheckOutRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.CheckOutResponse1> CheckOutAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.CheckOutRequest CheckOutRequest)
         {
-            ReservationAdvancedService.CheckOutRequest1 inValue = new ReservationAdvancedService.CheckOutRequest1();
+            ResAvancedService.CheckOutRequest1 inValue = new ResAvancedService.CheckOutRequest1();
             inValue.OGHeader = OGHeader;
             inValue.CheckOutRequest = CheckOutRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).CheckOutAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).CheckOutAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.GuestMessagesResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.GuestMessagesAsync(ReservationAdvancedService.GuestMessagesRequest1 request)
+        ResAvancedService.GuestMessagesResponse1 ResAvancedService.ResvAdvancedServiceSoap.GuestMessages(ResAvancedService.GuestMessagesRequest1 request)
+        {
+            return base.Channel.GuestMessages(request);
+        }
+        
+        public ResAvancedService.GuestMessagesResponse GuestMessages(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.GuestMessagesRequest GuestMessagesRequest)
+        {
+            ResAvancedService.GuestMessagesRequest1 inValue = new ResAvancedService.GuestMessagesRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.GuestMessagesRequest = GuestMessagesRequest;
+            ResAvancedService.GuestMessagesResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).GuestMessages(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.GuestMessagesResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.GuestMessagesResponse1> ResAvancedService.ResvAdvancedServiceSoap.GuestMessagesAsync(ResAvancedService.GuestMessagesRequest1 request)
         {
             return base.Channel.GuestMessagesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.GuestMessagesResponse1> GuestMessagesAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.GuestMessagesRequest GuestMessagesRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.GuestMessagesResponse1> GuestMessagesAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.GuestMessagesRequest GuestMessagesRequest)
         {
-            ReservationAdvancedService.GuestMessagesRequest1 inValue = new ReservationAdvancedService.GuestMessagesRequest1();
+            ResAvancedService.GuestMessagesRequest1 inValue = new ResAvancedService.GuestMessagesRequest1();
             inValue.OGHeader = OGHeader;
             inValue.GuestMessagesRequest = GuestMessagesRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).GuestMessagesAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).GuestMessagesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.InvoiceResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.InvoiceAsync(ReservationAdvancedService.InvoiceRequest1 request)
+        ResAvancedService.InvoiceResponse1 ResAvancedService.ResvAdvancedServiceSoap.Invoice(ResAvancedService.InvoiceRequest1 request)
+        {
+            return base.Channel.Invoice(request);
+        }
+        
+        public ResAvancedService.InvoiceResponse Invoice(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.InvoiceRequest InvoiceRequest)
+        {
+            ResAvancedService.InvoiceRequest1 inValue = new ResAvancedService.InvoiceRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.InvoiceRequest = InvoiceRequest;
+            ResAvancedService.InvoiceResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).Invoice(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.InvoiceResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.InvoiceResponse1> ResAvancedService.ResvAdvancedServiceSoap.InvoiceAsync(ResAvancedService.InvoiceRequest1 request)
         {
             return base.Channel.InvoiceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.InvoiceResponse1> InvoiceAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.InvoiceRequest InvoiceRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.InvoiceResponse1> InvoiceAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.InvoiceRequest InvoiceRequest)
         {
-            ReservationAdvancedService.InvoiceRequest1 inValue = new ReservationAdvancedService.InvoiceRequest1();
+            ResAvancedService.InvoiceRequest1 inValue = new ResAvancedService.InvoiceRequest1();
             inValue.OGHeader = OGHeader;
             inValue.InvoiceRequest = InvoiceRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).InvoiceAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).InvoiceAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.KioskAvaliablityResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.KioskAvaliablityAsync(ReservationAdvancedService.KioskAvaliablityRequest1 request)
+        ResAvancedService.KioskAvaliablityResponse1 ResAvancedService.ResvAdvancedServiceSoap.KioskAvaliablity(ResAvancedService.KioskAvaliablityRequest1 request)
+        {
+            return base.Channel.KioskAvaliablity(request);
+        }
+        
+        public ResAvancedService.KioskAvaliablityResponse KioskAvaliablity(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.KioskAvaliablityRequest KioskAvaliablityRequest)
+        {
+            ResAvancedService.KioskAvaliablityRequest1 inValue = new ResAvancedService.KioskAvaliablityRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.KioskAvaliablityRequest = KioskAvaliablityRequest;
+            ResAvancedService.KioskAvaliablityResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).KioskAvaliablity(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.KioskAvaliablityResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.KioskAvaliablityResponse1> ResAvancedService.ResvAdvancedServiceSoap.KioskAvaliablityAsync(ResAvancedService.KioskAvaliablityRequest1 request)
         {
             return base.Channel.KioskAvaliablityAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.KioskAvaliablityResponse1> KioskAvaliablityAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.KioskAvaliablityRequest KioskAvaliablityRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.KioskAvaliablityResponse1> KioskAvaliablityAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.KioskAvaliablityRequest KioskAvaliablityRequest)
         {
-            ReservationAdvancedService.KioskAvaliablityRequest1 inValue = new ReservationAdvancedService.KioskAvaliablityRequest1();
+            ResAvancedService.KioskAvaliablityRequest1 inValue = new ResAvancedService.KioskAvaliablityRequest1();
             inValue.OGHeader = OGHeader;
             inValue.KioskAvaliablityRequest = KioskAvaliablityRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).KioskAvaliablityAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).KioskAvaliablityAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.MakePaymentResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.MakePaymentAsync(ReservationAdvancedService.MakePaymentRequest1 request)
+        ResAvancedService.MakePaymentResponse1 ResAvancedService.ResvAdvancedServiceSoap.MakePayment(ResAvancedService.MakePaymentRequest1 request)
+        {
+            return base.Channel.MakePayment(request);
+        }
+        
+        public ResAvancedService.MakePaymentResponse MakePayment(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.MakePaymentRequest MakePaymentRequest)
+        {
+            ResAvancedService.MakePaymentRequest1 inValue = new ResAvancedService.MakePaymentRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.MakePaymentRequest = MakePaymentRequest;
+            ResAvancedService.MakePaymentResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).MakePayment(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.MakePaymentResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.MakePaymentResponse1> ResAvancedService.ResvAdvancedServiceSoap.MakePaymentAsync(ResAvancedService.MakePaymentRequest1 request)
         {
             return base.Channel.MakePaymentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.MakePaymentResponse1> MakePaymentAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.MakePaymentRequest MakePaymentRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.MakePaymentResponse1> MakePaymentAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.MakePaymentRequest MakePaymentRequest)
         {
-            ReservationAdvancedService.MakePaymentRequest1 inValue = new ReservationAdvancedService.MakePaymentRequest1();
+            ResAvancedService.MakePaymentRequest1 inValue = new ResAvancedService.MakePaymentRequest1();
             inValue.OGHeader = OGHeader;
             inValue.MakePaymentRequest = MakePaymentRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).MakePaymentAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).MakePaymentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.PayRoutingResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.PayRoutingAsync(ReservationAdvancedService.PayRoutingRequest1 request)
+        ResAvancedService.PayRoutingResponse1 ResAvancedService.ResvAdvancedServiceSoap.PayRouting(ResAvancedService.PayRoutingRequest1 request)
+        {
+            return base.Channel.PayRouting(request);
+        }
+        
+        public ResAvancedService.PayRoutingResponse PayRouting(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.PayRoutingRequest PayRoutingRequest)
+        {
+            ResAvancedService.PayRoutingRequest1 inValue = new ResAvancedService.PayRoutingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.PayRoutingRequest = PayRoutingRequest;
+            ResAvancedService.PayRoutingResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).PayRouting(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.PayRoutingResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.PayRoutingResponse1> ResAvancedService.ResvAdvancedServiceSoap.PayRoutingAsync(ResAvancedService.PayRoutingRequest1 request)
         {
             return base.Channel.PayRoutingAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.PayRoutingResponse1> PayRoutingAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.PayRoutingRequest PayRoutingRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.PayRoutingResponse1> PayRoutingAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.PayRoutingRequest PayRoutingRequest)
         {
-            ReservationAdvancedService.PayRoutingRequest1 inValue = new ReservationAdvancedService.PayRoutingRequest1();
+            ResAvancedService.PayRoutingRequest1 inValue = new ResAvancedService.PayRoutingRequest1();
             inValue.OGHeader = OGHeader;
             inValue.PayRoutingRequest = PayRoutingRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).PayRoutingAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).PayRoutingAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.PostChargeResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.PostChargeAsync(ReservationAdvancedService.PostChargeRequest1 request)
+        ResAvancedService.PostChargeResponse1 ResAvancedService.ResvAdvancedServiceSoap.PostCharge(ResAvancedService.PostChargeRequest1 request)
+        {
+            return base.Channel.PostCharge(request);
+        }
+        
+        public ResAvancedService.PostChargeResponse PostCharge(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.PostChargeRequest PostChargeRequest)
+        {
+            ResAvancedService.PostChargeRequest1 inValue = new ResAvancedService.PostChargeRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.PostChargeRequest = PostChargeRequest;
+            ResAvancedService.PostChargeResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).PostCharge(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.PostChargeResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.PostChargeResponse1> ResAvancedService.ResvAdvancedServiceSoap.PostChargeAsync(ResAvancedService.PostChargeRequest1 request)
         {
             return base.Channel.PostChargeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.PostChargeResponse1> PostChargeAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.PostChargeRequest PostChargeRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.PostChargeResponse1> PostChargeAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.PostChargeRequest PostChargeRequest)
         {
-            ReservationAdvancedService.PostChargeRequest1 inValue = new ReservationAdvancedService.PostChargeRequest1();
+            ResAvancedService.PostChargeRequest1 inValue = new ResAvancedService.PostChargeRequest1();
             inValue.OGHeader = OGHeader;
             inValue.PostChargeRequest = PostChargeRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).PostChargeAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).PostChargeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.PrintPreCheckOutBillResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.PrintPreCheckOutBillAsync(ReservationAdvancedService.PrintPreCheckOutBillRequest1 request)
+        ResAvancedService.PrintPreCheckOutBillResponse1 ResAvancedService.ResvAdvancedServiceSoap.PrintPreCheckOutBill(ResAvancedService.PrintPreCheckOutBillRequest1 request)
+        {
+            return base.Channel.PrintPreCheckOutBill(request);
+        }
+        
+        public ResAvancedService.PrintPreCheckOutBillResponse PrintPreCheckOutBill(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.PrintPreCheckOutBillRequest PrintPreCheckOutBillRequest)
+        {
+            ResAvancedService.PrintPreCheckOutBillRequest1 inValue = new ResAvancedService.PrintPreCheckOutBillRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.PrintPreCheckOutBillRequest = PrintPreCheckOutBillRequest;
+            ResAvancedService.PrintPreCheckOutBillResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).PrintPreCheckOutBill(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.PrintPreCheckOutBillResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.PrintPreCheckOutBillResponse1> ResAvancedService.ResvAdvancedServiceSoap.PrintPreCheckOutBillAsync(ResAvancedService.PrintPreCheckOutBillRequest1 request)
         {
             return base.Channel.PrintPreCheckOutBillAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.PrintPreCheckOutBillResponse1> PrintPreCheckOutBillAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.PrintPreCheckOutBillRequest PrintPreCheckOutBillRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.PrintPreCheckOutBillResponse1> PrintPreCheckOutBillAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.PrintPreCheckOutBillRequest PrintPreCheckOutBillRequest)
         {
-            ReservationAdvancedService.PrintPreCheckOutBillRequest1 inValue = new ReservationAdvancedService.PrintPreCheckOutBillRequest1();
+            ResAvancedService.PrintPreCheckOutBillRequest1 inValue = new ResAvancedService.PrintPreCheckOutBillRequest1();
             inValue.OGHeader = OGHeader;
             inValue.PrintPreCheckOutBillRequest = PrintPreCheckOutBillRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).PrintPreCheckOutBillAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).PrintPreCheckOutBillAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.ReservationRequestCodeResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.ReservationRequestCodeAsync(ReservationAdvancedService.ReservationRequestCodeRequest1 request)
+        ResAvancedService.ReservationRequestCodeResponse1 ResAvancedService.ResvAdvancedServiceSoap.ReservationRequestCode(ResAvancedService.ReservationRequestCodeRequest1 request)
+        {
+            return base.Channel.ReservationRequestCode(request);
+        }
+        
+        public ResAvancedService.ReservationRequestCodeResponse ReservationRequestCode(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.ReservationRequestCodeRequest ReservationRequestCodeRequest)
+        {
+            ResAvancedService.ReservationRequestCodeRequest1 inValue = new ResAvancedService.ReservationRequestCodeRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ReservationRequestCodeRequest = ReservationRequestCodeRequest;
+            ResAvancedService.ReservationRequestCodeResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).ReservationRequestCode(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.ReservationRequestCodeResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.ReservationRequestCodeResponse1> ResAvancedService.ResvAdvancedServiceSoap.ReservationRequestCodeAsync(ResAvancedService.ReservationRequestCodeRequest1 request)
         {
             return base.Channel.ReservationRequestCodeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.ReservationRequestCodeResponse1> ReservationRequestCodeAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.ReservationRequestCodeRequest ReservationRequestCodeRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.ReservationRequestCodeResponse1> ReservationRequestCodeAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.ReservationRequestCodeRequest ReservationRequestCodeRequest)
         {
-            ReservationAdvancedService.ReservationRequestCodeRequest1 inValue = new ReservationAdvancedService.ReservationRequestCodeRequest1();
+            ResAvancedService.ReservationRequestCodeRequest1 inValue = new ResAvancedService.ReservationRequestCodeRequest1();
             inValue.OGHeader = OGHeader;
             inValue.ReservationRequestCodeRequest = ReservationRequestCodeRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).ReservationRequestCodeAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).ReservationRequestCodeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchKeyDataResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.FetchKeyDataAsync(ReservationAdvancedService.FetchKeyDataRequest1 request)
+        ResAvancedService.FetchKeyDataResponse1 ResAvancedService.ResvAdvancedServiceSoap.FetchKeyData(ResAvancedService.FetchKeyDataRequest1 request)
+        {
+            return base.Channel.FetchKeyData(request);
+        }
+        
+        public ResAvancedService.FetchKeyDataResponse FetchKeyData(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchKeyDataRequest FetchKeyDataRequest)
+        {
+            ResAvancedService.FetchKeyDataRequest1 inValue = new ResAvancedService.FetchKeyDataRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchKeyDataRequest = FetchKeyDataRequest;
+            ResAvancedService.FetchKeyDataResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchKeyData(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchKeyDataResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.FetchKeyDataResponse1> ResAvancedService.ResvAdvancedServiceSoap.FetchKeyDataAsync(ResAvancedService.FetchKeyDataRequest1 request)
         {
             return base.Channel.FetchKeyDataAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.FetchKeyDataResponse1> FetchKeyDataAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchKeyDataRequest FetchKeyDataRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.FetchKeyDataResponse1> FetchKeyDataAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchKeyDataRequest FetchKeyDataRequest)
         {
-            ReservationAdvancedService.FetchKeyDataRequest1 inValue = new ReservationAdvancedService.FetchKeyDataRequest1();
+            ResAvancedService.FetchKeyDataRequest1 inValue = new ResAvancedService.FetchKeyDataRequest1();
             inValue.OGHeader = OGHeader;
             inValue.FetchKeyDataRequest = FetchKeyDataRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).FetchKeyDataAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchKeyDataAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.SetKeyDataResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.SetKeyDataAsync(ReservationAdvancedService.SetKeyDataRequest1 request)
+        ResAvancedService.SetKeyDataResponse1 ResAvancedService.ResvAdvancedServiceSoap.SetKeyData(ResAvancedService.SetKeyDataRequest1 request)
+        {
+            return base.Channel.SetKeyData(request);
+        }
+        
+        public ResAvancedService.SetKeyDataResponse SetKeyData(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.SetKeyDataRequest SetKeyDataRequest)
+        {
+            ResAvancedService.SetKeyDataRequest1 inValue = new ResAvancedService.SetKeyDataRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.SetKeyDataRequest = SetKeyDataRequest;
+            ResAvancedService.SetKeyDataResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).SetKeyData(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.SetKeyDataResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.SetKeyDataResponse1> ResAvancedService.ResvAdvancedServiceSoap.SetKeyDataAsync(ResAvancedService.SetKeyDataRequest1 request)
         {
             return base.Channel.SetKeyDataAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.SetKeyDataResponse1> SetKeyDataAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.SetKeyDataRequest SetKeyDataRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.SetKeyDataResponse1> SetKeyDataAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.SetKeyDataRequest SetKeyDataRequest)
         {
-            ReservationAdvancedService.SetKeyDataRequest1 inValue = new ReservationAdvancedService.SetKeyDataRequest1();
+            ResAvancedService.SetKeyDataRequest1 inValue = new ResAvancedService.SetKeyDataRequest1();
             inValue.OGHeader = OGHeader;
             inValue.SetKeyDataRequest = SetKeyDataRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).SetKeyDataAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).SetKeyDataAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchRoomSetupResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.FetchRoomSetupAsync(ReservationAdvancedService.FetchRoomSetupRequest1 request)
+        ResAvancedService.FetchRoomSetupResponse1 ResAvancedService.ResvAdvancedServiceSoap.FetchRoomSetup(ResAvancedService.FetchRoomSetupRequest1 request)
+        {
+            return base.Channel.FetchRoomSetup(request);
+        }
+        
+        public ResAvancedService.FetchRoomSetupResponse FetchRoomSetup(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchRoomSetupRequest FetchRoomSetupRequest)
+        {
+            ResAvancedService.FetchRoomSetupRequest1 inValue = new ResAvancedService.FetchRoomSetupRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchRoomSetupRequest = FetchRoomSetupRequest;
+            ResAvancedService.FetchRoomSetupResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchRoomSetup(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchRoomSetupResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.FetchRoomSetupResponse1> ResAvancedService.ResvAdvancedServiceSoap.FetchRoomSetupAsync(ResAvancedService.FetchRoomSetupRequest1 request)
         {
             return base.Channel.FetchRoomSetupAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.FetchRoomSetupResponse1> FetchRoomSetupAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchRoomSetupRequest FetchRoomSetupRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.FetchRoomSetupResponse1> FetchRoomSetupAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchRoomSetupRequest FetchRoomSetupRequest)
         {
-            ReservationAdvancedService.FetchRoomSetupRequest1 inValue = new ReservationAdvancedService.FetchRoomSetupRequest1();
+            ResAvancedService.FetchRoomSetupRequest1 inValue = new ResAvancedService.FetchRoomSetupRequest1();
             inValue.OGHeader = OGHeader;
             inValue.FetchRoomSetupRequest = FetchRoomSetupRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).FetchRoomSetupAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchRoomSetupAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchRoomStatusResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.FetchRoomStatusAsync(ReservationAdvancedService.FetchRoomStatusRequest1 request)
+        ResAvancedService.FetchRoomStatusResponse1 ResAvancedService.ResvAdvancedServiceSoap.FetchRoomStatus(ResAvancedService.FetchRoomStatusRequest1 request)
+        {
+            return base.Channel.FetchRoomStatus(request);
+        }
+        
+        public ResAvancedService.FetchRoomStatusResponse FetchRoomStatus(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchRoomStatusRequest FetchRoomStatusRequest)
+        {
+            ResAvancedService.FetchRoomStatusRequest1 inValue = new ResAvancedService.FetchRoomStatusRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchRoomStatusRequest = FetchRoomStatusRequest;
+            ResAvancedService.FetchRoomStatusResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchRoomStatus(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchRoomStatusResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.FetchRoomStatusResponse1> ResAvancedService.ResvAdvancedServiceSoap.FetchRoomStatusAsync(ResAvancedService.FetchRoomStatusRequest1 request)
         {
             return base.Channel.FetchRoomStatusAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.FetchRoomStatusResponse1> FetchRoomStatusAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchRoomStatusRequest FetchRoomStatusRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.FetchRoomStatusResponse1> FetchRoomStatusAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchRoomStatusRequest FetchRoomStatusRequest)
         {
-            ReservationAdvancedService.FetchRoomStatusRequest1 inValue = new ReservationAdvancedService.FetchRoomStatusRequest1();
+            ResAvancedService.FetchRoomStatusRequest1 inValue = new ResAvancedService.FetchRoomStatusRequest1();
             inValue.OGHeader = OGHeader;
             inValue.FetchRoomStatusRequest = FetchRoomStatusRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).FetchRoomStatusAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchRoomStatusAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchPromotionCodeResponse> ReservationAdvancedService.ResvAdvancedServiceSoap.FetchPromotionCodeAsync(ReservationAdvancedService.FetchPromotionCodeRequest1 request)
+        ResAvancedService.FetchPromotionCodeResponse ResAvancedService.ResvAdvancedServiceSoap.FetchPromotionCode(ResAvancedService.FetchPromotionCodeRequest1 request)
+        {
+            return base.Channel.FetchPromotionCode(request);
+        }
+        
+        public ResAvancedService.FetchResPromotionCodeResponse FetchPromotionCode(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchPromotionCodeRequest FetchPromotionCodeRequest)
+        {
+            ResAvancedService.FetchPromotionCodeRequest1 inValue = new ResAvancedService.FetchPromotionCodeRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchPromotionCodeRequest = FetchPromotionCodeRequest;
+            ResAvancedService.FetchPromotionCodeResponse retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchPromotionCode(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchResPromotionCodeResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.FetchPromotionCodeResponse> ResAvancedService.ResvAdvancedServiceSoap.FetchPromotionCodeAsync(ResAvancedService.FetchPromotionCodeRequest1 request)
         {
             return base.Channel.FetchPromotionCodeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.FetchPromotionCodeResponse> FetchPromotionCodeAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchPromotionCodeRequest FetchPromotionCodeRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.FetchPromotionCodeResponse> FetchPromotionCodeAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchPromotionCodeRequest FetchPromotionCodeRequest)
         {
-            ReservationAdvancedService.FetchPromotionCodeRequest1 inValue = new ReservationAdvancedService.FetchPromotionCodeRequest1();
+            ResAvancedService.FetchPromotionCodeRequest1 inValue = new ResAvancedService.FetchPromotionCodeRequest1();
             inValue.OGHeader = OGHeader;
             inValue.FetchPromotionCodeRequest = FetchPromotionCodeRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).FetchPromotionCodeAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchPromotionCodeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchResPromotionCodeResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.FetchResPromotionCodeAsync(ReservationAdvancedService.FetchResPromotionCodeRequest1 request)
+        ResAvancedService.FetchResPromotionCodeResponse1 ResAvancedService.ResvAdvancedServiceSoap.FetchResPromotionCode(ResAvancedService.FetchResPromotionCodeRequest1 request)
+        {
+            return base.Channel.FetchResPromotionCode(request);
+        }
+        
+        public ResAvancedService.FetchResPromotionCodeResponse FetchResPromotionCode(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchResPromotionCodeRequest FetchResPromotionCodeRequest)
+        {
+            ResAvancedService.FetchResPromotionCodeRequest1 inValue = new ResAvancedService.FetchResPromotionCodeRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchResPromotionCodeRequest = FetchResPromotionCodeRequest;
+            ResAvancedService.FetchResPromotionCodeResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchResPromotionCode(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchResPromotionCodeResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.FetchResPromotionCodeResponse1> ResAvancedService.ResvAdvancedServiceSoap.FetchResPromotionCodeAsync(ResAvancedService.FetchResPromotionCodeRequest1 request)
         {
             return base.Channel.FetchResPromotionCodeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.FetchResPromotionCodeResponse1> FetchResPromotionCodeAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchResPromotionCodeRequest FetchResPromotionCodeRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.FetchResPromotionCodeResponse1> FetchResPromotionCodeAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchResPromotionCodeRequest FetchResPromotionCodeRequest)
         {
-            ReservationAdvancedService.FetchResPromotionCodeRequest1 inValue = new ReservationAdvancedService.FetchResPromotionCodeRequest1();
+            ResAvancedService.FetchResPromotionCodeRequest1 inValue = new ResAvancedService.FetchResPromotionCodeRequest1();
             inValue.OGHeader = OGHeader;
             inValue.FetchResPromotionCodeRequest = FetchResPromotionCodeRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).FetchResPromotionCodeAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchResPromotionCodeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.SetResPromotionCodeResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.SetResPromotionCodeAsync(ReservationAdvancedService.SetResPromotionCodeRequest1 request)
+        ResAvancedService.SetResPromotionCodeResponse1 ResAvancedService.ResvAdvancedServiceSoap.SetResPromotionCode(ResAvancedService.SetResPromotionCodeRequest1 request)
+        {
+            return base.Channel.SetResPromotionCode(request);
+        }
+        
+        public ResAvancedService.SetResPromotionCodeResponse SetResPromotionCode(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.SetResPromotionCodeRequest SetResPromotionCodeRequest)
+        {
+            ResAvancedService.SetResPromotionCodeRequest1 inValue = new ResAvancedService.SetResPromotionCodeRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.SetResPromotionCodeRequest = SetResPromotionCodeRequest;
+            ResAvancedService.SetResPromotionCodeResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).SetResPromotionCode(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.SetResPromotionCodeResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.SetResPromotionCodeResponse1> ResAvancedService.ResvAdvancedServiceSoap.SetResPromotionCodeAsync(ResAvancedService.SetResPromotionCodeRequest1 request)
         {
             return base.Channel.SetResPromotionCodeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.SetResPromotionCodeResponse1> SetResPromotionCodeAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.SetResPromotionCodeRequest SetResPromotionCodeRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.SetResPromotionCodeResponse1> SetResPromotionCodeAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.SetResPromotionCodeRequest SetResPromotionCodeRequest)
         {
-            ReservationAdvancedService.SetResPromotionCodeRequest1 inValue = new ReservationAdvancedService.SetResPromotionCodeRequest1();
+            ResAvancedService.SetResPromotionCodeRequest1 inValue = new ResAvancedService.SetResPromotionCodeRequest1();
             inValue.OGHeader = OGHeader;
             inValue.SetResPromotionCodeRequest = SetResPromotionCodeRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).SetResPromotionCodeAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).SetResPromotionCodeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.UpdateMethodOfPaymentResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.UpdateMethodOfPaymentAsync(ReservationAdvancedService.UpdateMethodOfPaymentRequest1 request)
+        ResAvancedService.UpdateMethodOfPaymentResponse1 ResAvancedService.ResvAdvancedServiceSoap.UpdateMethodOfPayment(ResAvancedService.UpdateMethodOfPaymentRequest1 request)
+        {
+            return base.Channel.UpdateMethodOfPayment(request);
+        }
+        
+        public ResAvancedService.UpdateMethodOfPaymentResponse UpdateMethodOfPayment(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.UpdateMethodOfPaymentRequest UpdateMethodOfPaymentRequest)
+        {
+            ResAvancedService.UpdateMethodOfPaymentRequest1 inValue = new ResAvancedService.UpdateMethodOfPaymentRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.UpdateMethodOfPaymentRequest = UpdateMethodOfPaymentRequest;
+            ResAvancedService.UpdateMethodOfPaymentResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).UpdateMethodOfPayment(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.UpdateMethodOfPaymentResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.UpdateMethodOfPaymentResponse1> ResAvancedService.ResvAdvancedServiceSoap.UpdateMethodOfPaymentAsync(ResAvancedService.UpdateMethodOfPaymentRequest1 request)
         {
             return base.Channel.UpdateMethodOfPaymentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.UpdateMethodOfPaymentResponse1> UpdateMethodOfPaymentAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.UpdateMethodOfPaymentRequest UpdateMethodOfPaymentRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.UpdateMethodOfPaymentResponse1> UpdateMethodOfPaymentAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.UpdateMethodOfPaymentRequest UpdateMethodOfPaymentRequest)
         {
-            ReservationAdvancedService.UpdateMethodOfPaymentRequest1 inValue = new ReservationAdvancedService.UpdateMethodOfPaymentRequest1();
+            ResAvancedService.UpdateMethodOfPaymentRequest1 inValue = new ResAvancedService.UpdateMethodOfPaymentRequest1();
             inValue.OGHeader = OGHeader;
             inValue.UpdateMethodOfPaymentRequest = UpdateMethodOfPaymentRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).UpdateMethodOfPaymentAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).UpdateMethodOfPaymentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.GenerateRegistrationCardResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.GenerateRegistrationCardAsync(ReservationAdvancedService.GenerateRegistrationCardRequest1 request)
+        ResAvancedService.GenerateRegistrationCardResponse1 ResAvancedService.ResvAdvancedServiceSoap.GenerateRegistrationCard(ResAvancedService.GenerateRegistrationCardRequest1 request)
+        {
+            return base.Channel.GenerateRegistrationCard(request);
+        }
+        
+        public ResAvancedService.GenerateRegistrationCardResponse GenerateRegistrationCard(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.GenerateRegistrationCardRequest GenerateRegistrationCardRequest)
+        {
+            ResAvancedService.GenerateRegistrationCardRequest1 inValue = new ResAvancedService.GenerateRegistrationCardRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.GenerateRegistrationCardRequest = GenerateRegistrationCardRequest;
+            ResAvancedService.GenerateRegistrationCardResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).GenerateRegistrationCard(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.GenerateRegistrationCardResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.GenerateRegistrationCardResponse1> ResAvancedService.ResvAdvancedServiceSoap.GenerateRegistrationCardAsync(ResAvancedService.GenerateRegistrationCardRequest1 request)
         {
             return base.Channel.GenerateRegistrationCardAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.GenerateRegistrationCardResponse1> GenerateRegistrationCardAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.GenerateRegistrationCardRequest GenerateRegistrationCardRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.GenerateRegistrationCardResponse1> GenerateRegistrationCardAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.GenerateRegistrationCardRequest GenerateRegistrationCardRequest)
         {
-            ReservationAdvancedService.GenerateRegistrationCardRequest1 inValue = new ReservationAdvancedService.GenerateRegistrationCardRequest1();
+            ResAvancedService.GenerateRegistrationCardRequest1 inValue = new ResAvancedService.GenerateRegistrationCardRequest1();
             inValue.OGHeader = OGHeader;
             inValue.GenerateRegistrationCardRequest = GenerateRegistrationCardRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).GenerateRegistrationCardAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).GenerateRegistrationCardAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.ExternalPaymentResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.ExternalPaymentAsync(ReservationAdvancedService.ExternalPaymentRequest1 request)
+        ResAvancedService.ExternalPaymentResponse1 ResAvancedService.ResvAdvancedServiceSoap.ExternalPayment(ResAvancedService.ExternalPaymentRequest1 request)
+        {
+            return base.Channel.ExternalPayment(request);
+        }
+        
+        public ResAvancedService.ExternalPaymentResponse ExternalPayment(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.ExternalPaymentRequest ExternalPaymentRequest)
+        {
+            ResAvancedService.ExternalPaymentRequest1 inValue = new ResAvancedService.ExternalPaymentRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.ExternalPaymentRequest = ExternalPaymentRequest;
+            ResAvancedService.ExternalPaymentResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).ExternalPayment(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.ExternalPaymentResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.ExternalPaymentResponse1> ResAvancedService.ResvAdvancedServiceSoap.ExternalPaymentAsync(ResAvancedService.ExternalPaymentRequest1 request)
         {
             return base.Channel.ExternalPaymentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.ExternalPaymentResponse1> ExternalPaymentAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.ExternalPaymentRequest ExternalPaymentRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.ExternalPaymentResponse1> ExternalPaymentAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.ExternalPaymentRequest ExternalPaymentRequest)
         {
-            ReservationAdvancedService.ExternalPaymentRequest1 inValue = new ReservationAdvancedService.ExternalPaymentRequest1();
+            ResAvancedService.ExternalPaymentRequest1 inValue = new ResAvancedService.ExternalPaymentRequest1();
             inValue.OGHeader = OGHeader;
             inValue.ExternalPaymentRequest = ExternalPaymentRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).ExternalPaymentAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).ExternalPaymentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.InstantPaymentNotificationResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.InstantPaymentNotificationAsync(ReservationAdvancedService.InstantPaymentNotificationRequest1 request)
+        ResAvancedService.InstantPaymentNotificationResponse1 ResAvancedService.ResvAdvancedServiceSoap.InstantPaymentNotification(ResAvancedService.InstantPaymentNotificationRequest1 request)
+        {
+            return base.Channel.InstantPaymentNotification(request);
+        }
+        
+        public ResAvancedService.InstantPaymentNotificationResponse InstantPaymentNotification(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.InstantPaymentNotificationRequest InstantPaymentNotificationRequest)
+        {
+            ResAvancedService.InstantPaymentNotificationRequest1 inValue = new ResAvancedService.InstantPaymentNotificationRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.InstantPaymentNotificationRequest = InstantPaymentNotificationRequest;
+            ResAvancedService.InstantPaymentNotificationResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).InstantPaymentNotification(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.InstantPaymentNotificationResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.InstantPaymentNotificationResponse1> ResAvancedService.ResvAdvancedServiceSoap.InstantPaymentNotificationAsync(ResAvancedService.InstantPaymentNotificationRequest1 request)
         {
             return base.Channel.InstantPaymentNotificationAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.InstantPaymentNotificationResponse1> InstantPaymentNotificationAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.InstantPaymentNotificationRequest InstantPaymentNotificationRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.InstantPaymentNotificationResponse1> InstantPaymentNotificationAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.InstantPaymentNotificationRequest InstantPaymentNotificationRequest)
         {
-            ReservationAdvancedService.InstantPaymentNotificationRequest1 inValue = new ReservationAdvancedService.InstantPaymentNotificationRequest1();
+            ResAvancedService.InstantPaymentNotificationRequest1 inValue = new ResAvancedService.InstantPaymentNotificationRequest1();
             inValue.OGHeader = OGHeader;
             inValue.InstantPaymentNotificationRequest = InstantPaymentNotificationRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).InstantPaymentNotificationAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).InstantPaymentNotificationAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.AssignRoomResponse> ReservationAdvancedService.ResvAdvancedServiceSoap.AssignRoomAsync(ReservationAdvancedService.AssignRoomRequest request)
+        ResAvancedService.AssignRoomResponse ResAvancedService.ResvAdvancedServiceSoap.AssignRoom(ResAvancedService.AssignRoomRequest request)
+        {
+            return base.Channel.AssignRoom(request);
+        }
+        
+        public ResAvancedService.AssignRoomAdvResponse AssignRoom(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.AssignRoomAdvRequest AssignRoomAdvRequest)
+        {
+            ResAvancedService.AssignRoomRequest inValue = new ResAvancedService.AssignRoomRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.AssignRoomAdvRequest = AssignRoomAdvRequest;
+            ResAvancedService.AssignRoomResponse retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).AssignRoom(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.AssignRoomAdvResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.AssignRoomResponse> ResAvancedService.ResvAdvancedServiceSoap.AssignRoomAsync(ResAvancedService.AssignRoomRequest request)
         {
             return base.Channel.AssignRoomAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.AssignRoomResponse> AssignRoomAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.AssignRoomAdvRequest AssignRoomAdvRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.AssignRoomResponse> AssignRoomAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.AssignRoomAdvRequest AssignRoomAdvRequest)
         {
-            ReservationAdvancedService.AssignRoomRequest inValue = new ReservationAdvancedService.AssignRoomRequest();
+            ResAvancedService.AssignRoomRequest inValue = new ResAvancedService.AssignRoomRequest();
             inValue.OGHeader = OGHeader;
             inValue.AssignRoomAdvRequest = AssignRoomAdvRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).AssignRoomAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).AssignRoomAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.ReleaseRoomResponse> ReservationAdvancedService.ResvAdvancedServiceSoap.ReleaseRoomAsync(ReservationAdvancedService.ReleaseRoomRequest request)
+        ResAvancedService.ReleaseRoomResponse ResAvancedService.ResvAdvancedServiceSoap.ReleaseRoom(ResAvancedService.ReleaseRoomRequest request)
+        {
+            return base.Channel.ReleaseRoom(request);
+        }
+        
+        public ResAvancedService.ReleaseRoomAdvResponse ReleaseRoom(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.ReleaseRoomAdvRequest ReleaseRoomAdvRequest)
+        {
+            ResAvancedService.ReleaseRoomRequest inValue = new ResAvancedService.ReleaseRoomRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.ReleaseRoomAdvRequest = ReleaseRoomAdvRequest;
+            ResAvancedService.ReleaseRoomResponse retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).ReleaseRoom(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.ReleaseRoomAdvResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.ReleaseRoomResponse> ResAvancedService.ResvAdvancedServiceSoap.ReleaseRoomAsync(ResAvancedService.ReleaseRoomRequest request)
         {
             return base.Channel.ReleaseRoomAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.ReleaseRoomResponse> ReleaseRoomAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.ReleaseRoomAdvRequest ReleaseRoomAdvRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.ReleaseRoomResponse> ReleaseRoomAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.ReleaseRoomAdvRequest ReleaseRoomAdvRequest)
         {
-            ReservationAdvancedService.ReleaseRoomRequest inValue = new ReservationAdvancedService.ReleaseRoomRequest();
+            ResAvancedService.ReleaseRoomRequest inValue = new ResAvancedService.ReleaseRoomRequest();
             inValue.OGHeader = OGHeader;
             inValue.ReleaseRoomAdvRequest = ReleaseRoomAdvRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).ReleaseRoomAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).ReleaseRoomAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.InsertPayRoutingResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.InsertPayRoutingAsync(ReservationAdvancedService.InsertPayRoutingRequest1 request)
+        ResAvancedService.InsertPayRoutingResponse1 ResAvancedService.ResvAdvancedServiceSoap.InsertPayRouting(ResAvancedService.InsertPayRoutingRequest1 request)
+        {
+            return base.Channel.InsertPayRouting(request);
+        }
+        
+        public ResAvancedService.InsertPayRoutingResponse InsertPayRouting(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.InsertPayRoutingRequest InsertPayRoutingRequest)
+        {
+            ResAvancedService.InsertPayRoutingRequest1 inValue = new ResAvancedService.InsertPayRoutingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.InsertPayRoutingRequest = InsertPayRoutingRequest;
+            ResAvancedService.InsertPayRoutingResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).InsertPayRouting(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.InsertPayRoutingResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.InsertPayRoutingResponse1> ResAvancedService.ResvAdvancedServiceSoap.InsertPayRoutingAsync(ResAvancedService.InsertPayRoutingRequest1 request)
         {
             return base.Channel.InsertPayRoutingAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.InsertPayRoutingResponse1> InsertPayRoutingAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.InsertPayRoutingRequest InsertPayRoutingRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.InsertPayRoutingResponse1> InsertPayRoutingAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.InsertPayRoutingRequest InsertPayRoutingRequest)
         {
-            ReservationAdvancedService.InsertPayRoutingRequest1 inValue = new ReservationAdvancedService.InsertPayRoutingRequest1();
+            ResAvancedService.InsertPayRoutingRequest1 inValue = new ResAvancedService.InsertPayRoutingRequest1();
             inValue.OGHeader = OGHeader;
             inValue.InsertPayRoutingRequest = InsertPayRoutingRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).InsertPayRoutingAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).InsertPayRoutingAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.UpdatePayRoutingResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.UpdatePayRoutingAsync(ReservationAdvancedService.UpdatePayRoutingRequest1 request)
+        ResAvancedService.UpdatePayRoutingResponse1 ResAvancedService.ResvAdvancedServiceSoap.UpdatePayRouting(ResAvancedService.UpdatePayRoutingRequest1 request)
+        {
+            return base.Channel.UpdatePayRouting(request);
+        }
+        
+        public ResAvancedService.UpdatePayRoutingResponse UpdatePayRouting(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.UpdatePayRoutingRequest UpdatePayRoutingRequest)
+        {
+            ResAvancedService.UpdatePayRoutingRequest1 inValue = new ResAvancedService.UpdatePayRoutingRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.UpdatePayRoutingRequest = UpdatePayRoutingRequest;
+            ResAvancedService.UpdatePayRoutingResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).UpdatePayRouting(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.UpdatePayRoutingResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.UpdatePayRoutingResponse1> ResAvancedService.ResvAdvancedServiceSoap.UpdatePayRoutingAsync(ResAvancedService.UpdatePayRoutingRequest1 request)
         {
             return base.Channel.UpdatePayRoutingAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.UpdatePayRoutingResponse1> UpdatePayRoutingAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.UpdatePayRoutingRequest UpdatePayRoutingRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.UpdatePayRoutingResponse1> UpdatePayRoutingAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.UpdatePayRoutingRequest UpdatePayRoutingRequest)
         {
-            ReservationAdvancedService.UpdatePayRoutingRequest1 inValue = new ReservationAdvancedService.UpdatePayRoutingRequest1();
+            ResAvancedService.UpdatePayRoutingRequest1 inValue = new ResAvancedService.UpdatePayRoutingRequest1();
             inValue.OGHeader = OGHeader;
             inValue.UpdatePayRoutingRequest = UpdatePayRoutingRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).UpdatePayRoutingAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).UpdatePayRoutingAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FolioTransactionTransferResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.FolioTransactionTransferAsync(ReservationAdvancedService.FolioTransactionTransferRequest1 request)
+        ResAvancedService.FolioTransactionTransferResponse1 ResAvancedService.ResvAdvancedServiceSoap.FolioTransactionTransfer(ResAvancedService.FolioTransactionTransferRequest1 request)
+        {
+            return base.Channel.FolioTransactionTransfer(request);
+        }
+        
+        public ResAvancedService.FolioTransactionTransferResponse FolioTransactionTransfer(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.FolioTransactionTransferRequest FolioTransactionTransferRequest)
+        {
+            ResAvancedService.FolioTransactionTransferRequest1 inValue = new ResAvancedService.FolioTransactionTransferRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FolioTransactionTransferRequest = FolioTransactionTransferRequest;
+            ResAvancedService.FolioTransactionTransferResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FolioTransactionTransfer(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FolioTransactionTransferResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.FolioTransactionTransferResponse1> ResAvancedService.ResvAdvancedServiceSoap.FolioTransactionTransferAsync(ResAvancedService.FolioTransactionTransferRequest1 request)
         {
             return base.Channel.FolioTransactionTransferAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.FolioTransactionTransferResponse1> FolioTransactionTransferAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FolioTransactionTransferRequest FolioTransactionTransferRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.FolioTransactionTransferResponse1> FolioTransactionTransferAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.FolioTransactionTransferRequest FolioTransactionTransferRequest)
         {
-            ReservationAdvancedService.FolioTransactionTransferRequest1 inValue = new ReservationAdvancedService.FolioTransactionTransferRequest1();
+            ResAvancedService.FolioTransactionTransferRequest1 inValue = new ResAvancedService.FolioTransactionTransferRequest1();
             inValue.OGHeader = OGHeader;
             inValue.FolioTransactionTransferRequest = FolioTransactionTransferRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).FolioTransactionTransferAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FolioTransactionTransferAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.QueueReservationResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.QueueReservationAsync(ReservationAdvancedService.QueueReservationRequest1 request)
+        ResAvancedService.QueueReservationResponse1 ResAvancedService.ResvAdvancedServiceSoap.QueueReservation(ResAvancedService.QueueReservationRequest1 request)
+        {
+            return base.Channel.QueueReservation(request);
+        }
+        
+        public ResAvancedService.QueueReservationResponse QueueReservation(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.QueueReservationRequest QueueReservationRequest)
+        {
+            ResAvancedService.QueueReservationRequest1 inValue = new ResAvancedService.QueueReservationRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.QueueReservationRequest = QueueReservationRequest;
+            ResAvancedService.QueueReservationResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).QueueReservation(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.QueueReservationResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.QueueReservationResponse1> ResAvancedService.ResvAdvancedServiceSoap.QueueReservationAsync(ResAvancedService.QueueReservationRequest1 request)
         {
             return base.Channel.QueueReservationAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.QueueReservationResponse1> QueueReservationAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.QueueReservationRequest QueueReservationRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.QueueReservationResponse1> QueueReservationAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.QueueReservationRequest QueueReservationRequest)
         {
-            ReservationAdvancedService.QueueReservationRequest1 inValue = new ReservationAdvancedService.QueueReservationRequest1();
+            ResAvancedService.QueueReservationRequest1 inValue = new ResAvancedService.QueueReservationRequest1();
             inValue.OGHeader = OGHeader;
             inValue.QueueReservationRequest = QueueReservationRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).QueueReservationAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).QueueReservationAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchQueueReservationsResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.FetchQueueReservationsAsync(ReservationAdvancedService.FetchQueueReservationsRequest1 request)
+        ResAvancedService.FetchQueueReservationsResponse1 ResAvancedService.ResvAdvancedServiceSoap.FetchQueueReservations(ResAvancedService.FetchQueueReservationsRequest1 request)
+        {
+            return base.Channel.FetchQueueReservations(request);
+        }
+        
+        public ResAvancedService.FetchQueueReservationsResponse FetchQueueReservations(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchQueueReservationsRequest FetchQueueReservationsRequest)
+        {
+            ResAvancedService.FetchQueueReservationsRequest1 inValue = new ResAvancedService.FetchQueueReservationsRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchQueueReservationsRequest = FetchQueueReservationsRequest;
+            ResAvancedService.FetchQueueReservationsResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchQueueReservations(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchQueueReservationsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.FetchQueueReservationsResponse1> ResAvancedService.ResvAdvancedServiceSoap.FetchQueueReservationsAsync(ResAvancedService.FetchQueueReservationsRequest1 request)
         {
             return base.Channel.FetchQueueReservationsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.FetchQueueReservationsResponse1> FetchQueueReservationsAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchQueueReservationsRequest FetchQueueReservationsRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.FetchQueueReservationsResponse1> FetchQueueReservationsAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchQueueReservationsRequest FetchQueueReservationsRequest)
         {
-            ReservationAdvancedService.FetchQueueReservationsRequest1 inValue = new ReservationAdvancedService.FetchQueueReservationsRequest1();
+            ResAvancedService.FetchQueueReservationsRequest1 inValue = new ResAvancedService.FetchQueueReservationsRequest1();
             inValue.OGHeader = OGHeader;
             inValue.FetchQueueReservationsRequest = FetchQueueReservationsRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).FetchQueueReservationsAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchQueueReservationsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.DCCCheckResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.DCCCheckAsync(ReservationAdvancedService.DCCCheckRequest1 request)
+        ResAvancedService.DCCCheckResponse1 ResAvancedService.ResvAdvancedServiceSoap.DCCCheck(ResAvancedService.DCCCheckRequest1 request)
+        {
+            return base.Channel.DCCCheck(request);
+        }
+        
+        public ResAvancedService.DCCCheckResponse DCCCheck(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.DCCCheckRequest DCCCheckRequest)
+        {
+            ResAvancedService.DCCCheckRequest1 inValue = new ResAvancedService.DCCCheckRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.DCCCheckRequest = DCCCheckRequest;
+            ResAvancedService.DCCCheckResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).DCCCheck(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.DCCCheckResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.DCCCheckResponse1> ResAvancedService.ResvAdvancedServiceSoap.DCCCheckAsync(ResAvancedService.DCCCheckRequest1 request)
         {
             return base.Channel.DCCCheckAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.DCCCheckResponse1> DCCCheckAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.DCCCheckRequest DCCCheckRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.DCCCheckResponse1> DCCCheckAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.DCCCheckRequest DCCCheckRequest)
         {
-            ReservationAdvancedService.DCCCheckRequest1 inValue = new ReservationAdvancedService.DCCCheckRequest1();
+            ResAvancedService.DCCCheckRequest1 inValue = new ResAvancedService.DCCCheckRequest1();
             inValue.OGHeader = OGHeader;
             inValue.DCCCheckRequest = DCCCheckRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).DCCCheckAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).DCCCheckAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ReservationAdvancedService.FetchAuthorizationsHistoryResponse1> ReservationAdvancedService.ResvAdvancedServiceSoap.FetchAuthorizationsHistoryAsync(ReservationAdvancedService.FetchAuthorizationsHistoryRequest1 request)
+        ResAvancedService.FetchAuthorizationsHistoryResponse1 ResAvancedService.ResvAdvancedServiceSoap.FetchAuthorizationsHistory(ResAvancedService.FetchAuthorizationsHistoryRequest1 request)
+        {
+            return base.Channel.FetchAuthorizationsHistory(request);
+        }
+        
+        public ResAvancedService.FetchAuthorizationsHistoryResponse FetchAuthorizationsHistory(ref ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchAuthorizationsHistoryRequest FetchAuthorizationsHistoryRequest)
+        {
+            ResAvancedService.FetchAuthorizationsHistoryRequest1 inValue = new ResAvancedService.FetchAuthorizationsHistoryRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.FetchAuthorizationsHistoryRequest = FetchAuthorizationsHistoryRequest;
+            ResAvancedService.FetchAuthorizationsHistoryResponse1 retVal = ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchAuthorizationsHistory(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.FetchAuthorizationsHistoryResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ResAvancedService.FetchAuthorizationsHistoryResponse1> ResAvancedService.ResvAdvancedServiceSoap.FetchAuthorizationsHistoryAsync(ResAvancedService.FetchAuthorizationsHistoryRequest1 request)
         {
             return base.Channel.FetchAuthorizationsHistoryAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ReservationAdvancedService.FetchAuthorizationsHistoryResponse1> FetchAuthorizationsHistoryAsync(ReservationAdvancedService.OGHeader OGHeader, ReservationAdvancedService.FetchAuthorizationsHistoryRequest FetchAuthorizationsHistoryRequest)
+        public System.Threading.Tasks.Task<ResAvancedService.FetchAuthorizationsHistoryResponse1> FetchAuthorizationsHistoryAsync(ResAvancedService.OGHeader OGHeader, ResAvancedService.FetchAuthorizationsHistoryRequest FetchAuthorizationsHistoryRequest)
         {
-            ReservationAdvancedService.FetchAuthorizationsHistoryRequest1 inValue = new ReservationAdvancedService.FetchAuthorizationsHistoryRequest1();
+            ResAvancedService.FetchAuthorizationsHistoryRequest1 inValue = new ResAvancedService.FetchAuthorizationsHistoryRequest1();
             inValue.OGHeader = OGHeader;
             inValue.FetchAuthorizationsHistoryRequest = FetchAuthorizationsHistoryRequest;
-            return ((ReservationAdvancedService.ResvAdvancedServiceSoap)(this)).FetchAuthorizationsHistoryAsync(inValue);
+            return ((ResAvancedService.ResvAdvancedServiceSoap)(this)).FetchAuthorizationsHistoryAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -24104,11 +24754,11 @@ namespace ReservationAdvancedService
         {
             if ((endpointConfiguration == EndpointConfiguration.ResvAdvancedServiceSoap))
             {
-                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8081/ows_ws_51/ResvAdvanced.asmx");
+                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/ows_ws_51/ResvAdvanced.asmx");
             }
             if ((endpointConfiguration == EndpointConfiguration.ResvAdvancedServiceSoap12))
             {
-                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8081/ows_ws_51/ResvAdvanced.asmx");
+                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/ows_ws_51/ResvAdvanced.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

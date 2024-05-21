@@ -1,19 +1,19 @@
 {
   "ExtendedData": {
     "inputs": [
-      "../../../../../../Desktop/Connected Services/InformationService/Information.wsdl"
+      "http://94.203.133.74:8083/ows_ws_51/Information.asmx"
     ],
     "collectionTypes": [
       "System.Array",
       "System.Collections.Generic.Dictionary`2"
     ],
-    "enableDataBinding": true,
-    "messageContract": true,
     "namespaceMappings": [
       "*, InformationService"
     ],
     "references": [
       "Adyen, {Adyen, 3.4.0}",
+      "C:\\Users\\Administrator\\source\\repos\\PaymentsAPIs\\Infrastructure\\bin\\Debug\\net8.0\\BussinessLogic.dll",
+      "C:\\Users\\Administrator\\source\\repos\\PaymentsAPIs\\Infrastructure\\bin\\Debug\\net8.0\\Domain.dll",
       "Microsoft.Extensions.DependencyInjection.Abstractions, {Microsoft.Extensions.DependencyInjection.Abstractions, 8.0.1}",
       "Microsoft.Extensions.ObjectPool, {Microsoft.Extensions.ObjectPool, 6.0.16}",
       "Microsoft.Extensions.Primitives, {Microsoft.Extensions.Primitives, 8.0.0}",

@@ -1,6 +1,8 @@
 ﻿namespace Infrastructure;
 
 using BussinessLogic;
+using BussinessLogic.Abstractions;
+using Infrastructure.OwsHelper;
 using Microsoft.Extensions.DependencyInjection;
 
 
@@ -12,6 +14,7 @@ public static class RegisterInfraServices
         services.AddScoped(p => new InfraConfigutations(options));
         services.AddScoped<ITokenRequest, TokenService>();
         services.AddScoped<IAdenPayment, PaymentService>();
+        services.AddScoped<IOperaService, OperaServices>();
 
     }
 
@@ -40,5 +43,18 @@ public class PaymentSettings
     public string? WSSEPassword { get; set; }
     public bool OperaCloudEnabled { get; set; }
     public bool OPIEnabled { get; set; }
+    public string? HotelDomain { get; set; }
+    public string? KioskID { get; set; }
+    public string? Username { get; set; }
+    public string? Password { get; set; }
+    public string? SystemType { get; set; }
+    public string? Language { get; set; }
+    public string? LegNumber { get; set; }
+    public string? ChainCode { get; set; }
+    public string? DestinationEntityID { get; set; }
+    public string? PreAuthUDF { get; set; }
+    public string? PreAuthAmntUDF { get; set; }
+    public string? DestinationSystemType { get; set; }
+
 }
 

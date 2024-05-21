@@ -16,6 +16,7 @@ namespace InformationService
     public interface InformationSoap
     {
         
+        // CODEGEN: Generating message contract since the operation QueryLov is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#QueryLov", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
@@ -25,6 +26,7 @@ namespace InformationService
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#QueryLov", ReplyAction="*")]
         System.Threading.Tasks.Task<InformationService.QueryLovResponse> QueryLovAsync(InformationService.QueryLovRequest request);
         
+        // CODEGEN: Generating message contract since the operation QueryRate is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#QueryRate", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
@@ -34,6 +36,7 @@ namespace InformationService
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#QueryRate", ReplyAction="*")]
         System.Threading.Tasks.Task<InformationService.QueryRateResponse> QueryRateAsync(InformationService.QueryRateRequest request);
         
+        // CODEGEN: Generating message contract since the operation QueryHotelInformation is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#QueryHotelInformation", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
@@ -43,6 +46,7 @@ namespace InformationService
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#QueryHotelInformation", ReplyAction="*")]
         System.Threading.Tasks.Task<InformationService.QueryHotelInformationResponse> QueryHotelInformationAsync(InformationService.QueryHotelInformationRequest request);
         
+        // CODEGEN: Generating message contract since the operation CurrencyConverter is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#CurrencyConverter", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
@@ -52,6 +56,7 @@ namespace InformationService
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#CurrencyConverter", ReplyAction="*")]
         System.Threading.Tasks.Task<InformationService.CurrencyConverterResponse1> CurrencyConverterAsync(InformationService.CurrencyConverterRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation QueryChainInformation is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#QueryChainInformation", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
@@ -61,6 +66,7 @@ namespace InformationService
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#QueryChainInformation", ReplyAction="*")]
         System.Threading.Tasks.Task<InformationService.QueryChainInformationResponse> QueryChainInformationAsync(InformationService.QueryChainInformationRequest request);
         
+        // CODEGEN: Generating message contract since the operation QueryAwardsSchedules is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#QueryAwardsSchedules", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
@@ -70,6 +76,7 @@ namespace InformationService
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#QueryAwardsSchedules", ReplyAction="*")]
         System.Threading.Tasks.Task<InformationService.QueryAwardsSchedulesResponse> QueryAwardsSchedulesAsync(InformationService.QueryAwardsSchedulesRequest request);
         
+        // CODEGEN: Generating message contract since the operation QueryPackageItems is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#QueryPackageItems", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
@@ -79,6 +86,7 @@ namespace InformationService
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#QueryPackageItems", ReplyAction="*")]
         System.Threading.Tasks.Task<InformationService.QueryPackageItemsResponse> QueryPackageItemsAsync(InformationService.QueryPackageItemsRequest request);
         
+        // CODEGEN: Generating message contract since the operation GetScreenItems is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://webservices.micros.com/ows/5.1/Information.wsdl#GetScreenItems", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SystemID))]
@@ -93,7 +101,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-    public partial class OGHeader : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class OGHeader
     {
         
         private EndPoint originField;
@@ -131,7 +139,6 @@ namespace InformationService
             set
             {
                 this.originField = value;
-                this.RaisePropertyChanged("Origin");
             }
         }
         
@@ -146,7 +153,6 @@ namespace InformationService
             set
             {
                 this.destinationField = value;
-                this.RaisePropertyChanged("Destination");
             }
         }
         
@@ -162,7 +168,6 @@ namespace InformationService
             set
             {
                 this.intermediariesField = value;
-                this.RaisePropertyChanged("Intermediaries");
             }
         }
         
@@ -177,7 +182,6 @@ namespace InformationService
             set
             {
                 this.authenticationField = value;
-                this.RaisePropertyChanged("Authentication");
             }
         }
         
@@ -192,7 +196,6 @@ namespace InformationService
             set
             {
                 this.transactionIDField = value;
-                this.RaisePropertyChanged("transactionID");
             }
         }
         
@@ -207,7 +210,6 @@ namespace InformationService
             set
             {
                 this.authTokenField = value;
-                this.RaisePropertyChanged("authToken");
             }
         }
         
@@ -222,7 +224,6 @@ namespace InformationService
             set
             {
                 this.timeStampField = value;
-                this.RaisePropertyChanged("timeStamp");
             }
         }
         
@@ -237,7 +238,6 @@ namespace InformationService
             set
             {
                 this.timeStampFieldSpecified = value;
-                this.RaisePropertyChanged("timeStampSpecified");
             }
         }
         
@@ -252,7 +252,6 @@ namespace InformationService
             set
             {
                 this.primaryLangIDField = value;
-                this.RaisePropertyChanged("primaryLangID");
             }
         }
         
@@ -267,7 +266,6 @@ namespace InformationService
             set
             {
                 this.channelValidationField = value;
-                this.RaisePropertyChanged("channelValidation");
             }
         }
         
@@ -282,7 +280,6 @@ namespace InformationService
             set
             {
                 this.channelValidationFieldSpecified = value;
-                this.RaisePropertyChanged("channelValidationSpecified");
             }
         }
         
@@ -297,18 +294,6 @@ namespace InformationService
             set
             {
                 this.terminalIDField = value;
-                this.RaisePropertyChanged("terminalID");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -333,7 +318,6 @@ namespace InformationService
             set
             {
                 this.systemTypeField = value;
-                this.RaisePropertyChanged("systemType");
             }
         }
     }
@@ -343,7 +327,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-    public partial class SystemID : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class SystemID
     {
         
         private string entityIDField;
@@ -361,7 +345,6 @@ namespace InformationService
             set
             {
                 this.entityIDField = value;
-                this.RaisePropertyChanged("entityID");
             }
         }
         
@@ -376,18 +359,6 @@ namespace InformationService
             set
             {
                 this.organizationIDField = value;
-                this.RaisePropertyChanged("organizationID");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -396,7 +367,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class ScreenItemElement : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class ScreenItemElement
     {
         
         private long idField;
@@ -422,7 +393,6 @@ namespace InformationService
             set
             {
                 this.idField = value;
-                this.RaisePropertyChanged("Id");
             }
         }
         
@@ -437,7 +407,6 @@ namespace InformationService
             set
             {
                 this.idFieldSpecified = value;
-                this.RaisePropertyChanged("IdSpecified");
             }
         }
         
@@ -452,7 +421,6 @@ namespace InformationService
             set
             {
                 this.screenIdField = value;
-                this.RaisePropertyChanged("ScreenId");
             }
         }
         
@@ -467,7 +435,6 @@ namespace InformationService
             set
             {
                 this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
             }
         }
         
@@ -482,7 +449,6 @@ namespace InformationService
             set
             {
                 this.captionField = value;
-                this.RaisePropertyChanged("Caption");
             }
         }
         
@@ -497,18 +463,6 @@ namespace InformationService
             set
             {
                 this.toolTipField = value;
-                this.RaisePropertyChanged("ToolTip");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -520,7 +474,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
-    public partial class DescriptiveText : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class DescriptiveText
     {
         
         private object itemField;
@@ -541,7 +495,6 @@ namespace InformationService
             set
             {
                 this.itemField = value;
-                this.RaisePropertyChanged("Item");
             }
         }
         
@@ -557,18 +510,6 @@ namespace InformationService
             set
             {
                 this.itemElementNameField = value;
-                this.RaisePropertyChanged("ItemElementName");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -586,7 +527,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
-    public partial class Text : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class Text
     {
         
         private bool formattedField;
@@ -608,7 +549,6 @@ namespace InformationService
             set
             {
                 this.formattedField = value;
-                this.RaisePropertyChanged("formatted");
             }
         }
         
@@ -623,7 +563,6 @@ namespace InformationService
             set
             {
                 this.formattedFieldSpecified = value;
-                this.RaisePropertyChanged("formattedSpecified");
             }
         }
         
@@ -638,7 +577,6 @@ namespace InformationService
             set
             {
                 this.languageField = value;
-                this.RaisePropertyChanged("language");
             }
         }
         
@@ -653,18 +591,6 @@ namespace InformationService
             set
             {
                 this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -733,7 +659,6 @@ namespace InformationService
             set
             {
                 this.operaIdField = value;
-                this.RaisePropertyChanged("operaId");
             }
         }
         
@@ -748,7 +673,6 @@ namespace InformationService
             set
             {
                 this.operaIdFieldSpecified = value;
-                this.RaisePropertyChanged("operaIdSpecified");
             }
         }
         
@@ -763,7 +687,6 @@ namespace InformationService
             set
             {
                 this.externalIdField = value;
-                this.RaisePropertyChanged("externalId");
             }
         }
         
@@ -778,7 +701,6 @@ namespace InformationService
             set
             {
                 this.commentTitleField = value;
-                this.RaisePropertyChanged("commentTitle");
             }
         }
         
@@ -793,7 +715,6 @@ namespace InformationService
             set
             {
                 this.insertUserField = value;
-                this.RaisePropertyChanged("insertUser");
             }
         }
         
@@ -808,7 +729,6 @@ namespace InformationService
             set
             {
                 this.insertDateField = value;
-                this.RaisePropertyChanged("insertDate");
             }
         }
         
@@ -823,7 +743,6 @@ namespace InformationService
             set
             {
                 this.insertDateFieldSpecified = value;
-                this.RaisePropertyChanged("insertDateSpecified");
             }
         }
         
@@ -838,7 +757,6 @@ namespace InformationService
             set
             {
                 this.updateUserField = value;
-                this.RaisePropertyChanged("updateUser");
             }
         }
         
@@ -853,7 +771,6 @@ namespace InformationService
             set
             {
                 this.updateDateField = value;
-                this.RaisePropertyChanged("updateDate");
             }
         }
         
@@ -868,7 +785,6 @@ namespace InformationService
             set
             {
                 this.updateDateFieldSpecified = value;
-                this.RaisePropertyChanged("updateDateSpecified");
             }
         }
         
@@ -883,7 +799,6 @@ namespace InformationService
             set
             {
                 this.inactiveDateField = value;
-                this.RaisePropertyChanged("inactiveDate");
             }
         }
         
@@ -898,7 +813,6 @@ namespace InformationService
             set
             {
                 this.inactiveDateFieldSpecified = value;
-                this.RaisePropertyChanged("inactiveDateSpecified");
             }
         }
         
@@ -913,7 +827,6 @@ namespace InformationService
             set
             {
                 this.commentTypeField = value;
-                this.RaisePropertyChanged("commentType");
             }
         }
         
@@ -928,7 +841,6 @@ namespace InformationService
             set
             {
                 this.globalYnField = value;
-                this.RaisePropertyChanged("globalYn");
             }
         }
         
@@ -943,7 +855,6 @@ namespace InformationService
             set
             {
                 this.internalYnField = value;
-                this.RaisePropertyChanged("internalYn");
             }
         }
     }
@@ -970,7 +881,6 @@ namespace InformationService
             set
             {
                 this.attractionInfoTypeField = value;
-                this.RaisePropertyChanged("attractionInfoType");
             }
         }
         
@@ -985,7 +895,6 @@ namespace InformationService
             set
             {
                 this.otherAttractionInfoTypeField = value;
-                this.RaisePropertyChanged("otherAttractionInfoType");
             }
         }
     }
@@ -1025,7 +934,6 @@ namespace InformationService
             set
             {
                 this.hotelInfoTypeField = value;
-                this.RaisePropertyChanged("hotelInfoType");
             }
         }
         
@@ -1040,7 +948,6 @@ namespace InformationService
             set
             {
                 this.otherHotelInfoTypeField = value;
-                this.RaisePropertyChanged("otherHotelInfoType");
             }
         }
     }
@@ -1068,7 +975,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class ScreenItemsResponse : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class ScreenItemsResponse
     {
         
         private GDSResultStatus resultField;
@@ -1090,7 +997,6 @@ namespace InformationService
             set
             {
                 this.resultField = value;
-                this.RaisePropertyChanged("Result");
             }
         }
         
@@ -1105,7 +1011,6 @@ namespace InformationService
             set
             {
                 this.screenNameField = value;
-                this.RaisePropertyChanged("ScreenName");
             }
         }
         
@@ -1121,7 +1026,6 @@ namespace InformationService
             set
             {
                 this.screenItemsField = value;
-                this.RaisePropertyChanged("ScreenItems");
             }
         }
         
@@ -1136,18 +1040,6 @@ namespace InformationService
             set
             {
                 this.xsnField = value;
-                this.RaisePropertyChanged("xsn");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -1172,7 +1064,6 @@ namespace InformationService
             set
             {
                 this.gDSErrorField = value;
-                this.RaisePropertyChanged("GDSError");
             }
         }
     }
@@ -1181,7 +1072,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class GDSError : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class GDSError
     {
         
         private string errorCodeField;
@@ -1201,7 +1092,6 @@ namespace InformationService
             set
             {
                 this.errorCodeField = value;
-                this.RaisePropertyChanged("errorCode");
             }
         }
         
@@ -1216,7 +1106,6 @@ namespace InformationService
             set
             {
                 this.elementIdField = value;
-                this.RaisePropertyChanged("elementId");
             }
         }
         
@@ -1231,18 +1120,6 @@ namespace InformationService
             set
             {
                 this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -1252,7 +1129,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
-    public partial class ResultStatus : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class ResultStatus
     {
         
         private Text[] textField;
@@ -1277,7 +1154,6 @@ namespace InformationService
             set
             {
                 this.textField = value;
-                this.RaisePropertyChanged("Text");
             }
         }
         
@@ -1293,7 +1169,6 @@ namespace InformationService
             set
             {
                 this.iDsField = value;
-                this.RaisePropertyChanged("IDs");
             }
         }
         
@@ -1308,7 +1183,6 @@ namespace InformationService
             set
             {
                 this.operaErrorCodeField = value;
-                this.RaisePropertyChanged("OperaErrorCode");
             }
         }
         
@@ -1323,7 +1197,6 @@ namespace InformationService
             set
             {
                 this.resultStatusFlagField = value;
-                this.RaisePropertyChanged("resultStatusFlag");
             }
         }
         
@@ -1338,18 +1211,6 @@ namespace InformationService
             set
             {
                 this.resultStatusFlagFieldSpecified = value;
-                this.RaisePropertyChanged("resultStatusFlagSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -1358,7 +1219,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
-    public partial class IDPair : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class IDPair
     {
         
         private string idTypeField;
@@ -1380,7 +1241,6 @@ namespace InformationService
             set
             {
                 this.idTypeField = value;
-                this.RaisePropertyChanged("idType");
             }
         }
         
@@ -1395,7 +1255,6 @@ namespace InformationService
             set
             {
                 this.operaIdField = value;
-                this.RaisePropertyChanged("operaId");
             }
         }
         
@@ -1410,7 +1269,6 @@ namespace InformationService
             set
             {
                 this.operaIdFieldSpecified = value;
-                this.RaisePropertyChanged("operaIdSpecified");
             }
         }
         
@@ -1425,18 +1283,6 @@ namespace InformationService
             set
             {
                 this.externalIdField = value;
-                this.RaisePropertyChanged("externalId");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -1458,7 +1304,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class ScreenItemsRequest : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class ScreenItemsRequest
     {
         
         private string screenNameField;
@@ -1474,18 +1320,6 @@ namespace InformationService
             set
             {
                 this.screenNameField = value;
-                this.RaisePropertyChanged("ScreenName");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -1494,7 +1328,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class ItemGroupElement : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class ItemGroupElement
     {
         
         private string codeField;
@@ -1512,7 +1346,6 @@ namespace InformationService
             set
             {
                 this.codeField = value;
-                this.RaisePropertyChanged("Code");
             }
         }
         
@@ -1527,18 +1360,6 @@ namespace InformationService
             set
             {
                 this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -1547,7 +1368,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class InventoryItemElement : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class InventoryItemElement
     {
         
         private string itemCodeField;
@@ -1609,7 +1430,6 @@ namespace InformationService
             set
             {
                 this.itemCodeField = value;
-                this.RaisePropertyChanged("ItemCode");
             }
         }
         
@@ -1624,7 +1444,6 @@ namespace InformationService
             set
             {
                 this.itemNameField = value;
-                this.RaisePropertyChanged("ItemName");
             }
         }
         
@@ -1639,7 +1458,6 @@ namespace InformationService
             set
             {
                 this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
             }
         }
         
@@ -1654,7 +1472,6 @@ namespace InformationService
             set
             {
                 this.sellControlField = value;
-                this.RaisePropertyChanged("SellControl");
             }
         }
         
@@ -1669,7 +1486,6 @@ namespace InformationService
             set
             {
                 this.sellSeparateField = value;
-                this.RaisePropertyChanged("SellSeparate");
             }
         }
         
@@ -1684,7 +1500,6 @@ namespace InformationService
             set
             {
                 this.quantityField = value;
-                this.RaisePropertyChanged("Quantity");
             }
         }
         
@@ -1699,7 +1514,6 @@ namespace InformationService
             set
             {
                 this.quantityFieldSpecified = value;
-                this.RaisePropertyChanged("QuantitySpecified");
             }
         }
         
@@ -1714,7 +1528,6 @@ namespace InformationService
             set
             {
                 this.availableField = value;
-                this.RaisePropertyChanged("Available");
             }
         }
         
@@ -1729,7 +1542,6 @@ namespace InformationService
             set
             {
                 this.availableFieldSpecified = value;
-                this.RaisePropertyChanged("AvailableSpecified");
             }
         }
         
@@ -1744,7 +1556,6 @@ namespace InformationService
             set
             {
                 this.itemGroupField = value;
-                this.RaisePropertyChanged("ItemGroup");
             }
         }
         
@@ -1759,7 +1570,6 @@ namespace InformationService
             set
             {
                 this.itemDurationField = value;
-                this.RaisePropertyChanged("ItemDuration");
             }
         }
         
@@ -1774,7 +1584,6 @@ namespace InformationService
             set
             {
                 this.itemDurationFieldSpecified = value;
-                this.RaisePropertyChanged("ItemDurationSpecified");
             }
         }
         
@@ -1789,7 +1598,6 @@ namespace InformationService
             set
             {
                 this.itemBeginDateField = value;
-                this.RaisePropertyChanged("ItemBeginDate");
             }
         }
         
@@ -1804,7 +1612,6 @@ namespace InformationService
             set
             {
                 this.itemBeginDateFieldSpecified = value;
-                this.RaisePropertyChanged("ItemBeginDateSpecified");
             }
         }
         
@@ -1819,7 +1626,6 @@ namespace InformationService
             set
             {
                 this.itemEndDateField = value;
-                this.RaisePropertyChanged("ItemEndDate");
             }
         }
         
@@ -1834,7 +1640,6 @@ namespace InformationService
             set
             {
                 this.itemEndDateFieldSpecified = value;
-                this.RaisePropertyChanged("ItemEndDateSpecified");
             }
         }
         
@@ -1849,7 +1654,6 @@ namespace InformationService
             set
             {
                 this.isPackageField = value;
-                this.RaisePropertyChanged("isPackage");
             }
         }
         
@@ -1864,7 +1668,6 @@ namespace InformationService
             set
             {
                 this.isPackageFieldSpecified = value;
-                this.RaisePropertyChanged("isPackageSpecified");
             }
         }
         
@@ -1879,7 +1682,6 @@ namespace InformationService
             set
             {
                 this.isChildField = value;
-                this.RaisePropertyChanged("isChild");
             }
         }
         
@@ -1894,7 +1696,6 @@ namespace InformationService
             set
             {
                 this.isChildFieldSpecified = value;
-                this.RaisePropertyChanged("isChildSpecified");
             }
         }
         
@@ -1909,7 +1710,6 @@ namespace InformationService
             set
             {
                 this.itemDateField = value;
-                this.RaisePropertyChanged("ItemDate");
             }
         }
         
@@ -1924,7 +1724,6 @@ namespace InformationService
             set
             {
                 this.itemDateFieldSpecified = value;
-                this.RaisePropertyChanged("ItemDateSpecified");
             }
         }
         
@@ -1939,7 +1738,6 @@ namespace InformationService
             set
             {
                 this.isOutSideStayDateField = value;
-                this.RaisePropertyChanged("isOutSideStayDate");
             }
         }
         
@@ -1954,18 +1752,6 @@ namespace InformationService
             set
             {
                 this.isOutSideStayDateFieldSpecified = value;
-                this.RaisePropertyChanged("isOutSideStayDateSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -1974,7 +1760,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class InventoryItemGroupElement : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class InventoryItemGroupElement
     {
         
         private InventoryItemElement[] inventoryItemField;
@@ -1992,7 +1778,6 @@ namespace InformationService
             set
             {
                 this.inventoryItemField = value;
-                this.RaisePropertyChanged("InventoryItem");
             }
         }
         
@@ -2007,18 +1792,6 @@ namespace InformationService
             set
             {
                 this.groupCodeField = value;
-                this.RaisePropertyChanged("groupCode");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -2027,7 +1800,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class PackageGroupElement : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class PackageGroupElement
     {
         
         private DescriptiveText[] descriptionField;
@@ -2047,7 +1820,6 @@ namespace InformationService
             set
             {
                 this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
             }
         }
         
@@ -2062,7 +1834,6 @@ namespace InformationService
             set
             {
                 this.packagesField = value;
-                this.RaisePropertyChanged("Packages");
             }
         }
         
@@ -2077,18 +1848,6 @@ namespace InformationService
             set
             {
                 this.groupCodeField = value;
-                this.RaisePropertyChanged("groupCode");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -2097,7 +1856,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class PackageElement : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class PackageElement
     {
         
         private Amount amountField;
@@ -2183,7 +1942,6 @@ namespace InformationService
             set
             {
                 this.amountField = value;
-                this.RaisePropertyChanged("Amount");
             }
         }
         
@@ -2198,7 +1956,6 @@ namespace InformationService
             set
             {
                 this.packageAmountField = value;
-                this.RaisePropertyChanged("PackageAmount");
             }
         }
         
@@ -2213,7 +1970,6 @@ namespace InformationService
             set
             {
                 this.taxAmountField = value;
-                this.RaisePropertyChanged("TaxAmount");
             }
         }
         
@@ -2228,7 +1984,6 @@ namespace InformationService
             set
             {
                 this.allowanceField = value;
-                this.RaisePropertyChanged("Allowance");
             }
         }
         
@@ -2243,7 +1998,6 @@ namespace InformationService
             set
             {
                 this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
             }
         }
         
@@ -2258,7 +2012,6 @@ namespace InformationService
             set
             {
                 this.shortDescriptionField = value;
-                this.RaisePropertyChanged("ShortDescription");
             }
         }
         
@@ -2273,7 +2026,6 @@ namespace InformationService
             set
             {
                 this.packageDetailsField = value;
-                this.RaisePropertyChanged("PackageDetails");
             }
         }
         
@@ -2288,7 +2040,6 @@ namespace InformationService
             set
             {
                 this.packageCodesField = value;
-                this.RaisePropertyChanged("PackageCodes");
             }
         }
         
@@ -2303,7 +2054,6 @@ namespace InformationService
             set
             {
                 this.startDateField = value;
-                this.RaisePropertyChanged("StartDate");
             }
         }
         
@@ -2318,7 +2068,6 @@ namespace InformationService
             set
             {
                 this.startDateFieldSpecified = value;
-                this.RaisePropertyChanged("StartDateSpecified");
             }
         }
         
@@ -2333,7 +2082,6 @@ namespace InformationService
             set
             {
                 this.endDateField = value;
-                this.RaisePropertyChanged("EndDate");
             }
         }
         
@@ -2348,7 +2096,6 @@ namespace InformationService
             set
             {
                 this.endDateFieldSpecified = value;
-                this.RaisePropertyChanged("EndDateSpecified");
             }
         }
         
@@ -2363,7 +2110,6 @@ namespace InformationService
             set
             {
                 this.packageCodeField = value;
-                this.RaisePropertyChanged("packageCode");
             }
         }
         
@@ -2378,7 +2124,6 @@ namespace InformationService
             set
             {
                 this.calculationRuleField = value;
-                this.RaisePropertyChanged("calculationRule");
             }
         }
         
@@ -2393,7 +2138,6 @@ namespace InformationService
             set
             {
                 this.postingRhythmField = value;
-                this.RaisePropertyChanged("postingRhythm");
             }
         }
         
@@ -2408,7 +2152,6 @@ namespace InformationService
             set
             {
                 this.quantityField = value;
-                this.RaisePropertyChanged("quantity");
             }
         }
         
@@ -2423,7 +2166,6 @@ namespace InformationService
             set
             {
                 this.quantityFieldSpecified = value;
-                this.RaisePropertyChanged("quantitySpecified");
             }
         }
         
@@ -2438,7 +2180,6 @@ namespace InformationService
             set
             {
                 this.includedInRateField = value;
-                this.RaisePropertyChanged("includedInRate");
             }
         }
         
@@ -2453,7 +2194,6 @@ namespace InformationService
             set
             {
                 this.includedInRateFieldSpecified = value;
-                this.RaisePropertyChanged("includedInRateSpecified");
             }
         }
         
@@ -2468,7 +2208,6 @@ namespace InformationService
             set
             {
                 this.addRateSeprateLineField = value;
-                this.RaisePropertyChanged("addRateSeprateLine");
             }
         }
         
@@ -2483,7 +2222,6 @@ namespace InformationService
             set
             {
                 this.addRateSeprateLineFieldSpecified = value;
-                this.RaisePropertyChanged("addRateSeprateLineSpecified");
             }
         }
         
@@ -2498,7 +2236,6 @@ namespace InformationService
             set
             {
                 this.addRateCombinedLineField = value;
-                this.RaisePropertyChanged("addRateCombinedLine");
             }
         }
         
@@ -2513,7 +2250,6 @@ namespace InformationService
             set
             {
                 this.addRateCombinedLineFieldSpecified = value;
-                this.RaisePropertyChanged("addRateCombinedLineSpecified");
             }
         }
         
@@ -2528,7 +2264,6 @@ namespace InformationService
             set
             {
                 this.startTimeField = value;
-                this.RaisePropertyChanged("startTime");
             }
         }
         
@@ -2543,7 +2278,6 @@ namespace InformationService
             set
             {
                 this.startTimeFieldSpecified = value;
-                this.RaisePropertyChanged("startTimeSpecified");
             }
         }
         
@@ -2558,7 +2292,6 @@ namespace InformationService
             set
             {
                 this.endTimeField = value;
-                this.RaisePropertyChanged("endTime");
             }
         }
         
@@ -2573,7 +2306,6 @@ namespace InformationService
             set
             {
                 this.endTimeFieldSpecified = value;
-                this.RaisePropertyChanged("endTimeSpecified");
             }
         }
         
@@ -2588,7 +2320,6 @@ namespace InformationService
             set
             {
                 this.sellSeparateField = value;
-                this.RaisePropertyChanged("sellSeparate");
             }
         }
         
@@ -2603,7 +2334,6 @@ namespace InformationService
             set
             {
                 this.sellSeparateFieldSpecified = value;
-                this.RaisePropertyChanged("sellSeparateSpecified");
             }
         }
         
@@ -2618,7 +2348,6 @@ namespace InformationService
             set
             {
                 this.totalDepositAmountField = value;
-                this.RaisePropertyChanged("totalDepositAmount");
             }
         }
         
@@ -2633,7 +2362,6 @@ namespace InformationService
             set
             {
                 this.totalDepositAmountFieldSpecified = value;
-                this.RaisePropertyChanged("totalDepositAmountSpecified");
             }
         }
         
@@ -2648,7 +2376,6 @@ namespace InformationService
             set
             {
                 this.sourceField = value;
-                this.RaisePropertyChanged("source");
             }
         }
         
@@ -2663,7 +2390,6 @@ namespace InformationService
             set
             {
                 this.taxIncludedField = value;
-                this.RaisePropertyChanged("taxIncluded");
             }
         }
         
@@ -2678,7 +2404,6 @@ namespace InformationService
             set
             {
                 this.taxIncludedFieldSpecified = value;
-                this.RaisePropertyChanged("taxIncludedSpecified");
             }
         }
         
@@ -2693,7 +2418,6 @@ namespace InformationService
             set
             {
                 this.packageTypeField = value;
-                this.RaisePropertyChanged("packageType");
             }
         }
         
@@ -2708,18 +2432,6 @@ namespace InformationService
             set
             {
                 this.packageGroupCodeField = value;
-                this.RaisePropertyChanged("packageGroupCode");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -2728,7 +2440,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
-    public partial class Amount : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class Amount
     {
         
         private string currencyCodeField;
@@ -2752,7 +2464,6 @@ namespace InformationService
             set
             {
                 this.currencyCodeField = value;
-                this.RaisePropertyChanged("currencyCode");
             }
         }
         
@@ -2767,7 +2478,6 @@ namespace InformationService
             set
             {
                 this.decimalsField = value;
-                this.RaisePropertyChanged("decimals");
             }
         }
         
@@ -2782,7 +2492,6 @@ namespace InformationService
             set
             {
                 this.decimalsFieldSpecified = value;
-                this.RaisePropertyChanged("decimalsSpecified");
             }
         }
         
@@ -2797,7 +2506,6 @@ namespace InformationService
             set
             {
                 this.currencyTextField = value;
-                this.RaisePropertyChanged("currencyText");
             }
         }
         
@@ -2812,18 +2520,6 @@ namespace InformationService
             set
             {
                 this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -2832,7 +2528,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class PackageDetailCharges : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class PackageDetailCharges
     {
         
         private System.DateTime startDateField;
@@ -2860,7 +2556,6 @@ namespace InformationService
             set
             {
                 this.startDateField = value;
-                this.RaisePropertyChanged("StartDate");
             }
         }
         
@@ -2875,7 +2570,6 @@ namespace InformationService
             set
             {
                 this.startDateFieldSpecified = value;
-                this.RaisePropertyChanged("StartDateSpecified");
             }
         }
         
@@ -2890,7 +2584,6 @@ namespace InformationService
             set
             {
                 this.endDateField = value;
-                this.RaisePropertyChanged("EndDate");
             }
         }
         
@@ -2905,7 +2598,6 @@ namespace InformationService
             set
             {
                 this.endDateFieldSpecified = value;
-                this.RaisePropertyChanged("EndDateSpecified");
             }
         }
         
@@ -2920,7 +2612,6 @@ namespace InformationService
             set
             {
                 this.allowanceField = value;
-                this.RaisePropertyChanged("Allowance");
             }
         }
         
@@ -2935,7 +2626,6 @@ namespace InformationService
             set
             {
                 this.amountField = value;
-                this.RaisePropertyChanged("Amount");
             }
         }
         
@@ -2950,18 +2640,6 @@ namespace InformationService
             set
             {
                 this.taxAmountField = value;
-                this.RaisePropertyChanged("TaxAmount");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -2970,7 +2648,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class PackageMember : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class PackageMember
     {
         
         private string codeField;
@@ -2988,7 +2666,6 @@ namespace InformationService
             set
             {
                 this.codeField = value;
-                this.RaisePropertyChanged("Code");
             }
         }
         
@@ -3003,18 +2680,6 @@ namespace InformationService
             set
             {
                 this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -3025,7 +2690,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class Paragraph : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class Paragraph
     {
         
         private object[] itemsField;
@@ -3046,7 +2711,6 @@ namespace InformationService
             set
             {
                 this.itemsField = value;
-                this.RaisePropertyChanged("Items");
             }
         }
         
@@ -3062,18 +2726,6 @@ namespace InformationService
             set
             {
                 this.itemsElementNameField = value;
-                this.RaisePropertyChanged("ItemsElementName");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -3118,7 +2770,6 @@ namespace InformationService
             set
             {
                 this.specialRequestIdField = value;
-                this.RaisePropertyChanged("SpecialRequestId");
             }
         }
         
@@ -3133,7 +2784,6 @@ namespace InformationService
             set
             {
                 this.specialRequestIdFieldSpecified = value;
-                this.RaisePropertyChanged("SpecialRequestIdSpecified");
             }
         }
         
@@ -3148,7 +2798,6 @@ namespace InformationService
             set
             {
                 this.requestCodeField = value;
-                this.RaisePropertyChanged("requestCode");
             }
         }
     }
@@ -3187,7 +2836,6 @@ namespace InformationService
             set
             {
                 this.commentIdField = value;
-                this.RaisePropertyChanged("CommentId");
             }
         }
         
@@ -3202,7 +2850,6 @@ namespace InformationService
             set
             {
                 this.commentIdFieldSpecified = value;
-                this.RaisePropertyChanged("CommentIdSpecified");
             }
         }
         
@@ -3217,7 +2864,6 @@ namespace InformationService
             set
             {
                 this.internalYnField = value;
-                this.RaisePropertyChanged("InternalYn");
             }
         }
         
@@ -3232,7 +2878,6 @@ namespace InformationService
             set
             {
                 this.internalYnFieldSpecified = value;
-                this.RaisePropertyChanged("InternalYnSpecified");
             }
         }
         
@@ -3247,7 +2892,6 @@ namespace InformationService
             set
             {
                 this.commentTypeField = value;
-                this.RaisePropertyChanged("CommentType");
             }
         }
         
@@ -3262,7 +2906,6 @@ namespace InformationService
             set
             {
                 this.commentOriginatorCodeField = value;
-                this.RaisePropertyChanged("commentOriginatorCode");
             }
         }
         
@@ -3277,7 +2920,6 @@ namespace InformationService
             set
             {
                 this.guestViewableField = value;
-                this.RaisePropertyChanged("guestViewable");
             }
         }
         
@@ -3292,7 +2934,6 @@ namespace InformationService
             set
             {
                 this.guestViewableFieldSpecified = value;
-                this.RaisePropertyChanged("guestViewableSpecified");
             }
         }
     }
@@ -3301,7 +2942,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class PackageItemsResponse : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class PackageItemsResponse
     {
         
         private GDSResultStatus resultField;
@@ -3325,7 +2966,6 @@ namespace InformationService
             set
             {
                 this.resultField = value;
-                this.RaisePropertyChanged("Result");
             }
         }
         
@@ -3341,7 +2981,6 @@ namespace InformationService
             set
             {
                 this.packageGroupsField = value;
-                this.RaisePropertyChanged("PackageGroups");
             }
         }
         
@@ -3357,7 +2996,6 @@ namespace InformationService
             set
             {
                 this.packagesField = value;
-                this.RaisePropertyChanged("Packages");
             }
         }
         
@@ -3373,7 +3011,6 @@ namespace InformationService
             set
             {
                 this.itemsField = value;
-                this.RaisePropertyChanged("Items");
             }
         }
         
@@ -3388,18 +3025,6 @@ namespace InformationService
             set
             {
                 this.xsnField = value;
-                this.RaisePropertyChanged("xsn");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -3408,7 +3033,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class PackageItemsRequest : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class PackageItemsRequest
     {
         
         private TimeSpan timeSpanField;
@@ -3426,7 +3051,6 @@ namespace InformationService
             set
             {
                 this.timeSpanField = value;
-                this.RaisePropertyChanged("TimeSpan");
             }
         }
         
@@ -3441,18 +3065,6 @@ namespace InformationService
             set
             {
                 this.resortField = value;
-                this.RaisePropertyChanged("Resort");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -3461,7 +3073,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class TimeSpan : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class TimeSpan
     {
         
         private System.DateTime startDateField;
@@ -3479,7 +3091,6 @@ namespace InformationService
             set
             {
                 this.startDateField = value;
-                this.RaisePropertyChanged("StartDate");
             }
         }
         
@@ -3495,18 +3106,6 @@ namespace InformationService
             set
             {
                 this.itemField = value;
-                this.RaisePropertyChanged("Item");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -3515,7 +3114,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class HotelReference : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class HotelReference
     {
         
         private string chainCodeField;
@@ -3535,7 +3134,6 @@ namespace InformationService
             set
             {
                 this.chainCodeField = value;
-                this.RaisePropertyChanged("chainCode");
             }
         }
         
@@ -3550,7 +3148,6 @@ namespace InformationService
             set
             {
                 this.hotelCodeField = value;
-                this.RaisePropertyChanged("hotelCode");
             }
         }
         
@@ -3565,18 +3162,6 @@ namespace InformationService
             set
             {
                 this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -3585,7 +3170,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Membership/")]
-    public partial class AwardInformation : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class AwardInformation
     {
         
         private string resortField;
@@ -3645,7 +3230,6 @@ namespace InformationService
             set
             {
                 this.resortField = value;
-                this.RaisePropertyChanged("Resort");
             }
         }
         
@@ -3660,7 +3244,6 @@ namespace InformationService
             set
             {
                 this.awardCodeField = value;
-                this.RaisePropertyChanged("AwardCode");
             }
         }
         
@@ -3675,7 +3258,6 @@ namespace InformationService
             set
             {
                 this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
             }
         }
         
@@ -3690,7 +3272,6 @@ namespace InformationService
             set
             {
                 this.beginDateField = value;
-                this.RaisePropertyChanged("BeginDate");
             }
         }
         
@@ -3705,7 +3286,6 @@ namespace InformationService
             set
             {
                 this.beginDateFieldSpecified = value;
-                this.RaisePropertyChanged("BeginDateSpecified");
             }
         }
         
@@ -3720,7 +3300,6 @@ namespace InformationService
             set
             {
                 this.endDateField = value;
-                this.RaisePropertyChanged("EndDate");
             }
         }
         
@@ -3735,7 +3314,6 @@ namespace InformationService
             set
             {
                 this.endDateFieldSpecified = value;
-                this.RaisePropertyChanged("EndDateSpecified");
             }
         }
         
@@ -3750,7 +3328,6 @@ namespace InformationService
             set
             {
                 this.productField = value;
-                this.RaisePropertyChanged("Product");
             }
         }
         
@@ -3765,7 +3342,6 @@ namespace InformationService
             set
             {
                 this.productDescriptionField = value;
-                this.RaisePropertyChanged("ProductDescription");
             }
         }
         
@@ -3780,7 +3356,6 @@ namespace InformationService
             set
             {
                 this.roomTypeField = value;
-                this.RaisePropertyChanged("RoomType");
             }
         }
         
@@ -3795,7 +3370,6 @@ namespace InformationService
             set
             {
                 this.roomDescriptionField = value;
-                this.RaisePropertyChanged("RoomDescription");
             }
         }
         
@@ -3810,7 +3384,6 @@ namespace InformationService
             set
             {
                 this.toRoomTypeField = value;
-                this.RaisePropertyChanged("ToRoomType");
             }
         }
         
@@ -3825,7 +3398,6 @@ namespace InformationService
             set
             {
                 this.toRoomTypeDescriptionField = value;
-                this.RaisePropertyChanged("ToRoomTypeDescription");
             }
         }
         
@@ -3840,7 +3412,6 @@ namespace InformationService
             set
             {
                 this.rateCodeField = value;
-                this.RaisePropertyChanged("RateCode");
             }
         }
         
@@ -3855,7 +3426,6 @@ namespace InformationService
             set
             {
                 this.rateDescriptionField = value;
-                this.RaisePropertyChanged("RateDescription");
             }
         }
         
@@ -3870,7 +3440,6 @@ namespace InformationService
             set
             {
                 this.pointsRequiredField = value;
-                this.RaisePropertyChanged("PointsRequired");
             }
         }
         
@@ -3885,7 +3454,6 @@ namespace InformationService
             set
             {
                 this.pointsRequiredFieldSpecified = value;
-                this.RaisePropertyChanged("PointsRequiredSpecified");
             }
         }
         
@@ -3900,7 +3468,6 @@ namespace InformationService
             set
             {
                 this.cancelPenaltyDaysField = value;
-                this.RaisePropertyChanged("CancelPenaltyDays");
             }
         }
         
@@ -3915,7 +3482,6 @@ namespace InformationService
             set
             {
                 this.cancelPenaltyDaysFieldSpecified = value;
-                this.RaisePropertyChanged("CancelPenaltyDaysSpecified");
             }
         }
         
@@ -3930,7 +3496,6 @@ namespace InformationService
             set
             {
                 this.cancelPenaltyChargeField = value;
-                this.RaisePropertyChanged("CancelPenaltyCharge");
             }
         }
         
@@ -3945,7 +3510,6 @@ namespace InformationService
             set
             {
                 this.cancelPenaltyChargeFieldSpecified = value;
-                this.RaisePropertyChanged("CancelPenaltyChargeSpecified");
             }
         }
         
@@ -3960,7 +3524,6 @@ namespace InformationService
             set
             {
                 this.cancelPenaltyPointsField = value;
-                this.RaisePropertyChanged("CancelPenaltyPoints");
             }
         }
         
@@ -3975,18 +3538,6 @@ namespace InformationService
             set
             {
                 this.cancelPenaltyPointsFieldSpecified = value;
-                this.RaisePropertyChanged("CancelPenaltyPointsSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -3995,7 +3546,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class AwardsSchedulesResponse : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class AwardsSchedulesResponse
     {
         
         private GDSResultStatus resultField;
@@ -4013,7 +3564,6 @@ namespace InformationService
             set
             {
                 this.resultField = value;
-                this.RaisePropertyChanged("Result");
             }
         }
         
@@ -4029,18 +3579,6 @@ namespace InformationService
             set
             {
                 this.awardInformationField = value;
-                this.RaisePropertyChanged("AwardInformation");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -4049,7 +3587,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class AwardsSchedulesRequest : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class AwardsSchedulesRequest
     {
         
         private string propertyCodeField;
@@ -4071,7 +3609,6 @@ namespace InformationService
             set
             {
                 this.propertyCodeField = value;
-                this.RaisePropertyChanged("PropertyCode");
             }
         }
         
@@ -4086,7 +3623,6 @@ namespace InformationService
             set
             {
                 this.awardTypeField = value;
-                this.RaisePropertyChanged("AwardType");
             }
         }
         
@@ -4101,7 +3637,6 @@ namespace InformationService
             set
             {
                 this.membershipLevelField = value;
-                this.RaisePropertyChanged("MembershipLevel");
             }
         }
         
@@ -4116,18 +3651,6 @@ namespace InformationService
             set
             {
                 this.membershipTypeField = value;
-                this.RaisePropertyChanged("MembershipType");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -4155,7 +3678,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class ChainInfo : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class ChainInfo
     {
         
         private Address[] addressesField;
@@ -4183,7 +3706,6 @@ namespace InformationService
             set
             {
                 this.addressesField = value;
-                this.RaisePropertyChanged("Addresses");
             }
         }
         
@@ -4198,7 +3720,6 @@ namespace InformationService
             set
             {
                 this.contactEmailsField = value;
-                this.RaisePropertyChanged("ContactEmails");
             }
         }
         
@@ -4213,7 +3734,6 @@ namespace InformationService
             set
             {
                 this.contactPhonesField = value;
-                this.RaisePropertyChanged("ContactPhones");
             }
         }
         
@@ -4228,7 +3748,6 @@ namespace InformationService
             set
             {
                 this.marketingTextField = value;
-                this.RaisePropertyChanged("MarketingText");
             }
         }
         
@@ -4243,7 +3762,6 @@ namespace InformationService
             set
             {
                 this.loyaltyProgramField = value;
-                this.RaisePropertyChanged("LoyaltyProgram");
             }
         }
         
@@ -4258,7 +3776,6 @@ namespace InformationService
             set
             {
                 this.bookingConditionsField = value;
-                this.RaisePropertyChanged("BookingConditions");
             }
         }
         
@@ -4273,18 +3790,6 @@ namespace InformationService
             set
             {
                 this.acceptFrequenFlyerCardField = value;
-                this.RaisePropertyChanged("AcceptFrequenFlyerCard");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -4294,7 +3799,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
-    public partial class Address : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class Address
     {
         
         private string[] addressLineField;
@@ -4328,7 +3833,6 @@ namespace InformationService
             set
             {
                 this.addressLineField = value;
-                this.RaisePropertyChanged("AddressLine");
             }
         }
         
@@ -4343,7 +3847,6 @@ namespace InformationService
             set
             {
                 this.cityNameField = value;
-                this.RaisePropertyChanged("cityName");
             }
         }
         
@@ -4358,7 +3861,6 @@ namespace InformationService
             set
             {
                 this.stateProvField = value;
-                this.RaisePropertyChanged("stateProv");
             }
         }
         
@@ -4373,7 +3875,6 @@ namespace InformationService
             set
             {
                 this.countryCodeField = value;
-                this.RaisePropertyChanged("countryCode");
             }
         }
         
@@ -4388,7 +3889,6 @@ namespace InformationService
             set
             {
                 this.postalCodeField = value;
-                this.RaisePropertyChanged("postalCode");
             }
         }
         
@@ -4403,7 +3903,6 @@ namespace InformationService
             set
             {
                 this.barCodeField = value;
-                this.RaisePropertyChanged("barCode");
             }
         }
         
@@ -4418,7 +3917,6 @@ namespace InformationService
             set
             {
                 this.cityExtensionField = value;
-                this.RaisePropertyChanged("cityExtension");
             }
         }
         
@@ -4433,7 +3931,6 @@ namespace InformationService
             set
             {
                 this.addressTypeField = value;
-                this.RaisePropertyChanged("addressType");
             }
         }
         
@@ -4448,7 +3945,6 @@ namespace InformationService
             set
             {
                 this.otherAddressTypeField = value;
-                this.RaisePropertyChanged("otherAddressType");
             }
         }
         
@@ -4463,18 +3959,6 @@ namespace InformationService
             set
             {
                 this.languageCodeField = value;
-                this.RaisePropertyChanged("languageCode");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -4527,7 +4011,6 @@ namespace InformationService
             set
             {
                 this.operaIdField = value;
-                this.RaisePropertyChanged("operaId");
             }
         }
         
@@ -4542,7 +4025,6 @@ namespace InformationService
             set
             {
                 this.operaIdFieldSpecified = value;
-                this.RaisePropertyChanged("operaIdSpecified");
             }
         }
         
@@ -4557,7 +4039,6 @@ namespace InformationService
             set
             {
                 this.externalIdField = value;
-                this.RaisePropertyChanged("externalId");
             }
         }
         
@@ -4572,7 +4053,6 @@ namespace InformationService
             set
             {
                 this.primaryField = value;
-                this.RaisePropertyChanged("primary");
             }
         }
         
@@ -4587,7 +4067,6 @@ namespace InformationService
             set
             {
                 this.primaryFieldSpecified = value;
-                this.RaisePropertyChanged("primarySpecified");
             }
         }
         
@@ -4602,7 +4081,6 @@ namespace InformationService
             set
             {
                 this.displaySequenceField = value;
-                this.RaisePropertyChanged("displaySequence");
             }
         }
         
@@ -4617,7 +4095,6 @@ namespace InformationService
             set
             {
                 this.displaySequenceFieldSpecified = value;
-                this.RaisePropertyChanged("displaySequenceSpecified");
             }
         }
         
@@ -4632,7 +4109,6 @@ namespace InformationService
             set
             {
                 this.insertUserField = value;
-                this.RaisePropertyChanged("insertUser");
             }
         }
         
@@ -4647,7 +4123,6 @@ namespace InformationService
             set
             {
                 this.insertDateField = value;
-                this.RaisePropertyChanged("insertDate");
             }
         }
         
@@ -4662,7 +4137,6 @@ namespace InformationService
             set
             {
                 this.insertDateFieldSpecified = value;
-                this.RaisePropertyChanged("insertDateSpecified");
             }
         }
         
@@ -4677,7 +4151,6 @@ namespace InformationService
             set
             {
                 this.updateUserField = value;
-                this.RaisePropertyChanged("updateUser");
             }
         }
         
@@ -4692,7 +4165,6 @@ namespace InformationService
             set
             {
                 this.updateDateField = value;
-                this.RaisePropertyChanged("updateDate");
             }
         }
         
@@ -4707,7 +4179,6 @@ namespace InformationService
             set
             {
                 this.updateDateFieldSpecified = value;
-                this.RaisePropertyChanged("updateDateSpecified");
             }
         }
         
@@ -4722,7 +4193,6 @@ namespace InformationService
             set
             {
                 this.inactiveDateField = value;
-                this.RaisePropertyChanged("inactiveDate");
             }
         }
         
@@ -4737,7 +4207,6 @@ namespace InformationService
             set
             {
                 this.inactiveDateFieldSpecified = value;
-                this.RaisePropertyChanged("inactiveDateSpecified");
             }
         }
     }
@@ -4746,7 +4215,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class Email : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class Email
     {
         
         private string valueField;
@@ -4762,18 +4231,6 @@ namespace InformationService
             set
             {
                 this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -4783,7 +4240,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
-    public partial class Phone : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class Phone
     {
         
         private object itemField;
@@ -4808,7 +4265,6 @@ namespace InformationService
             set
             {
                 this.itemField = value;
-                this.RaisePropertyChanged("Item");
             }
         }
         
@@ -4823,7 +4279,6 @@ namespace InformationService
             set
             {
                 this.phoneTypeField = value;
-                this.RaisePropertyChanged("phoneType");
             }
         }
         
@@ -4838,7 +4293,6 @@ namespace InformationService
             set
             {
                 this.phoneRoleField = value;
-                this.RaisePropertyChanged("phoneRole");
             }
         }
         
@@ -4853,7 +4307,6 @@ namespace InformationService
             set
             {
                 this.primaryPhoneField = value;
-                this.RaisePropertyChanged("primaryPhone");
             }
         }
         
@@ -4868,18 +4321,6 @@ namespace InformationService
             set
             {
                 this.primaryPhoneFieldSpecified = value;
-                this.RaisePropertyChanged("primaryPhoneSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -4888,7 +4329,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
-    public partial class PhonePhoneData : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class PhonePhoneData
     {
         
         private string countryAccessCodeField;
@@ -4910,7 +4351,6 @@ namespace InformationService
             set
             {
                 this.countryAccessCodeField = value;
-                this.RaisePropertyChanged("countryAccessCode");
             }
         }
         
@@ -4925,7 +4365,6 @@ namespace InformationService
             set
             {
                 this.areaCodeField = value;
-                this.RaisePropertyChanged("areaCode");
             }
         }
         
@@ -4940,7 +4379,6 @@ namespace InformationService
             set
             {
                 this.phoneNumberField = value;
-                this.RaisePropertyChanged("phoneNumber");
             }
         }
         
@@ -4955,18 +4393,6 @@ namespace InformationService
             set
             {
                 this.extensionField = value;
-                this.RaisePropertyChanged("extension");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -5021,7 +4447,6 @@ namespace InformationService
             set
             {
                 this.operaIdField = value;
-                this.RaisePropertyChanged("operaId");
             }
         }
         
@@ -5036,7 +4461,6 @@ namespace InformationService
             set
             {
                 this.operaIdFieldSpecified = value;
-                this.RaisePropertyChanged("operaIdSpecified");
             }
         }
         
@@ -5051,7 +4475,6 @@ namespace InformationService
             set
             {
                 this.externalIdField = value;
-                this.RaisePropertyChanged("externalId");
             }
         }
         
@@ -5066,7 +4489,6 @@ namespace InformationService
             set
             {
                 this.primaryField = value;
-                this.RaisePropertyChanged("primary");
             }
         }
         
@@ -5081,7 +4503,6 @@ namespace InformationService
             set
             {
                 this.primaryFieldSpecified = value;
-                this.RaisePropertyChanged("primarySpecified");
             }
         }
         
@@ -5096,7 +4517,6 @@ namespace InformationService
             set
             {
                 this.displaySequenceField = value;
-                this.RaisePropertyChanged("displaySequence");
             }
         }
         
@@ -5111,7 +4531,6 @@ namespace InformationService
             set
             {
                 this.displaySequenceFieldSpecified = value;
-                this.RaisePropertyChanged("displaySequenceSpecified");
             }
         }
         
@@ -5126,7 +4545,6 @@ namespace InformationService
             set
             {
                 this.insertUserField = value;
-                this.RaisePropertyChanged("insertUser");
             }
         }
         
@@ -5141,7 +4559,6 @@ namespace InformationService
             set
             {
                 this.insertDateField = value;
-                this.RaisePropertyChanged("insertDate");
             }
         }
         
@@ -5156,7 +4573,6 @@ namespace InformationService
             set
             {
                 this.insertDateFieldSpecified = value;
-                this.RaisePropertyChanged("insertDateSpecified");
             }
         }
         
@@ -5171,7 +4587,6 @@ namespace InformationService
             set
             {
                 this.updateUserField = value;
-                this.RaisePropertyChanged("updateUser");
             }
         }
         
@@ -5186,7 +4601,6 @@ namespace InformationService
             set
             {
                 this.updateDateField = value;
-                this.RaisePropertyChanged("updateDate");
             }
         }
         
@@ -5201,7 +4615,6 @@ namespace InformationService
             set
             {
                 this.updateDateFieldSpecified = value;
-                this.RaisePropertyChanged("updateDateSpecified");
             }
         }
         
@@ -5216,7 +4629,6 @@ namespace InformationService
             set
             {
                 this.inactiveDateField = value;
-                this.RaisePropertyChanged("inactiveDate");
             }
         }
         
@@ -5231,7 +4643,6 @@ namespace InformationService
             set
             {
                 this.inactiveDateFieldSpecified = value;
-                this.RaisePropertyChanged("inactiveDateSpecified");
             }
         }
         
@@ -5246,7 +4657,6 @@ namespace InformationService
             set
             {
                 this.extensionField = value;
-                this.RaisePropertyChanged("extension");
             }
         }
     }
@@ -5255,7 +4665,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class ChainInformationResponse : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class ChainInformationResponse
     {
         
         private GDSResultStatus resultField;
@@ -5275,7 +4685,6 @@ namespace InformationService
             set
             {
                 this.resultField = value;
-                this.RaisePropertyChanged("Result");
             }
         }
         
@@ -5290,7 +4699,6 @@ namespace InformationService
             set
             {
                 this.chainInformationField = value;
-                this.RaisePropertyChanged("ChainInformation");
             }
         }
         
@@ -5305,18 +4713,6 @@ namespace InformationService
             set
             {
                 this.xsnField = value;
-                this.RaisePropertyChanged("xsn");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -5325,7 +4721,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class ChainInformationRequest : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class ChainInformationRequest
     {
         
         private string chainCodeField;
@@ -5341,18 +4737,6 @@ namespace InformationService
             set
             {
                 this.chainCodeField = value;
-                this.RaisePropertyChanged("ChainCode");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -5361,7 +4745,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class CurrencyConverterResponse : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class CurrencyConverterResponse
     {
         
         private GDSResultStatus resultField;
@@ -5379,7 +4763,6 @@ namespace InformationService
             set
             {
                 this.resultField = value;
-                this.RaisePropertyChanged("Result");
             }
         }
         
@@ -5394,18 +4777,6 @@ namespace InformationService
             set
             {
                 this.toCurrencyAmtField = value;
-                this.RaisePropertyChanged("ToCurrencyAmt");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -5414,7 +4785,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class CurrencyConverterRequest : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class CurrencyConverterRequest
     {
         
         private Amount fromCurrencyField;
@@ -5438,7 +4809,6 @@ namespace InformationService
             set
             {
                 this.fromCurrencyField = value;
-                this.RaisePropertyChanged("FromCurrency");
             }
         }
         
@@ -5453,7 +4823,6 @@ namespace InformationService
             set
             {
                 this.toCurrencyField = value;
-                this.RaisePropertyChanged("ToCurrency");
             }
         }
         
@@ -5468,7 +4837,6 @@ namespace InformationService
             set
             {
                 this.resortField = value;
-                this.RaisePropertyChanged("Resort");
             }
         }
         
@@ -5483,7 +4851,6 @@ namespace InformationService
             set
             {
                 this.exchangeTypeField = value;
-                this.RaisePropertyChanged("ExchangeType");
             }
         }
         
@@ -5498,18 +4865,6 @@ namespace InformationService
             set
             {
                 this.exchangeTypeFieldSpecified = value;
-                this.RaisePropertyChanged("ExchangeTypeSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -5543,7 +4898,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class MeetingRoomsTypeMeetingRoomCode : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class MeetingRoomsTypeMeetingRoomCode
     {
         
         private string chargeField;
@@ -5563,7 +4918,6 @@ namespace InformationService
             set
             {
                 this.chargeField = value;
-                this.RaisePropertyChanged("Charge");
             }
         }
         
@@ -5578,7 +4932,6 @@ namespace InformationService
             set
             {
                 this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
             }
         }
         
@@ -5593,18 +4946,6 @@ namespace InformationService
             set
             {
                 this.codeField = value;
-                this.RaisePropertyChanged("Code");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -5613,7 +4954,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class MeetingRoomsTypeMeetingRoom : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class MeetingRoomsTypeMeetingRoom
     {
         
         private MeetingRoomsTypeMeetingRoomCode[] codesField;
@@ -5644,7 +4985,6 @@ namespace InformationService
             set
             {
                 this.codesField = value;
-                this.RaisePropertyChanged("Codes");
             }
         }
         
@@ -5659,7 +4999,6 @@ namespace InformationService
             set
             {
                 this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
             }
         }
         
@@ -5674,7 +5013,6 @@ namespace InformationService
             set
             {
                 this.irregularField = value;
-                this.RaisePropertyChanged("Irregular");
             }
         }
         
@@ -5689,7 +5027,6 @@ namespace InformationService
             set
             {
                 this.irregularFieldSpecified = value;
-                this.RaisePropertyChanged("IrregularSpecified");
             }
         }
         
@@ -5704,7 +5041,6 @@ namespace InformationService
             set
             {
                 this.propertySystemNameField = value;
-                this.RaisePropertyChanged("PropertySystemName");
             }
         }
         
@@ -5719,7 +5055,6 @@ namespace InformationService
             set
             {
                 this.roomNameField = value;
-                this.RaisePropertyChanged("RoomName");
             }
         }
         
@@ -5734,7 +5069,6 @@ namespace InformationService
             set
             {
                 this.sortField = value;
-                this.RaisePropertyChanged("Sort");
             }
         }
         
@@ -5749,18 +5083,6 @@ namespace InformationService
             set
             {
                 this.meetingRoomCapacityField = value;
-                this.RaisePropertyChanged("MeetingRoomCapacity");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -5769,7 +5091,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class MeetingRoomsType : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class MeetingRoomsType
     {
         
         private MeetingRoomsTypeMeetingRoom[] meetingRoomField;
@@ -5799,7 +5121,6 @@ namespace InformationService
             set
             {
                 this.meetingRoomField = value;
-                this.RaisePropertyChanged("MeetingRoom");
             }
         }
         
@@ -5814,7 +5135,6 @@ namespace InformationService
             set
             {
                 this.meetingRoomCountField = value;
-                this.RaisePropertyChanged("MeetingRoomCount");
             }
         }
         
@@ -5829,7 +5149,6 @@ namespace InformationService
             set
             {
                 this.smallestRoomSpaceField = value;
-                this.RaisePropertyChanged("SmallestRoomSpace");
             }
         }
         
@@ -5844,7 +5163,6 @@ namespace InformationService
             set
             {
                 this.largestRoomSpaceField = value;
-                this.RaisePropertyChanged("LargestRoomSpace");
             }
         }
         
@@ -5859,7 +5177,6 @@ namespace InformationService
             set
             {
                 this.totalRoomSpaceField = value;
-                this.RaisePropertyChanged("TotalRoomSpace");
             }
         }
         
@@ -5874,7 +5191,6 @@ namespace InformationService
             set
             {
                 this.largestSeatingCapacityField = value;
-                this.RaisePropertyChanged("LargestSeatingCapacity");
             }
         }
         
@@ -5889,7 +5205,6 @@ namespace InformationService
             set
             {
                 this.secondLargestSeatingCapacityField = value;
-                this.RaisePropertyChanged("SecondLargestSeatingCapacity");
             }
         }
         
@@ -5904,18 +5219,6 @@ namespace InformationService
             set
             {
                 this.smallestSeatingCapacityField = value;
-                this.RaisePropertyChanged("SmallestSeatingCapacity");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -5924,7 +5227,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class RestaurantsTypeRestaurantCuisine : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class RestaurantsTypeRestaurantCuisine
     {
         
         private string codeField;
@@ -5942,7 +5245,6 @@ namespace InformationService
             set
             {
                 this.codeField = value;
-                this.RaisePropertyChanged("Code");
             }
         }
         
@@ -5957,18 +5259,6 @@ namespace InformationService
             set
             {
                 this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -5977,7 +5267,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class RestaurantsTypeRestaurant : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class RestaurantsTypeRestaurant
     {
         
         private Paragraph[] restaurantDescriptionField;
@@ -6021,7 +5311,6 @@ namespace InformationService
             set
             {
                 this.restaurantDescriptionField = value;
-                this.RaisePropertyChanged("RestaurantDescription");
             }
         }
         
@@ -6036,7 +5325,6 @@ namespace InformationService
             set
             {
                 this.relativePositionField = value;
-                this.RaisePropertyChanged("RelativePosition");
             }
         }
         
@@ -6052,7 +5340,6 @@ namespace InformationService
             set
             {
                 this.cuisinesField = value;
-                this.RaisePropertyChanged("Cuisines");
             }
         }
         
@@ -6068,7 +5355,6 @@ namespace InformationService
             set
             {
                 this.restaurantContactsField = value;
-                this.RaisePropertyChanged("RestaurantContacts");
             }
         }
         
@@ -6083,7 +5369,6 @@ namespace InformationService
             set
             {
                 this.restaurantNameField = value;
-                this.RaisePropertyChanged("RestaurantName");
             }
         }
         
@@ -6098,7 +5383,6 @@ namespace InformationService
             set
             {
                 this.maxSeatingCapacityField = value;
-                this.RaisePropertyChanged("MaxSeatingCapacity");
             }
         }
         
@@ -6113,7 +5397,6 @@ namespace InformationService
             set
             {
                 this.maxSinglePartyField = value;
-                this.RaisePropertyChanged("MaxSingleParty");
             }
         }
         
@@ -6128,7 +5411,6 @@ namespace InformationService
             set
             {
                 this.offerBreakfastField = value;
-                this.RaisePropertyChanged("OfferBreakfast");
             }
         }
         
@@ -6143,7 +5425,6 @@ namespace InformationService
             set
             {
                 this.offerBreakfastFieldSpecified = value;
-                this.RaisePropertyChanged("OfferBreakfastSpecified");
             }
         }
         
@@ -6158,7 +5439,6 @@ namespace InformationService
             set
             {
                 this.offerLunchField = value;
-                this.RaisePropertyChanged("OfferLunch");
             }
         }
         
@@ -6173,7 +5453,6 @@ namespace InformationService
             set
             {
                 this.offerLunchFieldSpecified = value;
-                this.RaisePropertyChanged("OfferLunchSpecified");
             }
         }
         
@@ -6188,7 +5467,6 @@ namespace InformationService
             set
             {
                 this.offerDinnerField = value;
-                this.RaisePropertyChanged("OfferDinner");
             }
         }
         
@@ -6203,7 +5481,6 @@ namespace InformationService
             set
             {
                 this.offerDinnerFieldSpecified = value;
-                this.RaisePropertyChanged("OfferDinnerSpecified");
             }
         }
         
@@ -6218,7 +5495,6 @@ namespace InformationService
             set
             {
                 this.offerBrunchField = value;
-                this.RaisePropertyChanged("OfferBrunch");
             }
         }
         
@@ -6233,18 +5509,6 @@ namespace InformationService
             set
             {
                 this.offerBrunchFieldSpecified = value;
-                this.RaisePropertyChanged("OfferBrunchSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -6253,7 +5517,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class Vector : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class Vector
     {
         
         private VectorDirection directionField;
@@ -6271,7 +5535,6 @@ namespace InformationService
             set
             {
                 this.directionField = value;
-                this.RaisePropertyChanged("Direction");
             }
         }
         
@@ -6286,18 +5549,6 @@ namespace InformationService
             set
             {
                 this.distanceField = value;
-                this.RaisePropertyChanged("Distance");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -6306,7 +5557,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class VectorDirection : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class VectorDirection
     {
         
         private VectorDirectionType vectorDirectionField;
@@ -6324,7 +5575,6 @@ namespace InformationService
             set
             {
                 this.vectorDirectionField = value;
-                this.RaisePropertyChanged("vectorDirection");
             }
         }
         
@@ -6339,18 +5589,6 @@ namespace InformationService
             set
             {
                 this.otherVectorDirectionField = value;
-                this.RaisePropertyChanged("otherVectorDirection");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -6393,7 +5631,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class VectorDistance : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class VectorDistance
     {
         
         private DistanceUnitType distanceUnitField;
@@ -6413,7 +5651,6 @@ namespace InformationService
             set
             {
                 this.distanceUnitField = value;
-                this.RaisePropertyChanged("distanceUnit");
             }
         }
         
@@ -6428,7 +5665,6 @@ namespace InformationService
             set
             {
                 this.otherDistanceUnitField = value;
-                this.RaisePropertyChanged("otherDistanceUnit");
             }
         }
         
@@ -6443,18 +5679,6 @@ namespace InformationService
             set
             {
                 this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -6479,7 +5703,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class FacilityInfoTypeGuestRoomsGuestRoom : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class FacilityInfoTypeGuestRoomsGuestRoom
     {
         
         private DescriptiveText roomDescriptionField;
@@ -6501,7 +5725,6 @@ namespace InformationService
             set
             {
                 this.roomDescriptionField = value;
-                this.RaisePropertyChanged("RoomDescription");
             }
         }
         
@@ -6516,7 +5739,6 @@ namespace InformationService
             set
             {
                 this.amenityInfoField = value;
-                this.RaisePropertyChanged("AmenityInfo");
             }
         }
         
@@ -6531,7 +5753,6 @@ namespace InformationService
             set
             {
                 this.codeField = value;
-                this.RaisePropertyChanged("code");
             }
         }
         
@@ -6546,18 +5767,6 @@ namespace InformationService
             set
             {
                 this.maxOccupancyField = value;
-                this.RaisePropertyChanged("maxOccupancy");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -6566,7 +5775,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class AmenityInfo : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class AmenityInfo
     {
         
         private Amenity[] amenitiesField;
@@ -6583,18 +5792,6 @@ namespace InformationService
             set
             {
                 this.amenitiesField = value;
-                this.RaisePropertyChanged("Amenities");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -6603,7 +5800,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class Amenity : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class Amenity
     {
         
         private string[] amenityDescriptionField;
@@ -6633,7 +5830,6 @@ namespace InformationService
             set
             {
                 this.amenityDescriptionField = value;
-                this.RaisePropertyChanged("amenityDescription");
             }
         }
         
@@ -6648,7 +5844,6 @@ namespace InformationService
             set
             {
                 this.amenityCodeField = value;
-                this.RaisePropertyChanged("amenityCode");
             }
         }
         
@@ -6663,7 +5858,6 @@ namespace InformationService
             set
             {
                 this.amenityTypeField = value;
-                this.RaisePropertyChanged("amenityType");
             }
         }
         
@@ -6678,7 +5872,6 @@ namespace InformationService
             set
             {
                 this.amenityTypeFieldSpecified = value;
-                this.RaisePropertyChanged("amenityTypeSpecified");
             }
         }
         
@@ -6693,7 +5886,6 @@ namespace InformationService
             set
             {
                 this.otherTypeField = value;
-                this.RaisePropertyChanged("otherType");
             }
         }
         
@@ -6708,7 +5900,6 @@ namespace InformationService
             set
             {
                 this.availabilityFlagField = value;
-                this.RaisePropertyChanged("availabilityFlag");
             }
         }
         
@@ -6723,7 +5914,6 @@ namespace InformationService
             set
             {
                 this.availabilityFlagFieldSpecified = value;
-                this.RaisePropertyChanged("availabilityFlagSpecified");
             }
         }
         
@@ -6738,18 +5928,6 @@ namespace InformationService
             set
             {
                 this.otherFlagField = value;
-                this.RaisePropertyChanged("otherFlag");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -6838,7 +6016,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class FacilityInfoTypeGuestRooms : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class FacilityInfoTypeGuestRooms
     {
         
         private FacilityInfoTypeGuestRoomsGuestRoom[] guestRoomField;
@@ -6856,7 +6034,6 @@ namespace InformationService
             set
             {
                 this.guestRoomField = value;
-                this.RaisePropertyChanged("GuestRoom");
             }
         }
         
@@ -6871,18 +6048,6 @@ namespace InformationService
             set
             {
                 this.totalRoomsField = value;
-                this.RaisePropertyChanged("totalRooms");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -6891,7 +6056,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class FacilityInfoType : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class FacilityInfoType
     {
         
         private FacilityInfoTypeGuestRooms guestRoomsField;
@@ -6921,7 +6086,6 @@ namespace InformationService
             set
             {
                 this.guestRoomsField = value;
-                this.RaisePropertyChanged("GuestRooms");
             }
         }
         
@@ -6937,7 +6101,6 @@ namespace InformationService
             set
             {
                 this.restaurantsField = value;
-                this.RaisePropertyChanged("Restaurants");
             }
         }
         
@@ -6952,7 +6115,6 @@ namespace InformationService
             set
             {
                 this.meetingRoomsField = value;
-                this.RaisePropertyChanged("MeetingRooms");
             }
         }
         
@@ -6968,7 +6130,6 @@ namespace InformationService
             set
             {
                 this.attractionsField = value;
-                this.RaisePropertyChanged("Attractions");
             }
         }
         
@@ -6983,7 +6144,6 @@ namespace InformationService
             set
             {
                 this.dateOpenedField = value;
-                this.RaisePropertyChanged("dateOpened");
             }
         }
         
@@ -6998,7 +6158,6 @@ namespace InformationService
             set
             {
                 this.dateOpenedFieldSpecified = value;
-                this.RaisePropertyChanged("dateOpenedSpecified");
             }
         }
         
@@ -7013,7 +6172,6 @@ namespace InformationService
             set
             {
                 this.dateRennovatedField = value;
-                this.RaisePropertyChanged("dateRennovated");
             }
         }
         
@@ -7028,18 +6186,6 @@ namespace InformationService
             set
             {
                 this.dateRennovatedFieldSpecified = value;
-                this.RaisePropertyChanged("dateRennovatedSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -7048,7 +6194,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class ArrayOfAttractionsTypeAttractionAttraction : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class ArrayOfAttractionsTypeAttractionAttraction
     {
         
         private string attractionCodeField;
@@ -7100,7 +6246,6 @@ namespace InformationService
             set
             {
                 this.attractionCodeField = value;
-                this.RaisePropertyChanged("AttractionCode");
             }
         }
         
@@ -7115,7 +6260,6 @@ namespace InformationService
             set
             {
                 this.attractionNameField = value;
-                this.RaisePropertyChanged("AttractionName");
             }
         }
         
@@ -7130,7 +6274,6 @@ namespace InformationService
             set
             {
                 this.attractionTypeField = value;
-                this.RaisePropertyChanged("AttractionType");
             }
         }
         
@@ -7146,7 +6289,6 @@ namespace InformationService
             set
             {
                 this.attractionInformationField = value;
-                this.RaisePropertyChanged("AttractionInformation");
             }
         }
         
@@ -7161,7 +6303,6 @@ namespace InformationService
             set
             {
                 this.distanceField = value;
-                this.RaisePropertyChanged("Distance");
             }
         }
         
@@ -7176,7 +6317,6 @@ namespace InformationService
             set
             {
                 this.distanceFieldSpecified = value;
-                this.RaisePropertyChanged("DistanceSpecified");
             }
         }
         
@@ -7191,7 +6331,6 @@ namespace InformationService
             set
             {
                 this.distanceTypeField = value;
-                this.RaisePropertyChanged("DistanceType");
             }
         }
         
@@ -7206,7 +6345,6 @@ namespace InformationService
             set
             {
                 this.drivingTimeField = value;
-                this.RaisePropertyChanged("DrivingTime");
             }
         }
         
@@ -7221,7 +6359,6 @@ namespace InformationService
             set
             {
                 this.cityField = value;
-                this.RaisePropertyChanged("City");
             }
         }
         
@@ -7236,7 +6373,6 @@ namespace InformationService
             set
             {
                 this.stateField = value;
-                this.RaisePropertyChanged("State");
             }
         }
         
@@ -7251,7 +6387,6 @@ namespace InformationService
             set
             {
                 this.zipCodeField = value;
-                this.RaisePropertyChanged("ZipCode");
             }
         }
         
@@ -7266,7 +6401,6 @@ namespace InformationService
             set
             {
                 this.hoursOfOperationField = value;
-                this.RaisePropertyChanged("HoursOfOperation");
             }
         }
         
@@ -7281,7 +6415,6 @@ namespace InformationService
             set
             {
                 this.latitudeField = value;
-                this.RaisePropertyChanged("Latitude");
             }
         }
         
@@ -7296,7 +6429,6 @@ namespace InformationService
             set
             {
                 this.latitudeFieldSpecified = value;
-                this.RaisePropertyChanged("LatitudeSpecified");
             }
         }
         
@@ -7311,7 +6443,6 @@ namespace InformationService
             set
             {
                 this.longitudeField = value;
-                this.RaisePropertyChanged("Longitude");
             }
         }
         
@@ -7326,7 +6457,6 @@ namespace InformationService
             set
             {
                 this.longitudeFieldSpecified = value;
-                this.RaisePropertyChanged("LongitudeSpecified");
             }
         }
         
@@ -7341,7 +6471,6 @@ namespace InformationService
             set
             {
                 this.priceRangeField = value;
-                this.RaisePropertyChanged("PriceRange");
             }
         }
         
@@ -7356,7 +6485,6 @@ namespace InformationService
             set
             {
                 this.displaySequenceField = value;
-                this.RaisePropertyChanged("DisplaySequence");
             }
         }
         
@@ -7371,18 +6499,6 @@ namespace InformationService
             set
             {
                 this.displaySequenceFieldSpecified = value;
-                this.RaisePropertyChanged("DisplaySequenceSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -7391,7 +6507,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class GeoCode : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class GeoCode
     {
         
         private string latitudeField;
@@ -7411,7 +6527,6 @@ namespace InformationService
             set
             {
                 this.latitudeField = value;
-                this.RaisePropertyChanged("latitude");
             }
         }
         
@@ -7426,7 +6541,6 @@ namespace InformationService
             set
             {
                 this.longitudeField = value;
-                this.RaisePropertyChanged("longitude");
             }
         }
         
@@ -7441,18 +6555,6 @@ namespace InformationService
             set
             {
                 this.altitudeField = value;
-                this.RaisePropertyChanged("altitude");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -7461,7 +6563,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class OtherPaymentType : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class OtherPaymentType
     {
         
         private string typeField;
@@ -7481,7 +6583,6 @@ namespace InformationService
             set
             {
                 this.typeField = value;
-                this.RaisePropertyChanged("type");
             }
         }
         
@@ -7496,7 +6597,6 @@ namespace InformationService
             set
             {
                 this.valueField = value;
-                this.RaisePropertyChanged("value");
             }
         }
         
@@ -7511,18 +6611,6 @@ namespace InformationService
             set
             {
                 this.sourceField = value;
-                this.RaisePropertyChanged("source");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -7531,7 +6619,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class Voucher : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class Voucher
     {
         
         private string voucherNumberField;
@@ -7553,7 +6641,6 @@ namespace InformationService
             set
             {
                 this.voucherNumberField = value;
-                this.RaisePropertyChanged("voucherNumber");
             }
         }
         
@@ -7568,7 +6655,6 @@ namespace InformationService
             set
             {
                 this.voucherIssuedByField = value;
-                this.RaisePropertyChanged("voucherIssuedBy");
             }
         }
         
@@ -7583,7 +6669,6 @@ namespace InformationService
             set
             {
                 this.voucherValidDateField = value;
-                this.RaisePropertyChanged("voucherValidDate");
             }
         }
         
@@ -7598,18 +6683,6 @@ namespace InformationService
             set
             {
                 this.voucherValidDateFieldSpecified = value;
-                this.RaisePropertyChanged("voucherValidDateSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -7618,7 +6691,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class PaymentType : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class PaymentType
     {
         
         private object itemField;
@@ -7636,18 +6709,6 @@ namespace InformationService
             set
             {
                 this.itemField = value;
-                this.RaisePropertyChanged("Item");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -7658,7 +6719,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
-    public partial class CreditCard : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class CreditCard
     {
         
         private string cardCodeField;
@@ -7698,7 +6759,6 @@ namespace InformationService
             set
             {
                 this.cardCodeField = value;
-                this.RaisePropertyChanged("cardCode");
             }
         }
         
@@ -7713,7 +6773,6 @@ namespace InformationService
             set
             {
                 this.cardHolderNameField = value;
-                this.RaisePropertyChanged("cardHolderName");
             }
         }
         
@@ -7729,7 +6788,6 @@ namespace InformationService
             set
             {
                 this.itemField = value;
-                this.RaisePropertyChanged("Item");
             }
         }
         
@@ -7744,7 +6802,6 @@ namespace InformationService
             set
             {
                 this.seriesCodeField = value;
-                this.RaisePropertyChanged("seriesCode");
             }
         }
         
@@ -7759,7 +6816,6 @@ namespace InformationService
             set
             {
                 this.track2Field = value;
-                this.RaisePropertyChanged("Track2");
             }
         }
         
@@ -7774,7 +6830,6 @@ namespace InformationService
             set
             {
                 this.effectiveDateField = value;
-                this.RaisePropertyChanged("effectiveDate");
             }
         }
         
@@ -7789,7 +6844,6 @@ namespace InformationService
             set
             {
                 this.effectiveDateFieldSpecified = value;
-                this.RaisePropertyChanged("effectiveDateSpecified");
             }
         }
         
@@ -7804,7 +6858,6 @@ namespace InformationService
             set
             {
                 this.expirationDateField = value;
-                this.RaisePropertyChanged("expirationDate");
             }
         }
         
@@ -7819,7 +6872,6 @@ namespace InformationService
             set
             {
                 this.encryptedSwipeField = value;
-                this.RaisePropertyChanged("EncryptedSwipe");
             }
         }
         
@@ -7834,7 +6886,6 @@ namespace InformationService
             set
             {
                 this.cardTypeField = value;
-                this.RaisePropertyChanged("cardType");
             }
         }
         
@@ -7849,7 +6900,6 @@ namespace InformationService
             set
             {
                 this.otherCardTypeField = value;
-                this.RaisePropertyChanged("otherCardType");
             }
         }
         
@@ -7864,7 +6914,6 @@ namespace InformationService
             set
             {
                 this.chipAndPinField = value;
-                this.RaisePropertyChanged("chipAndPin");
             }
         }
         
@@ -7879,18 +6928,6 @@ namespace InformationService
             set
             {
                 this.chipAndPinFieldSpecified = value;
-                this.RaisePropertyChanged("chipAndPinSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -7899,7 +6936,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
-    public partial class VaultedCardType : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class VaultedCardType
     {
         
         private string vaultedCardIDField;
@@ -7917,7 +6954,6 @@ namespace InformationService
             set
             {
                 this.vaultedCardIDField = value;
-                this.RaisePropertyChanged("vaultedCardID");
             }
         }
         
@@ -7932,18 +6968,6 @@ namespace InformationService
             set
             {
                 this.lastFourDigitsField = value;
-                this.RaisePropertyChanged("lastFourDigits");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -7952,7 +6976,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
-    public partial class EncryptedSwipe : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class EncryptedSwipe
     {
         
         private string trackIndicatorField;
@@ -7980,7 +7004,6 @@ namespace InformationService
             set
             {
                 this.trackIndicatorField = value;
-                this.RaisePropertyChanged("TrackIndicator");
             }
         }
         
@@ -7995,7 +7018,6 @@ namespace InformationService
             set
             {
                 this.swiperTypeField = value;
-                this.RaisePropertyChanged("SwiperType");
             }
         }
         
@@ -8010,7 +7032,6 @@ namespace InformationService
             set
             {
                 this.swiperIDField = value;
-                this.RaisePropertyChanged("SwiperID");
             }
         }
         
@@ -8025,7 +7046,6 @@ namespace InformationService
             set
             {
                 this.maskedPANField = value;
-                this.RaisePropertyChanged("MaskedPAN");
             }
         }
         
@@ -8040,7 +7060,6 @@ namespace InformationService
             set
             {
                 this.track1Field = value;
-                this.RaisePropertyChanged("Track1");
             }
         }
         
@@ -8055,7 +7074,6 @@ namespace InformationService
             set
             {
                 this.track2Field = value;
-                this.RaisePropertyChanged("Track2");
             }
         }
         
@@ -8070,18 +7088,6 @@ namespace InformationService
             set
             {
                 this.keySerialNumberField = value;
-                this.RaisePropertyChanged("KeySerialNumber");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -8134,7 +7140,6 @@ namespace InformationService
             set
             {
                 this.operaIdField = value;
-                this.RaisePropertyChanged("operaId");
             }
         }
         
@@ -8149,7 +7154,6 @@ namespace InformationService
             set
             {
                 this.operaIdFieldSpecified = value;
-                this.RaisePropertyChanged("operaIdSpecified");
             }
         }
         
@@ -8164,7 +7168,6 @@ namespace InformationService
             set
             {
                 this.externalIdField = value;
-                this.RaisePropertyChanged("externalId");
             }
         }
         
@@ -8179,7 +7182,6 @@ namespace InformationService
             set
             {
                 this.primaryField = value;
-                this.RaisePropertyChanged("primary");
             }
         }
         
@@ -8194,7 +7196,6 @@ namespace InformationService
             set
             {
                 this.primaryFieldSpecified = value;
-                this.RaisePropertyChanged("primarySpecified");
             }
         }
         
@@ -8209,7 +7210,6 @@ namespace InformationService
             set
             {
                 this.displaySequenceField = value;
-                this.RaisePropertyChanged("displaySequence");
             }
         }
         
@@ -8224,7 +7224,6 @@ namespace InformationService
             set
             {
                 this.displaySequenceFieldSpecified = value;
-                this.RaisePropertyChanged("displaySequenceSpecified");
             }
         }
         
@@ -8239,7 +7238,6 @@ namespace InformationService
             set
             {
                 this.insertUserField = value;
-                this.RaisePropertyChanged("insertUser");
             }
         }
         
@@ -8254,7 +7252,6 @@ namespace InformationService
             set
             {
                 this.insertDateField = value;
-                this.RaisePropertyChanged("insertDate");
             }
         }
         
@@ -8269,7 +7266,6 @@ namespace InformationService
             set
             {
                 this.insertDateFieldSpecified = value;
-                this.RaisePropertyChanged("insertDateSpecified");
             }
         }
         
@@ -8284,7 +7280,6 @@ namespace InformationService
             set
             {
                 this.updateUserField = value;
-                this.RaisePropertyChanged("updateUser");
             }
         }
         
@@ -8299,7 +7294,6 @@ namespace InformationService
             set
             {
                 this.updateDateField = value;
-                this.RaisePropertyChanged("updateDate");
             }
         }
         
@@ -8314,7 +7308,6 @@ namespace InformationService
             set
             {
                 this.updateDateFieldSpecified = value;
-                this.RaisePropertyChanged("updateDateSpecified");
             }
         }
         
@@ -8329,7 +7322,6 @@ namespace InformationService
             set
             {
                 this.inactiveDateField = value;
-                this.RaisePropertyChanged("inactiveDate");
             }
         }
         
@@ -8344,7 +7336,6 @@ namespace InformationService
             set
             {
                 this.inactiveDateFieldSpecified = value;
-                this.RaisePropertyChanged("inactiveDateSpecified");
             }
         }
     }
@@ -8377,7 +7368,6 @@ namespace InformationService
             set
             {
                 this.cIDNumberField = value;
-                this.RaisePropertyChanged("CIDNumber");
             }
         }
         
@@ -8392,7 +7382,6 @@ namespace InformationService
             set
             {
                 this.addressField = value;
-                this.RaisePropertyChanged("Address");
             }
         }
         
@@ -8407,7 +7396,6 @@ namespace InformationService
             set
             {
                 this.issueNumberField = value;
-                this.RaisePropertyChanged("IssueNumber");
             }
         }
         
@@ -8422,7 +7410,6 @@ namespace InformationService
             set
             {
                 this.approvalCodeField = value;
-                this.RaisePropertyChanged("ApprovalCode");
             }
         }
         
@@ -8437,7 +7424,6 @@ namespace InformationService
             set
             {
                 this.depositAmountField = value;
-                this.RaisePropertyChanged("DepositAmount");
             }
         }
     }
@@ -8446,7 +7432,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class ExtendedHotelInfo : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class ExtendedHotelInfo
     {
         
         private HotelInfo[] hotelInformationField;
@@ -8473,7 +7459,6 @@ namespace InformationService
             set
             {
                 this.hotelInformationField = value;
-                this.RaisePropertyChanged("HotelInformation");
             }
         }
         
@@ -8489,7 +7474,6 @@ namespace InformationService
             set
             {
                 this.paymentMethodsField = value;
-                this.RaisePropertyChanged("PaymentMethods");
             }
         }
         
@@ -8504,7 +7488,6 @@ namespace InformationService
             set
             {
                 this.amenityInfoField = value;
-                this.RaisePropertyChanged("AmenityInfo");
             }
         }
         
@@ -8519,7 +7502,6 @@ namespace InformationService
             set
             {
                 this.positionField = value;
-                this.RaisePropertyChanged("Position");
             }
         }
         
@@ -8534,7 +7516,6 @@ namespace InformationService
             set
             {
                 this.facilityInfoField = value;
-                this.RaisePropertyChanged("FacilityInfo");
             }
         }
         
@@ -8550,18 +7531,6 @@ namespace InformationService
             set
             {
                 this.alternatePropertiesField = value;
-                this.RaisePropertyChanged("AlternateProperties");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -8570,7 +7539,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class HotelContact : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class HotelContact
     {
         
         private Address[] addressesField;
@@ -8597,7 +7566,6 @@ namespace InformationService
             set
             {
                 this.addressesField = value;
-                this.RaisePropertyChanged("Addresses");
             }
         }
         
@@ -8613,7 +7581,6 @@ namespace InformationService
             set
             {
                 this.contactEmailsField = value;
-                this.RaisePropertyChanged("ContactEmails");
             }
         }
         
@@ -8629,7 +7596,6 @@ namespace InformationService
             set
             {
                 this.contactPhonesField = value;
-                this.RaisePropertyChanged("ContactPhones");
             }
         }
         
@@ -8645,7 +7611,6 @@ namespace InformationService
             set
             {
                 this.hotelInformationField = value;
-                this.RaisePropertyChanged("HotelInformation");
             }
         }
         
@@ -8661,7 +7626,6 @@ namespace InformationService
             set
             {
                 this.uRIsField = value;
-                this.RaisePropertyChanged("URIs");
             }
         }
         
@@ -8676,18 +7640,6 @@ namespace InformationService
             set
             {
                 this.vectorField = value;
-                this.RaisePropertyChanged("Vector");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -8696,7 +7648,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class HotelInformationResponseHotelInformation : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class HotelInformationResponseHotelInformation
     {
         
         private HotelReference hotelInformationField;
@@ -8716,7 +7668,6 @@ namespace InformationService
             set
             {
                 this.hotelInformationField = value;
-                this.RaisePropertyChanged("HotelInformation");
             }
         }
         
@@ -8731,7 +7682,6 @@ namespace InformationService
             set
             {
                 this.hotelContactInformationField = value;
-                this.RaisePropertyChanged("HotelContactInformation");
             }
         }
         
@@ -8746,18 +7696,6 @@ namespace InformationService
             set
             {
                 this.hotelExtendedInformationField = value;
-                this.RaisePropertyChanged("HotelExtendedInformation");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -8766,7 +7704,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class HotelInformationResponse : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class HotelInformationResponse
     {
         
         private GDSResultStatus resultField;
@@ -8786,7 +7724,6 @@ namespace InformationService
             set
             {
                 this.resultField = value;
-                this.RaisePropertyChanged("Result");
             }
         }
         
@@ -8801,7 +7738,6 @@ namespace InformationService
             set
             {
                 this.hotelInformationField = value;
-                this.RaisePropertyChanged("HotelInformation");
             }
         }
         
@@ -8816,18 +7752,6 @@ namespace InformationService
             set
             {
                 this.xsnField = value;
-                this.RaisePropertyChanged("xsn");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -8836,7 +7760,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class HotelInformationRequest : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class HotelInformationRequest
     {
         
         private HotelReference hotelInformationQueryField;
@@ -8852,18 +7776,6 @@ namespace InformationService
             set
             {
                 this.hotelInformationQueryField = value;
-                this.RaisePropertyChanged("HotelInformationQuery");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -8872,7 +7784,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class Discount : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class Discount
     {
         
         private double discountAmountField;
@@ -8892,7 +7804,6 @@ namespace InformationService
             set
             {
                 this.discountAmountField = value;
-                this.RaisePropertyChanged("DiscountAmount");
             }
         }
         
@@ -8907,7 +7818,6 @@ namespace InformationService
             set
             {
                 this.discountTypeField = value;
-                this.RaisePropertyChanged("DiscountType");
             }
         }
         
@@ -8922,18 +7832,6 @@ namespace InformationService
             set
             {
                 this.discountReasonField = value;
-                this.RaisePropertyChanged("DiscountReason");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -8955,7 +7853,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Common/")]
-    public partial class UniqueID : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class UniqueID
     {
         
         private UniqueIDType typeField;
@@ -8975,7 +7873,6 @@ namespace InformationService
             set
             {
                 this.typeField = value;
-                this.RaisePropertyChanged("type");
             }
         }
         
@@ -8990,7 +7887,6 @@ namespace InformationService
             set
             {
                 this.sourceField = value;
-                this.RaisePropertyChanged("source");
             }
         }
         
@@ -9005,18 +7901,6 @@ namespace InformationService
             set
             {
                 this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -9044,7 +7928,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class GuaranteeAccepted : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class GuaranteeAccepted
     {
         
         private CreditCard guaranteeCreditCardField;
@@ -9066,7 +7950,6 @@ namespace InformationService
             set
             {
                 this.guaranteeCreditCardField = value;
-                this.RaisePropertyChanged("GuaranteeCreditCard");
             }
         }
         
@@ -9081,7 +7964,6 @@ namespace InformationService
             set
             {
                 this.guaranteeTravelAgentField = value;
-                this.RaisePropertyChanged("GuaranteeTravelAgent");
             }
         }
         
@@ -9096,7 +7978,6 @@ namespace InformationService
             set
             {
                 this.guaranteeCompanyField = value;
-                this.RaisePropertyChanged("GuaranteeCompany");
             }
         }
         
@@ -9111,18 +7992,6 @@ namespace InformationService
             set
             {
                 this.agentPhoneField = value;
-                this.RaisePropertyChanged("agentPhone");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -9131,7 +8000,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class Guarantee : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class Guarantee
     {
         
         private GuaranteeAccepted[] guaranteesAcceptedField;
@@ -9172,7 +8041,6 @@ namespace InformationService
             set
             {
                 this.guaranteesAcceptedField = value;
-                this.RaisePropertyChanged("GuaranteesAccepted");
             }
         }
         
@@ -9187,7 +8055,6 @@ namespace InformationService
             set
             {
                 this.deadlineField = value;
-                this.RaisePropertyChanged("Deadline");
             }
         }
         
@@ -9202,7 +8069,6 @@ namespace InformationService
             set
             {
                 this.deadlineFieldSpecified = value;
-                this.RaisePropertyChanged("DeadlineSpecified");
             }
         }
         
@@ -9217,7 +8083,6 @@ namespace InformationService
             set
             {
                 this.guaranteeDescriptionField = value;
-                this.RaisePropertyChanged("GuaranteeDescription");
             }
         }
         
@@ -9232,7 +8097,6 @@ namespace InformationService
             set
             {
                 this.guaranteeTypeField = value;
-                this.RaisePropertyChanged("guaranteeType");
             }
         }
         
@@ -9247,7 +8111,6 @@ namespace InformationService
             set
             {
                 this.mandatoryDepositField = value;
-                this.RaisePropertyChanged("mandatoryDeposit");
             }
         }
         
@@ -9262,7 +8125,6 @@ namespace InformationService
             set
             {
                 this.mandatoryDepositFieldSpecified = value;
-                this.RaisePropertyChanged("mandatoryDepositSpecified");
             }
         }
         
@@ -9277,7 +8139,6 @@ namespace InformationService
             set
             {
                 this.cancellationRequiredField = value;
-                this.RaisePropertyChanged("cancellationRequired");
             }
         }
         
@@ -9292,7 +8153,6 @@ namespace InformationService
             set
             {
                 this.cancellationRequiredFieldSpecified = value;
-                this.RaisePropertyChanged("cancellationRequiredSpecified");
             }
         }
         
@@ -9307,7 +8167,6 @@ namespace InformationService
             set
             {
                 this.creditCardRequiredField = value;
-                this.RaisePropertyChanged("creditCardRequired");
             }
         }
         
@@ -9322,7 +8181,6 @@ namespace InformationService
             set
             {
                 this.creditCardRequiredFieldSpecified = value;
-                this.RaisePropertyChanged("creditCardRequiredSpecified");
             }
         }
         
@@ -9337,7 +8195,6 @@ namespace InformationService
             set
             {
                 this.paymentTypeField = value;
-                this.RaisePropertyChanged("paymentType");
             }
         }
         
@@ -9352,18 +8209,6 @@ namespace InformationService
             set
             {
                 this.requirementCodeField = value;
-                this.RaisePropertyChanged("requirementCode");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -9372,7 +8217,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class GdsFlags : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class GdsFlags
     {
         
         private string lateArrivalTimeField;
@@ -9392,7 +8237,6 @@ namespace InformationService
             set
             {
                 this.lateArrivalTimeField = value;
-                this.RaisePropertyChanged("LateArrivalTime");
             }
         }
         
@@ -9407,7 +8251,6 @@ namespace InformationService
             set
             {
                 this.cancellationCodeField = value;
-                this.RaisePropertyChanged("CancellationCode");
             }
         }
         
@@ -9422,18 +8265,6 @@ namespace InformationService
             set
             {
                 this.guarCancelFlagField = value;
-                this.RaisePropertyChanged("GuarCancelFlag");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -9442,7 +8273,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class DepositRequirement : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class DepositRequirement
     {
         
         private Amount depositAmountField;
@@ -9464,7 +8295,6 @@ namespace InformationService
             set
             {
                 this.depositAmountField = value;
-                this.RaisePropertyChanged("DepositAmount");
             }
         }
         
@@ -9479,7 +8309,6 @@ namespace InformationService
             set
             {
                 this.dueDateField = value;
-                this.RaisePropertyChanged("DueDate");
             }
         }
         
@@ -9494,7 +8323,6 @@ namespace InformationService
             set
             {
                 this.dueDateFieldSpecified = value;
-                this.RaisePropertyChanged("DueDateSpecified");
             }
         }
         
@@ -9509,18 +8337,6 @@ namespace InformationService
             set
             {
                 this.depositDueAmountField = value;
-                this.RaisePropertyChanged("DepositDueAmount");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -9529,7 +8345,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class CancelDateTime : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class CancelDateTime
     {
         
         private string periodField;
@@ -9547,7 +8363,6 @@ namespace InformationService
             set
             {
                 this.periodField = value;
-                this.RaisePropertyChanged("period");
             }
         }
         
@@ -9562,18 +8377,6 @@ namespace InformationService
             set
             {
                 this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -9582,7 +8385,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class AdditionalDetail : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class AdditionalDetail
     {
         
         private Paragraph additionalDetailDescriptionField;
@@ -9602,7 +8405,6 @@ namespace InformationService
             set
             {
                 this.additionalDetailDescriptionField = value;
-                this.RaisePropertyChanged("AdditionalDetailDescription");
             }
         }
         
@@ -9617,7 +8419,6 @@ namespace InformationService
             set
             {
                 this.detailTypeField = value;
-                this.RaisePropertyChanged("detailType");
             }
         }
         
@@ -9632,18 +8433,6 @@ namespace InformationService
             set
             {
                 this.otherDetailTypeField = value;
-                this.RaisePropertyChanged("otherDetailType");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -9704,7 +8493,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class Commission : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class Commission
     {
         
         private Amount commissionPayableAmountField;
@@ -9728,7 +8517,6 @@ namespace InformationService
             set
             {
                 this.commissionPayableAmountField = value;
-                this.RaisePropertyChanged("CommissionPayableAmount");
             }
         }
         
@@ -9743,7 +8531,6 @@ namespace InformationService
             set
             {
                 this.commentField = value;
-                this.RaisePropertyChanged("Comment");
             }
         }
         
@@ -9758,7 +8545,6 @@ namespace InformationService
             set
             {
                 this.percentField = value;
-                this.RaisePropertyChanged("percent");
             }
         }
         
@@ -9773,7 +8559,6 @@ namespace InformationService
             set
             {
                 this.percentFieldSpecified = value;
-                this.RaisePropertyChanged("percentSpecified");
             }
         }
         
@@ -9788,18 +8573,6 @@ namespace InformationService
             set
             {
                 this.currencyCodeField = value;
-                this.RaisePropertyChanged("currencyCode");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -9808,7 +8581,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/HotelCommon/")]
-    public partial class RatePlan : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class RatePlan
     {
         
         private Paragraph ratePlanDescriptionField;
@@ -9924,7 +8697,6 @@ namespace InformationService
             set
             {
                 this.ratePlanDescriptionField = value;
-                this.RaisePropertyChanged("RatePlanDescription");
             }
         }
         
@@ -9939,7 +8711,6 @@ namespace InformationService
             set
             {
                 this.ratePlanShortDescriptionField = value;
-                this.RaisePropertyChanged("RatePlanShortDescription");
             }
         }
         
@@ -9954,7 +8725,6 @@ namespace InformationService
             set
             {
                 this.commissionField = value;
-                this.RaisePropertyChanged("Commission");
             }
         }
         
@@ -9970,7 +8740,6 @@ namespace InformationService
             set
             {
                 this.additionalDetailsField = value;
-                this.RaisePropertyChanged("AdditionalDetails");
             }
         }
         
@@ -9985,7 +8754,6 @@ namespace InformationService
             set
             {
                 this.cancellationDateTimeField = value;
-                this.RaisePropertyChanged("CancellationDateTime");
             }
         }
         
@@ -10000,7 +8768,6 @@ namespace InformationService
             set
             {
                 this.depositRequiredField = value;
-                this.RaisePropertyChanged("DepositRequired");
             }
         }
         
@@ -10015,7 +8782,6 @@ namespace InformationService
             set
             {
                 this.gdsFlagsField = value;
-                this.RaisePropertyChanged("GdsFlags");
             }
         }
         
@@ -10031,7 +8797,6 @@ namespace InformationService
             set
             {
                 this.guaranteeDetailsField = value;
-                this.RaisePropertyChanged("GuaranteeDetails");
             }
         }
         
@@ -10046,7 +8811,6 @@ namespace InformationService
             set
             {
                 this.mealPlanCodesField = value;
-                this.RaisePropertyChanged("MealPlanCodes");
             }
         }
         
@@ -10062,7 +8826,6 @@ namespace InformationService
             set
             {
                 this.packagesField = value;
-                this.RaisePropertyChanged("Packages");
             }
         }
         
@@ -10077,7 +8840,6 @@ namespace InformationService
             set
             {
                 this.discountField = value;
-                this.RaisePropertyChanged("Discount");
             }
         }
         
@@ -10092,7 +8854,6 @@ namespace InformationService
             set
             {
                 this.ratePlanCategoryField = value;
-                this.RaisePropertyChanged("ratePlanCategory");
             }
         }
         
@@ -10107,7 +8868,6 @@ namespace InformationService
             set
             {
                 this.ratePlanCodeField = value;
-                this.RaisePropertyChanged("ratePlanCode");
             }
         }
         
@@ -10122,7 +8882,6 @@ namespace InformationService
             set
             {
                 this.promotionCodeField = value;
-                this.RaisePropertyChanged("promotionCode");
             }
         }
         
@@ -10137,7 +8896,6 @@ namespace InformationService
             set
             {
                 this.qualifyingIdTypeField = value;
-                this.RaisePropertyChanged("qualifyingIdType");
             }
         }
         
@@ -10152,7 +8910,6 @@ namespace InformationService
             set
             {
                 this.qualifyingIdValueField = value;
-                this.RaisePropertyChanged("qualifyingIdValue");
             }
         }
         
@@ -10167,7 +8924,6 @@ namespace InformationService
             set
             {
                 this.effectiveDateField = value;
-                this.RaisePropertyChanged("effectiveDate");
             }
         }
         
@@ -10182,7 +8938,6 @@ namespace InformationService
             set
             {
                 this.effectiveDateFieldSpecified = value;
-                this.RaisePropertyChanged("effectiveDateSpecified");
             }
         }
         
@@ -10197,7 +8952,6 @@ namespace InformationService
             set
             {
                 this.expirationDateField = value;
-                this.RaisePropertyChanged("expirationDate");
             }
         }
         
@@ -10212,7 +8966,6 @@ namespace InformationService
             set
             {
                 this.expirationDateFieldSpecified = value;
-                this.RaisePropertyChanged("expirationDateSpecified");
             }
         }
         
@@ -10227,7 +8980,6 @@ namespace InformationService
             set
             {
                 this.holdField = value;
-                this.RaisePropertyChanged("hold");
             }
         }
         
@@ -10242,7 +8994,6 @@ namespace InformationService
             set
             {
                 this.holdFieldSpecified = value;
-                this.RaisePropertyChanged("holdSpecified");
             }
         }
         
@@ -10257,7 +9008,6 @@ namespace InformationService
             set
             {
                 this.commissionYnField = value;
-                this.RaisePropertyChanged("commissionYn");
             }
         }
         
@@ -10272,7 +9022,6 @@ namespace InformationService
             set
             {
                 this.commissionYnFieldSpecified = value;
-                this.RaisePropertyChanged("commissionYnSpecified");
             }
         }
         
@@ -10287,7 +9036,6 @@ namespace InformationService
             set
             {
                 this.mandatoryDepositField = value;
-                this.RaisePropertyChanged("mandatoryDeposit");
             }
         }
         
@@ -10302,7 +9050,6 @@ namespace InformationService
             set
             {
                 this.mandatoryDepositFieldSpecified = value;
-                this.RaisePropertyChanged("mandatoryDepositSpecified");
             }
         }
         
@@ -10317,7 +9064,6 @@ namespace InformationService
             set
             {
                 this.suppressRateField = value;
-                this.RaisePropertyChanged("suppressRate");
             }
         }
         
@@ -10332,7 +9078,6 @@ namespace InformationService
             set
             {
                 this.suppressRateFieldSpecified = value;
-                this.RaisePropertyChanged("suppressRateSpecified");
             }
         }
         
@@ -10347,7 +9092,6 @@ namespace InformationService
             set
             {
                 this.ratePlanNameField = value;
-                this.RaisePropertyChanged("ratePlanName");
             }
         }
         
@@ -10362,7 +9106,6 @@ namespace InformationService
             set
             {
                 this.awardTypeField = value;
-                this.RaisePropertyChanged("awardType");
             }
         }
         
@@ -10377,7 +9120,6 @@ namespace InformationService
             set
             {
                 this.redemRateField = value;
-                this.RaisePropertyChanged("redemRate");
             }
         }
         
@@ -10392,7 +9134,6 @@ namespace InformationService
             set
             {
                 this.redemRateFieldSpecified = value;
-                this.RaisePropertyChanged("redemRateSpecified");
             }
         }
         
@@ -10407,7 +9148,6 @@ namespace InformationService
             set
             {
                 this.commissionCodeField = value;
-                this.RaisePropertyChanged("commissionCode");
             }
         }
         
@@ -10422,7 +9162,6 @@ namespace InformationService
             set
             {
                 this.asbRateCycleField = value;
-                this.RaisePropertyChanged("asbRateCycle");
             }
         }
         
@@ -10437,7 +9176,6 @@ namespace InformationService
             set
             {
                 this.hasPackageField = value;
-                this.RaisePropertyChanged("hasPackage");
             }
         }
         
@@ -10452,7 +9190,6 @@ namespace InformationService
             set
             {
                 this.hasPackageFieldSpecified = value;
-                this.RaisePropertyChanged("hasPackageSpecified");
             }
         }
         
@@ -10467,7 +9204,6 @@ namespace InformationService
             set
             {
                 this.taxInclusiveField = value;
-                this.RaisePropertyChanged("taxInclusive");
             }
         }
         
@@ -10482,7 +9218,6 @@ namespace InformationService
             set
             {
                 this.taxInclusiveFieldSpecified = value;
-                this.RaisePropertyChanged("taxInclusiveSpecified");
             }
         }
         
@@ -10497,7 +9232,6 @@ namespace InformationService
             set
             {
                 this.blockNameField = value;
-                this.RaisePropertyChanged("blockName");
             }
         }
         
@@ -10512,7 +9246,6 @@ namespace InformationService
             set
             {
                 this.rankRateField = value;
-                this.RaisePropertyChanged("rankRate");
             }
         }
         
@@ -10527,7 +9260,6 @@ namespace InformationService
             set
             {
                 this.rankRateFieldSpecified = value;
-                this.RaisePropertyChanged("rankRateSpecified");
             }
         }
         
@@ -10542,7 +9274,6 @@ namespace InformationService
             set
             {
                 this.rateTypeIndicatorField = value;
-                this.RaisePropertyChanged("rateTypeIndicator");
             }
         }
         
@@ -10557,7 +9288,6 @@ namespace InformationService
             set
             {
                 this.postingRhythmField = value;
-                this.RaisePropertyChanged("postingRhythm");
             }
         }
         
@@ -10572,7 +9302,6 @@ namespace InformationService
             set
             {
                 this.repeatPostingRhythmField = value;
-                this.RaisePropertyChanged("repeatPostingRhythm");
             }
         }
         
@@ -10587,7 +9316,6 @@ namespace InformationService
             set
             {
                 this.repeatPostingRhythmFieldSpecified = value;
-                this.RaisePropertyChanged("repeatPostingRhythmSpecified");
             }
         }
         
@@ -10602,7 +9330,6 @@ namespace InformationService
             set
             {
                 this.discountRateAmountField = value;
-                this.RaisePropertyChanged("discountRateAmount");
             }
         }
         
@@ -10617,7 +9344,6 @@ namespace InformationService
             set
             {
                 this.discountRateAmountFieldSpecified = value;
-                this.RaisePropertyChanged("discountRateAmountSpecified");
             }
         }
         
@@ -10632,7 +9358,6 @@ namespace InformationService
             set
             {
                 this.discountRatePercentField = value;
-                this.RaisePropertyChanged("discountRatePercent");
             }
         }
         
@@ -10647,7 +9372,6 @@ namespace InformationService
             set
             {
                 this.discountRatePercentFieldSpecified = value;
-                this.RaisePropertyChanged("discountRatePercentSpecified");
             }
         }
         
@@ -10662,7 +9386,6 @@ namespace InformationService
             set
             {
                 this.postingRhythmNightsField = value;
-                this.RaisePropertyChanged("postingRhythmNights");
             }
         }
         
@@ -10677,18 +9400,6 @@ namespace InformationService
             set
             {
                 this.postingRhythmNightsFieldSpecified = value;
-                this.RaisePropertyChanged("postingRhythmNightsSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -10697,7 +9408,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class RateResponse : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class RateResponse
     {
         
         private GDSResultStatus resultField;
@@ -10717,7 +9428,6 @@ namespace InformationService
             set
             {
                 this.resultField = value;
-                this.RaisePropertyChanged("Result");
             }
         }
         
@@ -10732,7 +9442,6 @@ namespace InformationService
             set
             {
                 this.rateResultField = value;
-                this.RaisePropertyChanged("RateResult");
             }
         }
         
@@ -10747,18 +9456,6 @@ namespace InformationService
             set
             {
                 this.xsnField = value;
-                this.RaisePropertyChanged("xsn");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -10767,7 +9464,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class RateQueryType : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class RateQueryType
     {
         
         private TimeSpan timeSpanField;
@@ -10787,7 +9484,6 @@ namespace InformationService
             set
             {
                 this.timeSpanField = value;
-                this.RaisePropertyChanged("TimeSpan");
             }
         }
         
@@ -10802,7 +9498,6 @@ namespace InformationService
             set
             {
                 this.hotelCodeField = value;
-                this.RaisePropertyChanged("hotelCode");
             }
         }
         
@@ -10817,18 +9512,6 @@ namespace InformationService
             set
             {
                 this.rateCodeField = value;
-                this.RaisePropertyChanged("rateCode");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -10837,7 +9520,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class RateRequest : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class RateRequest
     {
         
         private RateQueryType rateQueryField;
@@ -10853,18 +9536,6 @@ namespace InformationService
             set
             {
                 this.rateQueryField = value;
-                this.RaisePropertyChanged("RateQuery");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -10873,7 +9544,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-    public partial class OGHeaderAuthenticationLicence : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class OGHeaderAuthenticationLicence
     {
         
         private string keyField;
@@ -10889,18 +9560,6 @@ namespace InformationService
             set
             {
                 this.keyField = value;
-                this.RaisePropertyChanged("Key");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -10909,7 +9568,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-    public partial class OGHeaderAuthenticationUserCredentials : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class OGHeaderAuthenticationUserCredentials
     {
         
         private string userNameField;
@@ -10931,7 +9590,6 @@ namespace InformationService
             set
             {
                 this.userNameField = value;
-                this.RaisePropertyChanged("UserName");
             }
         }
         
@@ -10946,7 +9604,6 @@ namespace InformationService
             set
             {
                 this.userPasswordField = value;
-                this.RaisePropertyChanged("UserPassword");
             }
         }
         
@@ -10961,7 +9618,6 @@ namespace InformationService
             set
             {
                 this.domainField = value;
-                this.RaisePropertyChanged("Domain");
             }
         }
         
@@ -10976,18 +9632,6 @@ namespace InformationService
             set
             {
                 this.securityIdField = value;
-                this.RaisePropertyChanged("SecurityId");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -10996,7 +9640,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/og/4.3/Core/")]
-    public partial class OGHeaderAuthentication : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class OGHeaderAuthentication
     {
         
         private OGHeaderAuthenticationUserCredentials userCredentialsField;
@@ -11014,7 +9658,6 @@ namespace InformationService
             set
             {
                 this.userCredentialsField = value;
-                this.RaisePropertyChanged("UserCredentials");
             }
         }
         
@@ -11029,18 +9672,6 @@ namespace InformationService
             set
             {
                 this.licenceField = value;
-                this.RaisePropertyChanged("Licence");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -11049,7 +9680,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class LovValueType : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class LovValueType
     {
         
         private string descriptionField;
@@ -11067,7 +9698,6 @@ namespace InformationService
             set
             {
                 this.descriptionField = value;
-                this.RaisePropertyChanged("description");
             }
         }
         
@@ -11082,18 +9712,6 @@ namespace InformationService
             set
             {
                 this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -11102,7 +9720,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class LovQueryResultType : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class LovQueryResultType
     {
         
         private LovValueType[] lovValueField;
@@ -11138,7 +9756,6 @@ namespace InformationService
             set
             {
                 this.lovValueField = value;
-                this.RaisePropertyChanged("LovValue");
             }
         }
         
@@ -11153,7 +9770,6 @@ namespace InformationService
             set
             {
                 this.qualifierTypeField = value;
-                this.RaisePropertyChanged("qualifierType");
             }
         }
         
@@ -11168,7 +9784,6 @@ namespace InformationService
             set
             {
                 this.qualifierValueField = value;
-                this.RaisePropertyChanged("qualifierValue");
             }
         }
         
@@ -11183,7 +9798,6 @@ namespace InformationService
             set
             {
                 this.secondaryQualifierTypeField = value;
-                this.RaisePropertyChanged("secondaryQualifierType");
             }
         }
         
@@ -11198,7 +9812,6 @@ namespace InformationService
             set
             {
                 this.secondaryQualifierValueField = value;
-                this.RaisePropertyChanged("secondaryQualifierValue");
             }
         }
         
@@ -11213,7 +9826,6 @@ namespace InformationService
             set
             {
                 this.tertiaryQualifierTypeField = value;
-                this.RaisePropertyChanged("tertiaryQualifierType");
             }
         }
         
@@ -11228,7 +9840,6 @@ namespace InformationService
             set
             {
                 this.tertiaryQualifierValueField = value;
-                this.RaisePropertyChanged("tertiaryQualifierValue");
             }
         }
         
@@ -11243,7 +9854,6 @@ namespace InformationService
             set
             {
                 this.quaternaryQualifierTypeField = value;
-                this.RaisePropertyChanged("quaternaryQualifierType");
             }
         }
         
@@ -11258,7 +9868,6 @@ namespace InformationService
             set
             {
                 this.quaternaryQualifierValueField = value;
-                this.RaisePropertyChanged("quaternaryQualifierValue");
             }
         }
         
@@ -11273,7 +9882,6 @@ namespace InformationService
             set
             {
                 this.quinaryQualifierTypeField = value;
-                this.RaisePropertyChanged("quinaryQualifierType");
             }
         }
         
@@ -11288,18 +9896,6 @@ namespace InformationService
             set
             {
                 this.quinaryQualifierValueField = value;
-                this.RaisePropertyChanged("quinaryQualifierValue");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -11308,7 +9904,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class LovResponse : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class LovResponse
     {
         
         private GDSResultStatus resultField;
@@ -11328,7 +9924,6 @@ namespace InformationService
             set
             {
                 this.resultField = value;
-                this.RaisePropertyChanged("Result");
             }
         }
         
@@ -11343,7 +9938,6 @@ namespace InformationService
             set
             {
                 this.lovQueryResultField = value;
-                this.RaisePropertyChanged("LovQueryResult");
             }
         }
         
@@ -11358,18 +9952,6 @@ namespace InformationService
             set
             {
                 this.xsnField = value;
-                this.RaisePropertyChanged("xsn");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -11378,7 +9960,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class LovQueryType : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class LovQueryType
     {
         
         private LovQueryQualifierType[] lovQueryQualifierField;
@@ -11396,7 +9978,6 @@ namespace InformationService
             set
             {
                 this.lovQueryQualifierField = value;
-                this.RaisePropertyChanged("LovQueryQualifier");
             }
         }
         
@@ -11411,18 +9992,6 @@ namespace InformationService
             set
             {
                 this.textField = value;
-                this.RaisePropertyChanged("Text");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -11431,7 +10000,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class LovQueryQualifierType : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class LovQueryQualifierType
     {
         
         private string qualifierTypeField;
@@ -11449,7 +10018,6 @@ namespace InformationService
             set
             {
                 this.qualifierTypeField = value;
-                this.RaisePropertyChanged("qualifierType");
             }
         }
         
@@ -11464,18 +10032,6 @@ namespace InformationService
             set
             {
                 this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -11484,7 +10040,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class LovQueryType2 : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class LovQueryType2
     {
         
         private string lovIdentifierField;
@@ -11502,7 +10058,6 @@ namespace InformationService
             set
             {
                 this.lovIdentifierField = value;
-                this.RaisePropertyChanged("LovIdentifier");
             }
         }
         
@@ -11517,18 +10072,6 @@ namespace InformationService
             set
             {
                 this.lovQueryQualifierField = value;
-                this.RaisePropertyChanged("LovQueryQualifier");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -11537,7 +10080,7 @@ namespace InformationService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservices.micros.com/ows/5.1/Information.wsdl")]
-    public partial class LovRequest : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class LovRequest
     {
         
         private object itemField;
@@ -11554,24 +10097,13 @@ namespace InformationService
             set
             {
                 this.itemField = value;
-                this.RaisePropertyChanged("Item");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class QueryLovRequest
     {
@@ -11595,6 +10127,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class QueryLovResponse
     {
@@ -11618,6 +10151,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class QueryRateRequest
     {
@@ -11641,6 +10175,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class QueryRateResponse
     {
@@ -11664,6 +10199,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class QueryHotelInformationRequest
     {
@@ -11687,6 +10223,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class QueryHotelInformationResponse
     {
@@ -11710,6 +10247,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CurrencyConverterRequest1
     {
@@ -11733,6 +10271,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CurrencyConverterResponse1
     {
@@ -11756,6 +10295,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class QueryChainInformationRequest
     {
@@ -11779,6 +10319,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class QueryChainInformationResponse
     {
@@ -11802,6 +10343,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class QueryAwardsSchedulesRequest
     {
@@ -11825,6 +10367,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class QueryAwardsSchedulesResponse
     {
@@ -11848,6 +10391,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class QueryPackageItemsRequest
     {
@@ -11871,6 +10415,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class QueryPackageItemsResponse
     {
@@ -11894,6 +10439,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetScreenItemsRequest
     {
@@ -11917,6 +10463,7 @@ namespace InformationService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetScreenItemsResponse
     {
@@ -11980,89 +10527,245 @@ namespace InformationService
                 base(binding, remoteAddress)
         {
         }
-
-        public InformationSoapClient()
-        {
-        }
-
-        public InformationService.QueryLovResponse QueryLov(InformationService.QueryLovRequest request)
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InformationService.QueryLovResponse InformationService.InformationSoap.QueryLov(InformationService.QueryLovRequest request)
         {
             return base.Channel.QueryLov(request);
         }
         
-        public System.Threading.Tasks.Task<InformationService.QueryLovResponse> QueryLovAsync(InformationService.QueryLovRequest request)
+        public InformationService.LovResponse QueryLov(ref InformationService.OGHeader OGHeader, InformationService.LovRequest LovRequest)
+        {
+            InformationService.QueryLovRequest inValue = new InformationService.QueryLovRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.LovRequest = LovRequest;
+            InformationService.QueryLovResponse retVal = ((InformationService.InformationSoap)(this)).QueryLov(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.LovResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InformationService.QueryLovResponse> InformationService.InformationSoap.QueryLovAsync(InformationService.QueryLovRequest request)
         {
             return base.Channel.QueryLovAsync(request);
         }
         
-        public InformationService.QueryRateResponse QueryRate(InformationService.QueryRateRequest request)
+        public System.Threading.Tasks.Task<InformationService.QueryLovResponse> QueryLovAsync(InformationService.OGHeader OGHeader, InformationService.LovRequest LovRequest)
+        {
+            InformationService.QueryLovRequest inValue = new InformationService.QueryLovRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.LovRequest = LovRequest;
+            return ((InformationService.InformationSoap)(this)).QueryLovAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InformationService.QueryRateResponse InformationService.InformationSoap.QueryRate(InformationService.QueryRateRequest request)
         {
             return base.Channel.QueryRate(request);
         }
         
-        public System.Threading.Tasks.Task<InformationService.QueryRateResponse> QueryRateAsync(InformationService.QueryRateRequest request)
+        public InformationService.RateResponse QueryRate(ref InformationService.OGHeader OGHeader, InformationService.RateRequest RateRequest)
+        {
+            InformationService.QueryRateRequest inValue = new InformationService.QueryRateRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.RateRequest = RateRequest;
+            InformationService.QueryRateResponse retVal = ((InformationService.InformationSoap)(this)).QueryRate(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.RateResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InformationService.QueryRateResponse> InformationService.InformationSoap.QueryRateAsync(InformationService.QueryRateRequest request)
         {
             return base.Channel.QueryRateAsync(request);
         }
         
-        public InformationService.QueryHotelInformationResponse QueryHotelInformation(InformationService.QueryHotelInformationRequest request)
+        public System.Threading.Tasks.Task<InformationService.QueryRateResponse> QueryRateAsync(InformationService.OGHeader OGHeader, InformationService.RateRequest RateRequest)
+        {
+            InformationService.QueryRateRequest inValue = new InformationService.QueryRateRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.RateRequest = RateRequest;
+            return ((InformationService.InformationSoap)(this)).QueryRateAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InformationService.QueryHotelInformationResponse InformationService.InformationSoap.QueryHotelInformation(InformationService.QueryHotelInformationRequest request)
         {
             return base.Channel.QueryHotelInformation(request);
         }
         
-        public System.Threading.Tasks.Task<InformationService.QueryHotelInformationResponse> QueryHotelInformationAsync(InformationService.QueryHotelInformationRequest request)
+        public InformationService.HotelInformationResponse QueryHotelInformation(ref InformationService.OGHeader OGHeader, InformationService.HotelInformationRequest HotelInformationRequest)
+        {
+            InformationService.QueryHotelInformationRequest inValue = new InformationService.QueryHotelInformationRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.HotelInformationRequest = HotelInformationRequest;
+            InformationService.QueryHotelInformationResponse retVal = ((InformationService.InformationSoap)(this)).QueryHotelInformation(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.HotelInformationResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InformationService.QueryHotelInformationResponse> InformationService.InformationSoap.QueryHotelInformationAsync(InformationService.QueryHotelInformationRequest request)
         {
             return base.Channel.QueryHotelInformationAsync(request);
         }
         
-        public InformationService.CurrencyConverterResponse1 CurrencyConverter(InformationService.CurrencyConverterRequest1 request)
+        public System.Threading.Tasks.Task<InformationService.QueryHotelInformationResponse> QueryHotelInformationAsync(InformationService.OGHeader OGHeader, InformationService.HotelInformationRequest HotelInformationRequest)
+        {
+            InformationService.QueryHotelInformationRequest inValue = new InformationService.QueryHotelInformationRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.HotelInformationRequest = HotelInformationRequest;
+            return ((InformationService.InformationSoap)(this)).QueryHotelInformationAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InformationService.CurrencyConverterResponse1 InformationService.InformationSoap.CurrencyConverter(InformationService.CurrencyConverterRequest1 request)
         {
             return base.Channel.CurrencyConverter(request);
         }
         
-        public System.Threading.Tasks.Task<InformationService.CurrencyConverterResponse1> CurrencyConverterAsync(InformationService.CurrencyConverterRequest1 request)
+        public InformationService.CurrencyConverterResponse CurrencyConverter(ref InformationService.OGHeader OGHeader, InformationService.CurrencyConverterRequest CurrencyConverterRequest)
+        {
+            InformationService.CurrencyConverterRequest1 inValue = new InformationService.CurrencyConverterRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CurrencyConverterRequest = CurrencyConverterRequest;
+            InformationService.CurrencyConverterResponse1 retVal = ((InformationService.InformationSoap)(this)).CurrencyConverter(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.CurrencyConverterResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InformationService.CurrencyConverterResponse1> InformationService.InformationSoap.CurrencyConverterAsync(InformationService.CurrencyConverterRequest1 request)
         {
             return base.Channel.CurrencyConverterAsync(request);
         }
         
-        public InformationService.QueryChainInformationResponse QueryChainInformation(InformationService.QueryChainInformationRequest request)
+        public System.Threading.Tasks.Task<InformationService.CurrencyConverterResponse1> CurrencyConverterAsync(InformationService.OGHeader OGHeader, InformationService.CurrencyConverterRequest CurrencyConverterRequest)
+        {
+            InformationService.CurrencyConverterRequest1 inValue = new InformationService.CurrencyConverterRequest1();
+            inValue.OGHeader = OGHeader;
+            inValue.CurrencyConverterRequest = CurrencyConverterRequest;
+            return ((InformationService.InformationSoap)(this)).CurrencyConverterAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InformationService.QueryChainInformationResponse InformationService.InformationSoap.QueryChainInformation(InformationService.QueryChainInformationRequest request)
         {
             return base.Channel.QueryChainInformation(request);
         }
         
-        public System.Threading.Tasks.Task<InformationService.QueryChainInformationResponse> QueryChainInformationAsync(InformationService.QueryChainInformationRequest request)
+        public InformationService.ChainInformationResponse QueryChainInformation(ref InformationService.OGHeader OGHeader, InformationService.ChainInformationRequest ChainInformationRequest)
+        {
+            InformationService.QueryChainInformationRequest inValue = new InformationService.QueryChainInformationRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.ChainInformationRequest = ChainInformationRequest;
+            InformationService.QueryChainInformationResponse retVal = ((InformationService.InformationSoap)(this)).QueryChainInformation(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.ChainInformationResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InformationService.QueryChainInformationResponse> InformationService.InformationSoap.QueryChainInformationAsync(InformationService.QueryChainInformationRequest request)
         {
             return base.Channel.QueryChainInformationAsync(request);
         }
         
-        public InformationService.QueryAwardsSchedulesResponse QueryAwardsSchedules(InformationService.QueryAwardsSchedulesRequest request)
+        public System.Threading.Tasks.Task<InformationService.QueryChainInformationResponse> QueryChainInformationAsync(InformationService.OGHeader OGHeader, InformationService.ChainInformationRequest ChainInformationRequest)
+        {
+            InformationService.QueryChainInformationRequest inValue = new InformationService.QueryChainInformationRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.ChainInformationRequest = ChainInformationRequest;
+            return ((InformationService.InformationSoap)(this)).QueryChainInformationAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InformationService.QueryAwardsSchedulesResponse InformationService.InformationSoap.QueryAwardsSchedules(InformationService.QueryAwardsSchedulesRequest request)
         {
             return base.Channel.QueryAwardsSchedules(request);
         }
         
-        public System.Threading.Tasks.Task<InformationService.QueryAwardsSchedulesResponse> QueryAwardsSchedulesAsync(InformationService.QueryAwardsSchedulesRequest request)
+        public InformationService.AwardsSchedulesResponse QueryAwardsSchedules(ref InformationService.OGHeader OGHeader, InformationService.AwardsSchedulesRequest AwardsSchedulesRequest)
+        {
+            InformationService.QueryAwardsSchedulesRequest inValue = new InformationService.QueryAwardsSchedulesRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.AwardsSchedulesRequest = AwardsSchedulesRequest;
+            InformationService.QueryAwardsSchedulesResponse retVal = ((InformationService.InformationSoap)(this)).QueryAwardsSchedules(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.AwardsSchedulesResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InformationService.QueryAwardsSchedulesResponse> InformationService.InformationSoap.QueryAwardsSchedulesAsync(InformationService.QueryAwardsSchedulesRequest request)
         {
             return base.Channel.QueryAwardsSchedulesAsync(request);
         }
         
-        public InformationService.QueryPackageItemsResponse QueryPackageItems(InformationService.QueryPackageItemsRequest request)
+        public System.Threading.Tasks.Task<InformationService.QueryAwardsSchedulesResponse> QueryAwardsSchedulesAsync(InformationService.OGHeader OGHeader, InformationService.AwardsSchedulesRequest AwardsSchedulesRequest)
+        {
+            InformationService.QueryAwardsSchedulesRequest inValue = new InformationService.QueryAwardsSchedulesRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.AwardsSchedulesRequest = AwardsSchedulesRequest;
+            return ((InformationService.InformationSoap)(this)).QueryAwardsSchedulesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InformationService.QueryPackageItemsResponse InformationService.InformationSoap.QueryPackageItems(InformationService.QueryPackageItemsRequest request)
         {
             return base.Channel.QueryPackageItems(request);
         }
         
-        public System.Threading.Tasks.Task<InformationService.QueryPackageItemsResponse> QueryPackageItemsAsync(InformationService.QueryPackageItemsRequest request)
+        public InformationService.PackageItemsResponse QueryPackageItems(ref InformationService.OGHeader OGHeader, InformationService.PackageItemsRequest PackageItemsRequest)
+        {
+            InformationService.QueryPackageItemsRequest inValue = new InformationService.QueryPackageItemsRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.PackageItemsRequest = PackageItemsRequest;
+            InformationService.QueryPackageItemsResponse retVal = ((InformationService.InformationSoap)(this)).QueryPackageItems(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.PackageItemsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InformationService.QueryPackageItemsResponse> InformationService.InformationSoap.QueryPackageItemsAsync(InformationService.QueryPackageItemsRequest request)
         {
             return base.Channel.QueryPackageItemsAsync(request);
         }
         
-        public InformationService.GetScreenItemsResponse GetScreenItems(InformationService.GetScreenItemsRequest request)
+        public System.Threading.Tasks.Task<InformationService.QueryPackageItemsResponse> QueryPackageItemsAsync(InformationService.OGHeader OGHeader, InformationService.PackageItemsRequest PackageItemsRequest)
+        {
+            InformationService.QueryPackageItemsRequest inValue = new InformationService.QueryPackageItemsRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.PackageItemsRequest = PackageItemsRequest;
+            return ((InformationService.InformationSoap)(this)).QueryPackageItemsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InformationService.GetScreenItemsResponse InformationService.InformationSoap.GetScreenItems(InformationService.GetScreenItemsRequest request)
         {
             return base.Channel.GetScreenItems(request);
         }
         
-        public System.Threading.Tasks.Task<InformationService.GetScreenItemsResponse> GetScreenItemsAsync(InformationService.GetScreenItemsRequest request)
+        public InformationService.ScreenItemsResponse GetScreenItems(ref InformationService.OGHeader OGHeader, InformationService.ScreenItemsRequest ScreenItemsRequest)
+        {
+            InformationService.GetScreenItemsRequest inValue = new InformationService.GetScreenItemsRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.ScreenItemsRequest = ScreenItemsRequest;
+            InformationService.GetScreenItemsResponse retVal = ((InformationService.InformationSoap)(this)).GetScreenItems(inValue);
+            OGHeader = retVal.OGHeader;
+            return retVal.ScreenItemsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InformationService.GetScreenItemsResponse> InformationService.InformationSoap.GetScreenItemsAsync(InformationService.GetScreenItemsRequest request)
         {
             return base.Channel.GetScreenItemsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InformationService.GetScreenItemsResponse> GetScreenItemsAsync(InformationService.OGHeader OGHeader, InformationService.ScreenItemsRequest ScreenItemsRequest)
+        {
+            InformationService.GetScreenItemsRequest inValue = new InformationService.GetScreenItemsRequest();
+            inValue.OGHeader = OGHeader;
+            inValue.ScreenItemsRequest = ScreenItemsRequest;
+            return ((InformationService.InformationSoap)(this)).GetScreenItemsAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -12101,11 +10804,11 @@ namespace InformationService
         {
             if ((endpointConfiguration == EndpointConfiguration.InformationSoap))
             {
-                return new System.ServiceModel.EndpointAddress("http://oeds-pc/OWS_WS_51/Information.asmx");
+                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/ows_ws_51/Information.asmx");
             }
             if ((endpointConfiguration == EndpointConfiguration.InformationSoap12))
             {
-                return new System.ServiceModel.EndpointAddress("http://oeds-pc/OWS_WS_51/Information.asmx");
+                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/ows_ws_51/Information.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

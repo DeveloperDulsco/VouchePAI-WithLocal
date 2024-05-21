@@ -2,11 +2,14 @@
 using Domain;
 using Domain.Response;
 using Domain.Responses;
+using InformationService;
 using Infrastructure.OwsServiceClass.OwsHelper;
 using Infrastructure.ResponseDTO;
+using ReservationService;
 using System.Globalization;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using static ReservationService.ReservationServiceSoapClient;
 
 namespace Infrastructure.OwsHelper
 {
@@ -20,6 +23,19 @@ namespace Infrastructure.OwsHelper
         }
         async Task<ServiceResponse<object?>> IOperaService.MakePayment(OwsRequestModel Request)
         {
+            #region OperaCredential
+            Request.LegNumber = config?.PaymentSettings.LegNumber;
+            Request.Username = config?.PaymentSettings.Username;
+            Request.Language = config?.PaymentSettings.Language;
+            Request.ChainCode = config?.PaymentSettings.ChainCode;
+            Request.DestinationEntityID = config?.PaymentSettings.DestinationEntityID;
+            Request.DestinationSystemType = config?.PaymentSettings.DestinationSystemType;
+            Request.HotelDomain = config?.PaymentSettings.HotelDomain;
+            Request.KioskID = config?.PaymentSettings?.KioskID;
+            Request.SystemType = config?.PaymentSettings?.SystemType;
+            Request.Password = config?.PaymentSettings?.Password;
+
+            #endregion
             DateTime? PostingDate = null;
             #region Getting BusinessDate
 
@@ -47,15 +63,15 @@ namespace Infrastructure.OwsHelper
             #endregion
 
             #region Request Body
-            InformationService.QueryLovRequest LOVReq = new InformationService.QueryLovRequest();
-            InformationService.QueryLovResponse LOVRes = new InformationService.QueryLovResponse();
+            InformationService.LovRequest LOVReq = new InformationService.LovRequest();
+            InformationService.LovResponse LOVRes = new InformationService.LovResponse();
 
             InformationService.LovQueryType2 LOVQuery = new InformationService.LovQueryType2();
             LOVQuery.LovIdentifier = "BUSINESSDATE";
-            LOVReq.LovRequest.Item = LOVQuery;
+            LOVReq.Item = LOVQuery;
             #endregion
 
-            InformationService.InformationSoapClient InfoPortClient = new InformationService.InformationSoapClient();
+            InformationService.InformationSoapClient InfoPortClient = new InformationService.InformationSoapClient(InformationSoapClient.EndpointConfiguration.InformationSoap);
             bool? isOperaCloudEnabled1 = false;
             isOperaCloudEnabled1 = config?.PaymentSettings!.OperaCloudEnabled;
             if (isOperaCloudEnabled1 is not null && isOperaCloudEnabled1==true)
@@ -63,13 +79,13 @@ namespace Infrastructure.OwsHelper
                 InfoPortClient.Endpoint.EndpointBehaviors.Add(new CustomEndpointBehaviour(config?.PaymentSettings!.WSSEUserName, config?.PaymentSettings!.WSSEPassword,
                                         Request.Username, Request.Password, Request.HotelDomain));
             }
-            LOVRes = InfoPortClient.QueryLov(LOVReq);
-            if (LOVRes.LovResponse.Result.resultStatusFlag == InformationService.ResultStatusFlag.SUCCESS)
+            LOVRes = InfoPortClient.QueryLov(ref OG,LOVReq);
+            if (LOVRes.Result.resultStatusFlag == InformationService.ResultStatusFlag.SUCCESS)
             {
                 string date = null;
                 string month = null;
                 string year = null;
-                foreach (InformationService.LovQueryResultType Value in LOVRes.LovResponse.LovQueryResult)
+                foreach (InformationService.LovQueryResultType Value in LOVRes.LovQueryResult)
                 {
                     if (!string.IsNullOrEmpty(Value.qualifierType) && Value.qualifierType.Equals("Day"))
                         date = Value.qualifierValue;
@@ -93,20 +109,20 @@ namespace Infrastructure.OwsHelper
 
             #region Request Header
             string temp = Helper.Get8Digits();
-            ReservationAdvancedService.OGHeader OGHeader = new ReservationAdvancedService.OGHeader();
+            ResAvancedService.OGHeader OGHeader = new ResAvancedService.OGHeader();
             OGHeader.transactionID = temp;
             OGHeader.timeStamp = DateTime.Now;
             OGHeader.primaryLangID = Request.Language; //English
-            ReservationAdvancedService.EndPoint orginEndPOint = new ReservationAdvancedService.EndPoint();
+            ResAvancedService.EndPoint orginEndPOint = new ResAvancedService.EndPoint();
             orginEndPOint.entityID = Request.KioskID; //Kiosk Identifier
             orginEndPOint.systemType = Request.SystemType;
             OGHeader.Origin = orginEndPOint;
-            ReservationAdvancedService.EndPoint destEndPOint = new ReservationAdvancedService.EndPoint();
+            ResAvancedService.EndPoint destEndPOint = new ResAvancedService.EndPoint();
             destEndPOint.entityID = Request.DestinationEntityID;
             destEndPOint.systemType = Request.DestinationSystemType;
             OGHeader.Destination = destEndPOint;
-            ReservationAdvancedService.OGHeaderAuthentication Auth = new ReservationAdvancedService.OGHeaderAuthentication();
-            ReservationAdvancedService.OGHeaderAuthenticationUserCredentials userCredentials = new ReservationAdvancedService.OGHeaderAuthenticationUserCredentials();
+            ResAvancedService.OGHeaderAuthentication Auth = new ResAvancedService.OGHeaderAuthentication();
+            ResAvancedService.OGHeaderAuthenticationUserCredentials userCredentials = new ResAvancedService.OGHeaderAuthenticationUserCredentials();
             userCredentials.UserName = Request.Username;
             userCredentials.UserPassword = Request.Password;
             userCredentials.Domain = Request.HotelDomain;
@@ -116,8 +132,8 @@ namespace Infrastructure.OwsHelper
 
             #region Request Body
 
-            ReservationAdvancedService.MakePaymentRequest MPRequest = new ReservationAdvancedService.MakePaymentRequest();
-            ReservationAdvancedService.Posting PaymentPosting = new ReservationAdvancedService.Posting();
+            ResAvancedService.MakePaymentRequest MPRequest = new ResAvancedService.MakePaymentRequest();
+            ResAvancedService.Posting PaymentPosting = new ResAvancedService.Posting();
             PaymentPosting.PostDate = PostingDate != null ? (DateTime)PostingDate : DateTime.Now;
 
             PaymentPosting.PostDateSpecified = true;
@@ -139,23 +155,23 @@ namespace Infrastructure.OwsHelper
             PaymentPosting.FolioViewNo = Request.MakePaymentRequest.WindowNumber != null ? Request.MakePaymentRequest.WindowNumber.Value : 1;
             PaymentPosting.FolioViewNoSpecified = true;
 
-            ReservationAdvancedService.ReservationRequestBase RRBase = new ReservationAdvancedService.ReservationRequestBase();
-            ReservationAdvancedService.UniqueID[] rUniqueIDList = new ReservationAdvancedService.UniqueID[1];
-            ReservationAdvancedService.UniqueID uID = new ReservationAdvancedService.UniqueID();
-            uID.type = ReservationAdvancedService.UniqueIDType.INTERNAL;
+            ResAvancedService.ReservationRequestBase RRBase = new ResAvancedService.ReservationRequestBase();
+            ResAvancedService.UniqueID[] rUniqueIDList = new ResAvancedService.UniqueID[1];
+            ResAvancedService.UniqueID uID = new ResAvancedService.UniqueID();
+            uID.type = ResAvancedService.UniqueIDType.INTERNAL;
             uID.source = "RESV_NAME_ID";
             uID.Value = Request.MakePaymentRequest.ReservationNameID;
             rUniqueIDList[0] = uID;
             RRBase.ReservationID = rUniqueIDList;
-            ReservationAdvancedService.HotelReference HF = new ReservationAdvancedService.HotelReference();
+            ResAvancedService.HotelReference HF = new ResAvancedService.HotelReference();
             HF.hotelCode = Request.HotelDomain;
             RRBase.HotelReference = HF;
             PaymentPosting.ReservationRequestBase = RRBase;
             MPRequest.Posting = PaymentPosting;
 
-            ReservationAdvancedService.CreditCardInfo CCInfo = new ReservationAdvancedService.CreditCardInfo();
+            ResAvancedService.CreditCardInfo CCInfo = new ResAvancedService.CreditCardInfo();
 
-            ReservationAdvancedService.CreditCard CC = new ReservationAdvancedService.CreditCard();
+            ResAvancedService.CreditCard CC = new ResAvancedService.CreditCard();
 
             //ReservationAdvancedService.cred
             if (Request.MakePaymentRequest.PaymentTypeCode != "CA")
@@ -167,7 +183,7 @@ namespace Infrastructure.OwsHelper
 
                 if (isOPIEnabled)
                 {
-                    CC.Item = new ReservationAdvancedService.VaultedCardType()
+                    CC.Item = new ResAvancedService.VaultedCardType()
                     {
                         vaultedCardID = Request.MakePaymentRequest.ApprovalCode,
                         lastFourDigits = Request.MakePaymentRequest.MaskedCardNumber.Substring(Request.MakePaymentRequest.MaskedCardNumber.Length - 4)
@@ -188,7 +204,7 @@ namespace Infrastructure.OwsHelper
                 {
                     CC.expirationDate = DateTime.Now.AddYears(2);
                 }
-                CC.expirationDateSpecified = true;
+                //CC.expirationDateSpecified = true;
                 CCInfo.Item = CC;
             }
             else
@@ -199,7 +215,7 @@ namespace Infrastructure.OwsHelper
             MPRequest.Reference = Request.MakePaymentRequest.PaymentRefernce;
             MPRequest.CreditCardInfo = CCInfo;
 
-            ReservationAdvancedService.ResvAdvancedServiceSoapClient ResAdvPortClient = new ReservationAdvancedService.ResvAdvancedServiceSoapClient();
+            ResAvancedService.ResvAdvancedServiceSoapClient ResAdvPortClient = new ResAvancedService.ResvAdvancedServiceSoapClient(ResAvancedService.ResvAdvancedServiceSoapClient.EndpointConfiguration.ResvAdvancedServiceSoap);
             bool? isOperaCloudEnabled = false;
             isOperaCloudEnabled = config?.PaymentSettings!.OperaCloudEnabled;
             if (isOperaCloudEnabled is not null && isOperaCloudEnabled == true)
@@ -207,15 +223,15 @@ namespace Infrastructure.OwsHelper
                 InfoPortClient.Endpoint.EndpointBehaviors.Add(new CustomEndpointBehaviour(config?.PaymentSettings!.WSSEUserName, config?.PaymentSettings!.WSSEPassword,
                                         Request.Username, Request.Password, Request.HotelDomain));
             }
-            ReservationAdvancedService.MakePaymentResponse RSResponse = new ReservationAdvancedService.MakePaymentResponse();
+            ResAvancedService.MakePaymentResponse RSResponse = new ResAvancedService.MakePaymentResponse();
             #endregion
 
 
-            RSResponse = await ResAdvPortClient.MakePaymentAsync(OGHeader, MPRequest);
+            RSResponse = ResAdvPortClient.MakePayment(ref OGHeader, MPRequest);
 
 
 
-            if (RSResponse.Result.resultStatusFlag == ReservationAdvancedService.ResultStatusFlag.SUCCESS)
+            if (RSResponse.Result.resultStatusFlag == ResAvancedService.ResultStatusFlag.SUCCESS)
             {
                 return await new ServiceResult().GetServiceResponseAsync<object>(null, "Success", ApiResponseCodes.SUCCESS, 200, null);
 
@@ -229,6 +245,19 @@ namespace Infrastructure.OwsHelper
 
         async Task<ServiceResponse<object?>> IOperaService.ModifyReservation(OwsRequestModel modifyReservation)
         {
+
+            #region OperaCredential
+            modifyReservation.LegNumber = config?.PaymentSettings.LegNumber;
+            modifyReservation.Username = config?.PaymentSettings.Username;
+            modifyReservation.Language = config?.PaymentSettings.Language;
+            modifyReservation.ChainCode = config?.PaymentSettings.ChainCode;
+            modifyReservation.DestinationEntityID = config?.PaymentSettings.DestinationEntityID;
+            modifyReservation.DestinationSystemType = config?.PaymentSettings.DestinationSystemType;
+            modifyReservation.HotelDomain = config?.PaymentSettings.HotelDomain;
+            modifyReservation.KioskID = config?.PaymentSettings?.KioskID;
+            modifyReservation.SystemType = config?.PaymentSettings?.SystemType;
+            
+            #endregion
             ReservationService.ModifyBookingRequest modifyBookingReq = new ReservationService.ModifyBookingRequest();
             ReservationService.ModifyBookingResponse modifyBookingRes = new ReservationService.ModifyBookingResponse();
 
@@ -256,7 +285,7 @@ namespace Infrastructure.OwsHelper
             OGHeader.Authentication = Auth;
             #endregion
 
-            ReservationService.ReservationServiceSoapClient ResSoapCLient = new ReservationService.ReservationServiceSoapClient();
+            ReservationService.ReservationServiceSoapClient ResSoapCLient = new ReservationService.ReservationServiceSoapClient(EndpointConfiguration.ReservationServiceSoap);
             bool isOperaCloudEnabled = false;
             if (isOperaCloudEnabled)
             {
@@ -288,6 +317,14 @@ namespace Infrastructure.OwsHelper
                 foreach (UDFField uDFField in modifyReservation.modifyBookingRequest.uDFFields)
                 {
                     ReservationService.UserDefinedValue UDF = new ReservationService.UserDefinedValue();
+                    if (uDFField.FieldName == "PreAuthUDF")
+                        uDFField.FieldName = config?.PaymentSettings.PreAuthUDF;
+
+                    else if (uDFField.FieldName == "PreAuthAmntUDF")
+                        uDFField.FieldName = config?.PaymentSettings.PreAuthAmntUDF;
+                    else
+                        uDFField.FieldName = uDFField.FieldName;
+
                     UDF.valueName = uDFField.FieldName;
                     UDF.Item = uDFField.FieldValue;
                     UDFFields[x] = UDF;
@@ -303,7 +340,7 @@ namespace Infrastructure.OwsHelper
 
                 modifyBookingReq.HotelReservation = hReservation;
                 //ResSoapCLient.Endpoint.Behaviors.Add(new Helper.CustomEndpointBehaviour("Test USE", "Request.WSSEPassword", "Request.KioskUserName", "Request.KioskPassword", "Request.HotelDomain"));
-                modifyBookingRes = ResSoapCLient.ModifyBookingAsync(modifyBookingReq);
+                modifyBookingRes = ResSoapCLient.ModifyBooking(ref OGHeader,modifyBookingReq);
                 ReservationService.GDSResultStatus status = modifyBookingRes.Result;
 
               
@@ -390,7 +427,7 @@ DateTimeStyles.None) : DateTime.Now.AddYears(2);
 
                 modifyBookingReq.HotelReservation = hReservation;
                 //ResSoapCLient.Endpoint.Behaviors.Add(new Helper.CustomEndpointBehaviour("Test USE", "Request.WSSEPassword", "Request.KioskUserName", "Request.KioskPassword", "Request.HotelDomain"));
-                modifyBookingRes = ResSoapCLient.ModifyBookingAsync(modifyBookingReq);
+                modifyBookingRes = ResSoapCLient.ModifyBooking(ref OGHeader,modifyBookingReq);
                 ReservationService.GDSResultStatus status = modifyBookingRes.Result;
                 if (status.resultStatusFlag.Equals(ReservationService.ResultStatusFlag.SUCCESS))
                 {
