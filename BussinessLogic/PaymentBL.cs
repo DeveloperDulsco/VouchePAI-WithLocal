@@ -126,14 +126,14 @@ public class PaymentBL
         else
             return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, 400, null);
     }
-    public async Task<ServiceResponse<IEnumerable<FetchPaymentTransaction?>?>> FetchPaymentDetails(RequestModel<string> request)
+    public async Task<ServiceResponse<IEnumerable<FetchPaymentTransaction?>?>> FetchPaymentDetails(RequestModel<PaymentFetchRequest> request)
     {
 
         ServiceResult serviceResult = new ServiceResult();
         if (request?.RequestObject is null)
             return await serviceResult.GetServiceResponseAsync<IEnumerable<FetchPaymentTransaction?>>(null, "Invalid Payment Request", ApiResponseCodes.FAILURE, 400, null);
 
-        var respose = await payment.FetchPaymentDetails(request);
+        var respose = await payment.FetchPaymentDetails(request!);
         if (respose is not null)
             return await serviceResult.GetServiceResponseAsync(respose?.ResponseData, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
         else
@@ -171,27 +171,7 @@ public class PaymentBL
                         ApprovalCode = respose?.ResponseData?.ResultCode
                     }
                 });
-                var udfresponse = await operaService.ModifyReservation(new OwsRequestModel()
-                {
-                    modifyBookingRequest = new ModifyBookingRequest()
-                    {
-                        isUDFFieldSpecified = true,
-                        ReservationNumber = paymentRequest?.ReservationNumber,
-                        uDFFields = new List<UDFField>()
-                         { new UDFField()
-                          {
-                           FieldName  = "PreAuthUDF",
-                           FieldValue = respose?.ResponseData?.PspReference
-                           },
-                           new UDFField()
-                            {
-                            FieldName  = "PreAuthAmntUDF",
-                            FieldValue = respose?.ResponseData?.Amount.ToString()
-                            }
-                            }
-                    }
-                });
-                var updateheader = await payment.UpdatePaymentHeader(new RequestModel<UpdatePaymentModel> { RequestObject = new UpdatePaymentModel { isActive = false, amount = paymentRequest.RequestObject.Amount, ReservationNumber = request.RequestObject.ReservationNumber, ResponseMessage = respose?.ResponseData.ResultCode, ResultCode = respose?.ResponseData.ResultCode, transactionID = paymentRequest.TransactionId } });
+                 var updateheader = await payment.UpdatePaymentHeader(new RequestModel<UpdatePaymentModel> { RequestObject = new UpdatePaymentModel { isActive = false, amount = paymentRequest.RequestObject.Amount, ReservationNumber = request.RequestObject.ReservationNumber, ResponseMessage = respose?.ResponseData.ResultCode, ResultCode = respose?.ResponseData.ResultCode, transactionID = paymentRequest.TransactionId } });
             }
             return await serviceResult.GetServiceResponseAsync(respose?.ResponseData, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
         }

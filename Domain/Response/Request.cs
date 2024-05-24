@@ -81,7 +81,10 @@ namespace Domain.Response
         public decimal amount { get; set; }
         public string ReservationNumber { get; set; }
     }
-
+    public class PaymentFetchRequest
+    {
+        public string? ReservationNumber { get; set; }
+    }
     public class PaymentHistory
     {
         public string TransactionID { get; set; }

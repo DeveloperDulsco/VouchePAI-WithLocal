@@ -55,9 +55,9 @@ internal class PaymentApiEndPoint : IEndPointDefinition
         return ReturnResultBaseClass.returnResult(response);
 
     }
-    private static async Task<IResult?> PaymentFetchAsync([FromBody] ServiceRequest<string> request, PaymentBL paymentBL)
+    private static async Task<IResult?> PaymentFetchAsync([FromBody] ServiceRequest<PaymentFetchRequest> request, PaymentBL paymentBL)
     {
-        var response = await paymentBL.FetchPaymentDetails(new RequestModel<string> { RequestObject = request.RequestObject });
+        var response = await paymentBL.FetchPaymentDetails(new RequestModel<PaymentFetchRequest> { RequestObject = request.RequestObject });
         return ReturnResultBaseClass.returnResult(response);
     }
     private static async Task<IResult?> CapturePaymentAsync([FromBody] ServiceRequest<PaymentRequest> request, PaymentBL paymentBL)
