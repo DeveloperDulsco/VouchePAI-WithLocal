@@ -83,12 +83,14 @@ public class PaymentRepository : IPayment
         }
     }
 
-  async Task<ServiceResponse<string>> getOperaPaymentType(string AdeyanPaymentType)
+  async Task<ServiceResponse<string>> IPayment.getOperaPaymentType(string AdeyanPaymentType)
     {
         var OperaPaymentType = await new DapperHelper(config!._connectionString!).getOperaPaymentType(AdeyanPaymentType);
         return await new ServiceResult().GetServiceResponseAsync<string>(OperaPaymentType, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
 
     }
+
+   
 
 
     /*async Task<ServiceResponse<Domain.Responses.PaymentResponse>> IPayment.CapturePayment(Domain.Response.RequestModel<Domain.Response.PaymentRequest> request)
