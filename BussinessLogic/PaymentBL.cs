@@ -4,7 +4,7 @@ using Domain.Response;
 using Domain.Responses;
 using Microsoft.Extensions.Primitives;
 using System.Net.Http.Json;
-using System.Reflection;
+
 
 
 
@@ -12,31 +12,42 @@ namespace BussinessLogic;
 
 public class PaymentBL
 {
-    IPayment payment;
-    ITokenRequest tokenRequest;
-    IAdenPayment adenPayment;
-    IOperaService operaService;
-    public PaymentBL(IPayment _ipayment, ITokenRequest _itokenRequest, IAdenPayment _iadenPayment,IOperaService _iOperaService)
+     private readonly IPayment payment;
+     private readonly ITokenRequest tokenRequest;
+     private readonly IAdenPayment adenPayment;
+     private readonly IOperaService operaService;
+     private readonly IPaymentValidation paymentValidation;
+    public PaymentBL(IPayment _ipayment, ITokenRequest _itokenRequest, IAdenPayment _iadenPayment,IOperaService _iOperaService,IPaymentValidation _paymentValidation)
     {
         payment = _ipayment;
         tokenRequest = _itokenRequest;
         adenPayment = _iadenPayment;
         operaService = _iOperaService;
+        paymentValidation = _paymentValidation;
 
     }
 
-    public async Task<ServiceResponse<object?>> InsertPayment(RequestModel<PaymentModel> request)
+    public async Task<ServiceResponse<object?>> InsertPayment(RequestModel<PaymentModel> request) //Insert Payment in Vasy Pay database and update in Opera.
     {
         ServiceResult serviceResult = new ServiceResult();
+        
+        #region Validation
+        var result = await  paymentValidation.ValidateInsertPayment(request);
+        
+        if ( result is null || !result.IsValid )
+            return await serviceResult.GetServiceResponseAsync<object?>(null!, ApplicationGenericConstants.PAYMENT_VALIDATION, ApiResponseCodes.FAILURE, 400, result.Errors);
+        
+        
+        
+        #endregion
 
-        if (request?.RequestObject is null) return await serviceResult.GetServiceResponseAsync<object?>(null!, ApplicationGenericConstants.MISSING_PAYMENT, ApiResponseCodes.FAILURE, 400, null);
-
+        
         PaymentModel? paymentDetails = request?.RequestObject;
         var respose = await payment.InsertPayment(request!);
 
         if (respose is not null)
         {
-            if (request.RequestObject.transaction == TransactionType.Sale)
+            if (request?.RequestObject?.transaction == TransactionType.Sale)
             {
                 var paymnetresponse = await operaService.MakePayment(new OwsRequestModel()
                 {
@@ -44,12 +55,12 @@ public class PaymentBL
                     {
                         Amount = Convert.ToDecimal(request?.RequestObject?.paymentHeaders.FirstOrDefault().Amount),
                         PaymentInfo = "Auth code - (" + request?.RequestObject?.paymentHeaders.FirstOrDefault().AuthorisationCode + ")",
-                        StationID = "MCI",
+                        StationID = OperaConstants.StationIDCheckIn, // This should be hardcoded .
                         WindowNumber = 1,
                         ReservationNameID = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNameID,
                         MaskedCardNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber,
                         PaymentRefernce = "web checkin - (" + request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber + ")",
-                        PaymentTypeCode = "WEB",
+                        PaymentTypeCode = "WEB", //  need to take from Database.
                         ApprovalCode = request?.RequestObject?.paymentHeaders.FirstOrDefault().ResultCode
                     }
                 });
@@ -62,12 +73,12 @@ public class PaymentBL
                         uDFFields = new List<UDFField>()
                          { new UDFField()
                           {
-                           FieldName  = "PreAuthUDF",
+                           FieldName  = OperaConstants.PreAuthUDFFieldName,
                            FieldValue = request?.RequestObject?.paymentHeaders.FirstOrDefault().pspReferenceNumber
                            },
                            new UDFField()
                             {
-                            FieldName  = "PreAuthAmntUDF",
+                            FieldName  = OperaConstants.PreAuthAmntUDFieldName,
                             FieldValue = request?.RequestObject?.paymentHeaders.FirstOrDefault().Amount.ToString()
                             }
                             }
@@ -85,12 +96,12 @@ public class PaymentBL
                         uDFFields = new List<UDFField>()
                          { new UDFField()
                           {
-                           FieldName  = "PreAuthUDF",
+                           FieldName  = OperaConstants.PreAuthUDFFieldName,
                            FieldValue = request?.RequestObject?.paymentHeaders.FirstOrDefault().pspReferenceNumber
                            },
                            new UDFField()
                             {
-                            FieldName  = "PreAuthAmntUDF",
+                            FieldName  = OperaConstants.PreAuthAmntUDFieldName,
                             FieldValue = request?.RequestObject?.paymentHeaders.FirstOrDefault().Amount.ToString()
                             }
                             }
@@ -111,9 +122,16 @@ public class PaymentBL
 
 
     }
-    public async Task<ServiceResponse<object?>> UpdatePaymentHeader(RequestModel<UpdatePaymentModel> request)
+    public async Task<ServiceResponse<object?>> UpdatePaymentHeader(RequestModel<UpdatePaymentModel> request)  //Update Paymen Header only in database .
     {
         ServiceResult serviceResult = new ServiceResult();
+
+        #region Validation
+        var result = await paymentValidation.ValidateUpdatePayment(request);
+       if ( result is null || !result.IsValid )
+            return await serviceResult.GetServiceResponseAsync<object?>(null!, ApplicationGenericConstants.PAYMENT_VALIDATION, ApiResponseCodes.FAILURE, 400, result.Errors);
+        #endregion
+
         if (request?.RequestObject is null)
             return await serviceResult.GetServiceResponseAsync<object?>(null, ApplicationGenericConstants.MISSING_PAYMENT, ApiResponseCodes.FAILURE, 400, null);
 
@@ -130,8 +148,15 @@ public class PaymentBL
     {
 
         ServiceResult serviceResult = new ServiceResult();
+
+        #region Validation
+        var result = await paymentValidation.ValidateFetchPayment(request);
+       if ( result is null || !result.IsValid )
+            return await serviceResult.GetServiceResponseAsync<IEnumerable<FetchPaymentTransaction?>>(null!, ApplicationGenericConstants.PAYMENT_VALIDATION, ApiResponseCodes.FAILURE, 400, result.Errors);
+        #endregion
+
         if (request?.RequestObject is null)
-            return await serviceResult.GetServiceResponseAsync<IEnumerable<FetchPaymentTransaction?>>(null, "Invalid Payment Request", ApiResponseCodes.FAILURE, 400, null);
+            return await serviceResult.GetServiceResponseAsync<IEnumerable<FetchPaymentTransaction?>>(null, ApplicationGenericConstants.PAYMENT_VALIDATION, ApiResponseCodes.FAILURE, 400, null);
 
         var respose = await payment.FetchPaymentDetails(request!);
         if (respose is not null)
@@ -144,33 +169,41 @@ public class PaymentBL
     }
 
 
-    public async Task<ServiceResponse<PaymentResponse?>?> CapturePayment(RequestModel<PaymentRequest> request)
+    public async Task<ServiceResponse<PaymentResponse?>?> CapturePayment(RequestModel<PaymentRequest> request)  //Update Opera
     {
         ServiceResult serviceResult = new ServiceResult();
         if (request?.RequestObject is null)
             return await serviceResult.GetServiceResponseAsync<PaymentResponse?>(null, ApplicationGenericConstants.MISSING_PAYMENT, ApiResponseCodes.FAILURE, 400, null);
 
+        #region Validation
+        var result = await paymentValidation.ValidateCapturePayment(request);
+        if ( result is null || !result.IsValid )
+            return await serviceResult.GetServiceResponseAsync<PaymentResponse?>(null!, ApplicationGenericConstants.PAYMENT_VALIDATION, ApiResponseCodes.FAILURE, 400, result.Errors);
+
+        #endregion
+
         PaymentRequest? paymentRequest = request?.RequestObject;
-        var respose = await adenPayment.CapturePayment(paymentRequest);
+        var respose = await adenPayment.CapturePayment(paymentRequest);  //Capture the Payment in Adeyan.
         if (respose is not null)
         {
             if(respose?.ResponseData is not null)
             {
-                var paymnetresponse = await operaService.MakePayment(new OwsRequestModel()
+                var paymnetresponse = await operaService.MakePayment(new OwsRequestModel()  //Update the Paymnet in Opera
                 {
                     MakePaymentRequest = new MakePaymentRequest()
                     {
                         Amount = Convert.ToDecimal(respose?.ResponseData?.Amount),
                         PaymentInfo = "Auth code - (" + respose?.ResponseData?.AuthCode + ")",
-                        StationID = "MCO",
+                        StationID = OperaConstants.StationIDCheckOut,
                         WindowNumber = 1,
                         ReservationNameID = paymentRequest?.ReservationNameID,
                         MaskedCardNumber = respose?.ResponseData?.MaskCardNumber,
                         PaymentRefernce = "web checkin - (" + respose?.ResponseData?.MaskCardNumber + ")",
-                        PaymentTypeCode = "MC",
+                        PaymentTypeCode =  "MC" , //"MC", //  need to take from Database.
                         ApprovalCode = respose?.ResponseData?.ResultCode
                     }
                 });
+                //Update in Savy Pay Database .
                  var updateheader = await payment.UpdatePaymentHeader(new RequestModel<UpdatePaymentModel> { RequestObject = new UpdatePaymentModel { isActive = false, amount = paymentRequest.RequestObject.Amount, ReservationNumber = request.RequestObject.ReservationNumber, ResponseMessage = respose?.ResponseData.ResultCode, ResultCode = respose?.ResponseData.ResultCode, transactionID = paymentRequest.TransactionId } });
             }
             return await serviceResult.GetServiceResponseAsync(respose?.ResponseData, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
@@ -195,8 +228,7 @@ public class PaymentBL
             return await serviceResult.GetServiceResponseAsync<object?>(null, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, (int)response.StatusCode, null);
 
 
-
-
     }
 
 }
+

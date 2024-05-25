@@ -11,7 +11,8 @@ namespace DataAccessLayer.Helper
         public DapperHelper(string connectionString)
         {
             _connectionString = connectionString;
-            _connectionString = "Data Source=94.203.133.74,1433;Initial Catalog=QC_SaavyPayDB;user id=sbs_administrator;password=P@ssw0rd@2020";
+           
+                             
 
         }
 
@@ -42,8 +43,30 @@ namespace DataAccessLayer.Helper
             using (var connection = new SqlConnection(_connectionString))
             {
                 await connection.OpenAsync();
-
+                
                 return await connection.ExecuteAsync(query, param: parameters, commandType: CommandType.Text);
+            }
+        }
+
+        public async Task<T> ExecuteScalarAsync<T>(string query, object? parameters = null)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                
+                return await connection.ExecuteScalarAsync<T>(query, param: parameters, commandType: CommandType.Text);
+            }
+        }
+
+        public async Task<string?> getOperaPaymentType(string AdeyanPaymentType)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                
+                var result = await connection.ExecuteScalarAsync<IEnumerable<dynamic>>("SELECT OperaPaymentType FROM PaymentTypeMapping WHERE AdeyanPaymentType = @AdeyanPaymentType", new { AdeyanPaymentType });
+                
+                return result.FirstOrDefault().OperaPaymentType;
             }
         }
 

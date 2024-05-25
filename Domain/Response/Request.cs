@@ -16,9 +16,9 @@ namespace Domain.Response
         public string merchantAccount { get; set; }
         public string ApiKey { get; set; }
 
-        public CaptureRequest RequestObject { get; set; }
+        public CaptureRequest? RequestObject { get; set; }
         public string? ReservationNameID { get; set; }
-        public string ReservationNumber { get; set; }
+        public string? ReservationNumber { get; set; }
         public string? TransactionId { get; set; }
     }
     public class CaptureRequest

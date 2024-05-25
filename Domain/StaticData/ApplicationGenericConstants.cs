@@ -13,6 +13,7 @@ public static class ApplicationGenericConstants
     public const string MISSING_CONNECTION_STRING = "Error in Data Fetch";
     public const string MISSING_PAYMENT_SETTINGS = "Error in Data Update";
     public const string DBCON_PARAM = "DBConnection";
+    public const string PAYMENT_VALIDATION = "PaymentValidation error";
 
 
 }
@@ -31,6 +32,19 @@ public static class PaymentAPIConstants
     public const string PaymentAPIEndV1Point = "v1/Payments";
     public const string PaymentAPIEndPoint = "Payments";
     public const string CapturePaymentEndpoint = "/CapturePayment";
+
+   
+}
+
+public static class OperaConstants
+{
+    public const string PreAuthUDFFieldName = "PreAuthUDF";
+    public const string PreAuthAmntUDFieldName = "PreAuthAmntUDF";
+
+    public const string StationIDCheckIn = "MCI";
+    public const string StationIDCheckOut = "MCO";
+    
+
 
    
 }

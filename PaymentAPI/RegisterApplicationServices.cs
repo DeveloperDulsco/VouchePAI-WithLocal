@@ -3,6 +3,7 @@ using DataAccessLayer;
 using BussinessLogic;
 using Infrastructure;
 using System.Configuration;
+using DataValidation;
 using Domain;
 
 namespace PaymentAPI;
@@ -29,7 +30,7 @@ public static class RegisterApplicationServices
         services.useAPIServices(APIconfig => APIconfig.Name = "PaymentAPI"); //to be changed
         services.useDALServices(DALconfig => DALconfig._connectionString = _connectionString);
         services.useBLServices(blconfig => blconfig.Name = "PaymentAPI"); //to be changed
-
+        services.useValidationServices();
         services.useInfraServices(Infraconfig => Infraconfig.PaymentSettings = paymentSettings);
 
         return services;

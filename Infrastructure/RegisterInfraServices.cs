@@ -1,11 +1,11 @@
-﻿namespace Infrastructure;
+﻿
 
 using BussinessLogic;
 using BussinessLogic.Abstractions;
 using Infrastructure.OwsHelper;
 using Microsoft.Extensions.DependencyInjection;
 
-
+namespace Infrastructure;
 
 public static class RegisterInfraServices
 {
