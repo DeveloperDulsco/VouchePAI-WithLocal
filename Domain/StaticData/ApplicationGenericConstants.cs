@@ -15,6 +15,9 @@ public static class ApplicationGenericConstants
     public const string DBCON_PARAM = "DBConnection";
     public const string PAYMENT_VALIDATION = "PaymentValidation error";
 
+    public const string PAYMENT_PMS_ERROR ="Error in Updating Payment in PMS";
+
+
 
 }
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace Domain.Response
 {
@@ -13,8 +9,8 @@ namespace Domain.Response
     }
     public class PaymentRequest
     {
-        public string merchantAccount { get; set; }
-        public string ApiKey { get; set; }
+        public string? merchantAccount { get; set; }
+
 
         public CaptureRequest? RequestObject { get; set; }
         public string? ReservationNameID { get; set; }
@@ -23,19 +19,19 @@ namespace Domain.Response
     }
     public class CaptureRequest
     {
-        public string OrginalPSPRefernce { get; set; }
+        public string? OrginalPSPRefernce { get; set; }
         public decimal Amount { get; set; }
-        public string adjustAuthorisationData { get; set; }
+        public string? adjustAuthorisationData { get; set; }
         //public string MerchantReference { get; set; }
     }
     public class PaymentModel
     {
 
-        public List<PushPaymentHeaderModel> paymentHeaders { get; set; }
-        public List<PaymentAdditionalInfo> paymentAdditionalInfos { get; set; }
-        public List<PaymentHistory> paymentHistories { get; set; }
+        public List<PushPaymentHeaderModel>? paymentHeaders { get; set; }
+        public List<PaymentAdditionalInfo>? paymentAdditionalInfos { get; set; }
+        public List<PaymentHistory>? paymentHistories { get; set; }
         public TransactionType transaction { get; set; }
-       
+
 
     }
     public enum TransactionType
