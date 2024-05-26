@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.HttpLogging;
 using Middlewares.Exceptions;
 
 
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddWindowsService();
 builder.Services.AddExceptionHandler<GlobalExceptions>();
@@ -23,9 +24,11 @@ builder.Services.AddAntiforgery();
 
 builder.Services.AddHttpLogging(logging =>
 {
+     logging.LoggingFields = HttpLoggingFields.All;
     logging.RequestBodyLogLimit = 4096;
     logging.ResponseBodyLogLimit = 4096;
-    logging.LoggingFields = HttpLoggingFields.All;
+    
+   
 
 
 });
@@ -62,7 +65,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
 
 app.UseAuthentication();
 app.UseAuthorization();
-
+//app.LogRequestResponse();
 app.usePaymentAPIS();
 app.Logger.LogInformation("*******************Starting the app*************************");
 

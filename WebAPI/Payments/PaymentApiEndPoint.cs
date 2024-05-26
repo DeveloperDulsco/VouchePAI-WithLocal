@@ -38,7 +38,7 @@ internal class PaymentApiEndPoint : IEndPointDefinition
 
     private static async Task<IResult?> getAsync()
     {
-        ServiceResult serviceResult = new ServiceResult();
+        ServiceResult serviceResult = new();
         return ReturnResultBaseClass.returnResult<string?>(await serviceResult.GetServiceResponseAsync<string>("pong", ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null));
     }
 

@@ -32,7 +32,7 @@ public static class RegisterApplicationServices
         services.useBLServices(blconfig => blconfig.Name = "PaymentAPI"); //to be changed
         services.useValidationServices();
         services.useInfraServices(Infraconfig => Infraconfig.PaymentSettings = paymentSettings);
-
+        
         return services;
 
 

@@ -13,7 +13,7 @@ internal static class ReturnResultBaseClass
 
 
     internal static IResult TokenreturnResult<T>(ServiceResponse<T>? serviceResponse) =>
-     serviceResponse is null ? TypedResults.Problem(ApplicationGenericConstants.UNKNOWN_ERROR) :
+    serviceResponse is null ? TypedResults.Problem(ApplicationGenericConstants.UNKNOWN_ERROR) :
     serviceResponse?.StatusCode == 200 ? TypedResults.Ok(serviceResponse.ResponseData) :
     serviceResponse?.StatusCode == 400 ? TypedResults.BadRequest(serviceResponse.ResponseData) :
     serviceResponse?.StatusCode == 401 ? TypedResults.Unauthorized() :
