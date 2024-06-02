@@ -10804,11 +10804,11 @@ namespace InformationService
         {
             if ((endpointConfiguration == EndpointConfiguration.InformationSoap))
             {
-                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/ows_ws_51/Information.asmx");
+                return new System.ServiceModel.EndpointAddress("http://52.221.59.206:6501/ows_ws_51/Information.asmx");
             }
             if ((endpointConfiguration == EndpointConfiguration.InformationSoap12))
             {
-                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/ows_ws_51/Information.asmx");
+                return new System.ServiceModel.EndpointAddress("http://52.221.59.206:6501/ows_ws_51/Information.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

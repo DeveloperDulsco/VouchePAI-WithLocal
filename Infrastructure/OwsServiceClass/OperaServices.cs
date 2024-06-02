@@ -257,7 +257,8 @@ namespace Infrastructure.OwsHelper
             modifyReservation.HotelDomain = config?.PaymentSettings.HotelDomain;
             modifyReservation.KioskID = config?.PaymentSettings?.KioskID;
             modifyReservation.SystemType = config?.PaymentSettings?.SystemType;
-            
+            modifyReservation.Password = config?.PaymentSettings?.Password;
+            modifyReservation.modifyBookingRequest.GarunteeTypeCode = config?.PaymentSettings.GuranteeTypeCode;
             #endregion
             ReservationService.ModifyBookingRequest modifyBookingReq = new ReservationService.ModifyBookingRequest();
             ReservationService.ModifyBookingResponse modifyBookingRes = new ReservationService.ModifyBookingResponse();

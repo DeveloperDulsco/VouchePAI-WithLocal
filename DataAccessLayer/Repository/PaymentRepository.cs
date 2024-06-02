@@ -23,8 +23,10 @@ public class PaymentRepository : IPayment
     async Task<ServiceResponse<object?>> IPayment.InsertPayment(Domain.Response.RequestModel<Domain.Response.PaymentModel> request)
     {
         Model.ResponseModel<bool> responseModel = new Model.ResponseModel<bool>();
+        var payrespone = JsonSerializer.Serialize(request!.RequestObject!.paymentHeaders);
+         List<Domain.Response.PushPaymentModel>? des = JsonSerializer.Deserialize<List<Domain.Response.PushPaymentModel>>(payrespone);
         var spResponse = await new DapperHelper(config?._connectionString!).ExecuteSPAsync("Usp_InsertPaymentTransactions"
-                , new { TbPaymentHeaderType = new DBHelper().ToDataTable(request!.RequestObject!.paymentHeaders), TbPaymentAdditionalInfoType = new DBHelper().ToDataTable(request.RequestObject.paymentAdditionalInfos), TbPaymentHistoryType = new DBHelper().ToDataTable(request.RequestObject.paymentHistories) });
+                , new { TbPaymentHeaderType = new DBHelper().ToDataTable(des), TbPaymentAdditionalInfoType = new DBHelper().ToDataTable(request.RequestObject.paymentAdditionalInfos), TbPaymentHistoryType = new DBHelper().ToDataTable(request.RequestObject.paymentHistories) });
         if (spResponse is not null)
         {
             responseModel.Result = true;

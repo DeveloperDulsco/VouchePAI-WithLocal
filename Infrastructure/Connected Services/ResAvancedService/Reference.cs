@@ -24754,11 +24754,11 @@ namespace ResAvancedService
         {
             if ((endpointConfiguration == EndpointConfiguration.ResvAdvancedServiceSoap))
             {
-                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/ows_ws_51/ResvAdvanced.asmx");
+                return new System.ServiceModel.EndpointAddress("http://52.221.59.206:6501/ows_ws_51/ResvAdvanced.asmx");
             }
             if ((endpointConfiguration == EndpointConfiguration.ResvAdvancedServiceSoap12))
             {
-                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/ows_ws_51/ResvAdvanced.asmx");
+                return new System.ServiceModel.EndpointAddress("http://52.221.59.206:6501/ows_ws_51/ResvAdvanced.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

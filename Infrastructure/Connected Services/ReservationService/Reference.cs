@@ -29509,11 +29509,11 @@ namespace ReservationService
         {
             if ((endpointConfiguration == EndpointConfiguration.ReservationServiceSoap))
             {
-                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/OWS_WS_51/Reservation.asmx");
+                return new System.ServiceModel.EndpointAddress("http://52.221.59.206:6501/OWS_WS_51/Reservation.asmx");
             }
             if ((endpointConfiguration == EndpointConfiguration.ReservationServiceSoap12))
             {
-                return new System.ServiceModel.EndpointAddress("http://94.203.133.74:8083/OWS_WS_51/Reservation.asmx");
+                return new System.ServiceModel.EndpointAddress("http://52.221.59.206:6501/OWS_WS_51/Reservation.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

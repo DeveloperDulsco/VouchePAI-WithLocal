@@ -4,6 +4,7 @@ using Domain.Response;
 using Domain.Responses;
 using Microsoft.Extensions.Primitives;
 using System.Net.Http.Json;
+using System.Reflection;
 
 
 
@@ -59,8 +60,9 @@ public class PaymentBL
                     ReservationNameID = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNameID,
                     MaskedCardNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber,
                     PaymentRefernce = "web checkin - (" + request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber + ")",
-                    PaymentTypeCode = "WEB", //  need to take from Database.
-                    ApprovalCode = request?.RequestObject?.paymentHeaders.FirstOrDefault().ResultCode
+                    ApprovalCode = request?.RequestObject?.paymentHeaders.FirstOrDefault().OperaPaymentTypeCode,
+                    PaymentTypeCode= request?.RequestObject?.paymentHeaders.FirstOrDefault().OperaPaymentTypeCode
+
                 }
             });
 
@@ -88,7 +90,31 @@ public class PaymentBL
                 }
 
             });
-            return await serviceResult.GetServiceResponseAsync<object>(udfresponse.ResponseData, udfresponse.Message, udfresponse.ApiResponseCode, udfresponse.StatusCode, null);
+          
+            if (udfresponse?.ApiResponseCode == ApiResponseCodes.FAILURE)
+                return await serviceResult.GetServiceResponseAsync<object>(null, paymnetresponse.Message, paymnetresponse.ApiResponseCode, paymnetresponse.StatusCode, null);
+            var creditcardresponse = await operaService.ModifyReservation(new OwsRequestModel()
+            {
+                modifyBookingRequest = new ModifyBookingRequest()
+                {
+                    ReservationNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNumber,
+                    isUDFFieldSpecified = false,
+                    updateCreditCardDetails = true,
+                    GarunteeTypeCode = "CC",//"CC",
+                    PaymentMethod = new PaymentMethod()
+                    {
+                      
+                        ExpiryDate = !string.IsNullOrEmpty(request?.RequestObject?.paymentHeaders.FirstOrDefault().ExpiryDate) ? "01/" + request?.RequestObject?.paymentHeaders.FirstOrDefault().ExpiryDate : null,
+                        MaskedCardNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber,
+                        PaymentType = request?.RequestObject?.paymentHeaders.FirstOrDefault().OperaPaymentTypeCode,
+                        AprovalCode= !string.IsNullOrEmpty(request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode)? request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode: request?.RequestObject?.paymentHeaders.FirstOrDefault().pspReferenceNumber
+                    }
+                }
+
+                });
+            return await serviceResult.GetServiceResponseAsync<object>(creditcardresponse.ResponseData, creditcardresponse.Message, creditcardresponse.ApiResponseCode, creditcardresponse.StatusCode, null);
+
+
 
         }
         else
@@ -114,8 +140,26 @@ public class PaymentBL
                 }
             });
 
-            return await serviceResult.GetServiceResponseAsync<object>(udfresponse.ResponseData, udfresponse.Message, udfresponse.ApiResponseCode, udfresponse.StatusCode, null);
-
+            if (udfresponse?.ApiResponseCode == ApiResponseCodes.FAILURE)
+                return await serviceResult.GetServiceResponseAsync<object>(null, udfresponse.Message, udfresponse.ApiResponseCode, udfresponse.StatusCode, null);
+            var creditcardresponse = await operaService.ModifyReservation(new OwsRequestModel()
+            {
+                modifyBookingRequest = new ModifyBookingRequest()
+                {
+                    ReservationNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNumber,
+                    isUDFFieldSpecified = false,
+                    updateCreditCardDetails = true,
+                    GarunteeTypeCode = "CC",//"CC",
+                    PaymentMethod = new PaymentMethod()
+                    {
+                        ExpiryDate = !string.IsNullOrEmpty(request?.RequestObject?.paymentHeaders.FirstOrDefault().ExpiryDate) ? "01/" + request?.RequestObject?.paymentHeaders.FirstOrDefault().ExpiryDate: null,
+                        MaskedCardNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber,
+                        PaymentType = request?.RequestObject?.paymentHeaders.FirstOrDefault().OperaPaymentTypeCode,
+                         AprovalCode = !string.IsNullOrEmpty(request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode) ? request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode : request?.RequestObject?.paymentHeaders.FirstOrDefault().pspReferenceNumber
+                    }
+                }
+                });
+            return await serviceResult.GetServiceResponseAsync<object>(creditcardresponse.ResponseData, creditcardresponse.Message, creditcardresponse.ApiResponseCode, creditcardresponse.StatusCode, null);
         }
 
 

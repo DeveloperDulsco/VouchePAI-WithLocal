@@ -60,6 +60,30 @@ namespace Domain.Response
         public bool? IsActive { get; set; }
         public string StatusType { get; set; }
         public string CardType { get; set; }
+        public  string OperaPaymentTypeCode { get; set; }
+        public string? ApprovalCode { get; set; }
+    }
+    public class PushPaymentModel
+    {
+        public string TransactionID { get; set; }
+        public string ReservationNumber { get; set; }
+        public string ReservationNameID { get; set; }
+        public string MaskedCardNumber { get; set; }
+        public string ExpiryDate { get; set; }
+        public string FundingSource { get; set; }
+        public string Amount { get; set; }
+        public string Currency { get; set; }
+        public string RecurringIdentifier { get; set; }
+        public string AuthorisationCode { get; set; }
+        public string pspReferenceNumber { get; set; }
+        public string ParentPspRefereceNumber { get; set; }
+        public string TransactionType { get; set; }
+        public string ResultCode { get; set; }
+        public string ResponseMessage { get; set; }
+        public bool? IsActive { get; set; }
+        public string StatusType { get; set; }
+        public string CardType { get; set; }
+       
     }
     public class PaymentAdditionalInfo
     {

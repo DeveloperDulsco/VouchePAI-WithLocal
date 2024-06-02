@@ -55,6 +55,6 @@ public class PaymentSettings
     public string? PreAuthUDF { get; set; }
     public string? PreAuthAmntUDF { get; set; }
     public string? DestinationSystemType { get; set; }
-
+    public string? GuranteeTypeCode { get; set; }
 }
 
