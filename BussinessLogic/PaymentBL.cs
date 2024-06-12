@@ -270,6 +270,9 @@ public class PaymentBL
                 var paymenttypecode = await payment.getOperaPaymentType(paymentdata?.FirstOrDefault().CardType);
                 if(paymenttypecode == null)
                     return await serviceResult.GetServiceResponseAsync<PaymentResponse?>(null, "PAYMENTTYPE CODE MISSING", ApiResponseCodes.FAILURE, 400, null);
+
+                if (paymenttypecode.ResponseData is null)
+                    return await serviceResult.GetServiceResponseAsync<PaymentResponse?>(null, "PAYMENTTYPE CODE MISSING", ApiResponseCodes.FAILURE, 400, null);
                 var paymnetresponse = await operaService.MakePayment(new OwsRequestModel()  //Update the Paymnet in Opera
                 {
                     MakePaymentRequest = new MakePaymentRequest()
