@@ -176,7 +176,7 @@ namespace Infrastructure.OwsHelper
             //ReservationAdvancedService.cred
             if (Request.MakePaymentRequest.PaymentTypeCode != "CA")
             {
-                bool isOPIEnabled = false;
+                bool isOPIEnabled = config.PaymentSettings.OPIEnabled;
                 CC.chipAndPin = false;
                 CC.chipAndPinSpecified = true;
                 CC.cardType = Request.MakePaymentRequest.PaymentTypeCode;//"WEB";
@@ -397,7 +397,7 @@ namespace Infrastructure.OwsHelper
                 CC.chipAndPinSpecified = true;
                 CC.cardType = modifyReservation.modifyBookingRequest.PaymentMethod.PaymentType;//"WEB";
 
-                bool isOPIEnabled = false;
+                bool isOPIEnabled = config.PaymentSettings.OPIEnabled;
 
                 if (isOPIEnabled)
                 {

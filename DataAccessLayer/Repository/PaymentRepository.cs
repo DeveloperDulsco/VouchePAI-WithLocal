@@ -64,7 +64,7 @@ public class PaymentRepository : IPayment
     async Task<ServiceResponse<IEnumerable<Domain.Responses.FetchPaymentTransaction?>?>?> IPayment.FetchPaymentDetails(Domain.Response.RequestModel<PaymentFetchRequest> request)
     {
         Domain.Responses.ResponseModel<IEnumerable<Domain.Responses.FetchPaymentTransaction>> responseModel = new Domain.Responses.ResponseModel<IEnumerable<Domain.Responses.FetchPaymentTransaction>>();
-        var spResponse = await new DapperHelper(config?._connectionString!).ExecuteSPAsync<Model.FetchPaymentTransaction>("Usp_FetchPaymentTransaction", new { ReservationNameID = request.RequestObject?.ReservationNumber });
+        var spResponse = await new DapperHelper(config?._connectionString!).ExecuteSPAsync<Model.FetchPaymentTransaction>("Usp_FetchPaymentTransaction", new { ReservationNumber = request.RequestObject?.ReservationNumber });
         if (spResponse != null && spResponse.Any())
         {
 
@@ -91,6 +91,8 @@ public class PaymentRepository : IPayment
         return await new ServiceResult().GetServiceResponseAsync<string>(OperaPaymentType, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
 
     }
+  
+
 
    
 

@@ -31,6 +31,7 @@ namespace Domain.Response
         public int? WindowNumber { get; set; }
         public string ReservationNameID { get; set; }
         public string PaymentTypeCode { get; set; }
+        public string PaymentCardType { get; set; }
         public string MaskedCardNumber { get; set; }
         public DateTime? ExpiryDate { get; set; }
         public string UserName { get; set; }

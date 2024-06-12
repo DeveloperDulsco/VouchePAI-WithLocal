@@ -58,15 +58,14 @@ namespace DataAccessLayer.Helper
             }
         }
 
-        public async Task<string?> getOperaPaymentType(string AdeyanPaymentType)
+        public async Task<string?> getOperaPaymentType(string cardType)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 await connection.OpenAsync();
                 
-                var result = await connection.ExecuteScalarAsync<IEnumerable<dynamic>>("SELECT OperaPaymentType FROM PaymentTypeMapping WHERE AdeyanPaymentType = @AdeyanPaymentType", new { AdeyanPaymentType });
-                
-                return result.FirstOrDefault().OperaPaymentType;
+                var result = await connection.ExecuteScalarAsync<string>("SELECT top 1 OperaPaymentTypeCode FROM tbOperaPaymentTypeCode  where VendorPaymentTypeCode=@cardType and CardType='KSK'", new { cardType = cardType });
+                return result;
             }
         }
 

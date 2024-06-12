@@ -26,9 +26,9 @@ namespace Middlewares.Exceptions
             _logger.LogError(exception, exception.Message);
             if (_environment.IsDevelopment() || _environment.IsStaging())
 
-                await httpContext.Response.WriteAsJsonAsync(await serviceResult.GetServiceResponseAsync<string>(exception.Message, ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 500, null));
+                await httpContext.Response.WriteAsJsonAsync(await serviceResult.GetServiceResponseAsync<string>(exception.InnerException.ToString(), ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 500, null));
             else
-                await httpContext.Response.WriteAsJsonAsync(await serviceResult.GetServiceResponseAsync<string>(ApplicationGenericConstants.UNKNOWN_ERROR, ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 500, null));
+                await httpContext.Response.WriteAsJsonAsync(await serviceResult.GetServiceResponseAsync<string>(exception.Message, ApplicationGenericConstants.UNKNOWN_ERROR, ApiResponseCodes.FAILURE, 500, null));
 
             return true;
 

@@ -58,8 +58,7 @@ public class PaymentInsertRequestValidator :   AbstractValidator<RequestModel<Pa
         RuleFor(x => x.RequestObject).NotNull();
         RuleFor(x => x.RequestObject.paymentHeaders).NotNull();
         RuleFor(x => x.RequestObject.paymentHistories).NotNull();
-        RuleFor(x => x.RequestObject.transaction).NotNull();
-
+      
         RuleForEach(x => x.RequestObject.paymentHeaders).ChildRules(header => 
          {
                 header.RuleFor(x => x.TransactionID).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
@@ -107,14 +106,13 @@ public class PaymentCaptureRequestValidator : AbstractValidator<RequestModel<Pay
     {
         RuleFor(x => x).NotNull();
         RuleFor(x => x.RequestObject).NotNull();
-        RuleFor(x => x.RequestObject.ReservationNameID).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
+       
         RuleFor(x => x.RequestObject.ReservationNumber).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
         RuleFor(x => x.RequestObject.TransactionId).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
-        RuleFor(x => x.RequestObject.merchantAccount).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
-        RuleFor(x => x.RequestObject.RequestObject).NotNull();
-        RuleFor(x => x.RequestObject.RequestObject.Amount).NotNull().NotEmpty().NotEqual(0);
-        RuleFor(x => x.RequestObject.RequestObject.OrginalPSPRefernce).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
-        RuleFor(x => x.RequestObject.RequestObject.adjustAuthorisationData).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
+       
+        RuleFor(x => x.RequestObject.Amount).NotNull().NotEmpty().NotEqual(0);
+        RuleFor(x => x.RequestObject.OrginalPSPRefernce).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
+       // RuleFor(x => x.RequestObject.CaptureObject.adjustAuthorisationData).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
 
         
     }

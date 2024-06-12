@@ -18,13 +18,16 @@ public class PaymentBL
     private readonly IAdenPayment adenPayment;
     private readonly IOperaService operaService;
     private readonly IPaymentValidation paymentValidation;
-    public PaymentBL(IPayment _ipayment, ITokenRequest _itokenRequest, IAdenPayment _iadenPayment, IOperaService _iOperaService, IPaymentValidation _paymentValidation)
+    private readonly BLConfigutations bLConfigutations;
+    public PaymentBL(IPayment _ipayment, ITokenRequest _itokenRequest, IAdenPayment _iadenPayment, IOperaService _iOperaService, IPaymentValidation _paymentValidation, BLConfigutations _bLConfigutations)
     {
         payment = _ipayment;
         tokenRequest = _itokenRequest;
         adenPayment = _iadenPayment;
         operaService = _iOperaService;
         paymentValidation = _paymentValidation;
+        bLConfigutations = _bLConfigutations;
+
 
     }
 
@@ -45,11 +48,61 @@ public class PaymentBL
 
         PaymentModel? paymentDetails = request?.RequestObject;
         var respose = await payment.InsertPayment(request!);
-        if (respose?.ApiResponseCode == ApiResponseCodes.FAILURE) return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.FAILURE, ApiResponseCodes.FAILURE, 400, null);
-
-        if (request?.RequestObject?.transaction == TransactionType.Sale)
+        if (respose?.ApiResponseCode == ApiResponseCodes.FAILURE) return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.INSERTFAILURE, ApiResponseCodes.FAILURE,400, null);
+        var paymenttypecode = await payment.getOperaPaymentType(request?.RequestObject?.paymentHeaders.FirstOrDefault().CardType);
+        if (paymenttypecode == null)
+            return await serviceResult.GetServiceResponseAsync<object?>(null, "PAYMENTTYPE CODE MISSING", ApiResponseCodes.FAILURE,400, null);
+        if (request?.RequestObject?.paymentHeaders.FirstOrDefault().TransactionType == "Sale")
         {
-            var paymnetresponse = await operaService.MakePayment(new OwsRequestModel()
+            var creditcardresponse = await operaService.ModifyReservation(new OwsRequestModel()
+            {
+                modifyBookingRequest = new ModifyBookingRequest()
+                {
+                    ReservationNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNumber,
+                    isUDFFieldSpecified = false,
+                    updateCreditCardDetails = true,
+                    GarunteeTypeCode = null,//"CC",
+                    PaymentMethod = new PaymentMethod()
+                    {
+
+                        ExpiryDate = !string.IsNullOrEmpty(request?.RequestObject?.paymentHeaders.FirstOrDefault().ExpiryDate) ? "01/" + request?.RequestObject?.paymentHeaders.FirstOrDefault().ExpiryDate : null,
+                        MaskedCardNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber,
+                        PaymentType = paymenttypecode.ResponseData,
+                        AprovalCode = !string.IsNullOrEmpty(request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode) ? request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode : request?.RequestObject?.paymentHeaders.FirstOrDefault().pspReferenceNumber
+                    }
+                }
+
+            });
+            if (creditcardresponse?.ApiResponseCode == ApiResponseCodes.FAILURE)
+                return await serviceResult.GetServiceResponseAsync<object>(null, creditcardresponse.Message, creditcardresponse.ApiResponseCode,400,null);
+            if (bLConfigutations.settings.IsUDFUpdate)
+            {
+                var udfresponse = await operaService.ModifyReservation(new OwsRequestModel()
+                {
+                    modifyBookingRequest = new ModifyBookingRequest()
+                    {
+                        isUDFFieldSpecified = true,
+                        ReservationNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNumber,
+                        uDFFields = new List<UDFField>()
+                         { new UDFField()
+                          {
+                           FieldName  = OperaConstants.PreAuthUDFFieldName,
+                           FieldValue = request?.RequestObject?.paymentHeaders.FirstOrDefault().pspReferenceNumber
+                           },
+                           new UDFField()
+                            {
+                            FieldName  = OperaConstants.PreAuthAmntUDFieldName,
+                            FieldValue = request?.RequestObject?.paymentHeaders.FirstOrDefault().Amount.ToString()
+                            }
+                            }
+                    }
+
+                });
+
+                if (udfresponse?.ApiResponseCode == ApiResponseCodes.FAILURE)
+                    return await serviceResult.GetServiceResponseAsync<object>(null, udfresponse.Message, udfresponse.ApiResponseCode,400, null);
+            }
+              var paymnetresponse = await operaService.MakePayment(new OwsRequestModel()
             {
                 MakePaymentRequest = new MakePaymentRequest()
                 {
@@ -59,40 +112,22 @@ public class PaymentBL
                     WindowNumber = 1,
                     ReservationNameID = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNameID,
                     MaskedCardNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber,
-                    PaymentRefernce = "web checkin - (" + request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber + ")",
-                    ApprovalCode = request?.RequestObject?.paymentHeaders.FirstOrDefault().OperaPaymentTypeCode,
-                    PaymentTypeCode= request?.RequestObject?.paymentHeaders.FirstOrDefault().OperaPaymentTypeCode
+                    PaymentRefernce = "Saavy - (" + request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber + ")",
+                    ApprovalCode = request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode,
+                    PaymentTypeCode  = paymenttypecode.ResponseData.Split('-')[0],
 
                 }
             });
 
             if (paymnetresponse?.ApiResponseCode == ApiResponseCodes.FAILURE)
-                return await serviceResult.GetServiceResponseAsync<object>(null, paymnetresponse.Message, paymnetresponse.ApiResponseCode, paymnetresponse.StatusCode, null);
 
-            var udfresponse = await operaService.ModifyReservation(new OwsRequestModel()
-            {
-                modifyBookingRequest = new ModifyBookingRequest()
-                {
-                    isUDFFieldSpecified = true,
-                    ReservationNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNumber,
-                    uDFFields = new List<UDFField>()
-                         { new UDFField()
-                          {
-                           FieldName  = OperaConstants.PreAuthUDFFieldName,
-                           FieldValue = request?.RequestObject?.paymentHeaders.FirstOrDefault().pspReferenceNumber
-                           },
-                           new UDFField()
-                            {
-                            FieldName  = OperaConstants.PreAuthAmntUDFieldName,
-                            FieldValue = request?.RequestObject?.paymentHeaders.FirstOrDefault().Amount.ToString()
-                            }
-                            }
-                }
+                return await serviceResult.GetServiceResponseAsync<object>(paymnetresponse.ResponseData, paymnetresponse.Message, paymnetresponse.ApiResponseCode,400, null);
+            else
+                return await serviceResult.GetServiceResponseAsync<object>(paymnetresponse.ResponseData, paymnetresponse.Message, paymnetresponse.ApiResponseCode, paymnetresponse.StatusCode, null);
 
-            });
-          
-            if (udfresponse?.ApiResponseCode == ApiResponseCodes.FAILURE)
-                return await serviceResult.GetServiceResponseAsync<object>(null, paymnetresponse.Message, paymnetresponse.ApiResponseCode, paymnetresponse.StatusCode, null);
+        }
+        else if(request?.RequestObject?.paymentHeaders.FirstOrDefault().TransactionType == "PreAuth")
+        {
             var creditcardresponse = await operaService.ModifyReservation(new OwsRequestModel()
             {
                 modifyBookingRequest = new ModifyBookingRequest()
@@ -103,29 +138,24 @@ public class PaymentBL
                     GarunteeTypeCode = "CC",//"CC",
                     PaymentMethod = new PaymentMethod()
                     {
-                      
                         ExpiryDate = !string.IsNullOrEmpty(request?.RequestObject?.paymentHeaders.FirstOrDefault().ExpiryDate) ? "01/" + request?.RequestObject?.paymentHeaders.FirstOrDefault().ExpiryDate : null,
                         MaskedCardNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber,
-                        PaymentType = request?.RequestObject?.paymentHeaders.FirstOrDefault().OperaPaymentTypeCode,
-                        AprovalCode= !string.IsNullOrEmpty(request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode)? request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode: request?.RequestObject?.paymentHeaders.FirstOrDefault().pspReferenceNumber
+                        PaymentType = paymenttypecode.ResponseData,
+                        AprovalCode = !string.IsNullOrEmpty(request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode) ? request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode : request?.RequestObject?.paymentHeaders.FirstOrDefault().pspReferenceNumber
                     }
                 }
-
-                });
-            return await serviceResult.GetServiceResponseAsync<object>(creditcardresponse.ResponseData, creditcardresponse.Message, creditcardresponse.ApiResponseCode, creditcardresponse.StatusCode, null);
-
-
-
-        }
-        else
-        {
-            var udfresponse = await operaService.ModifyReservation(new OwsRequestModel()
+            });
+            if (creditcardresponse?.ApiResponseCode == ApiResponseCodes.FAILURE)
+                return await serviceResult.GetServiceResponseAsync<object>(null, creditcardresponse.Message, creditcardresponse.ApiResponseCode,400, null);
+            if (bLConfigutations.settings.IsUDFUpdate)
             {
-                modifyBookingRequest = new ModifyBookingRequest()
+                var udfresponse = await operaService.ModifyReservation(new OwsRequestModel()
                 {
-                    isUDFFieldSpecified = true,
-                    ReservationNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNumber,
-                    uDFFields = new List<UDFField>()
+                    modifyBookingRequest = new ModifyBookingRequest()
+                    {
+                        isUDFFieldSpecified = true,
+                        ReservationNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNumber,
+                        uDFFields = new List<UDFField>()
                          { new UDFField()
                           {
                            FieldName  = OperaConstants.PreAuthUDFFieldName,
@@ -137,32 +167,24 @@ public class PaymentBL
                             FieldValue = request?.RequestObject?.paymentHeaders.FirstOrDefault().Amount.ToString()
                             }
                             }
-                }
-            });
-
-            if (udfresponse?.ApiResponseCode == ApiResponseCodes.FAILURE)
-                return await serviceResult.GetServiceResponseAsync<object>(null, udfresponse.Message, udfresponse.ApiResponseCode, udfresponse.StatusCode, null);
-            var creditcardresponse = await operaService.ModifyReservation(new OwsRequestModel()
-            {
-                modifyBookingRequest = new ModifyBookingRequest()
-                {
-                    ReservationNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNumber,
-                    isUDFFieldSpecified = false,
-                    updateCreditCardDetails = true,
-                    GarunteeTypeCode = "CC",//"CC",
-                    PaymentMethod = new PaymentMethod()
-                    {
-                        ExpiryDate = !string.IsNullOrEmpty(request?.RequestObject?.paymentHeaders.FirstOrDefault().ExpiryDate) ? "01/" + request?.RequestObject?.paymentHeaders.FirstOrDefault().ExpiryDate: null,
-                        MaskedCardNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber,
-                        PaymentType = request?.RequestObject?.paymentHeaders.FirstOrDefault().OperaPaymentTypeCode,
-                         AprovalCode = !string.IsNullOrEmpty(request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode) ? request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode : request?.RequestObject?.paymentHeaders.FirstOrDefault().pspReferenceNumber
                     }
-                }
                 });
-            return await serviceResult.GetServiceResponseAsync<object>(creditcardresponse.ResponseData, creditcardresponse.Message, creditcardresponse.ApiResponseCode, creditcardresponse.StatusCode, null);
+
+                if (udfresponse?.ApiResponseCode == ApiResponseCodes.FAILURE)
+
+                    return await serviceResult.GetServiceResponseAsync<object>(udfresponse.ResponseData, udfresponse.Message, udfresponse.ApiResponseCode, 400, null);
+                else
+                    return await serviceResult.GetServiceResponseAsync<object>(udfresponse.ResponseData, udfresponse.Message, udfresponse.ApiResponseCode, udfresponse.StatusCode, null);
+            }
+
+            return await serviceResult.GetServiceResponseAsync<object>(creditcardresponse.ResponseData, creditcardresponse?.Message, creditcardresponse.ApiResponseCode, 400, null);
         }
 
+        else
+        {
 
+            return await serviceResult.GetServiceResponseAsync<object>(null, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
+        }
 
 
 
@@ -219,10 +241,11 @@ public class PaymentBL
 
     public async Task<ServiceResponse<PaymentResponse?>?> CapturePayment(RequestModel<PaymentRequest> request)  //Update Opera
     {
+        
         ServiceResult serviceResult = new ServiceResult();
         if (request?.RequestObject is null)
             return await serviceResult.GetServiceResponseAsync<PaymentResponse?>(null, ApplicationGenericConstants.MISSING_PAYMENT, ApiResponseCodes.FAILURE, 400, null);
-
+        
         #region Validation
         var result = await paymentValidation.ValidateCapturePayment(request);
         if (result is null || !result.IsValid)
@@ -234,25 +257,42 @@ public class PaymentBL
         var respose = await adenPayment.CapturePayment(paymentRequest);  //Capture the Payment in Adeyan.
         if (respose?.ApiResponseCode == ApiResponseCodes.SUCCESS)
         {
+            RequestModel<PaymentFetchRequest> request1 = new RequestModel<PaymentFetchRequest>{ ConnectionString = request?.ConnectionString, RequestObject = new PaymentFetchRequest { ReservationNumber = request?.RequestObject.ReservationNumber } };
+            var fetchpayment = await payment.FetchPaymentDetails(request1);
             if (respose?.ResponseData is not null)
             {
+                if(fetchpayment?.ResponseData is  null)
+                    return await serviceResult.GetServiceResponseAsync<PaymentResponse?>(null, "NOT ACTIVE TRANSACTION EXISTS",ApiResponseCodes.FAILURE, 400, null);
+                var paymentdata = fetchpayment?.ResponseData.Where(x => x.TransactionID == request?.RequestObject.TransactionId);
+                if (paymentdata is  null || paymentdata.Count()==0 )
+                    return await serviceResult.GetServiceResponseAsync<PaymentResponse?>(null, "NOT ACTIVE TRANSACTION EXISTS", ApiResponseCodes.FAILURE, 400, null);
+
+                var paymenttypecode = await payment.getOperaPaymentType(paymentdata?.FirstOrDefault().CardType);
+                if(paymenttypecode == null)
+                    return await serviceResult.GetServiceResponseAsync<PaymentResponse?>(null, "PAYMENTTYPE CODE MISSING", ApiResponseCodes.FAILURE, 400, null);
                 var paymnetresponse = await operaService.MakePayment(new OwsRequestModel()  //Update the Paymnet in Opera
                 {
                     MakePaymentRequest = new MakePaymentRequest()
                     {
-                        Amount = Convert.ToDecimal(respose?.ResponseData?.Amount),
-                        PaymentInfo = "Auth code - (" + respose?.ResponseData?.AuthCode + ")",
+                        Amount = Convert.ToDecimal(request?.RequestObject?.Amount),
+                        PaymentInfo = "Auth code - (" + paymentdata?.FirstOrDefault().AuthorisationCode + ")",
                         StationID = OperaConstants.StationIDCheckOut,
                         WindowNumber = 1,
-                        ReservationNameID = paymentRequest?.ReservationNameID,
-                        MaskedCardNumber = respose?.ResponseData?.MaskCardNumber,
-                        PaymentRefernce = "web checkin - (" + respose?.ResponseData?.MaskCardNumber + ")",
-                        PaymentTypeCode = "MC", //"MC", //  need to take from Database.
-                        ApprovalCode = respose?.ResponseData?.ResultCode
+                        ReservationNameID = paymentdata?.FirstOrDefault().ReservationNameID,
+                        MaskedCardNumber = paymentdata?.FirstOrDefault().MaskedCardNumber,
+                        PaymentRefernce = "saavy - (" + paymentdata?.FirstOrDefault().MaskedCardNumber + ")",
+                        PaymentTypeCode = paymenttypecode.ResponseData.Split('-')[0], //"MC", //  need to take from Database.
+                        ApprovalCode = paymentdata?.FirstOrDefault().ResultCode
                     }
+                    
+
                 });
+                if (paymnetresponse?.ApiResponseCode == ApiResponseCodes.FAILURE)
+
+                    return await serviceResult.GetServiceResponseAsync(respose?.ResponseData, paymnetresponse.Message, paymnetresponse.ApiResponseCode,400, null);
+
                 //Update in Savy Pay Database .
-                var updateheader = await payment.UpdatePaymentHeader(new RequestModel<UpdatePaymentModel> { RequestObject = new UpdatePaymentModel { isActive = false, amount = paymentRequest.RequestObject.Amount, ReservationNumber = request.RequestObject.ReservationNumber, ResponseMessage = respose?.ResponseData.ResultCode, ResultCode = respose?.ResponseData.ResultCode, transactionID = paymentRequest.TransactionId } });
+                var updateheader = await payment.UpdatePaymentHeader(new RequestModel<UpdatePaymentModel> { RequestObject = new UpdatePaymentModel { isActive = false, amount = paymentdata.FirstOrDefault().Amount, ReservationNumber = request.RequestObject.ReservationNumber, ResponseMessage = paymentdata?.FirstOrDefault().ResultCode, ResultCode = paymentdata?.FirstOrDefault().ResultCode, transactionID = paymentRequest.TransactionId } });
                 return await serviceResult.GetServiceResponseAsync(respose?.ResponseData, ApplicationGenericConstants.SUCCESS, ApiResponseCodes.SUCCESS, 200, null);
             }
             return await serviceResult.GetServiceResponseAsync<PaymentResponse>(null, ApplicationGenericConstants.PAYMENT_PMS_ERROR, ApiResponseCodes.FAILURE, 400, null);

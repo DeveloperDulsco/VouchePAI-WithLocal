@@ -16,7 +16,8 @@ public static  class RegisterBLServices
 
 public class BLConfigutations
 {
-   public string? Name { get; set; } 
+   public PmsUpdateSettings? settings { get; set; }
+
    public BLConfigutations(Action<BLConfigutations> options)
    {
     options(this);

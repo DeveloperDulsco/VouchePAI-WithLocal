@@ -9,19 +9,16 @@ namespace Domain.Response
     }
     public class PaymentRequest
     {
-        public string? merchantAccount { get; set; }
-
-
-        public CaptureRequest? RequestObject { get; set; }
-        public string? ReservationNameID { get; set; }
-        public string? ReservationNumber { get; set; }
-        public string? TransactionId { get; set; }
+         public string? OrginalPSPRefernce { get; set; }
+        public decimal Amount { get; set; }
+        public string ReservationNumber { get; set; }
+        public string TransactionId { get; set; }
     }
     public class CaptureRequest
     {
         public string? OrginalPSPRefernce { get; set; }
         public decimal Amount { get; set; }
-        public string? adjustAuthorisationData { get; set; }
+        //public string? adjustAuthorisationData { get; set; }
         //public string MerchantReference { get; set; }
     }
     public class PaymentModel
@@ -30,7 +27,7 @@ namespace Domain.Response
         public List<PushPaymentHeaderModel>? paymentHeaders { get; set; }
         public List<PaymentAdditionalInfo>? paymentAdditionalInfos { get; set; }
         public List<PaymentHistory>? paymentHistories { get; set; }
-        public TransactionType transaction { get; set; }
+        public string transaction { get; set; }
 
 
     }
