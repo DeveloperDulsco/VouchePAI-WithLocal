@@ -71,7 +71,7 @@ namespace Infrastructure.OwsHelper
             LOVReq.Item = LOVQuery;
             #endregion
 
-            InformationService.InformationSoapClient InfoPortClient = new InformationService.InformationSoapClient(InformationSoapClient.EndpointConfiguration.InformationSoap);
+            InformationService.InformationSoapClient InfoPortClient = new InformationService.InformationSoapClient(InformationSoapClient.EndpointConfiguration.InformationSoap12,config.PaymentSettings.InformationOWSURL);
             bool? isOperaCloudEnabled1 = false;
             isOperaCloudEnabled1 = config?.PaymentSettings!.OperaCloudEnabled;
             if (isOperaCloudEnabled1 is not null && isOperaCloudEnabled1==true)
@@ -216,7 +216,7 @@ namespace Infrastructure.OwsHelper
             MPRequest.Reference = Request.MakePaymentRequest.PaymentRefernce;
             MPRequest.CreditCardInfo = CCInfo;
 
-            ResAvancedService.ResvAdvancedServiceSoapClient ResAdvPortClient = new ResAvancedService.ResvAdvancedServiceSoapClient(ResAvancedService.ResvAdvancedServiceSoapClient.EndpointConfiguration.ResvAdvancedServiceSoap);
+            ResAvancedService.ResvAdvancedServiceSoapClient ResAdvPortClient = new ResAvancedService.ResvAdvancedServiceSoapClient(ResAvancedService.ResvAdvancedServiceSoapClient.EndpointConfiguration.ResvAdvancedServiceSoap12,config?.PaymentSettings.ReservationAdvancedOWSURL);
             bool? isOperaCloudEnabled = false;
             isOperaCloudEnabled = config?.PaymentSettings!.OperaCloudEnabled;
             if (isOperaCloudEnabled is not null && isOperaCloudEnabled == true)
@@ -287,9 +287,11 @@ namespace Infrastructure.OwsHelper
             OGHeader.Authentication = Auth;
             #endregion
 
-            ReservationService.ReservationServiceSoapClient ResSoapCLient = new ReservationService.ReservationServiceSoapClient(EndpointConfiguration.ReservationServiceSoap);
-            bool isOperaCloudEnabled = false;
-            if (isOperaCloudEnabled)
+            ReservationService.ReservationServiceSoapClient ResSoapCLient = new ReservationService.ReservationServiceSoapClient(EndpointConfiguration.ReservationServiceSoap12,config?.PaymentSettings.ReservatinOWSURL);
+            bool? isOperaCloudEnabled = false;
+            isOperaCloudEnabled = config?.PaymentSettings!.OperaCloudEnabled;
+            if (isOperaCloudEnabled is not null && isOperaCloudEnabled == true)
+
             {
                 ResSoapCLient.Endpoint.EndpointBehaviors.Add(new CustomEndpointBehaviour("WSSEUserName", "WSSEPassword",
                                         modifyReservation.Username, modifyReservation.Password, modifyReservation.HotelDomain));

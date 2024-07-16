@@ -13,7 +13,7 @@ namespace BussinessLogic
     public class PmsUpdateSettings
     {
         public bool IsUDFUpdate {  get; set; }=true;
-
-
+        public bool TestCard { get; set; } = false;
+        
     }
 }

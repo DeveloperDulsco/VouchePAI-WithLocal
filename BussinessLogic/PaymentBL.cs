@@ -114,7 +114,7 @@ public class PaymentBL
                     MaskedCardNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber,
                     PaymentRefernce = "Saavy - (" + request?.RequestObject?.paymentHeaders.FirstOrDefault().MaskedCardNumber + ")",
                     ApprovalCode = request?.RequestObject?.paymentHeaders.FirstOrDefault().ApprovalCode,
-                    PaymentTypeCode  = paymenttypecode.ResponseData.Split('-')[0],
+                    PaymentTypeCode  = bLConfigutations.settings.TestCard ? paymenttypecode.ResponseData.Split('-')[0]: paymenttypecode.ResponseData,
 
                 }
             });
@@ -284,7 +284,7 @@ public class PaymentBL
                         ReservationNameID = paymentdata?.FirstOrDefault().ReservationNameID,
                         MaskedCardNumber = paymentdata?.FirstOrDefault().MaskedCardNumber,
                         PaymentRefernce = "saavy - (" + paymentdata?.FirstOrDefault().MaskedCardNumber + ")",
-                        PaymentTypeCode = paymenttypecode.ResponseData.Split('-')[0], //"MC", //  need to take from Database.
+                        PaymentTypeCode = bLConfigutations.settings.TestCard?paymenttypecode.ResponseData.Split('-')[0]: paymenttypecode.ResponseData, //"MC", //  need to take from Database.
                         ApprovalCode = paymentdata?.FirstOrDefault().ResultCode
                     }
                     

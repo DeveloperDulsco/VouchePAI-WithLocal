@@ -69,7 +69,7 @@ public class PaymentInsertRequestValidator :   AbstractValidator<RequestModel<Pa
                 header.RuleFor(x => x.FundingSource).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
                 header.RuleFor(x => x.Amount).NotNull().NotEmpty().Matches(@"^[0-9.-]*$");
                 
-                header.RuleFor(x => x.RecurringIdentifier).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
+               // header.RuleFor(x => x.RecurringIdentifier).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
                 header.RuleFor(x => x.AuthorisationCode).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
                 header.RuleFor(x => x.pspReferenceNumber).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");
                 header.RuleFor(x => x.ParentPspRefereceNumber).NotNull().NotEmpty().Matches(@"^[a-zA-Z0-9]*$");

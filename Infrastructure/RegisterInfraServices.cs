@@ -57,5 +57,12 @@ public class PaymentSettings
     public string? PreAuthAmntUDF { get; set; }
     public string? DestinationSystemType { get; set; }
     public string? GuranteeTypeCode { get; set; }
+    public string? NameOWSURL { get; set; }
+    public string? InformationOWSURL { get; set; }
+
+    public string? ReservatinOWSURL { get; set; }
+
+    public string? ReservationAdvancedOWSURL { get; set; }
+    
 }
 

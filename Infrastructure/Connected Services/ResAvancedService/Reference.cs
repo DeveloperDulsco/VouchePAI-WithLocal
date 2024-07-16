@@ -23702,12 +23702,12 @@ namespace ResAvancedService
         /// <param name="clientCredentials">The client credentials</param>
         static partial void ConfigureEndpoint(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);
         
-        public ResvAdvancedServiceSoapClient(EndpointConfiguration endpointConfiguration) : 
-                base(ResvAdvancedServiceSoapClient.GetBindingForEndpoint(endpointConfiguration), ResvAdvancedServiceSoapClient.GetEndpointAddress(endpointConfiguration))
-        {
-            this.Endpoint.Name = endpointConfiguration.ToString();
-            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
-        }
+        //public ResvAdvancedServiceSoapClient(EndpointConfiguration endpointConfiguration) : 
+        //        base(ResvAdvancedServiceSoapClient.GetBindingForEndpoint(endpointConfiguration), ResvAdvancedServiceSoapClient.GetEndpointAddress(endpointConfiguration))
+        //{
+        //    this.Endpoint.Name = endpointConfiguration.ToString();
+        //    ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
+        //}
         
         public ResvAdvancedServiceSoapClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
                 base(ResvAdvancedServiceSoapClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
@@ -24738,30 +24738,20 @@ namespace ResAvancedService
             {
                 System.ServiceModel.Channels.CustomBinding result = new System.ServiceModel.Channels.CustomBinding();
                 System.ServiceModel.Channels.TextMessageEncodingBindingElement textBindingElement = new System.ServiceModel.Channels.TextMessageEncodingBindingElement();
-                textBindingElement.MessageVersion = System.ServiceModel.Channels.MessageVersion.CreateVersion(System.ServiceModel.EnvelopeVersion.Soap12, System.ServiceModel.Channels.AddressingVersion.None);
+                textBindingElement.MessageVersion = System.ServiceModel.Channels.MessageVersion.CreateVersion(System.ServiceModel.EnvelopeVersion.Soap11, System.ServiceModel.Channels.AddressingVersion.None);
                 result.Elements.Add(textBindingElement);
-                System.ServiceModel.Channels.HttpTransportBindingElement httpBindingElement = new System.ServiceModel.Channels.HttpTransportBindingElement();
-                httpBindingElement.AllowCookies = true;
-                httpBindingElement.MaxBufferSize = int.MaxValue;
-                httpBindingElement.MaxReceivedMessageSize = int.MaxValue;
-                result.Elements.Add(httpBindingElement);
+                System.ServiceModel.Channels.HttpsTransportBindingElement httpsBindingElement = new System.ServiceModel.Channels.HttpsTransportBindingElement();
+                httpsBindingElement.AllowCookies = true;
+                httpsBindingElement.MaxBufferSize = int.MaxValue;
+                httpsBindingElement.MaxReceivedMessageSize = int.MaxValue;
+                result.Elements.Add(httpsBindingElement);
+               
                 return result;
+
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
         
-        private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration)
-        {
-            if ((endpointConfiguration == EndpointConfiguration.ResvAdvancedServiceSoap))
-            {
-                return new System.ServiceModel.EndpointAddress("http://52.221.59.206:6501/ows_ws_51/ResvAdvanced.asmx");
-            }
-            if ((endpointConfiguration == EndpointConfiguration.ResvAdvancedServiceSoap12))
-            {
-                return new System.ServiceModel.EndpointAddress("http://52.221.59.206:6501/ows_ws_51/ResvAdvanced.asmx");
-            }
-            throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
-        }
         
         public enum EndpointConfiguration
         {

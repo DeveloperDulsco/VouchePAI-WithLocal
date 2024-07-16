@@ -64,11 +64,20 @@ namespace DataAccessLayer.Helper
             {
                 await connection.OpenAsync();
                 
-                var result = await connection.ExecuteScalarAsync<string>("SELECT top 1 OperaPaymentTypeCode FROM tbOperaPaymentTypeCode  where VendorPaymentTypeCode=@cardType and CardType='KSK'", new { cardType = cardType });
+                var result = await connection.ExecuteScalarAsync<string>("SELECT top 1 OperaPaymentTypeCode FROM tbOperaPaymentTypeCode  where VendorPaymentTypeCode=@cardType", new { cardType = cardType });
                 return result;
             }
         }
+        public async Task<string?> getOperaPaymentTypes(string sprocName, object? sprocParams = null)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
 
+                var result = await connection.ExecuteScalarAsync<string>(sprocName, param: sprocParams, commandType: CommandType.StoredProcedure);
+                return result;
+            }
+        }
 
 
     }
