@@ -63,6 +63,8 @@ public class PaymentSettings
     public string? ReservatinOWSURL { get; set; }
 
     public string? ReservationAdvancedOWSURL { get; set; }
-    
+    public string? LocalAPIURL { get; set; }
+
+
 }
 

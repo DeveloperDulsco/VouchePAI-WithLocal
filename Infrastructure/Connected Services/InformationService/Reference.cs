@@ -10788,12 +10788,13 @@ namespace InformationService
             {
                 System.ServiceModel.Channels.CustomBinding result = new System.ServiceModel.Channels.CustomBinding();
                 System.ServiceModel.Channels.TextMessageEncodingBindingElement textBindingElement = new System.ServiceModel.Channels.TextMessageEncodingBindingElement();
-                textBindingElement.MessageVersion = System.ServiceModel.Channels.MessageVersion.CreateVersion(System.ServiceModel.EnvelopeVersion.Soap12, System.ServiceModel.Channels.AddressingVersion.None);
+                textBindingElement.MessageVersion = System.ServiceModel.Channels.MessageVersion.CreateVersion(System.ServiceModel.EnvelopeVersion.Soap11, System.ServiceModel.Channels.AddressingVersion.None);
                 result.Elements.Add(textBindingElement);
                 System.ServiceModel.Channels.HttpsTransportBindingElement httpsBindingElement = new System.ServiceModel.Channels.HttpsTransportBindingElement();
                 httpsBindingElement.AllowCookies = true;
                 httpsBindingElement.MaxBufferSize = int.MaxValue;
                 httpsBindingElement.MaxReceivedMessageSize = int.MaxValue;
+                httpsBindingElement.RequireClientCertificate = false;
                 result.Elements.Add(httpsBindingElement);
                 return result;
             }

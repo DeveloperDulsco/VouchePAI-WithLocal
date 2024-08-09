@@ -101,6 +101,7 @@ namespace Domain.Response
     public class PaymentFetchRequest
     {
         public string? ReservationNumber { get; set; }
+        public string? TransactionID { get; set; }
     }
     public class PaymentHistory
     {

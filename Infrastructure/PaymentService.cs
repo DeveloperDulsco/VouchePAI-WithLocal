@@ -10,6 +10,7 @@ using Domain.Response;
 using Domain.Responses;
 using System.Text.Json;
 using Microsoft.IdentityModel.Logging;
+using Newtonsoft.Json;
 
 
 
@@ -117,7 +118,82 @@ public class PaymentService : IAdenPayment
 
 
     }
+    public async Task<ServiceResponse<object?>> ModifyBooking(OwsRequestModel owsRequest)
+    {
+
+
+        HttpClient? httpClient = null;
+        bool proxy = false;
+        if (proxy)
+        {
+            httpClient = new HttpISHelper().getProxyClient("", null, null);
+        }
+        else
+            httpClient = new HttpClient();
+
+        httpClient.DefaultRequestHeaders.Clear();
+        string requestString = JsonConvert.SerializeObject(owsRequest, Formatting.None);
+
+        var requestContent = new StringContent(requestString, Encoding.UTF8, "application/json");
+        HttpResponseMessage response = await httpClient.PostAsync(config?.PaymentSettings!.LocalAPIURL + @"/ows/ModifyBooking", requestContent);
+        if (response != null)
+        {
+            if (response.IsSuccessStatusCode)
+            {
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                OwsResponseModel owsResponse = JsonConvert.DeserializeObject<OwsResponseModel>(apiResponse);
+                return await new ServiceResult().GetServiceResponseAsync<object>(null, "Success", ApiResponseCodes.SUCCESS, 200, null);
+            }
+            else
+            {
+                return await new ServiceResult().GetServiceResponseAsync<object>(null, response.ReasonPhrase != null ? response.ReasonPhrase : "Failed", ApiResponseCodes.FAILURE, 400, null);
+            }
+        }
+        else
+        {
+            return await new ServiceResult().GetServiceResponseAsync<object>(null, "Failed", ApiResponseCodes.FAILURE, 400, null);
+        }
+    }
+    public async Task<ServiceResponse<object?>> MakePayment(OwsRequestModel owsRequest)
+    {
+        HttpClient? httpClient = null;
+        bool proxy = false;
+        if (proxy)
+        {
+            httpClient = new HttpISHelper().getProxyClient("", null, null);
+        }
+        else
+            httpClient = new HttpClient();
+       
+            httpClient.DefaultRequestHeaders.Clear();
+            string requestString = JsonConvert.SerializeObject(owsRequest, Formatting.None);
+            
+            var requestContent = new StringContent(requestString, Encoding.UTF8, "application/json");
+            HttpResponseMessage RSResponse = await httpClient.PostAsync(config?.PaymentSettings!.LocalAPIURL + @"/ows/MakePayment", requestContent);
+            if (RSResponse != null)
+            {
+                if (RSResponse.IsSuccessStatusCode)
+                {
+                    string apiResponse = await RSResponse.Content.ReadAsStringAsync();
+                   
+                    OwsResponseModel owsResponse = JsonConvert.DeserializeObject<OwsResponseModel>(apiResponse);
+                return await new ServiceResult().GetServiceResponseAsync<object>(null, "Success", ApiResponseCodes.SUCCESS, 200, null);
+            }
+                else
+                {
+
+                return await new ServiceResult().GetServiceResponseAsync<object>(null, RSResponse.ReasonPhrase != null ? RSResponse.ReasonPhrase : "Failed", ApiResponseCodes.FAILURE, 400, null);
+            }
+            }
+            else
+            {
+
+            return await new ServiceResult().GetServiceResponseAsync<object>(null,"Failed", ApiResponseCodes.FAILURE, 400, null);
+        }
+        }
+        
+    }
 
 
 
-}
+

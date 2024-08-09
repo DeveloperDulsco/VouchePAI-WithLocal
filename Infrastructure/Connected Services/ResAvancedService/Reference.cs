@@ -24744,6 +24744,7 @@ namespace ResAvancedService
                 httpsBindingElement.AllowCookies = true;
                 httpsBindingElement.MaxBufferSize = int.MaxValue;
                 httpsBindingElement.MaxReceivedMessageSize = int.MaxValue;
+                httpsBindingElement.RequireClientCertificate = false;
                 result.Elements.Add(httpsBindingElement);
                
                 return result;

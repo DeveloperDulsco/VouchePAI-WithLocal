@@ -8,19 +8,19 @@ namespace Domain.Response
 {
     public class OwsRequestModel
     {
-       
-            public string HotelDomain { get; set; }
-            public string KioskID { get; set; }
-            public string Username { get; set; }
-            public string Password { get; set; }
-            public string SystemType { get; set; }
-            public string Language { get; set; }
-            public string LegNumber { get; set; }
-            public string ChainCode { get; set; }
-            public string DestinationEntityID { get; set; }
-            public string DestinationSystemType { get; set; }
-            public MakePaymentRequest MakePaymentRequest { get; set; }
-            public ModifyBookingRequest modifyBookingRequest { get; set; }
+
+        public string HotelDomain { get; set; }
+        public string KioskID { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string SystemType { get; set; }
+        public string Language { get; set; }
+        public string LegNumber { get; set; }
+        public string ChainCode { get; set; }
+        public string DestinationEntityID { get; set; }
+        public string DestinationSystemType { get; set; }
+        public MakePaymentRequest MakePaymentRequest { get; set; }
+        public ModifyBookingRequest modifyBookingRequest { get; set; }
 
     }
     public class MakePaymentRequest
@@ -64,5 +64,12 @@ namespace Domain.Response
     {
         public string FieldName { get; set; }
         public string FieldValue { get; set; }
+    }
+    public class OwsResponseModel
+    {
+        public object responseData { get; set; }
+        public bool result { get; set; }
+        public string responseMessage { get; set; }
+
     }
 }

@@ -5,6 +5,7 @@ using Domain.Responses;
 using Microsoft.Extensions.Primitives;
 using System.Net.Http.Json;
 using System.Reflection;
+using System.Transactions;
 
 
 
@@ -54,14 +55,23 @@ public class PaymentBL
             return await serviceResult.GetServiceResponseAsync<object?>(null, "PAYMENTTYPE CODE MISSING", ApiResponseCodes.FAILURE,400, null);
         if (request?.RequestObject?.paymentHeaders.FirstOrDefault().TransactionType == "Sale")
         {
-            var creditcardresponse = await operaService.ModifyReservation(new OwsRequestModel()
+            var creditcardresponse = await adenPayment.ModifyBooking(new OwsRequestModel()
             {
+                ChainCode = bLConfigutations.settings.ChainCode,
+                DestinationEntityID = bLConfigutations.settings.DestinationEntityID,
+                HotelDomain = bLConfigutations.settings.HotelDomain,
+                KioskID = bLConfigutations.settings.KioskID,
+                Language = bLConfigutations.settings.Language,
+                LegNumber = bLConfigutations.settings.LegNumber,
+                Password = bLConfigutations.settings.Password,
+                SystemType = bLConfigutations.settings.SystemType,
+                Username = bLConfigutations.settings.Username,
                 modifyBookingRequest = new ModifyBookingRequest()
                 {
                     ReservationNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNumber,
                     isUDFFieldSpecified = false,
                     updateCreditCardDetails = true,
-                    GarunteeTypeCode = null,//"CC",
+                    GarunteeTypeCode = bLConfigutations.settings.GuranteeTypeCode,//"CC",
                     PaymentMethod = new PaymentMethod()
                     {
 
@@ -77,7 +87,7 @@ public class PaymentBL
                 return await serviceResult.GetServiceResponseAsync<object>(null, creditcardresponse.Message, creditcardresponse.ApiResponseCode,400,null);
             if (bLConfigutations.settings.IsUDFUpdate)
             {
-                var udfresponse = await operaService.ModifyReservation(new OwsRequestModel()
+                var udfresponse = await adenPayment.ModifyBooking(new OwsRequestModel()
                 {
                     modifyBookingRequest = new ModifyBookingRequest()
                     {
@@ -102,9 +112,18 @@ public class PaymentBL
                 if (udfresponse?.ApiResponseCode == ApiResponseCodes.FAILURE)
                     return await serviceResult.GetServiceResponseAsync<object>(null, udfresponse.Message, udfresponse.ApiResponseCode,400, null);
             }
-              var paymnetresponse = await operaService.MakePayment(new OwsRequestModel()
+              var paymnetresponse = await adenPayment.MakePayment(new OwsRequestModel()
             {
-                MakePaymentRequest = new MakePaymentRequest()
+                  ChainCode = bLConfigutations.settings.ChainCode,
+                  DestinationEntityID = bLConfigutations.settings.DestinationEntityID,
+                  HotelDomain = bLConfigutations.settings.HotelDomain,
+                  KioskID = bLConfigutations.settings.KioskID,
+                  Language = bLConfigutations.settings.Language,
+                  LegNumber = bLConfigutations.settings.LegNumber,
+                  Password = bLConfigutations.settings.Password,
+                  SystemType = bLConfigutations.settings.SystemType,
+                  Username = bLConfigutations.settings.Username,
+                  MakePaymentRequest = new MakePaymentRequest()
                 {
                     Amount = Convert.ToDecimal(request?.RequestObject?.paymentHeaders.FirstOrDefault().Amount),
                     PaymentInfo = "Auth code - (" + request?.RequestObject?.paymentHeaders.FirstOrDefault().AuthorisationCode + ")",
@@ -128,14 +147,23 @@ public class PaymentBL
         }
         else if(request?.RequestObject?.paymentHeaders.FirstOrDefault().TransactionType == "PreAuth")
         {
-            var creditcardresponse = await operaService.ModifyReservation(new OwsRequestModel()
+            var creditcardresponse = await adenPayment.ModifyBooking(new OwsRequestModel()
             {
+                ChainCode = bLConfigutations.settings.ChainCode,
+                DestinationEntityID = bLConfigutations.settings.DestinationEntityID,
+                HotelDomain = bLConfigutations.settings.HotelDomain,
+                KioskID = bLConfigutations.settings.KioskID,
+                Language = bLConfigutations.settings.Language,
+                LegNumber = bLConfigutations.settings.LegNumber,
+                Password = bLConfigutations.settings.Password,
+                SystemType = bLConfigutations.settings.SystemType,
+                Username = bLConfigutations.settings.Username,
                 modifyBookingRequest = new ModifyBookingRequest()
                 {
                     ReservationNumber = request?.RequestObject?.paymentHeaders.FirstOrDefault().ReservationNumber,
                     isUDFFieldSpecified = false,
                     updateCreditCardDetails = true,
-                    GarunteeTypeCode = "CC",//"CC",
+                    GarunteeTypeCode = bLConfigutations.settings.GuranteeTypeCode,//"CC",
                     PaymentMethod = new PaymentMethod()
                     {
                         ExpiryDate = !string.IsNullOrEmpty(request?.RequestObject?.paymentHeaders.FirstOrDefault().ExpiryDate) ? "01/" + request?.RequestObject?.paymentHeaders.FirstOrDefault().ExpiryDate : null,
@@ -149,8 +177,17 @@ public class PaymentBL
                 return await serviceResult.GetServiceResponseAsync<object>(null, creditcardresponse.Message, creditcardresponse.ApiResponseCode,400, null);
             if (bLConfigutations.settings.IsUDFUpdate)
             {
-                var udfresponse = await operaService.ModifyReservation(new OwsRequestModel()
+                var udfresponse = await adenPayment.ModifyBooking(new OwsRequestModel()
                 {
+                    ChainCode = bLConfigutations.settings.ChainCode,
+                    DestinationEntityID = bLConfigutations.settings.DestinationEntityID,
+                    HotelDomain = bLConfigutations.settings.HotelDomain,
+                    KioskID = bLConfigutations.settings.KioskID,
+                    Language = bLConfigutations.settings.Language,
+                    LegNumber = bLConfigutations.settings.LegNumber,
+                    Password = bLConfigutations.settings.Password,
+                    SystemType = bLConfigutations.settings.SystemType,
+                    Username = bLConfigutations.settings.Username,
                     modifyBookingRequest = new ModifyBookingRequest()
                     {
                         isUDFFieldSpecified = true,
@@ -257,7 +294,7 @@ public class PaymentBL
         var respose = await adenPayment.CapturePayment(paymentRequest);  //Capture the Payment in Adeyan.
         if (respose?.ApiResponseCode == ApiResponseCodes.SUCCESS)
         {
-            RequestModel<PaymentFetchRequest> request1 = new RequestModel<PaymentFetchRequest>{ ConnectionString = request?.ConnectionString, RequestObject = new PaymentFetchRequest { ReservationNumber = request?.RequestObject.ReservationNumber } };
+            RequestModel<PaymentFetchRequest> request1 = new RequestModel<PaymentFetchRequest>{ ConnectionString = request?.ConnectionString, RequestObject = new PaymentFetchRequest { ReservationNumber = request?.RequestObject.ReservationNumber, TransactionID= request?.RequestObject.TransactionId } };
             var fetchpayment = await payment.FetchPaymentDetails(request1);
             if (respose?.ResponseData is not null)
             {
@@ -273,8 +310,17 @@ public class PaymentBL
 
                 if (paymenttypecode.ResponseData is null)
                     return await serviceResult.GetServiceResponseAsync<PaymentResponse?>(null, "PAYMENTTYPE CODE MISSING", ApiResponseCodes.FAILURE, 400, null);
-                var paymnetresponse = await operaService.MakePayment(new OwsRequestModel()  //Update the Paymnet in Opera
+                var paymnetresponse = await adenPayment.MakePayment(new OwsRequestModel()  //Update the Paymnet in Opera
                 {
+                    ChainCode = bLConfigutations.settings.ChainCode,
+                    DestinationEntityID = bLConfigutations.settings.DestinationEntityID,
+                    HotelDomain = bLConfigutations.settings.HotelDomain,
+                    KioskID = bLConfigutations.settings.KioskID,
+                    Language = bLConfigutations.settings.Language,
+                    LegNumber = bLConfigutations.settings.LegNumber,
+                    Password = bLConfigutations.settings.Password,
+                    SystemType = bLConfigutations.settings.SystemType,
+                    Username = bLConfigutations.settings.Username,
                     MakePaymentRequest = new MakePaymentRequest()
                     {
                         Amount = Convert.ToDecimal(request?.RequestObject?.Amount),
